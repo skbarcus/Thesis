@@ -1,0 +1,93 @@
+%% Edit toclof to meet WM standards
+
+%%%%
+% Table of Contents
+%%%%
+
+
+%To make sure that the chapters have dots to the page #
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+%% Title is 14 pt font and centered
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\cfttoctitlefont}{\hfill\fontsize{14}{16.8}\selectfont}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+%only one space after the title
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{12pt}
+
+%Chapters are not in bold and 12 pt font
+\renewcommand{\cftchapfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{12}{14}\selectfont}
+%Sections, subsections etc are 12pt font
+\renewcommand{\cftsecfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftsubsecfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftsubsecpagefont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftsubsubsecfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftsubsubsecpagefont}{\fontsize{12}{14}\selectfont}
+
+%% remove spacing before chapters
+\setlength{\cftbeforechapskip}{0pt}
+
+%%%%
+% List of Tables
+%%%%
+
+%% Title is 14 pt font and centered
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\cftlottitlefont}{\hfill\fontsize{14}{16.8}\selectfont\hfill}
+\renewcommand{\cftafterlottitle}{\hfill\hfill}
+%only one space after the title
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{12pt}
+
+%Tables and pages are 12pt font
+\renewcommand{\cfttabfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cfttabpagefont}{\fontsize{12}{14}\selectfont}
+
+
+%%%%
+% List of Figures
+%%%%
+
+%% Title is 14 pt font and centered
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\cftloftitlefont}{\hfill\fontsize{14}{16.8}\selectfont\hfill}
+\renewcommand{\cftafterloftitle}{\hfill\hfill}
+%only one space after the title
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{12pt}
+
+%Figures and pages are 12pt font
+\renewcommand{\cftfigfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftfigpagefont}{\fontsize{12}{14}\selectfont}
+
+%%%%
+% List of Equations
+%%%%
+
+%Use tocloft commands to construct a list of equations
+%%gmedina solution
+\newcommand{\listequationsname}{LIST OF EQUATIONS}
+\newlistof{equationlabels}{equ}{\listequationsname}
+
+%% Title is 14 pt font and centered
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\cftequtitlefont}{\hfill\fontsize{14}{16.8}\selectfont}
+\renewcommand{\cftafterequtitle}{\hfill\hfill}
+%only one space after the title
+\setlength{\cftbeforeequtitleskip}{0pt}
+\setlength{\cftafterequtitleskip}{12pt}
+
+%\newcommand{\equationlabels}[1]{%
+%\addcontentsline{equ}{equationlabels}{\protect\numberline{\theequation}#1}\par}
+% The above forces a new paragraph after the equation. Which is not wanted.
+\newcommand{\equationlabels}[1]{%
+\addcontentsline{equ}{equationlabels}{\protect\numberline{\theequation}#1}}
+\setlength{\cftequationlabelsnumwidth}{2.5em}% Width of equation number in List of Equations
+
+%Equations and pages are 12pt font
+\renewcommand{\cftequationlabelsfont}{\fontsize{12}{14}\selectfont}
+\renewcommand{\cftequationlabelspagefont}{\fontsize{12}{14}\selectfont}
+

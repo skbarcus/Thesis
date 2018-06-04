@@ -1,0 +1,4 @@
+*.tex linguist-language=tex
+*.bib linguist-language=bibtex
+*.C linguist-language=C++
+*.ipynb linguist-language=python

@@ -1,0 +1,85 @@
+%Use geometry package to set margins
+%WM requirement: Left 1.5in to 2in Top,Right,Bottom 1in to 1.25in
+\usepackage[letterpaper,
+            left=1.75in,
+            top=1.125in,
+            right=1.125in,
+            bottom=1.125in]{geometry}
+            
+%Allow input of separate files. Using to load configuration files.
+\usepackage{import}
+
+%Allow separate files to be included into the main document.
+\usepackage{subfiles}
+
+%Allow fancy headers and footer
+\usepackage{fancyhdr}
+%\fancyhead{}
+
+%\fancyfoot{}
+
+%Allow doublespacing as required
+\usepackage{setspace}
+\doublespacing
+
+%Allows for changing of fonts size for parts of doc
+%\fontsize{size}{lineheight}\selectfont{blah blah}
+%lineheight = 1.2*size
+\usepackage{anyfontsize}
+
+%Allow preamble tables to be formatted
+\usepackage{tocloft}
+%Dots in ToC
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+%Import graphics package
+\usepackage{graphicx}
+
+%Fix spacing issues in text
+\usepackage{microtype}
+
+%Import extra math environments
+\usepackage{amsmath}
+
+%Allows click-able reference in final pdf document.
+%Also allows bookmarks for final pdf document.
+%\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    %colorlinks=true,
+    colorlinks=false,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    %bookmarks=true,
+    bookmarksopen=false,
+    pdftitle={Dissertation},
+    pdfauthor={H. Potter}
+}
+
+%Allows for more clever referencing of items using \cref and \Cref
+\usepackage{cleveref}
+
+%Allow you to place To-do notes in colorful block in text.
+ \usepackage[obeyFinal,
+             colorinlistoftodos,
+             textwidth=textwidth]{todonotes}
+             
+%Allow captions for figures
+\usepackage{caption}
+%Allow captions for subfigures
+\usepackage{subcaption}
+
+%Allow appendices
+\usepackage[toc]{appendix}
+
+%Allow Feynman Diagrams
+%Activate later! Requires .sty file.
+%\usepackage{tikz-feynman}
+
+%Allow chemical & isotope notation
+\usepackage[version=3]{mhchem}
+\usepackage{isotope}
+
+%Allow fancy tables 
+\usepackage{booktabs}

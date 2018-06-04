@@ -1,0 +1,130 @@
+\RequirePackage[l2tabu, orthodox]{nag} % Checks for old notation and warns you
+
+\documentclass[11pt, letterpaper, oneside]{report}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%
+%Set Up Configurations
+%%%%%%%%%%%%%%%%%%%%%%
+\include{config/setup}
+
+
+%For babeling
+\usepackage{lipsum}
+
+%Set path of figures directory
+%\graphicspath{{figures}{../figures/}{../../figures}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%
+% Preamble Pages
+%%%%%%%%%%%%%%%%
+
+% Generate Title Page
+%\maketitle
+% Use roman numerals for page numbers as required
+\pagenumbering{roman}
+
+\include{preamble/title_page}
+
+% Generate Copyright Page
+\subfile{preamble/copyright}
+
+% Generate Abstract Page
+\subfile{preamble/approval_page}
+
+% Generate Abstract Page
+\subfile{preamble/abstract}
+
+% Generate Table of Contents
+\newpage
+\setcounter{page}{1}
+%add to the PDF bookmarks
+\phantomsection\pdfbookmark{Table of Contents}{Table of Contents}
+%\addcontentsline{toc}{chapter}{Table of Contents}
+\begin{singlespace}
+\tableofcontents
+\end{singlespace}
+
+% Generate Acknowledgements
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgements}
+%\chapter*{Acknowledgements}
+\subfile{preamble/acknowledgements}
+
+% Generate Dedication
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Dedication}
+%\chapter*{Dedication}
+\subfile{preamble/dedication}
+
+% Generate List of Tables
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+%% From manual needed for extra space due to chapters
+\begingroup
+\renewcommand*{\addvspace}[1]{}
+\begin{singlespace}
+\listoftables
+\end{singlespace}
+\endgroup
+
+
+% Generate List of Figures
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+%% From manual needed for extra space due to chapters
+\begingroup
+\renewcommand*{\addvspace}[1]{}
+\begin{singlespace}
+\listoffigures
+\end{singlespace}
+\endgroup
+
+%Generate List of Equations
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Equations}
+\begin{singlespace}
+\listofequationlabels
+\end{singlespace}
+
+
+%%%%%%%%%%
+% Chapters
+%%%%%%%%%%
+
+\newpage 
+%Change the page style 
+\pagestyle{dissertationbody}
+%Change back to arabic numerals
+\pagenumbering{arabic}
+
+% Chapter 1: Introduction
+\import{Chapters/Ch_Introduction/}{Ch_Introduction}
+
+
+
+%%%%%%%%%%%%
+% Appendices
+%%%%%%%%%%%%
+\appendix
+
+
+%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%
+\phantomsection
+\label{Bibliography}
+\begin{singlespace}
+%\printbibliography
+%\printbibliography[heading=bibintoc]
+\printbibliography[heading=bibintoc, title=References]
+\end{singlespace}
+
+\end{document}

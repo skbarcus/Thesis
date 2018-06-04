@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%
+% Load packages
+%%%%%%%%%%%%%%%%%%
+\input{config/packages}
+\input{config/definitions_dissertation}
+
+\input{config/units}
+
+\input{config/thesis_references}
+
+\usepackage{anyfontsize}
+
+\input{config/setup_tof}
+
+
+%Allow fancy headers and footer
+\usepackage{fancyhdr}
+
+%for main text page # system
+\fancypagestyle{dissertationbody}{%
+  \fancyhf{}
+  \setlength{\headheight}{14.59pt}%{13.59999pt} 
+  \fancyhead[R]{\thepage}
+  % If using one sided
+  \fancyhead[L]{\leftmark}
+  % If it wasn't one sided then 
+%  \fancyhead[LO]{\leftmark} % Chapter
+%  \fancyhead[LE]{\rightmark} % Section
+  \renewcommand{\headrulewidth}{0pt}%
+  \pagestyle{fancy}
+  %% For Chapter title pages
+ \fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  }
+  \cfoot{}
+}

@@ -1,0 +1,59 @@
+%% per-mode=symbol : Uses a / to denote per, rather than ^-1
+\usepackage[per-mode=symbol,binary-units=true,alsoload=synchem]{siunitx}
+\sisetup{detect-all} %% So it can detect the proper font
+
+%% Need to setup strange unit system (English)
+% Define some English units
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\inch}{in}
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\inches}{in}
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\foot}{ft}
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\feet}{ft}
+\DeclareSIUnit\mi{mi}
+\DeclareSIUnit\mile{mi}
+\DeclareSIUnit\miles{mi}
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\mil}{mil} % thousandth of an inch...really?
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\rad}{Rad} %Unit of radiation
+%\DeclareSIUnit[number-unit-product = {\thinspace}]{\inch}{in} %% Sigh...who is using inches??
+\DeclareSIUnit \clight {\text{\ensuremath{c}}} % Seriously, what's with the 0 in speed of light?!?!?!
+
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\year}{yr}
+
+\sisetup{allow-number-unit-breaks} % allow for units to be on a different line if needed
+
+%To get rid of the \mirco error
+%\sisetup{math-micro=\text{µ},text-micro=µ}
+%see https://tex.stackexchange.com/questions/97611/textmu-doesnt-work-with-newtxtext/97614#97614
+%\sisetup{math-micro=\upmu,text-micro=\ensuremath{\upmu},
+%         math-ohm=\upOmega,text-ohm=\ensuremath{\upOmega}}
+
+%% Why doesn't the micro show up?
+\sisetup{math-micro=\mu{},text-micro=$\mu{}$}
+
+
+\DeclareSIUnit{\atmosphere}{atm}
+
+%\DeclareSIUnit{\barn}{\text{barn}}
+
+%Percent with no space
+\DeclareSIUnit[number-unit-product = {}]{\percent}{\%} 
+
+\sisetup{separate-uncertainty = true}
+
+%Set up range output
+%override with [per-mode = reciprocal] or [per-mode = reciprocal-positive-first]
+\sisetup{per-mode = fraction}
+
+%Set up range output
+\sisetup{range-units = repeat}
+%\sisetup{range-units = single}
+
+% Set up list to have a final separator of a , and
+\sisetup{list-final-separator = {, and }}
+
+% Set up to always separate out the uncertainty
+\sisetup{separate-uncertainty=true}
+
+% when have a number and uncertainty only use the unit once
+% and don't put () around the numbers 
+\sisetup{multi-part-units = single}
+

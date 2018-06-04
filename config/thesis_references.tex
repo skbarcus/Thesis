@@ -1,0 +1,61 @@
+%% Add the various references
+%APS Reference Standards
+%https://journals.aps.org/authors/references-physical-review-physical-review-letters
+
+\usepackage[%
+  sorting=none,%
+%  backend=bibtex,%
+  backend=biber,%
+%  style=numeric,%
+  style=phys,% 
+  pageranges=false,% Print only first page, only works with style=phys
+  chaptertitle=false,% for incollections show chapter titles - true for AIP style, false for APS style
+  articletitle=true,% Print article title, AIP = false, APS = true
+  biblabel=brackets,% Number entries by bracked notation
+  related=true,%
+  isbn=false,% Don't print ISBN
+  doi=false,% Don't print DOI
+  url=false,% Don't print URL
+  eprint=false,% Don't print eprint information
+  hyperref=true,%
+%  note=false,%
+  firstinits=true,% Use first intials only
+  maxnames=3,% Truncate after N names
+  minnames=1,% Print at least N names if truncated
+%  natbib=true%
+ ]{biblatex}
+
+
+%% Italics the et al.
+\DefineBibliographyStrings{english}{%
+  andothers = {\textit{et al}\adddot}
+}
+
+
+%% Force the collaboration to show up on the bibliography
+%% Code taken from http://mlotze.bitbucket.org/collaboration-entries-in-biblatex.html
+\DeclareSourcemap{
+    \maps[datatype=bibtex]{
+        \map{
+            \step[fieldsource=Collaboration, match=\regexp{([^,]+)}, fieldset=usera, fieldvalue={$1}, final=true]
+            }
+    }
+}
+\renewbibmacro*{author}{%
+  \iffieldundef{usera}{%
+    \printnames{author}%
+  }{%
+    \printnames{author} (\printfield{usera})%
+  }%
+}%
+
+
+
+
+%%%%%%%%%%%%
+% Add in my files
+%%%%%%%%%%%%
+
+
+%Books
+\addbibresource{references/bib_Books.bib}
