@@ -1,0 +1,76 @@
+% Introduction
+\chapter{Elastic Electron Scattering} % Main chapter title
+\label{ch:elastic} % For referencing the chapter elsewhere, use 
+
+Electron scattering is one of the most powerful tools available to physicists to study the nature of nuclear matter. When electrons are accelerated to high energies by means of a particle accelerator, like JLab's CEBAF, and fired at a nuclear target the electrons scatter due to the nuclear structure of the target. This scattering is well described by quantum electrodynamics (QED). Thus, by measuring the scattered electrons, called inclusive electron scattering, the nuclear structure of the target is revealed. 
+
+\section{Kinematics of Elastic Electron Scattering}
+\label{sec:kinematics}
+
+The process of elastic electron scattering is dhown in figure ~\ref{fig:elastic_scattering}. An incident electron, with four-momentum $k = (E_0,\textit{\textbf{k}})$, exchanges a virtual photon, $q = (\nu,\textit{\textbf{q}})$, with a target in the target's rest frame, $p = (M,0)$. The virtual photon exchanges energy and momentum causing the electron to scatter with a scattering angle $\theta$ and four-momentum $k' = (E',\textit{\textbf{k'}})$. The proton is also scattered with four-momentum $p'$, but the proton is not measured in inclusive electron scattering. When the kinetic energy of this scattering process is conserved the process is called `elastic'. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Elastic_Electron_Scattering_Clean.png}
+\end{center}
+\caption{
+{\bf{Elastic Electron Scattering.}} An incident electron interacts with a target by exchanging a virtual photon causing the electron to scatter.}
+\label{fig:elastic_scattering}
+\end{figure}
+
+When the scattering process is elastic the whole process can be completely described by two variables. These variables are the scattering angle, $\theta$, and the initial energy, $E_0$. By using conserving energy and momentum as well as applying the Einstein relation the scattered electron's final energy, $E'$, is found to be given by equation ~\ref{eq:E'}. The energy lost by the incident electron during scattering, $\nu$, is given by equation ~\ref{eq:nu}. The strength of the interaction is generally described as in equation ~\ref{eq:Q^2}. 
+
+Another useful quantity to define is Bjorken x given by equation ~\ref{eq:xbj}. This variable is interpretable as the fraction of the three-momentum carried by the quark struck by the electron. For a single nucleon $0 \leq X_{Bj} \leq 1$. However, for a nucleus $0 \leq X_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $X_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $X_{Bj} = 3$.
+
+\begin{equation} \label{eq:E'}
+	E' = \frac{E_0}{1+\frac{2E_0}{M}sin^2\left(\frac{\theta}{2}\right)}
+\end{equation}
+
+\begin{equation} \label{eq:nu}
+	\nu = E_0-E'
+\end{equation}
+
+\begin{equation} \label{eq:Q^2}
+	Q^2 = -q^2 = 4E_0E'sin^2\left(\frac{\theta}{2}\right)
+\end{equation}
+
+\begin{equation} \label{eq:xbj}
+	X_{Bj} = \frac{Q^2}{M(E_0-E')} 
+\end{equation}
+
+\begin{table}
+  \centering
+    \begin{tabular}{c  c c}
+    \toprule
+      table & \multicolumn{2}{c}{Slope (\si{\meter\giga\electronvolt\squared\per\micro\radian})} \\
+      \midrule
+      1 & 2 \\
+      5 & 6\\
+      \bottomrule
+    \end{tabular}
+    \caption[Here is a table]{Table}
+    \label{tab:table}
+\end{table}
+
+
+How about and Equation? Remove equation labels if you would like in the text and in the main file where the table of equations is printed.
+%Example equation
+\begin{equation}
+    1 + 1 = 2
+    \label{eq:sum1}
+  \text{\equationlabels{1st sum}}
+\end{equation}
+
+
+How about a figure:
+\begin{figure}[!htb]
+    \centering
+    \includegraphics{Chapters/Ch_Introduction/Figure_Placeholder.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+Use Units \SI{15}{\ampere}: Change the units.tex to your liking.
+How about a citation~\cite{Book:PeskinSchroeder1995,Book:Jackson} or a reference Eq.~\ref{eq:sum1}.
+
+\lipsum[6-7]
