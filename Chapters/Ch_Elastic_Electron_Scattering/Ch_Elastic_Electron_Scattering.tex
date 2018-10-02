@@ -43,11 +43,107 @@ Another useful quantity to define is Bjorken x given by equation ~\ref{eq:xbj}. 
 
 The differential cross section describes the likelihood of an electron interacting with a target. It is proportional to the probability that an electron incident on the target will interact with that target which can be said to describe the `size' of the interaction, $\sigma$. However, for a scattered electron to be measured it must be scattered through a solid angle, $\Omega$, that can be seen by a detector. Therefore, the differential cross section measures the probability that an electron will be scattered from a target while being detected, $\frac{d\sigma}{d\Omega}$.
 
-Following the derivation laid out ~\cite{Book:Povh} in let us first examine the classical case of particles scattering from a fixed target nuclei, Rutherford scattering equation ~\ref{eq:rutherford}.   
+Following the discussion of cross sections and form factors laid out in ~\cite{Book:Povh} let us begin with the classical case of particles scattering from a fixed target nuclei. The Rutherford scattering equation can be obtained classically ~\ref{eq:rutherford} or through non-relativistic quantum mechanics by assuming that the wave functions of the electron are plane waves (Born approximation).   
 
 \begin{equation} \label{eq:rutherford}
-	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{\left(ze*Ze\right)^2}{(4\pi\epsilon_0)^2(4E_0)^2sin^4(\theta/2)}
+	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{\left(zeZe\right)^2}{(4\pi\epsilon_0)^2(4E_0)^2sin^4(\theta/2)}
 \end{equation}
 
+\noindent Where $z$ ($Z$) is the atomic number of the incident particle (target), $e$ is the elementary charge, $\epsilon_0$ is the vacuum permittivity, and $E_0$ is the incident particle's initial energy. The Rutherford equation can also be written as ~\ref{eq:rutherford_2} following the quantum mechanical derivation. Notice that the cross section falls off like $\frac{1}{q^4}$ indicating that the interaction probability falls off rapidly with increased momentum transfer.
 
+\begin{equation} \label{eq:rutherford_2}
+	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4}
+\end{equation}
 
+The Rutherford equation does not account for relativity, spin, or target recoil. To begin accounting for these quantities let us continue the derivation by adding relativity. This yields the preliminary version of the Mott equation while still neglecting recoil ~\ref{eq:mott_no_recoil}.
+
+\begin{equation} \label{eq:mott_no_recoil}
+	\left(\frac{d\sigma}{d\Omega}\right)_{Mott, \: No \: Recoil} = \left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} \left( 1-\beta^2 sin^2 \left( \frac{\theta}{2} \right) \right)
+\end{equation}
+
+\noindent Where $\beta = \frac{v}{c}$ with $v$ being the velocity of the incident particle and $c$ the speed of light. 
+
+By taking the incident particle's velocity to its maximum value of $c$ $\beta$ goes to unity. Then ~\ref{eq:mott_no_recoil} simplifies via trigonometric identity to ~\ref{eq:mott_no_recoil_simple}.
+
+\begin{equation} \label{eq:mott_no_recoil_simple}
+	\left(\frac{d\sigma}{d\Omega}\right)_{Mott, \: No \: Recoil} = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} cos^2 \left( \frac{\theta}{2} \right) = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4} cos^2 \left( \frac{\theta}{2} \right) 
+\end{equation}
+
+\noindent Equation ~\ref{eq:mott_no_recoil_simple} now accounts for relativity, but also accounts for spin by suppressing scattering through 180$\degree$ for a spinless target which is forbidden by conservation of helicity. 
+
+So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing spatial extents. To quantize the spatial extent of a target we introduce the form factors. Form factors contain all of the spatial and structural information about the target. Multiplying the Mott cross section excepting recoil by the form factor we get the experimental cross section as in equation ~\ref{eq:xs_exp_ff}. So by measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor of a target can be determined. 
+
+\begin{equation} \label{eq:xs_exp_ff}
+	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \left(\frac{d\sigma}{d\Omega}\right)_{Mott, \: No \: Recoil} |F(q^2)|^2
+\end{equation}
+
+Continuing to assume that recoil is negligible as well as the validity of the Born approximation the target's form factors can be written as the Fourier transform of a charge distribution, $\rho(x)$, as in equation ~\ref{eq:fourier}. If the charge distribution is spherically symmetric then the form factor equals the right side of equation ~\ref{eq:fourier} with the integral of $\rho(r)$ normalized to unity.
+
+\begin{equation} \label{eq:fourier}
+	F(q^2) = \int e^{\frac{iq \cdot x}{\hbar}} \rho(x) d^3x \xrightarrow{x \xrightarrow{} r} 4\pi \int \rho(r) \frac{sin\left( |q|r/\hbar \right)}{|q|r/\hbar} r^2 dr
+\end{equation}
+
+\noindent This procedure can be inverted to find the charge distribution of a target from its form factor as in ~\ref{eq:inverse_fourier}.
+
+\begin{equation} \label{eq:inverse_fourier}
+	\rho(r) = \frac{1}{(2\pi)^3} \int F(q^2) e^{\frac{-iq \cdot x}{\hbar}} d^3q 
+\end{equation}
+
+Let us now examine a simple example of a charge distribution and its form factor. Assume that there is a charge distribution in the shape of a hard sphere, i.e. a solid ball of constant charge density that drops to zero beyond a certain radius. This is a reasonable first order model for the charge distribution of an atom. Figure ~\ref{fig:hard_sphere} shows a hard sphere of charge density on top. The bottom plot shows the form factor, Fourier transform, of the upper hard sphere plot. Now we can see that the form factor of a hard sphere distribution of charge yields an oscillatory and decreasing form factor.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Hard_Sphere_FT_Clean.png}
+\end{center}
+\caption{
+{\bf{Hard Sphere Charge Distribution Form Factor.}} Taking the Fourier transform of a hard sphere charge distribution yields an oscillatory form factor.}
+\label{fig:hard_sphere}
+\end{figure}
+
+As ~\cite{Book:Povh} points out the location of the minima can be used to learn about the size of the target. For a hard sphere of charge radius, $R$, is roughly given by equation ~\ref{eq:minima}, where $\frac{q}{\hbar}$ is the location of the first minima. 
+
+\begin{equation} \label{eq:minima}
+	R \approx \frac{4.5 \hbar}{q}
+\end{equation}
+
+\noindent However, one can also study the charge radius by examining the behavior of the charge density as it approaches zero. This can be seen by expanding the form factor in $q$ from the first integral in ~\ref{eq:fourier}. Euler's formula, $e^{ix} = cos(x)+isin(x)$, begins the expansion of the exponent, but we are still left with a troublesome $isin(x)$ term. This $isin(x)$ term can be eliminated by assuming that the wavelength of the electron, $\frac{\hbar}{q}$, is much larger than the charge radius, $R$, as in ~\ref{eq:large_wavelength}.
+
+\begin{equation} \label{eq:large_wavelength}
+	R \ll \frac{\hbar}{q} \implies \frac{Rq}{\hbar} \ll 1
+\end{equation}
+
+Now $isin\left(\frac{Rq}{\hbar}\right) \xrightarrow{} 0$ and we can drop the $isin(x)$ term leaving only $e^{ix} \approx cos(x)$. The Taylor expansion of $cos(x)$ is given by equation ~\ref{eq:cos}.
+
+\begin{equation} \label{eq:cos}
+	cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} +...
+\end{equation}
+
+\noindent Keeping only the first two terms of the $cos(x)$ expansion we can now rewrite the form factor equation as in equation ~\ref{eq:ff_expanded} while inserting $q \cdot r = |q||r|cos(\omega)$ where $\omega$ is the angle between $q$ and $r$.
+
+\begin{equation} \label{eq:ff_expanded}
+	F(q^2) = \int_0^\infty \int_{-1}^1 \int_0^{2\pi} \rho(r) \left( 1-\frac{1}{2} \frac{|q||r|cos(\omega)}{\hbar} \right) r^2 d\phi \; dcos(\omega) \; dr
+\end{equation}
+
+\noindent Integrating over $\phi$ and $\cos(\omega)$ we obtain equation ~\ref{eq:ff_expanded_r}.
+
+\begin{equation} \label{eq:ff_expanded_r}
+	F(q^2) = 4\pi \int_0^\infty \rho(r) r^2 dr - 4\pi \frac{q^2}{6\hbar^2} \int_0^\infty f(r) r^4 dr
+\end{equation}
+
+If we require that $\rho(r)$ be normalized such that $4\pi \int_0^\infty \rho(r) r^2 dr = 1$ then we can define the mean square charge radius as in equation ~\ref{eq:rms}.
+
+\begin{equation} \label{eq:rms}
+	\langle r^2 \rangle = 4\pi \int_0^\infty r^2 \rho(r) r^2 dr
+\end{equation}
+
+\noindent Now equation ~\ref{eq:ff_expanded_r} can be rewritten as equation ~\ref{eq:ff_rms}.
+
+\begin{equation} \label{eq:ff_rms}
+	F(q^2) = 1 - \frac{q^2}{6\hbar^2} \langle r^2 \rangle
+\end{equation}
+
+\noindent Taking the derivative of equation ~\ref{eq:ff_rms} with respect to $q^2$ we can extract $\langle r^2 \rangle$ as in equation ~\ref{eq:rms_derivative}. So by measuring the form factor of a target at very low $q^2$ one can calculate the mean square radius by finding the slope of the form factor at $q^2=0$.
+
+\begin{equation} \label{eq:rms_derivative}
+	\langle r^2 \rangle = -6\hbar^2 \frac{dF(q^2)}{dq^2} |_{q^2=0}
+\end{equation}
