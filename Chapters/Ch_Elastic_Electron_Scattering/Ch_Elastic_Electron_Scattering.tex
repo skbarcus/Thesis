@@ -147,3 +147,36 @@ If we require that $\rho(r)$ be normalized such that $4\pi \int_0^\infty \rho(r)
 \begin{equation} \label{eq:rms_derivative}
 	\langle r^2 \rangle = -6\hbar^2 \frac{dF(q^2)}{dq^2} |_{q^2=0}
 \end{equation}
+
+At this point we are still claiming that the recoil of the struck particle is negligible. Let us examine the truth of this assumption by comparing the electron energies needed to the mass of a typical target, $^3$He. First let us determine approximately what energy an electron needs to be able to probe a target's nuclear structure. The Planck-Einstein relation can guide us with this estimate and is given in equation ~\ref{eq:planck}, where $h$ is Planck's constant and $\nu$ is the electron's frequency. 
+
+\begin{equation} \label{eq:planck}
+	E = h\nu
+\end{equation}
+
+\noindent Also remember the relationship between frequency and wavelength given in equation \ref{eq:wavelength}
+
+\begin{equation} \label{eq:wavelength}
+	\nu = \frac{c}{\lambda}
+\end{equation}
+
+\noindent Combining equations ~\ref{eq:planck} and \ref{eq:wavelength} gives us equation ~\ref{eq:energy_estimate} which allows us to estimate the required electron energies to examine nuclear structure. 
+
+\begin{equation} \label{eq:energy_estimate}
+	E = \frac{hc}{\lambda}
+\end{equation}
+
+Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in ~\ref{eq:energy_estimate} along with $h \approx 4.136 *10^{-15} eV*s$ and $c\approx 3*10^{8} m/s$ yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required for to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
+
+Taking the recoil of the target in to account adds a factor of $\frac{E'}{E}$ to the Mott cross section giving equation ~\ref{eq:mott_recoil}.
+
+\begin{equation} \label{eq:mott_recoil}
+\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^3}{|qc|^4 E_0} cos^2 \left( \frac{\theta}{2} \right)
+\end{equation}
+
+\noindent The Mott cross section cab be written in a slightly different by setting some constants equal to one and rearranging some of the energies as in equation ~\ref{eq:mott}.
+
+\begin{equation} \label{eq:mott}
+\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2}{4E_0^2 sin^4\left( \frac{\theta}{2} \right) cos^2\left( \frac{\theta}{2} \right)}
+\end{equation}
+
