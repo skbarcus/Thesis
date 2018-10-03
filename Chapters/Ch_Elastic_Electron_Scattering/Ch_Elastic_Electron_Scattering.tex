@@ -71,6 +71,9 @@ By taking the incident particle's velocity to its maximum value of $c$ we see $\
 
 \noindent Equation ~\ref{eq:mott_no_recoil_simple} now accounts for relativity, but also accounts for spin by suppressing scattering through 180$\degree$ for a spinless target which is forbidden by conservation of helicity. 
 
+\section{Nuclear Form Factors}
+\label{sec:ffs}
+
 So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing spatial extents. To quantize the spatial extent of a target we introduce the form factors. Form factors contain all of the spatial and structural information about the target. Multiplying the Mott cross section excepting recoil by the form factor we get the experimental cross section as in equation ~\ref{eq:xs_exp_ff}. So by measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor of a target can be determined. 
 
 \begin{equation} \label{eq:xs_exp_ff}
@@ -168,7 +171,13 @@ At this point we are still claiming that the recoil of the struck particle is ne
 
 Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in ~\ref{eq:energy_estimate} along with $h \approx 4.136 *10^{-15} eV*s$ and $c\approx 3*10^{8} m/s$ yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required for to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
 
-Taking the recoil of the target in to account adds a factor of $\frac{E'}{E}$ to the Mott cross section giving equation ~\ref{eq:mott_recoil}.
+Taking the recoil of the target in to account one finds that the recoil factor is given by equation ~\ref{eq:recoil}. 
+
+\begin{equation} \label{eq:recoil}
+\frac{E'}{E_0} = \frac{1}{1+\frac{2E}{M} sin^2 \left( \frac{\theta}{2} \right)}
+\end{equation}
+
+\noindent Adding the factor of $\frac{E'}{E}$ to the Mott cross section gives equation ~\ref{eq:mott_recoil}.
 
 \begin{equation} \label{eq:mott_recoil}
 \left(\frac{d\sigma}{d\Omega}\right)_{Mott} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^3}{|qc|^4 E_0} cos^2 \left( \frac{\theta}{2} \right)
@@ -177,7 +186,7 @@ Taking the recoil of the target in to account adds a factor of $\frac{E'}{E}$ to
 \noindent The Mott cross section cab be written in a slightly different form by setting some constants equal to one and rearranging some of the energies as in equation ~\ref{eq:mott}. We now have an equation that represents the scattering of electrons off of a pointlike particle.
 
 \begin{equation} \label{eq:mott}
-\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2}{4E_0^2 sin^4\left( \frac{\theta}{2} \right) cos^2\left( \frac{\theta}{2} \right)}
+\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 cos^2\left( \frac{\theta}{2} \right)}{4E_0^2 sin^4\left( \frac{\theta}{2} \right)}
 \end{equation}
 
 At this point in the analysis we have accounted for spin, relativity, and recoil. However, we have still neglected the fact that many targets have a magnetic moment that will also interact with the electrons it scatters. Equation ~\ref{eq:mu} shows the magnetic moment for a pointlike spin 1/2 particle of mass $M$. With the $g=2$ factor coming from Dirac theory.  
@@ -189,7 +198,7 @@ At this point in the analysis we have accounted for spin, relativity, and recoil
 To account for magnetic interactions we do as we did in equation ~\ref{eq:mott_no_recoil} and introduce a second term to the cross section scaled by a constant and with an angular dependence of $sin^2(\theta/2)$ as in equation ~\ref{eq:mag}. The angular dependence arises from a need to conserve angular momentum and helicity. We obtain $tan^2(\theta/2)$ by pulling out a $1/cos^2(\theta/2)$.
 
 \begin{equation} \label{eq:mag}
-\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{point} \\ \text{spin 1/2}}} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} (1-2\tau \; tan^2\left( \frac{\theta}{2} \right))
+\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{point} \\ \text{spin 1/2}}} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \left( (1-2\tau \; tan^2\left( \frac{\theta}{2} \right) \right)
 \end{equation}
 
 \noindent Here $\tau$ is given by ~\ref{eq:tau} where $M$ is the target's mass and $Q^2$ is the kinematic variable measuring momentum transfer from equation ~\ref{eq:Q^2}. From equation ~\ref{eq:mag} it becomes clear that at large angles and large momentum transfers the magnetic interaction becomes large and cannot be ignored. The effect of the magnetic term causes the cross section to fall off less rapidly than it would if only the electric interaction were relevant.
@@ -204,8 +213,56 @@ Finally let us consider that nuclear targets are not pointlike particles and thu
 \mu_p = 2.79 \mu_N \;\;\;\;\; \mu_n = -1.91 \mu_N \;\; and \;\; \mu_N = \frac{e\hbar}{2m_p} = 3.1525 * 10^{-8} \, eV \, T^{-1}
 \end{equation}
 
-\noindent We once again need to introduce form factors to describe the structure of the electric and magnetic components of the cross section. In this case we use the Sach's form factors $G_E(Q^2)$ and $G_M(Q^2)$ for the electric and magnetic components respectively. With these form factors we finally arrive at the Rosenbluth equation ~\ref{eq:rosenbluth}.
+\noindent We once again need to introduce form factors to describe the structure of the electric and magnetic components of the cross section. In this case we use the Sach's form factors $G_E(Q^2)$ and $G_M(Q^2)$ for the electric and magnetic components respectively. With these form factors we finally arrive at the Rosenbluth equation ~\ref{eq:rosenbluth_long}.
+
+\begin{equation} \label{eq:rosenbluth_long}
+\left(\frac{d\sigma}{d\Omega}\right) = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} * \left[ \frac{G_E^2\left(Q^2\right)+\tau G_M^2\left(Q^2\right)}{1+\tau} + 2 \tau G_M^2\left(Q^2\right) tan^2\left( \frac{\theta}{2} \right) \right]
+\end{equation}
+
+The physical meaning of these form factors can be further explored by studying their behavior as $Q^2 \rightarrow 0$. $G_E(Q^2)$ describes the electric structure of the target and therefore equals the electric charge of the target at $Q^2 = 0$ in units of elementary charge. $G_M(Q^2)$ describes the magnetic structure of the target and therefore equals the magnetic moment of the target at $Q^2 = 0$ in units of the nuclear magneton. So we find that at $Q^2 = 0$ the proton's form factors are given by equation ~\ref{eq:ge_0} and the neutron's form factors are given by equation ~\ref{eq:gm_0}.
+
+\begin{equation} \label{eq:ge_0}
+	G_E^p\left(Q^2=0\right) = 1 \;\; and \;\; G_M^p\left(Q^2=0\right) = 2.79
+\end{equation}
+
+\begin{equation} \label{eq:gm_0}
+	G_E^n\left(Q^2=0\right) = 0 \;\; and \;\; G_M^n\left(Q^2=0\right) = -1.91
+\end{equation}
+
+In the literature ~\cite{Article:Hand} one finds several other commonly used form factors related to $G_E$ and $G_M$. Being able to translate between these form factors is often necessary to compare the results reported by different groups. The first set of these form factors are the Dirac form factor, $F_1$, and the Pauli form factor, $F_2$. These two form factors are given by equations ~\ref{eq:f1} and ~\ref{eq:f2} in relation to $G_E$ and $G_M$ which are more commonly used because of their physical interpretation.
+
+\begin{equation} \label{eq:f1}
+	G_E \left(Q^2\right) = F_1\left(Q^2\right) -\mu \tau F_2\left(Q^2\right)
+\end{equation}
+
+\begin{equation} \label{eq:f2}
+	G_M \left(Q^2\right) = F_1\left(Q^2\right) + \mu F_2\left(Q^2\right)
+\end{equation}
+
+\noindent One final set of form factors are $F_{ch}$ and $F_m$. Their relations to $G_E$ and $G_M$ are given in ~\ref{eq:fch} and ~\ref{eq:fm}. These are the form factors used in the sum of Gaussians analysis of the data presented in this thesis.
+
+\begin{equation} \label{eq:fch}
+	F_{ch}\left(Q^2\right) = G_E \left(Q^2\right) 
+\end{equation}
+
+\begin{equation} \label{eq:fm}
+	F_{m}\left(Q^2\right) = \frac{G_M \left(Q^2\right)}{\mu} 
+\end{equation}
+
+The form factors $G_E$ and $G_M$ can be separated out from experimental data according to the procedure of Rosenbluth separation laid out in ~\cite{Article:Hand}. First numerous cross section measurements at a fixed $Q^2$ and multiple different angles must be taken. To see how to extract $G_E$ and $G_M$ it is helpful to rewrite the Rosenbluth equation ~\ref{eq:rosenbluth_long} as equation ~\ref{eq:rosenbluth} with $\epsilon$ given in equation ~\ref{eq:epsilon}.
 
 \begin{equation} \label{eq:rosenbluth}
-\left(\frac{d\sigma}{d\Omega}\right) = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} * \left[ \frac{G_E^2(Q^2)+\tau G_M^2(Q^2)}{1+\tau} + 2 \tau G_M^2(Q^2) tan^2\left( \frac{\theta}{2} \right) \right]
+\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} * \frac{1}{1+\tau}\left[ G_E^2\left(Q^2\right) + \frac{\tau}{\epsilon} G_M^2\left(Q^2\right) \right]
 \end{equation}
+
+\begin{equation} \label{eq:epsilon}
+\epsilon = \left( 1 + 2(1+\tau)tan^2\left( \frac{\theta}{2} \right) \right)^{-1}
+\end{equation}
+
+Now we can define a value called the reduced cross section by dividing the experimental cross section by the Mott cross section and rearranging some kinematic factors as in equation ~\ref{eq:rxs}.
+
+\begin{equation} \label{eq:rxs}
+\left(\frac{d\sigma}{d\Omega}\right)_{r} = \frac{\left( \frac{d\sigma}{d\Omega} \right)_{exp}}{\left( \frac{d\sigma}{d\Omega} \right)_{Mott}} \epsilon (1+\tau) = \left[ \epsilon G_E^2\left(Q^2\right) + \tau G_M^2\left(Q^2\right) \right]
+\end{equation}
+
+\noindent Now if we plot the reduced cross section against $\epsilon$ we see that we are plotting the equation of a line. (Note: I could make and add a Rosenbluth plot here, but I don't know if it's worth it since it was never part of my analysis.) Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the y-intercept as $\tau G_M^2\left(Q^2\right)$. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in chapter (Note: Insert chapter with SOG fits here later.) we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
