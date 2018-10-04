@@ -58,8 +58,8 @@ Jefferson Lab's Continuous Electron Beam Accelerator Facility (CEBAF) uses super
 
 CEBAF begins creating an electron beam using either a thermionic or polarized gun to inject electrons into the accelerator. The polarized gun produces electrons by illuminating a GaAs cathode crystal with a 1497 MHz diode laser tuned to 780 nm. These electrons then enter the first (North) of two linacs each of which contain 20 cryomodules that accelerate the electrons with a maximum gradient exceeding 7 MeV/m. At the end of the North linac the electrons are bent around a 180$\degree$ bend and enter the South linac passing through 20 more cryomodules. Upon reaching the end of the South linac the beam can be directed into any of the three halls by means of RF separators and septa. If higher energies are desired the beam can be recirculated through the linacs up to four additional times for a maximum of five passes through the accelerator resulting in the maximum energy of ~5.7 GeV  ~\cite{Article:HallA}.
 
-\section{Hall A}
-\label{sec:HallA}
+\section{Hall A Beamline}
+\label{sec:HallA_beamline}
 
 The distinguishing feature of Jefferson Lab's experimental Hall A are the two High Resolution Spectrometers (HRSs) and their associated detector packages. At a central momentum setting of 4 GeV these two spectrometers provide a momentum resolution better than $\frac{\delta p}{p} = 2*10^{-4}$ as well as a horizontal angular resolution of more than 2 mrad. The spectrometer magnets bend the particles upward into the detector stack using a series of quadrupole and dipole magnets in a QQDQ arrangement ~\cite{Article:HallA}. A side view of Hall A is given in figure ~\ref{fig:halla_side} and a top view is given in ~\ref{fig:halla_top}. Each of the components listed in ~\ref{fig:halla_top} will be discussed individually in the following sections.
 
@@ -123,6 +123,110 @@ The electron beam is generally quite narrow at $<$ 0.3 mm ~\cite{Thesis:Wang}. I
 \subsection{Beam Current Monitors}
 \label{ssec:bcms}
 
-The beam current is measured by two beam current monitors (BCMs) which are RF cavity monitors and an Unser located 25 m upstream of the target ~\cite{Article:HallA} as shown in figure ~\ref{fig:beamline}. The Unser measures beam current by, ``a system combining a second harmonic magnetic modulator with an active current transformer in an operational feedback loop, to obtain wide band response down to dc ~\cite{Article:Unser}." The two BCM RF cavities are located on either side of the Unser and are tuned to the electron beam frequency of 1.497 GHz. 
+The beam current is measured by two beam current monitors (BCMs) which are RF cavity monitors and an Unser located 25 m upstream of the target ~\cite{Article:HallA} as shown in figure ~\ref{fig:beamline}. The Unser measures beam current by, ``a system combining a second harmonic magnetic modulator with an active current transformer in an operational feedback loop, to obtain wide band response down to dc~\cite{Article:Unser}." The two BCM RF cavities are located on either side of the Unser and are tuned to the electron beam frequency of 1.497 GHz. 
 
 These RF cavity monitors then produce a signal that is proportional to the beam current which is recorded by a data acquisition system. Before being recorded the output signals of the two BCMs are each split into three. One of those three signals is amplified by a factor of three and another by a factor of ten. This results in six signals from the two BCMs designated U$_1$, U$_3$, U$_{10}$, D$_1$, D$_3$, and D$_{10}$. The procedure and results for the BCM calibration for experiment E08-014 can be found in ~\cite{bcm_calibration}. 
+
+\section{Target}
+\label{sec:target}
+
+Hall A has a cryogenic distribution system (CDS) capable of cooling targets to temperatures of around 5 K to 15 K ~\cite{Article:HallA}. The targets are kept in a vacuum scattering chamber where they are allowed to interact with the electron beam. Inside this chamber is a ladder containing various experimental targets as shown in figure ~\ref{fig:ladder}. The target ladder is divided into three loops which are cryogenically cooled while having their pressure and temperature monitored continuously. Loops one and two contain one each of a 10 cm and 20 cm target cell while loop 3 contains two 20 cm target cells. The target ladder can be moved up and down to place different targets in the path of the electron beam from the counting house ~\cite{Thesis:Ye}.  
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.4\linewidth]{Ladder.png}
+\end{center}
+\caption{
+{\bf{Target Ladder for Experiment E08-014.}} Only loops one and two are shown. Image from ~\cite{Thesis:Ye}.}
+\label{fig:ladder}
+\end{figure}
+
+Experiment E08-014 used a liquid deuterium target as well as a gaseous $^3$He target, examined in this thesis, and a gaseous $^4$He target. The $^3$He target was used in the second run period of the experiment taking place from April 21$^{st}$ to May 15$^{th}$ of 2011. The $^3$He target was located in loop 1 and was cooled to 17 K with a pressure of 211 psia ~\cite{Thesis:Ye}. The entire target layout over the two runs can be seen in figure ~\ref{fig:targets} and the monitoring and control system is shown in figure ~\ref{fig:cryo_controls}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Targets_Table.png}
+\end{center}
+\caption{
+{\bf{Table of Target Information for Experiment E08-014.}} Image from ~\cite{Thesis:Ye}.}
+\label{fig:targets}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Cryo_Controls.png}
+\end{center}
+\caption{
+{\bf{Cryogentic Monitoring and Control Screen.}} Image from ~\cite{Thesis:Ye}.}
+\label{fig:cryo_controls}
+\end{figure}
+
+A 30 cm long carbon foil optics target was installed below loop 3. This target contains seven carbon foils spaced 5 cm apart ranging from -15 cm to +15 cm. Electrons scattering off of these foils can be used to calibrate the position of the target from data in collected by the detector package as will be discussed in ~\ref{sec:optics}. Along with these target a 10 cm and a 20 cm dummy target were also installed below the optics target. These dummy targets each contained two thick aluminium foils separated by 10 cm and 20 cm respectively. The dummy targets were used to study the end cap contributions of the target cells. There were also a BeO, $^{12}$C, and an empty target installed below ~\cite{Thesis:Ye}.  
+
+\section{High Resolution Spectrometers}
+\label{sec:HRSs}
+
+The high resolution spectrometers (HRSs) are the workhorses of Hall A. They are designated the left HRS (LHRS) and right HRS (RHRS) for the spectrometers on the left and right side of the beam direction respectively. While they were designed to be identical they each have unique features ased on their construction as well as the general wear and tear of age on their components. They have a momentum resolution of 1*10$^{-4}$ from 0.8 Gev to 4 GeV. They use a combination of superconducting quadrupole and dipole magnets in a QQDQ combination to bend the scattered particles through a 45$\degree$ angle up into the detector stack as shown in figure ~\ref{fig:hrs_side}. The HRSs were designed to provide, ``a large acceptance in both angle and momentum, good position and angular resolution in the scattering plane, an extended target acceptance, and a large angular range.~\cite{Article:HallA}"
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{HRS_Diagram.png}
+\end{center}
+\caption{
+{\bf{Side View of Single HRS.}} Image from ~\cite{Thesis:Wang}.}
+\label{fig:hrs_side}
+\end{figure}
+
+The superconducting quadrupoles are labelled Q1, Q2, and Q3 as shown in ~\ref{fig:hrs_side}. The Q1 magnet provides focussing of the particles in the vertical plane, and the identical Q2 and Q3 provide focussing in the transverse plane. The 6.6 m long superconducting dipole magnet bends the particles through a 45$\degree$ angle  while providing additional focussing while also allowing for the use of extended targets ~\cite{Article:HallA}. The primary characteristics of the HRSs are given in figure ~\ref{fig:hrs_specs}. Unfortunately, during the run period the Q3 power supply of the RHRS was malfunctioning and could not reach the central momentum setting of 3.055 GeV required for the experiment. As such this analysis considers only data from the LHRS ~\cite{Thesis:Ye}. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{HRS_Specs.png}
+\end{center}
+\caption{
+{\bf{Table of Important HRS Values.}} Image from ~\cite{Article:HallA}.}
+\label{fig:hrs_specs}
+\end{figure}
+
+\section{Detector Package}
+\label{sec:detectors}
+
+The standard detector package for Hall A can be seen in figures ~\ref{fig:halla_top} and ~\ref{fig:hrs_side}. These compnents include VDCs, scintillator planes, gas Cherenkovs, and electromagnetic calorimeters as well as the corresponding data acquisition systems. Each of these components will be described in the following sections. 
+
+\subsection{Vertical Drift Chambers}
+\label{ssec:vdcs}
+
+After passing through the HRSs the scattered particles first pass through two vertical drift chambers (VDCs). These chambers each contain two planes of 368 wires each that are designated U$_1$ and V$_1$ for the bottom VDC and U$_2$ and V$_2$ for the top VDC. These pairs of planes are oriented at a 45$\degree$ angle to one another and separated by 0.335 m as shown in figure ~\ref{fig:vdcs_exterior}. The lower VDC lies in spectrometer focal plane and the upper VDC allows for angular reconstruction of particle trajectories. The VDCs' interior, figure ~\ref{fig:vdcs_interior}, are filled with a 62-38 mixture of argon and ethane gasses and flowed through at a rate of 10 liter/hour. Two gold-plated mylar planes sit above and below the sense wires and a large electric field is created between them on the order of -4 kV. As charged particles pass through the electric field attracts the charged particles to the sense wires which then pass the signal from those particles through amplifier cards and on to the data acquisition system ~\cite{Article:VDCs} ~\cite{Thesis:Ye}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{VDCs_External.png}
+\end{center}
+\caption{
+{\bf{External VDC Diagram.}} Image from ~\cite{Article:VDCs}.}
+\label{fig:vdcs_exterior}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{VDCs_Internal.png}
+\end{center}
+\caption{
+{\bf{Internal VDC Diagram.}} Image from ~\cite{Article:VDCs}.}
+\label{fig:vdcs_interior}
+\end{figure}
+
+When operating at a high enough voltage the sense wires are efficient to above 99$\%$ in the central region of the wire planes. Towards the edge of the wire planes the efficiency falls off. In general a charged particle will be detected by four to six wires. A wire is considered to be efficient if that wire fired at the same time as its two adjacent wires also fired. Thus the efficiency of a wire is given by equation ~\ref{eq:wire_efficiency}, where $\kappa$ is the number of times a wire was considered to be efficient for an event and $\lambda$ is the number of time that wire was inefficient for an event ~\cite{Article:VDCs}. Figure ~\ref{fig:vdc_efficiency} shows the wire efficiency spectrum for a good run on the left and a bad run on the right. The right spectrum indicates that the operating voltage may be too low or unsteady or that some of the amplifier cards have become disconnected.
+
+\begin{equation} \label{eq:wire_efficiency}
+	\epsilon = \frac{\kappa}{\kappa + \lambda}
+\end{equation}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.0\linewidth]{Wire_Efficiencies.png}
+\end{center}
+\caption{
+{\bf{Example Wire Efficiency Spectra.}} The left spectrum represents a good run and the right represents a run that has some type of problem.}
+\label{fig:vdc_efficiency}
+\end{figure}
