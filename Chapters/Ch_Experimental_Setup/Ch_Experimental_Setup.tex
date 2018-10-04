@@ -80,3 +80,49 @@ The distinguishing feature of Jefferson Lab's experimental Hall A are the two Hi
 {\bf{Hall A Top View.}} Image from ~\cite{Thesis:Wang}.}
 \label{fig:halla_top}
 \end{figure}
+
+\subsection{Beam Energy}
+\label{ssec:beam_energy}
+
+An accurate measure of the electron beam's energy is necessary to obtain accurate experimental results. The energy of the electron beam was measured using the Arc method laid out in ~\cite{Article:HallA}. This method works by passing the electron beam through a series of quadrupole magnets in the arc section of the beam line and measuring its deflection as shown in figure ~\ref{fig:arc}. The beam's momentum, $p$, is then given by the field integral of the eight quadrupole magnets, $\int \overrightarrow{\rm \textbf{B}} \cdot \overrightarrow{\rm \textbf{d}}l$, divided by the arc bend angle, $\theta$, multiplied by a constant $k=0.299792$ GeV rad T$^{-1}$ m$^{-1}$/c as given in equation ~\ref{eq:arc}. To perform this calculation two measurements are required. The first measurement is of the magnetic field integral of the eight quadrupoles is made based on a ninth reference quadrupole. The second measurement is of the bend angle of the arc which is measured by a set of wire scanners.   
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Arc_Method.png}
+\end{center}
+\caption{
+{\bf{Arc Energy Measurement Diagram.}} Image from ~\cite{Thesis:Wang}.}
+\label{fig:arc}
+\end{figure}
+
+\begin{equation} \label{eq:arc}
+	p = k \frac{\int \overrightarrow{\rm \textbf{B}} \cdot \overrightarrow{\rm \textbf{d}}l}{\theta}
+\end{equation}
+
+\subsection{Beam Position Monitors}
+\label{ssec:bpms}
+
+Along with the beam's energy it's position must also be well known. To assess the beam's position two beam position monitors (BPMs) are located 7.524 m and 1.286 m upstream of the Hall A target ~\cite{Article:HallA}. Figure ~\ref{fig:beamline} shows the layout of the beamline components. Each of these BPMs is made up of four orthogonally oriented antennae place perpendicular to the beam. For beam currents above 1 $\mu$A these antennae produce a signal that is inversely proportional to the beam's distance. The position of the beam is determined by the difference-over-sum technique laid out in ~\cite{bpm1} and ~\cite{bpm2}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Beamline_Layout.png}
+\end{center}
+\caption{
+{\bf{Layout of Hall A Beamline Components.}} Image from ~\cite{Thesis:Wang}.}
+\label{fig:beamline}
+\end{figure}
+
+The BPMs are calibrated by wire scanners adjacent to each of them. These wire scanners are independently calibrated periodically with respect to the Hall A coordinates and are accurate to within 200 $\mu$m. The data from the BPMs is recorded in the EPICS database every second and in the data stream every three to four seconds. Each of the eight antennae signals is also recorded in the CODA data stream on an event by event basis. 
+
+\subsection{Raster}
+\label{ssec:raster}
+
+The electron beam is generally quite narrow at $<$ 0.3 mm ~\cite{Thesis:Wang}. If this small beam falls on a single part of the target the target can overheat locally causing parts of the target to behave differently than those not struck by the beam. There is also the risk of burning a hole through the target. To avoid these problems the electron beam is rastered meaning that the beam is widened and spread out over a larger area of the target. The fast raster consists of two steering magnets and operates with a frequency of 17-24 kHz. It is located 23 m upstream from the target ~\cite{Article:HallA} as seen in figure ~\ref{fig:beamline}. This system has the capability to spread the beam over several mm in all directions allowing for the target to be illuminated uniformly. 
+
+\subsection{Beam Current Monitors}
+\label{ssec:bcms}
+
+The beam current is measured by two beam current monitors (BCMs) which are RF cavity monitors and an Unser located 25 m upstream of the target ~\cite{Article:HallA} as shown in figure ~\ref{fig:beamline}. The Unser measures beam current by, ``a system combining a second harmonic magnetic modulator with an active current transformer in an operational feedback loop, to obtain wide band response down to dc ~\cite{Article:Unser}." The two BCM RF cavities are located on either side of the Unser and are tuned to the electron beam frequency of 1.497 GHz. 
+
+These RF cavity monitors then produce a signal that is proportional to the beam current which is recorded by a data acquisition system. Before being recorded the output signals of the two BCMs are each split into three. One of those three signals is amplified by a factor of three and another by a factor of ten. This results in six signals from the two BCMs designated U$_1$, U$_3$, U$_{10}$, D$_1$, D$_3$, and D$_{10}$. The procedure and results for the BCM calibration for experiment E08-014 can be found in ~\cite{bcm_calibration}. 
