@@ -315,8 +315,38 @@ Located in the detector stack between the S$_1$ and S$_{2m}$ scintillator planes
 	cos(\theta) = \frac{1}{\beta n}
 \end{equation}
 
-GC detectors are especially useful for particle discrimination, in particular, for distinguishing between electron and pion events. GCs are able to discriminate between particles of different mass because of the momentum threshold required to create Cherenkov radiation shown in equation ~\ref{eq:moneuntum_threshold}. The Hall A GC is generally filled with CO$_2$ which has an index of refraction of $n=1.00041$. Therefore the momentum threshold for an electron is $p_{th}$ and for a pion it is $p_{th}$. Thus electrons generally create a signal passing through the GC while the pions generally do not.
+GC detectors are especially useful for particle discrimination, in particular, for distinguishing between electron and pion events. GCs are able to discriminate between particles of different mass because of the momentum threshold required to create Cherenkov radiation shown in equation ~\ref{eq:momentum_threshold}. The Hall A GC is generally filled with CO$_2$ which has an index of refraction of $n=1.00041$. Therefore the momentum threshold for an electron is $p_{th}=0.0178$ GeV and for a pion it is $p_{th}=4.87$ GeV. The HRSs cover a momentum range of up to about 4.3 GeV thus electrons generally create a signal passing through the GC while the pions generally do not. It is still possible for pions to interact with the gas or the detector structures and create low energy $\delta$-electrons that can be seen by the GC, but this is a low probability process. When in normal operation the GC can generally detect electrons with an efficiency of over 99$\%$ ~\cite{Thesis:Ye}.
 
-\begin{equation} \label{eq:shock_wave_angle}
+\begin{equation} \label{eq:momentum_threshold}
 	p_{th} = \frac{mc}{\sqrt{n^2-1}}
 \end{equation}
+
+The Hall A GCs each contain ten spherical mirrors focus the Cherenkov light onto ten PMT tubes as seen in figure ~\ref{fig:gc}. The LHRS GC has a detector path length of 80 cm and produces an average of 7 photoelectrons per event, and the RHRS GC has a detector path length of 130 cm and yields on average 12 photoelectrons per event. ~\cite{Article:HallA} ~\cite{Article:GC}. Each PMT signal passes through a 10X amplifier before being split in two. One of these two signals is sent to an ADC and put in the run data stream for offline analysis. The other signal is again split in two and one of these two new signals is converted and sent to a digital TDC. The remaining PMT signal is summed with the PMT signals of the nine other PMTs. This summed signal is converted to a digital signal and then is used as part of the efficiency triggers while the experiment runs. The combined GC signal was also added to the main production trigger during experiment E08-014 to prevent pions from firing the main trigger ~\cite{Thesis:Ye}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{GC.png}
+\end{center}
+\caption{
+{\bf{Hall A GC Interior.}} Image from ~\cite{Thesis:Ye}.}
+\label{fig:gc}
+\end{figure}
+
+\subsection{Electromagnetic Calorimeters}
+\label{ssec:em_cal}
+
+In the detector stack of each HRS behind the GC and the S$_{2m}$ scintillator plane sit a series of lead-glass blocks with PMTs attached making up an electromagnetic calorimeter. The calorimeters in the LHRS and RHRS have their lead-glass blocks arranged differently as shown in figure ~\ref{fig:em_cal}. The LHRS blocks are set in two columns of 17 blocks each with the first layer called pion-rejector 1 (PRL1) and the second layer pion-rejector 2 (PRL2). The RHRS blocks are arranged in two layers. The first layer is referred to as the preshower and is made up of two columns of 24 PMTs each. The second layer, called the shower, is comprised of five columns of 16 blocks each ~\cite{Thesis:Ye} ~\cite{Article:HallA}. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{EM_Cal.png}
+\end{center}
+\caption{
+{\bf{Hall A Electromagnetic Calorimeters.}} Image from ~\cite{Article:HallA}.}
+\label{fig:em_cal}
+\end{figure}
+
+The calorimeters provide a second level of particle identification for the experiments. When charged particles pass through the lead-glass blocks they are slowed down by their interactions with the electrons and nuclei of those blocks. The energy lost by this deceleration is emitted as photons via Bremsstrahlung radiation. These released photons continue on and produce electron-positron pairs through pair production which again create more Bremsstrahlung radiation. This alternating process creates a ``shower'' of photons, electrons, and positrons in the calorimeter and the photons are then detected by the PMTs. Heavier particles compared to electrons like pions require a much greater path length in the lead-glass blocks to release a shower of particles. This means that only electrons should create significant showers in the calorimeters. Although they still provide accurate particle identification the PRL1 and PRL2 in the LHRS do not totally absorb all of the electron's energy, whereas the preshower and shower in the RHRS are total absorbers ~\cite{Thesis:Ye}.
+
+\section{Data Acquisition System}
+\label{sec:daq}
