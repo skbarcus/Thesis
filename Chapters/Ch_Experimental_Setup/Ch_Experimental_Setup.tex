@@ -276,3 +276,47 @@ The first two variables are the two $U-V$ coordinates of the crossing point of t
 \begin{equation} \label{eq:theta_uv}
 	tan\left( \theta_{U(V)} \right) = \frac{U_2-U_1}{d}
 \end{equation}
+
+\subsection{Scintillator Counters}
+\label{ssec:scintillators}
+
+After the VDCs are two planes of scintillator paddles located 2 m apart. Figure ~\ref{fig:paddle} shows a schematic of a single scintillator paddle. The first plane, S$_1$, consists of 6 paddles of plastic scintillators which provide overlapping coverage. The second plane, S$_{2m}$, consists of 16 plaastic scintillator paddles smaller than those in S$_1$ ~\cite{Thesis:Ye}. When a charged particle strikes one of these paddles it produces photons which travel along the length of the paddle to either end where the photons encounter a photomultiplier tube (PMT). 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.35\linewidth]{Paddle.png}
+\end{center}
+\caption{
+{\bf{Single Plastic Scintillator Paddle.}} Image from ~\cite{Thesis:Wang}.}
+\label{fig:paddle}
+\end{figure}
+
+When the photons enter the PMT they create a cascade of electrons via the photoelectric effect following a voltage down the PMT. This produces an analog electric signal. The PMT then passes this signal on to the data acquisition system. These scintillators have a very fast response time and timing resolutions of around 30 ns ~\cite{Thesis:Ye}. Due to these excellent timing responses most of the primary triggers in Hall A use a coincidence of S$_1$ and S$_{2m}$ for the main production triggers of experiments. The triggers used in E08-014 are discussed in ~\ref{ssec:triggers}. 
+
+\subsection{Gas Cherenkov}
+\label{ssec:gc}
+
+Located in the detector stack between the S$_1$ and S$_{2m}$ scintillator planes is a gas Cherenkov (GC) detector. The GC operates by detecting Cherenkov radiation created by particles passing through a gas at velocities greater than the speed of light in that gas medium. When light passes through a transparent medium its velocity is slowed down by the medium's index of refraction, $n$, as seen in equation ~\ref{eq:threshold}. Because the speed of light has been slowed in the medium particles can travel faster than the speed of light in that medium. When a particle exceeds the speed of light in a medium, $v_{th}$, it creates an electromagnetic shock wave in the same manner as a jet plane creating a sonic boom. The shock wave formed has the conical shape seen in figure ~\ref{fig:em_shock_wave} where the angle $\theta$ is given in equation ~\ref{eq:shock_wave_angle} with $\beta = \frac{v}{c}$ ~\cite{Book:Leo}.
+
+\begin{equation} \label{eq:threshold}
+	v_{th} = \frac{c}{n}
+\end{equation}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.35\linewidth]{EM_Shock_Wave.png}
+\end{center}
+\caption{
+{\bf{EM Shock Wave.}} The EM shock wave is produced by a particle exceeding the speed of light in the medium it is passing through. This shock wave then produces Cherenkov radiation. Image from ~\cite{Thesis:Cummings}.}
+\label{fig:em_shock_wave}
+\end{figure}
+
+\begin{equation} \label{eq:shock_wave_angle}
+	cos(\theta) = \frac{1}{\beta n}
+\end{equation}
+
+GC detectors are especially useful for particle discrimination, in particular, for distinguishing between electron and pion events. GCs are able to discriminate between particles of different mass because of the momentum threshold required to create Cherenkov radiation shown in equation ~\ref{eq:moneuntum_threshold}. The Hall A GC is generally filled with CO$_2$ which has an index of refraction of $n=1.00041$. Therefore the momentum threshold for an electron is $p_{th}$ and for a pion it is $p_{th}$. Thus electrons generally create a signal passing through the GC while the pions generally do not.
+
+\begin{equation} \label{eq:shock_wave_angle}
+	p_{th} = \frac{mc}{\sqrt{n^2-1}}
+\end{equation}
