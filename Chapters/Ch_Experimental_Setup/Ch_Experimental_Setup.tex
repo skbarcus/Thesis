@@ -200,7 +200,7 @@ After passing through the HRSs the scattered particles first pass through two ve
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.6\linewidth]{VDCs_External.png}
+\includegraphics[width=0.5\linewidth]{VDCs_External.png}
 \end{center}
 \caption{
 {\bf{External VDC Diagram.}} Image from ~\cite{Article:VDCs}.}
@@ -227,6 +227,50 @@ When operating at a high enough voltage the sense wires are efficient to above 9
 \includegraphics[width=1.0\linewidth]{Wire_Efficiencies.png}
 \end{center}
 \caption{
-{\bf{Example Wire Efficiency Spectra.}} The left spectrum represents a good run and the right represents a run that has some type of problem.}
+{\bf{Example Wire Efficiency Spectra.}} The X axis represents the wire number and the Y axis represents the wire's efficiency.}
 \label{fig:vdc_efficiency}
 \end{figure}
+
+Where and at what angle a charged particle passes through the VDCs determines the time it takes for that particle to drift to the sense wire. Figure ~\ref{fig:drift} shows a typical drift time spectrum for a single wire on the left. On the right it shows a single sense wire drift cell with the sense wire at the center of the circle. Timing is measured by a common stop TDC which trigger on the sense wire signals and are ended by the main event trigger. Higher TDC channels indicate shorter drift times.
+
+By examining each of the four trajectory regions A, B, C, and D on the right side of figure ~\ref{fig:drift} we can explain the structure of the drift time spectrum. Region A on the right side of the figure corresponds to TDC channels 1020-1080 on the left side of the figure. These drift times are created by particles with large trajectory angles and intersect less of the cell leading to a lower detection probability. Region B corresponds to channels 1080-1460. This region represents the bulk of the cell where the electric field lines are flat and parallel giving a constant drift velocity and track density. Region C corresponds to channels 1460-1540. Here the field lines become quasiradial as we approach the sense wire. Drift velocity is roughly constant here, but the track density increases. Finally region D corresponds to channels 1540-1620. Now the trajectory is close to the sense wires so a maximal track density and a dramatic increase in drift velocity occurs ~\cite{Article:VDCs}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Wire_Timing_Spectrum.png}
+\end{center}
+\caption{
+{\bf{Wire Timing Spectrum.}} The left plot represents a single wire's timing spectrum and the right image shows the different regions of a VDC drift cell a charged particle may pass through. Image from ~\cite{Article:VDCs}.}
+\label{fig:drift}
+\end{figure}
+
+The particle's drift time can be used to calculate the distance it was from the sense wire to begin pinning down its spatial location. Before this is done all of the drift spectra must be calibrated to one another. This is done by defining a reference time, $t_0$, which is defined as the channel where the maximal slope is obtained in the short drift time region around channel 1600. The drift distance can then be calculated by integrating over the number of events, $dN$, per time bin, $dt$, and scaled by a calibration constant, $k$, determined by the size of the drift cell as in equation ~\ref{eq:distance} from ~\cite{Article:VDCs}.
+
+\begin{equation} \label{eq:distance}
+	x(t') = \frac{1}{k} \int_{t_0}^{t'} \frac{dN}{dt} dt
+\end{equation}
+
+The ultimate job of the VDCs is to reconstruct the charged particle's trajectories. A typical particle trajectory passes through all four wire planes in the two VDCs as shown in the left side of figure ~\ref{fig:trajectory}. Because there are two wire planes per VDC the two locations where the particle was determined to cross each VDC's wire planes can be used to create a trajectory as seen in the right side of figure ~\ref{fig:trajectory}. In this case the trajectory can be described by four variables where one has defined a $U-V$ plane starting from (0,0) in the right side of the figure. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Trajectory_Reconstruction.png}
+\end{center}
+\caption{
+{\bf{Trajectory Reconstruction.}} The left plot shows a charged particle passing through both VDCs and the right plot shows the coordinates needed to reconstructthat particle's trajectory. Image from ~\cite{Article:VDCs}.}
+\label{fig:trajectory}
+\end{figure}
+
+The first two variables are the two $U-V$ coordinates of the crossing point of the particle through the first VDC wire plane called $U$ and $V$. The second two variables are the two angles, $\theta_V$ and $\theta_U$, which are the angles in the $U$ and $V$ direction between the two wire plane crossing points of the first VDC. Equations ~\ref{eq:u}, ~\ref{eq:v}, and ~\ref{eq:theta_uv} give these four variables with $\Delta U$ and $\Delta V$ being the differences between the crossing point locations in the $U$ and $V$ directions respectively. $d$ is the distance between the $U_1$ wire plane of the bottom VDC and the $U_2$ wire plane of the top VDC, and $l_0$ is the distance between the two wire planes in a single VDC.
+
+\begin{equation} \label{eq:u}
+	U = U1
+\end{equation}
+
+\begin{equation} \label{eq:v}
+	V = V_1-\Delta V = V_1 - l_0 tan\left( \theta_V \right)
+\end{equation}
+
+\begin{equation} \label{eq:theta_uv}
+	tan\left( \theta_{U(V)} \right) = \frac{U_2-U_1}{d}
+\end{equation}
