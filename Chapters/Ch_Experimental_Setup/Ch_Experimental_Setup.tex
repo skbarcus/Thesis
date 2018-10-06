@@ -350,3 +350,20 @@ The calorimeters provide a second level of particle identification for the exper
 
 \section{Data Acquisition System}
 \label{sec:daq}
+
+A schematic of the data acquisition system (DAQ) is shown in figure ~\ref{fig:daq}. To understand the Hall A DAQ let us follow the data signal chronologically through the various components. This journey begins with the analog signals produced by each of the detector components in the detector stack described in section \ref{sec:detectors}. Some signals are digitized and others remain analog as they pass through the system. Detector signals enter the system through one of two ways. The first is a by being sent into a majority logic unit (MLU) which then uses various combinations of signals to create triggers and coincidences between the detectors. For example it may create an new trigger output that is a coincidence of the S$_1$, S$_{2m}$, and GC signals which was used as the main production trigger in experiment E08-014 ~\cite{DAQ}. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{DAQ.png}
+\end{center}
+\caption{
+{\bf{Schematic of Hall A DAQ and Trigger System.}} Image from ~\cite{DAQ}.}
+\label{fig:daq}
+\end{figure}
+
+These MLU output signals are then transported via NIM-ECL translator to a trigger supervisor (TS) module. The TS module is the central control point for the DAQ. This module decides whether or not to accept a trigger from the detectors. If a trigger is accepted the TS then creates a level one accept (L1A) signal. These L1A signals provide timing and gating information for the front end electronics such as ADCs and TDCs. The TS can also prescale the triggers if the rate is higher than desired. The L1A signals are then sent to the retiming module where they await the trigger signals from the detectors that enter the DAQ via the second method ~\cite{DAQ}.
+
+The second way into the DAQ is by taking the signals from the detectors directly into NIM cards. Here using the NIM cards such as amplifiers and coincidence modules the detector signals are combined to make triggers in the same manner as the MLU. These signals are called the retiming signals and are also sent to the retiming module where they meet up with the L1A signals. The L1A signals are then retimed to match the detector signals. Now the gates and stops determined by the detector signals are in coincidence with the L1A signal ~\cite{DAQ}.
+
+This coincidence signal is sent to the transition module (TM) which acts as an interface between the TS and the front end electronics. The TM then copies the signals for the triggers, gates, and stops and sends them to the VME and FASTBUS crates containing the ADCs, TDCs, and scalers which are controlled by read out controllers (ROCs). These front end electronics then begin recording data based on the trigger information from the detectors and a unique event number for this trigger is created that contains all of the front end electronics information for that event ~\cite{DAQ}.
