@@ -374,6 +374,108 @@ The Hall A DAQ also contains two timing scalers (clocks), a fast (104 kHz) and a
 	LT = \frac{ps_i * T_i^{acc}}{T_i}
 \end{equation}
 
-Another method of preventing data from being lost to electronic dead time is by placing the data in a buffer before analyzing it. The buffer is essentially an electronic storage bin where the raw data is kept in computer memory until the system has processed all the events preceding the buffered event. As long as the buffer is large enough all the events can be processed eventually without loss. This allows the experiment to run as fast as the front end electronics are capable of running. 
+Another method of preventing data from being lost to electronic dead time is by placing the data in a buffer before analyzing it. The buffer is essentially an electronic storage bin where the raw data is kept in computer memory until the system has processed all the events preceding the buffered event. As long as the buffer is large enough all the events can be processed eventually without loss. This allows the experiment to run as fast as the front end electronics are capable of running ~\cite{DAQ}. 
 
-The dead time can be monitored by several methods. One is by the electronic dead time monitor (EDTM) signal in the DAQ. The EDTM sends constant pulser signals into the S$_1$, S$_{2m}$, and GC data streams. If DAQ is free these signals will be accepted, but if the DAQ is busy they will be rejected. Because the pulser rate is known the number of accepted signals in the final data can be compared to the known pulser signals sent to calculate the dead time. The TS module also sends out an electronic busy signal when it is processing data and unable to accept new triggers that is essentially an internal constant pulser signal that is gated by the TS entering the busy state providing a second method of calculating the dead time. 
+The dead time can be monitored by several methods. One is by the electronic dead time monitor (EDTM) signal in the DAQ. The EDTM sends constant pulser signals into the S$_1$, S$_{2m}$, and GC data streams. If DAQ is free these signals will be accepted, but if the DAQ is busy they will be rejected. Because the pulser rate is known the number of accepted signals in the final data can be compared to the known pulser signals sent to calculate the dead time. The TS module also sends out an electronic busy signal when it is processing data and unable to accept new triggers that is essentially an internal constant pulser signal that is gated by the TS entering the busy state providing a second method of calculating the dead time ~\cite{DAQ}. 
+
+Now we have seen how the data is gathered from the detectors, but how is this system controlled and how does the data come to be in a datafile useful for analysis? The CEBAF Online Data Acquisition (CODA) program, seen schematically in figure ~\ref{fig:coda}, allows the DAQ to be controlled remotely and builds the experiment's run datafiles. The main CODA GUI is used to begin and end each experimental run. The GUI communicates these commands to an RC server that ties all of CODA's components together. Once the RC server gets the command to begin a run it informs the electronics described above to begin the process of taking data ~\cite{DAQ}. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{CODA.png}
+\end{center}
+\caption{
+{\bf{Schematic of CODA.}} Image from ~\cite{DAQ}.}
+\label{fig:coda}
+\end{figure}
+
+Once a trigger is accepted by the DAQ the crates containing ADCs and TDCs are read out by the ROCs. The ROCs pass this information on to CODA's event builder (EB). The EB then takes these disparate pieces of data from the various components and organizes them all into one file using the CODA formatting structure. The EB then sends this file in the form of a single event to the event transfer (ET) system. The ET gathers these events and then send them on to the event recorder (ER) where they are finally written to permanent storage such as tape file. The resulting CODA files can then be decoded to create ROOT files which are then used in the offline analysis of the experimental runs. These data files contain scaler readouts every one to four seconds. They also log the Experimental Physics and Industrial Control System (EPICS) data, which contains information from the hall like target position, spectrometer angle, BCM readings, BPM readings, beam energy, and spectrometer magnet information, periodically every few seconds ~\cite{DAQ} ~\cite{Thesis:Ye}. 
+
+\section{Triggers}
+\label{sec:triggers}
+
+Experiment E08-014 used seven different triggers between the HRS arms. Each of these triggers is made up of a combination of the signals from the S$_1$ and/or S$_{2m}$ scintillator planes and the sum of the ten GC signals. The main production trigger is a coincidence of S$_1$, S$_{2m}$, and the GC sum signals called T1 (T3) for the RHRS (LHRS), and is denoted by (S$_1$ \& S$_{2m}$ \& GC). Two efficiency triggers designed to measure the efficiency of the main production triggers T1 (T3) are T2 (T4) for the RHRS (LHRS). These are made up of a coincidence of the GC signal and only one of either S$_1$ or S$_{2m}$. The triggers T6 (T7) for the RHRS (LHRS) are the coincidences of the S$_1$ and S$_{2m}$ scintillator planes. Since these triggers do not involve the GC they recorded pion events as well and were thus useful for particle identification purposes. Finally trigger T5, the coincidence of T1 and T3, was disabled for this experiment ~\cite{Thesis:Ye}. 
+
+\section{High Resolution Spectrometer Optics}
+\label{sec:optics}
+
+Once the charged particles are bent through a spectrometer and into the detector stack they first pass through the two VDCs set in the HRS's focal plane as described in ~\ref{ssec:vdcs}. The VDCs give the particle's location in the focal plane which can then be used to reconstruct where the electron interacted with the target, the reaction vertex, as well as it's trajectory at the target. This reconstruction is done by applying an optics matrix determined by the characteristics of the HRS. This matrix needs to be calibrated on an experiment by experiment basis as there are always slight changes in the relative positions of the target, spectrometer, and detectors as well as changes in spectrometer magnet behavior. This section describes the coordinate systems used in Hall A and the standard procedure for optimizing the optics matrix. 
+
+\subsection{Hall A Coordinate Systems}
+\label{ssec:coordinates}
+
+Hall A has five different coordinate systems which can all be related to one another. 
+
+\noindent $\bullet$ \textbf{Hall Coordinate System (HCS):}
+
+The HCS can be seen in figure ~\ref{fig:hcs}. The origin of the HCS begins at the center of Hall A which is located at the intersection of the electron beam and the target's vertical axis of symmetry, The $\hat{x}$. The $\hat{z}$ direction is defined in the direction of the electron beam's travel. The $\hat{y}$ direction is defined to be vertically up ~\cite{optics}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Hall_Coordinate_System.png}
+\end{center}
+\caption{
+{\bf{Hall Coordinate System.}} Image from ~\cite{optics}.}
+\label{fig:hcs}
+\end{figure}
+
+\noindent $\bullet$ \textbf{Target Coordinate System (TCS):}
+
+Each spectrometer has their own target coordinate system seen in figure ~\ref{fig:tcs}. The $z$ axis is defined by drawing a line perpendicular from the sieve slit surface of the spectrometer and the midpoint of the central sieve slit hole. The $\hat{z}_{tg}$ direction is defined to be pointing away from the target. When optimally aligned the spectrometer is pointing at the hall center with the sieve slit being perfectly centered causing the $\hat{z}_{tg}$ vector to pass through the hall center ~\cite{optics}. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.0\linewidth]{Target_Coordinate_System_Better.png}
+\end{center}
+\caption{
+{\bf{Target Coordinate System.}} Image from ~\cite{Thesis:Ye}.}
+\label{fig:hcs}
+\end{figure}
+
+With this optimal alignment the distance separating the hall center and the central midpoint of the sieve slit hole is defined as the spectrometer constant $Z_0$. By definition the TCS origin is located a distance $Z_0$ from the sieve surface on the $\hat{z}_{tg}$ axis, and in the optimal case is the same as the hall center. The  $\hat{x}_{tg}$ is defined to be parallel to the sieve plate surface pointing downwards. Finally the in-plane and out-of-plane angles, $\phi_{tg}$ and $\theta_{tg}$, are defined as $\frac{dy_{tg}}{Z_0}$ and $\frac{dx_{tg}}{Z_0}$ respectively ~\cite{optics}.
+
+\noindent $\bullet$ \textbf{Detector Coordinate System (DCS):}
+
+The origin of the detector coordinate system is located inside of the first VDC on either spectrometer as shown in ~\ref{fig:dcs}. This origin is defined by the intersection of wire 184 at the center of the U1 wire plane of the bottom VDC with the projection of wire 184 at the center of the V1 wire plane of the bottom VDC. $\hat{y}$ is defined in the direction parallel to the short axis of the VDC pointing to the left of the direction of the particles entering the VDC. $\hat{x}$ is defined along the longer VDC axis pointing away from the hall center. The $\hat{z}$ direction is defined as vertically up. For a fuller description of the coordinates and how to calculate the detector vertex see ~\cite{optics}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Detector_Coordinate_System.png}
+\end{center}
+\caption{
+{\bf{Detector Coordinate System.}} Image from ~\cite{optics}.}
+\label{fig:dcs}
+\end{figure}
+
+\noindent $\bullet$ \textbf{Transport Coordinate System (TRCS):}
+
+The transport coordinate system is defined by rotating the DCS 45$\degree$ about its $\hat{y}_{det}$ axis as shown in figure ~\ref{fig:trcs} ~\cite{optics}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.5\linewidth]{Transport_Coordinate_System.png}
+\end{center}
+\caption{
+{\bf{Transport Coordinate System.}} Image from ~\cite{optics}.}
+\label{fig:trcs}
+\end{figure}
+
+\noindent $\bullet$ \textbf{Focal Plane Coordinate System (FCS):}
+
+The FCS is another rotated coordinate system as shown in figure ~\ref{fig:fcs}. It is created by rotating the DCS about its $\hat{y}_{det}$ axis by and angle $\rho$. $\rho$ is defined as the angle between the $\hat{z}_{det}$ axis and the central ray passing through the target, i.e. $\phi_{tg}$ = $\theta_{tg}$ = 0, for the corresponding relative momentum given in equation ~\ref{eq:rel_mom} ~\cite{Thesis:Ye} ~\cite{optics}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{Focal_Plane_Coordinate_System.png}
+\end{center}
+\caption{
+{\bf{Focal Plane Coordinate System.}} Image from ~\cite{optics}.}
+\label{fig:fcs}
+\end{figure}
+
+\begin{equation} \label{eq:rel_mom}
+	\delta p = \frac{p-p_0}{p_0}
+\end{equation}
+
+\subsection{Spectrometer Optics Optimization Procedure}
+\label{ssec:optics_optimization} 
