@@ -291,7 +291,7 @@ After the VDCs are two planes of scintillator paddles located 2 m apart. Figure 
 \label{fig:paddle}
 \end{figure}
 
-When the photons enter the PMT they create a cascade of electrons via the photoelectric effect following a voltage down the PMT. This produces an analog electric signal. The PMT then passes this signal on to the data acquisition system. These scintillators have a very fast response time and timing resolutions of around 30 ns ~\cite{Thesis:Ye}. Due to these excellent timing responses most of the primary triggers in Hall A use a coincidence of S$_1$ and S$_{2m}$ for the main production triggers of experiments. The triggers used in E08-014 are discussed in ~\ref{ssec:triggers}. 
+When the photons enter the PMT they create a cascade of electrons via the photoelectric effect following a voltage down the PMT. This produces an analog electric signal. The PMT then passes this signal on to the data acquisition system. These scintillators have a very fast response time and timing resolutions of around 30 ns ~\cite{Thesis:Ye}. Due to these excellent timing responses most of the primary triggers in Hall A use a coincidence of S$_1$ and S$_{2m}$ for the main production triggers of experiments. The triggers used in E08-014 are discussed in ~\ref{sec:triggers}. 
 
 \subsection{Gas Cherenkov}
 \label{ssec:gc}
@@ -332,6 +332,8 @@ The Hall A GCs each contain ten spherical mirrors focus the Cherenkov light onto
 \label{fig:gc}
 \end{figure}
 
+The ten photomultiplier tubes in each GC must be calibrated such that they place the same energy photon in the same ADC channel. This means each of the PMTs have the same response to a photon of equal energy and thus can be compared to one another. This is generally done by first locating the single photoelectron (SPE) peak of each of the PMTs in the ADC data. By increasing or decreasing the voltage of the PMTs the SPE peak can be shifted up or down in ADC channels respectively. A target ADC channel is then chosen and the voltages of the individual PMTs are then adjusted until all of the SPE peaks are located in the same ADC channel. For the specific procedure and results from experiment E08-014's GC calibration see section 4.2.1 of ~\cite{Thesis:Ye}.
+
 \subsection{Electromagnetic Calorimeters}
 \label{ssec:em_cal}
 
@@ -346,7 +348,9 @@ In the detector stack of each HRS behind the GC and the S$_{2m}$ scintillator pl
 \label{fig:em_cal}
 \end{figure}
 
-The calorimeters provide a second level of particle identification for the experiments. When charged particles pass through the lead-glass blocks they are slowed down by their interactions with the electrons and nuclei of those blocks. The energy lost by this deceleration is emitted as photons via Bremsstrahlung radiation. These released photons continue on and produce electron-positron pairs through pair production which again create more Bremsstrahlung radiation. This alternating process creates a ``shower'' of photons, electrons, and positrons in the calorimeter and the photons are then detected by the PMTs. Heavier particles compared to electrons like pions require a much greater path length in the lead-glass blocks to release a shower of particles. This means that only electrons should create significant showers in the calorimeters. Although they still provide accurate particle identification the PRL1 and PRL2 in the LHRS do not totally absorb all of the electron's energy, whereas the preshower and shower in the RHRS are total absorbers ~\cite{Thesis:Ye}.
+The calorimeters provide a second level of particle identification for the experiments. When charged particles pass through the lead-glass blocks they are slowed down by their interactions with the electrons and nuclei of those blocks. The energy lost by this deceleration is emitted as photons via Bremsstrahlung radiation. These released photons continue on and produce electron-positron pairs through pair production which again create more Bremsstrahlung radiation. This alternating process creates a ``shower'' of photons, electrons, and positrons in the calorimeter and the photons are then detected by the PMTs. 
+
+Heavier particles compared to electrons like pions require a much greater path length in the lead-glass blocks to release a shower of particles. This means that only electrons should create significant showers in the calorimeters. Although they still provide accurate particle identification the PRL1 and PRL2 in the LHRS do not totally absorb all of the electron's energy, whereas the preshower and shower in the RHRS are total absorbers ~\cite{Thesis:Ye}. The PMTs attached to the lead-glass blocks must also be calibrated in the same manner as the GC discussed in ~\ref{ssec:gc}. For a full accounting of the calorimeter calibration procedure for experiment E08-014 see section 4.2.2 of ~\cite{Thesis:Ye}.
 
 \section{Data Acquisition System}
 \label{sec:daq}
@@ -479,3 +483,70 @@ The FCS is another rotated coordinate system as shown in figure ~\ref{fig:fcs}. 
 
 \subsection{Spectrometer Optics Optimization Procedure}
 \label{ssec:optics_optimization} 
+
+Now that we understand the coordinate systems in Hall A we must calibrate the optics of the HRS so that we can reconstruct what happens at the target when the electrons scatter. To do this we create an optics matrix that links the focal plane coordinates to the target coordinates. To first order this matrix can be written as equation ~\ref{eq:matrix}. A set of polynomial tensors in $x_{fp}$ can then describe the target variables in terms of the focal plane variables as shown in equations ~\ref{eq:delta_tg}, ~\ref{eq:theta_tg}, ~\ref{eq:y_tg}, and ~\ref{eq:phi_tg}. These tensors can all be written similar to the one written in equation ~\ref{eq:tensor} ~\cite{optics}.
+
+\begin{equation} \label{eq:matrix}
+	\left[ \begin{matrix}
+		\delta \\
+		\theta \\
+		y	   \\
+		\phi
+	\end{matrix} \right]_{tg}
+	=
+	\left[ \begin{matrix}
+		\langle \delta | x \rangle & \langle \delta | \theta \rangle & 0 & 0 \\
+		\langle \theta | x \rangle & \langle \theta | \theta \rangle & 0 & 0 \\
+		0 & 0 & \langle y | y \rangle & \langle y | \phi \rangle \\
+		0 & 0 & \langle \phi | y \rangle & \langle \phi | \phi \rangle 
+	\end{matrix} \right]
+		\left[ \begin{matrix}
+		x \\
+		\theta \\
+		y	   \\
+		\phi
+	\end{matrix} \right]_{fp}
+\end{equation}
+
+\begin{equation} \label{eq:delta_tg}
+	\delta = \sum_{j,k,l} D_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+\end{equation}
+
+\begin{equation} \label{eq:theta_tg}
+	\theta_{tg} = \sum_{j,k,l} T_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+\end{equation}
+
+\begin{equation} \label{eq:y_tg}
+	y_{tg} = \sum_{j,k,l} Y_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+\end{equation}
+
+\begin{equation} \label{eq:phi_tg}
+	\phi_{tg} = \sum_{j,k,l} P_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+\end{equation}
+
+\begin{equation} \label{eq:tensor}
+	D_{j,k,l} = \sum_{i=1}^m C_i^{D_{j,k,l}} x_{fp}^i
+\end{equation}
+
+This matrix is calibrated by placing a sieve slit, shown in figure ~\ref{fig:sieve}, over the spectrometer entrance. The sieve has a series of wholes with a well known pattern. This pattern then shows up in the focal plane data and by knowing the hole locations well the focal plane data can be correlated with the sieve holes.  The variables ~\ref{eq:theta_tg}, ~\ref{eq:y_tg}, and ~\ref{eq:phi_tg} described above turn out to be impractical to work with. As such as set of three more user friendly variables are defined. The first of these variables is $Z_{react}$ which describes the point of interaction between the beam and the target given in equation ~\ref{eq:zreact}. The second and third are $x_{sieve}$, equation ~\ref{eq:xsieve}, and $y_{sieve}$, equation ~\ref{eq:ysieve}, which describe the horizontal and vertical positions of the sieve plate respectively. In these equations $L$ and $D_y$ are defined as they were in the TCS above, $\theta_0$ is the spectrometer angle, and $x_{beam}$ is the horizontal beam position ~\cite{optics}. For the specific results of the optics calibration procedure for experiment E08-014 see section 4.3.2 of ~\cite{Thesis:Ye}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.3\linewidth]{Sieve.png}
+\end{center}
+\caption{
+{\bf{Optics Sieve Plate for E08-014.}} Image from ~\cite{Thesis:Ye}.}
+\label{fig:sieve}
+\end{figure}
+
+\begin{equation} \label{eq:zreact}
+	Z_{react} = \frac{-\left( y_{tg} + D_y \right) + x_{beam}\left( cos\left( \theta_0 \right) - \phi_{tg} sin\left( \theta_0 \right) \right)}{\phi_{tg} cos\left( \theta_0 \right) + sin\left( \theta_0 \right)}
+\end{equation}
+
+\begin{equation} \label{eq:xsieve}
+	x_{sieve} = x_{tg} + L \theta_{tg}
+\end{equation}
+
+\begin{equation} \label{eq:ysieve}
+	y_{sieve} = y_{tg} + L \phi_{tg}
+\end{equation}
