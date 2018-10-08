@@ -2,7 +2,7 @@
 \chapter{Elastic Electron Scattering} % Main chapter title
 \label{ch:elastic} % For referencing the chapter elsewhere, use 
 
-Electron scattering is one of the most powerful tools available to physicists to study the nature of nuclear matter. When electrons are accelerated to high energies by means of a particle accelerator, like JLab's CEBAF, and fired at a nuclear target the electrons scatter due to the nuclear structure of the target. This scattering is well described by quantum electrodynamics (QED). Thus, by measuring the scattered electrons, called inclusive electron scattering, the nuclear structure of the target is revealed. 
+Electron scattering is one of the most powerful tools available to physicists to study the nature of nuclear matter. When electrons are accelerated to high energies by means of a particle accelerator, like Jefferson Lab's CEBAF, and fired at a nuclear target the electrons scatter according to the nuclear structure of the target. This scattering is well described by quantum electrodynamics (QED). Thus, by measuring the scattered electrons, called `inclusive electron scattering', the nuclear structure of the target is revealed. 
 
 \section{Kinematics of Elastic Electron Scattering}
 \label{sec:kinematics}
@@ -18,7 +18,7 @@ The process of elastic electron scattering is shown in figure ~\ref{fig:elastic_
 \label{fig:elastic_scattering}
 \end{figure}
 
-When the scattering process is elastic the whole process can be completely described by two variables. These variables are the scattering angle, $\theta$, and the initial energy, $E_0$. By using conserving energy and momentum as well as applying the Einstein relation the scattered electron's final energy, $E'$, is found to be given by equation ~\ref{eq:E'}. The energy lost by the incident electron during scattering, $\nu$, is given by equation ~\ref{eq:nu}. The strength of the interaction, how much four-momentum is transferred to the target by the electron, is generally described as in equation ~\ref{eq:Q^2}. 
+When the scattering process is elastic the entire process can be described by two variables. These variables are the scattering angle, $\theta$, and the initial energy, $E_0$. By using conservation of energy and momentum as well as applying the Einstein relation the scattered electron's final energy, $E'$, is found to be given by equation ~\ref{eq:E'}. The energy lost by the incident electron during scattering, $\nu$, is given by equation ~\ref{eq:nu}. The strength of the interaction, how much four-momentum is transferred to the target by the electron, is generally described as in equation ~\ref{eq:Q^2}. 
 
 \begin{equation} \label{eq:E'}
 	E' = \frac{E_0}{1+\frac{2E_0}{M}sin^2\left(\frac{\theta}{2}\right)}
@@ -32,7 +32,7 @@ When the scattering process is elastic the whole process can be completely descr
 	Q^2 = -q^2 = 4E_0E'sin^2\left(\frac{\theta}{2}\right)
 \end{equation}
 
-Another useful quantity to define is Bjorken x given by equation ~\ref{eq:xbj}. This variable is interpretable as the fraction of the three-momentum carried by the quark struck by the electron. For a single nucleon $0 \leq X_{Bj} \leq 1$. However, for a nucleus $0 \leq X_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $X_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $X_{Bj} = 3$.
+Another useful quantity to define is Bjorken x given by equation ~\ref{eq:xbj}. This variable is interpretable as the fraction of the nucleon's three-momentum carried by the quark struck by the electron. For a single nucleon $0 \leq X_{Bj} \leq 1$. However, for a nucleus $0 \leq X_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $X_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $X_{Bj} = 3$.
 
 \begin{equation} \label{eq:xbj}
 	X_{Bj} = \frac{Q^2}{M(E_0-E')} 
@@ -41,7 +41,7 @@ Another useful quantity to define is Bjorken x given by equation ~\ref{eq:xbj}. 
 \section{Differential Cross Section}
 \label{sec:xs}
 
-The differential cross section describes the likelihood of an electron interacting with a target. It is proportional to the probability that an electron incident on the target will interact with that target which can be said to describe the `size' of the interaction, $\sigma$. However, for a scattered electron to be measured it must be scattered through a solid angle, $\Omega$, that can be seen by a detector. Therefore, the differential cross section measures the probability that an electron will be scattered from a target while being detected, $\frac{d\sigma}{d\Omega}$.
+The differential cross section describes the likelihood of an electron interacting with a target. It is proportional to the probability that an electron incident on a target will interact with that target. This can be thought of as the `size' of the interaction, $\sigma$. However, for a scattered electron to be measured it must be scattered through a solid angle, $\Omega$, that can be seen by a detector. Therefore, the differential cross section measures the probability that an electron will be scattered from a target while being detected, $\frac{d\sigma}{d\Omega}$.
 
 Following the discussion of cross sections and form factors laid out in chapters five and six of ~\cite{Book:Povh}, and largely adopting their notation, let us begin with the classical case of particles scattering from a fixed target nuclei. The Rutherford scattering equation can be obtained classically ~\ref{eq:rutherford} or through non-relativistic quantum mechanics by assuming that the wave functions of the electron are plane waves (Born approximation).   
 
@@ -49,7 +49,7 @@ Following the discussion of cross sections and form factors laid out in chapters
 	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{\left(zeZe\right)^2}{(4\pi\epsilon_0)^2(4E_0)^2sin^4(\theta/2)}
 \end{equation}
 
-\noindent Where $z$ ($Z$) is the atomic number of the incident particle (target), $e$ is the elementary charge, $\epsilon_0$ is the vacuum permittivity, and $E_0$ is the incident particle's initial energy. The Rutherford equation can also be written as ~\ref{eq:rutherford_2} following the quantum mechanical derivation. Notice that the cross section falls off like $\frac{1}{q^4}$ indicating that the interaction probability falls off rapidly with increased momentum transfer.
+\noindent Here $z$ ($Z$) is the atomic number of the incident particle (target), $e$ is the elementary charge, $\epsilon_0$ is the vacuum permittivity, and $E_0$ is the incident particle's initial energy. The Rutherford equation can also be written as ~\ref{eq:rutherford_2} following the quantum mechanical derivation. Notice that the cross section falls off like $\frac{1}{q^4}$ indicating that the interaction probability falls off rapidly with increased momentum transfer ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:rutherford_2}
 	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4}
@@ -61,7 +61,7 @@ The Rutherford equation does not account for relativity, spin, or target recoil.
 	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} \left( 1-\beta^2 sin^2 \left( \frac{\theta}{2} \right) \right)
 \end{equation}
 
-\noindent Where $\beta = \frac{v}{c}$ with $v$ being the velocity of the incident particle and $c$ the speed of light. 
+\noindent Here $\beta = \frac{v}{c}$ with $v$ being the velocity of the incident particle and $c$ the speed of light ~\cite{Book:Povh}. 
 
 By taking the incident particle's velocity to its maximum value of $c$ we see $\beta$ goes to unity. Then ~\ref{eq:mott_no_recoil} simplifies via trigonometric identity to ~\ref{eq:mott_no_recoil_simple}.
 
@@ -69,12 +69,12 @@ By taking the incident particle's velocity to its maximum value of $c$ we see $\
 	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} cos^2 \left( \frac{\theta}{2} \right) = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4} cos^2 \left( \frac{\theta}{2} \right) 
 \end{equation}
 
-\noindent Equation ~\ref{eq:mott_no_recoil_simple} now accounts for relativity, but also accounts for spin by suppressing scattering through 180$\degree$ for a spinless target which is forbidden by conservation of helicity. 
+\noindent Equation ~\ref{eq:mott_no_recoil_simple} now accounts for relativity, but also accounts for spin by suppressing scattering through 180$\degree$ for a spinless target which is forbidden by conservation of helicity ~\cite{Book:Povh}. 
 
 \section{Nuclear Form Factors}
 \label{sec:ffs}
 
-So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing spatial extents. To quantize the spatial extent of a target we introduce the form factors. Form factors contain all of the spatial and structural information about the target. Multiplying the Mott cross section excepting recoil by the form factor we get the experimental cross section as in equation ~\ref{eq:xs_exp_ff}. So by measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor of a target can be determined. 
+So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing spatial extents. To quantize the spatial extent of a target we introduce the concept of form factors. Form factors contain all of the spatial and structural information about the target. Multiplying the Mott cross section, excepting recoil, by the form factor we get the experimental cross section as in equation ~\ref{eq:xs_exp_ff}. By measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor of a target can be determined. 
 
 \begin{equation} \label{eq:xs_exp_ff}
 	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} |F(q^2)|^2
@@ -86,13 +86,13 @@ Continuing to assume that recoil is negligible as well as the validity of the Bo
 	F(q^2) = \int e^{\frac{iq \cdot x}{\hbar}} \rho(x) d^3x \xrightarrow{x \xrightarrow{} r} 4\pi \int \rho(r) \frac{sin\left( |q|r/\hbar \right)}{|q|r/\hbar} r^2 dr
 \end{equation}
 
-\noindent This procedure can be inverted to find the charge distribution of a target from its form factor as in ~\ref{eq:inverse_fourier}.
+\noindent This procedure can be inverted to find the charge distribution of a target from its form factor as in ~\ref{eq:inverse_fourier} ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:inverse_fourier}
 	\rho(r) = \frac{1}{(2\pi)^3} \int F(q^2) e^{\frac{-iq \cdot x}{\hbar}} d^3q 
 \end{equation}
 
-Let us now examine a simple example of a charge distribution and its form factor. Assume that there is a charge distribution in the shape of a hard sphere, i.e. a solid ball of constant charge density that drops to zero beyond a certain radius. This is a reasonable first order model for the charge distribution of an atom. Figure ~\ref{fig:hard_sphere} shows a hard sphere of charge density on top. The bottom plot shows the form factor, Fourier transform, of the upper hard sphere plot. Now we can see that the form factor of a hard sphere distribution of charge yields an oscillatory and decreasing form factor.
+Let us now examine a simple example of a charge distribution and its form factor. Assume that there is a charge distribution in the shape of a hard sphere, i.e. a solid ball of constant charge density that drops to zero beyond a certain radius. This is a reasonable first order model for the charge distribution of an atom. Figure ~\ref{fig:hard_sphere} shows a hard sphere of charge density on top. The bottom plot shows the form factor, Fourier transform, of the upper hard sphere plot. Now we can see that the form factor of a hard sphere distribution of charge yields an oscillatory and decreasing form factor ~\cite{Book:Povh}.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -121,13 +121,13 @@ Now $isin\left(\frac{Rq}{\hbar}\right) \xrightarrow{} 0$ and we can drop the $is
 	cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} +...
 \end{equation}
 
-\noindent Keeping only the first two terms of the $cos(x)$ expansion we can now rewrite the form factor equation as in equation ~\ref{eq:ff_expanded} while inserting $q \cdot r = |q||r|cos(\omega)$ where $\omega$ is the angle between $q$ and $r$.
+\noindent Keeping only the first two terms of the $cos(x)$ expansion we can now rewrite the form factor equation as in equation ~\ref{eq:ff_expanded}. Here we have inserted $q \cdot r = |q||r|cos(\omega)$ where $\omega$ is the angle between $q$ and $r$.
 
 \begin{equation} \label{eq:ff_expanded}
 	F(q^2) = \int_0^\infty \int_{-1}^1 \int_0^{2\pi} \rho(r) \left( 1-\frac{1}{2} \frac{|q||r|cos(\omega)}{\hbar} \right) r^2 d\phi \; dcos(\omega) \; dr
 \end{equation}
 
-\noindent Integrating over $\phi$ and $\cos(\omega)$ we obtain equation ~\ref{eq:ff_expanded_r}.
+\noindent Integrating over $\phi$ and $\cos(\omega)$ we obtain equation ~\ref{eq:ff_expanded_r} ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:ff_expanded_r}
 	F(q^2) = 4\pi \int_0^\infty \rho(r) r^2 dr - 4\pi \frac{q^2}{6\hbar^2} \int_0^\infty f(r) r^4 dr
@@ -145,13 +145,13 @@ If we require that $\rho(r)$ be normalized such that $4\pi \int_0^\infty \rho(r)
 	F(q^2) = 1 - \frac{q^2}{6\hbar^2} \langle r^2 \rangle
 \end{equation}
 
-\noindent Taking the derivative of equation ~\ref{eq:ff_rms} with respect to $q^2$ we can extract $\langle r^2 \rangle$ as in equation ~\ref{eq:rms_derivative}. So by measuring the form factor of a target at very low $q^2$ one can calculate the mean square radius by finding the slope of the form factor at $q^2=0$.
+\noindent Taking the derivative of equation ~\ref{eq:ff_rms} with respect to $q^2$ we can extract $\langle r^2 \rangle$ as in equation ~\ref{eq:rms_derivative}. So by measuring the form factor of a target at very low $q^2$ one can calculate the mean square radius by finding the slope of the form factor at $q^2=0$ ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:rms_derivative}
 	\langle r^2 \rangle = -6\hbar^2 \frac{dF(q^2)}{dq^2} |_{q^2=0}
 \end{equation}
 
-At this point we are still claiming that the recoil of the struck particle is negligible. Let us examine the truth of this assumption by comparing the electron energies needed to the mass of a typical target, $^3$He. First let us determine approximately what energy an electron needs to be able to probe a target's nuclear structure. The Planck-Einstein relation can guide us with this estimate and is given in equation ~\ref{eq:planck}, where $h$ is Planck's constant and $\nu$ is the electron's frequency. 
+At this point we are still claiming that the recoil of the struck particle is negligible. Let us examine the truth of this assumption by comparing the electron energies needed to study nuclear structure to the mass of a typical target, $^3$He. First let us determine approximately what energy an electron needs to be able to probe a target's nuclear structure. The Planck-Einstein relation can guide us with this estimate, and is given in equation ~\ref{eq:planck}, where $h$ is Planck's constant and $\nu$ is the electron's frequency. 
 
 \begin{equation} \label{eq:planck}
 	E = h\nu
@@ -163,13 +163,13 @@ At this point we are still claiming that the recoil of the struck particle is ne
 	\nu = \frac{c}{\lambda}
 \end{equation}
 
-\noindent Combining equations ~\ref{eq:planck} and \ref{eq:wavelength} gives us equation ~\ref{eq:energy_estimate} which allows us to estimate the required electron energies to examine nuclear structure. 
+\noindent Combining equations ~\ref{eq:planck} and \ref{eq:wavelength} gives us equation ~\ref{eq:energy_estimate} which allows us to estimate the required electron energies to study nuclear structure. 
 
 \begin{equation} \label{eq:energy_estimate}
 	E = \frac{hc}{\lambda}
 \end{equation}
 
-Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in ~\ref{eq:energy_estimate} along with $h \approx 4.136 *10^{-15} eV*s$ and $c\approx 3*10^{8} m/s$ yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required for to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
+Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in ~\ref{eq:energy_estimate} along with $h \approx 4.136 *10^{-15} eV*s$ and $c\approx 3*10^{8} m/s$ yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
 
 Taking the recoil of the target in to account one finds that the recoil factor is given by equation ~\ref{eq:recoil}. 
 
@@ -177,13 +177,13 @@ Taking the recoil of the target in to account one finds that the recoil factor i
 \frac{E'}{E_0} = \frac{1}{1+\frac{2E}{M} sin^2 \left( \frac{\theta}{2} \right)}
 \end{equation}
 
-\noindent Adding the factor of $\frac{E'}{E}$ to the Mott cross section gives equation ~\ref{eq:mott_recoil}.
+\noindent Adding the factor of $\frac{E'}{E_0}$ to the Mott cross section gives equation ~\ref{eq:mott_recoil}.
 
 \begin{equation} \label{eq:mott_recoil}
 \left(\frac{d\sigma}{d\Omega}\right)_{Mott} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^3}{|qc|^4 E_0} cos^2 \left( \frac{\theta}{2} \right)
 \end{equation}
 
-\noindent The Mott cross section cab be written in a slightly different form by setting some constants equal to one and rearranging some of the energies as in equation ~\ref{eq:mott}. We now have an equation that represents the scattering of electrons off of a pointlike particle.
+\noindent The Mott cross section can be written in a slightly different form by setting some constants equal to one and rearranging some of the energies as in equation ~\ref{eq:mott}. We now have an equation that represents the scattering of electrons off of a pointlike particle ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:mott}
 \left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 cos^2\left( \frac{\theta}{2} \right)}{4E_0^2 sin^4\left( \frac{\theta}{2} \right)}
@@ -195,13 +195,13 @@ At this point in the analysis we have accounted for spin, relativity, and recoil
 \mu = g \frac{e\hbar}{4M}
 \end{equation}
 
-To account for magnetic interactions we do as we did in equation ~\ref{eq:mott_no_recoil} and introduce a second term to the cross section scaled by a constant and with an angular dependence of $sin^2(\theta/2)$ as in equation ~\ref{eq:mag}. The angular dependence arises from a need to conserve angular momentum and helicity. We obtain $tan^2(\theta/2)$ by pulling out a $1/cos^2(\theta/2)$.
+To account for magnetic interactions we do as we did in equation ~\ref{eq:mott_no_recoil} and introduce a second term to the cross section. This term is scaled by a constant and given an angular dependence of $sin^2(\theta/2)$ as in equation ~\ref{eq:mag}. The angular dependence arises from a need to conserve angular momentum and helicity. We obtain $tan^2(\theta/2)$ by pulling out a $1/cos^2(\theta/2)$.
 
 \begin{equation} \label{eq:mag}
 \left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{point} \\ \text{spin 1/2}}} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \left( (1-2\tau \; tan^2\left( \frac{\theta}{2} \right) \right)
 \end{equation}
 
-\noindent Here $\tau$ is given by ~\ref{eq:tau} where $M$ is the target's mass and $Q^2$ is the kinematic variable measuring momentum transfer from equation ~\ref{eq:Q^2}. From equation ~\ref{eq:mag} it becomes clear that at large angles and large momentum transfers the magnetic interaction becomes large and cannot be ignored. The effect of the magnetic term causes the cross section to fall off less rapidly than it would if only the electric interaction were relevant.
+\noindent Here $\tau$ is given by ~\ref{eq:tau} where $M$ is the target's mass and $Q^2$ is the kinematic variable measuring momentum transfer from equation ~\ref{eq:Q^2}. From equation ~\ref{eq:mag} it becomes clear that at large angles and large momentum transfers the magnetic interaction becomes significant and cannot be ignored. The effect of the magnetic term causes the cross section to fall off less rapidly than it would if only the electric interaction were relevant ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:tau}
 \tau = \frac{Q^2}{4M}
@@ -213,7 +213,7 @@ Finally let us consider that nuclear targets are not pointlike particles and thu
 \mu_p = 2.79 \mu_N \;\;\;\;\; \mu_n = -1.91 \mu_N \;\; and \;\; \mu_N = \frac{e\hbar}{2m_p} = 3.1525 * 10^{-8} \, eV \, T^{-1}
 \end{equation}
 
-\noindent We once again need to introduce form factors to describe the structure of the electric and magnetic components of the cross section. In this case we use the Sach's form factors $G_E(Q^2)$ and $G_M(Q^2)$ for the electric and magnetic components respectively. With these form factors we finally arrive at the Rosenbluth equation ~\ref{eq:rosenbluth_long}.
+\noindent We once again need to introduce form factors to describe the structure of the electric and magnetic components of the cross section. In this case we use the Sach's form factors $G_E(Q^2)$ and $G_M(Q^2)$ for the electric and magnetic components respectively. With these form factors we finally arrive at the Rosenbluth equation ~\ref{eq:rosenbluth_long} ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:rosenbluth_long}
 \left(\frac{d\sigma}{d\Omega}\right) = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} * \left[ \frac{G_E^2\left(Q^2\right)+\tau G_M^2\left(Q^2\right)}{1+\tau} + 2 \tau G_M^2\left(Q^2\right) tan^2\left( \frac{\theta}{2} \right) \right]
@@ -229,7 +229,7 @@ The physical meaning of these form factors can be further explored by studying t
 	G_E^n\left(Q^2=0\right) = 0 \;\; and \;\; G_M^n\left(Q^2=0\right) = -1.91
 \end{equation}
 
-In the literature ~\cite{Article:Hand} one finds several other commonly used form factors related to $G_E$ and $G_M$. Being able to translate between these form factors is often necessary to compare the results reported by different groups. The first set of these form factors are the Dirac form factor, $F_1$, and the Pauli form factor, $F_2$. These two form factors are given by equations ~\ref{eq:f1} and ~\ref{eq:f2} in relation to $G_E$ and $G_M$ which are more commonly used because of their physical interpretation.
+In the literature one finds several other commonly used form factors related to $G_E$ and $G_M$. Being able to translate between these form factors is often necessary to compare the results reported by different groups. The first set of these form factors are the Dirac form factor, $F_1$, and the Pauli form factor, $F_2$. These two form factors are given by equations ~\ref{eq:f1} and ~\ref{eq:f2} in relation to $G_E$ and $G_M$ which are more commonly used because of their physical interpretation.
 
 \begin{equation} \label{eq:f1}
 	G_E \left(Q^2\right) = F_1\left(Q^2\right) -\mu \tau F_2\left(Q^2\right)
@@ -239,7 +239,7 @@ In the literature ~\cite{Article:Hand} one finds several other commonly used for
 	G_M \left(Q^2\right) = F_1\left(Q^2\right) + \mu F_2\left(Q^2\right)
 \end{equation}
 
-\noindent One final set of form factors are $F_{ch}$ and $F_m$. Their relations to $G_E$ and $G_M$ are given in ~\ref{eq:fch} and ~\ref{eq:fm}. These are the form factors used in the sum of Gaussians analysis of the data presented in this thesis.
+\noindent One final set of form factors are $F_{ch}$ and $F_m$. Their relations to $G_E$ and $G_M$ are given in ~\ref{eq:fch} and ~\ref{eq:fm} ~\cite{Article:Hand}. These are the form factors used in the sum of Gaussians analysis of the data presented in this thesis.
 
 \begin{equation} \label{eq:fch}
 	F_{ch}\left(Q^2\right) = G_E \left(Q^2\right) 
@@ -265,4 +265,4 @@ Now we can define a value called the reduced cross section by dividing the exper
 \left(\frac{d\sigma}{d\Omega}\right)_{r} = \frac{\left( \frac{d\sigma}{d\Omega} \right)_{exp}}{\left( \frac{d\sigma}{d\Omega} \right)_{Mott}} \epsilon (1+\tau) = \left[ \epsilon G_E^2\left(Q^2\right) + \tau G_M^2\left(Q^2\right) \right]
 \end{equation}
 
-\noindent Now if we plot the reduced cross section against $\epsilon$ we see that we are plotting the equation of a line. (Note: I could make and add a Rosenbluth plot here, but I don't know if it's worth it since it was never part of my analysis.) Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the y-intercept as $\tau G_M^2\left(Q^2\right)$. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in chapter (Note: Insert chapter with SOG fits here later.) we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
+\noindent If one plots the reduced cross section against $\epsilon$ we see that we are plotting the equation of a line. (Note: I could make and add a Rosenbluth plot here, but I don't know if it's worth it since it was never part of my analysis.) Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the y-intercept as $\tau G_M^2\left(Q^2\right)$ ~\cite{Book:Povh}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in chapter (Note: Insert chapter with SOG fits here later.) we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
