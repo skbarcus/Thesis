@@ -1,3 +1,53 @@
 % Introduction
 \chapter{Data Analysis} % Main chapter title
-\label{ch:Data_Analysis} % For referencing the chapter elsewhere, use 
+\label{ch:analysis}
+
+\section{Overview}
+\label{sec:analysis_overview}
+
+This chapter will explore the various analyses used to extract a $^3$He elastic cross section. This discussion will include all measurements required to extract a differential cross section, the corrections for efficiency losses for these values, the physics cuts applied to the data, and an estimate of the uncertainties. Also discussed will be the Monte Carlo software used to create an artificial elastic electron spectrum as well as the software used to calculate radiative corrections to this data.
+
+\section{Experimental Cross Section}
+\label{sec:exp_xs}
+
+The theoretical origins of a differential cross section were explored in ~\ref{sec:xs}. However, this derivation is not particularly intuitive for extracting an actual experimental cross section. In practice extracting a cross section is essentially an exercise in electron counting. Let us now write the cross section as an experimentalist understands it as in Equation ~\ref{eq:exp_xs}. Each of these variables will be examined in detail later in this chapter.
+
+\begin{equation} \label{eq:exp_xs}
+	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \frac{ps*N_e}{N_{in}*\rho *LT* \epsilon_{det}} \frac{1}{\Delta\Omega\Delta P \Delta Z}
+\end{equation}
+
+Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic deadtime in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle fraction covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
+
+\subsection{Beam Charge}
+\label{ssec:charge}
+
+As the the cross section extraction is essentially an exercise in electron counting let us begin by finding the charge of the electron beam during any given experimental run. This process begins with the U and D BCMs measuring the beam current prior to the beam striking the target. These BCMs require are calibrated according to Equation ~\ref{eq:bcms}, and the constants can be found in Table ~\ref{tab:bcm_constants}. The BCM calibration for experiment E08-014 can be read about more in ~\cite{bcm_calibration} where these equations are found. The final constants in the table were updated after the analysis in ~\cite{bcm_calibration}, and were provided via private communication with Dien Nguyen.
+
+\begin{equation} \label{eq:bcms}
+	\langle I_{beam} \rangle = \frac{\frac{scalar}{time}-K'_{offset}}{C_{V-to-F}}
+\end{equation}
+
+\begin{table}[!h]
+\centering
+\caption{\bf{BCM Calibration Constants for E08-014}}
+\begin{tabular}{c c c}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{BCM} & \textbf{$K'_{offset}$} & \textbf{$C_{V-to-F}$} \\
+\hline
+$U_1$ & 200 & 1035 \\
+$D_1$ & 37 & 1263\\
+\hline
+\end{tabular}
+\label{tab:bcm_constants}
+\end{table}
+
+The average current, $\langle I_{beam} \rangle$, is thus a product of the number of counts seen by a $scaler$ in a certain period of $time$ tracked by a clock scaler and then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run by Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
+
+\begin{equation} \label{eq:charge}
+	Q = \langle I_{beam} \rangle *time
+\end{equation}
+
+\begin{equation} \label{eq:electrons}
+	N_{in} = \frac{Q}{e}
+\end{equation}
