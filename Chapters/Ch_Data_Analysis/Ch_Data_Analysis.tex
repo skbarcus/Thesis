@@ -30,7 +30,7 @@ As the the cross section extraction is essentially an exercise in electron count
 \begin{table}[!h]
 \centering
 \caption{\bf{BCM Calibration Constants for E08-014}}
-\begin{tabular}{c c c}
+\begin{tabular}{|c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
 \textbf{BCM} & \textbf{$K'_{offset}$} & \textbf{$C_{V-to-F}$} \\
@@ -42,7 +42,7 @@ $D_1$ & 37 & 1263\\
 \label{tab:bcm_constants}
 \end{table}
 
-The average current, $\langle I_{beam} \rangle$, is thus a product of the number of counts seen by a $scaler$ in a certain period of $time$ tracked by a clock scaler and then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run by Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
+The average current, $\langle I_{beam} \rangle$, is thus a product of the number of event triggers seen by a $scaler$ in a certain period of $time$ tracked by a clock scaler and then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run by Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
 
 \begin{equation} \label{eq:charge}
 	Q = \langle I_{beam} \rangle *time
@@ -51,3 +51,35 @@ The average current, $\langle I_{beam} \rangle$, is thus a product of the number
 \begin{equation} \label{eq:electrons}
 	N_{in} = \frac{Q}{e}
 \end{equation}
+
+Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$ BCMs for experimental run 4074. During E08-014 the target beam current 120 $\mu$A. When the beam `trips' turning off and when the beam is being brought online it tends to be somewhat unstable. These events can be seen in the trailing edges and leading edges of the gaps in the BCM current measurement. Due to the beam's instability at these times measurements taken during them are discarded by placing cuts on the current spectrum represented by the red lines in ~\ref{fig:bcms_4074}. These lines are placed two scaler readouts, about 4 seconds per readout, after the BCMs register 90$\%$ or greater of the 120 $\mu$A operating current. This analysis was performed for each run of KIN 3.2 and the results are shown in Table ~\ref{tab:charges}.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{BCMs_4074.png}
+\end{center}
+\caption{
+{\bf{BCM Readouts for Run 4074.}} These plots show the $U_1$ and $D_1$ BCM measurements for run 4074. The cuts are applied two scaler readouts after the current rises above or below the 90$\%$ threshold of the 120 $\mu$A target current.}
+\label{fig:bcms_4074}
+\end{figure}
+
+\begin{table}[!h]
+\centering
+\caption{\bf{Charge Accumulated per Run}}
+\begin{tabular}{|c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{Run} & \makecell{\textbf{Charge}\\ \textbf{$U_1$ ($\mu C$)}} & \makecell{\textbf{Charge}\\ \textbf{$D_1$ ($\mu C$)}} & \makecell{\textbf{Average}\\ \textbf{Charge}\\ ($\mu C$)} & \makecell{\textbf{Electrons} \\ $U_1$} & \makecell{\textbf{Electrons} \\ $D_1$} & \makecell{\textbf{Average} \\ \textbf{Electrons}}\\
+\hline
+3892 & 5568.68 & 6015.81 & 5792.25 & 3.47608e+16 & 3.75519e+16 & 3.61564e+16 \\
+3893 & 118261 & 118016 & 118138 & 7.38207e+17 & 7.36678e+17 & 7.37443e+17 \\
+3894 & 136502 & 138131 & 137316 & 8.5207e+17 & 8.62243e+17 & 8.57157e+17 \\
+4073 & 7656.35 & 7654.74 & 7655.54 & 4.77924e+16 & 4.77824e+16 & 4.77874e+16 \\
+4074 & 251551 & 251227 & 251389 & 1.57023e+18 & 1.56821e+18 & 1.56922e+18 \\
+4075 & 280417 & 280017 & 280217 & 1.75042e+18 & 1.74792e+18 & 1.74917e+18 \\
+\hline
+\textbf{Totals} & \textbf{799956} & \textbf{801062} & \textbf{800509} & \textbf{4.99348e+18} & \textbf{5.00039e+18} & \textbf{4.99693e+18} \\
+\hline
+\end{tabular}
+\label{tab:charges}
+\end{table}
