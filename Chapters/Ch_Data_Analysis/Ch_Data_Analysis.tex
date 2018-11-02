@@ -16,7 +16,7 @@ The theoretical origins of a differential cross section were explored in ~\ref{s
 	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \frac{ps*N_e}{N_{in}*\rho *LT* \epsilon_{det}} \frac{1}{\Delta\Omega\Delta P \Delta Z}
 \end{equation}
 
-Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic deadtime in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle fraction covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
+Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic dead-time in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle fraction covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
 
 \subsection{Beam Charge}
 \label{ssec:charge}
@@ -29,7 +29,6 @@ As the the cross section extraction is essentially an exercise in electron count
 
 \begin{table}[!h]
 \centering
-\caption{\bf{BCM Calibration Constants for E08-014}}
 \begin{tabular}{|c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
@@ -39,10 +38,11 @@ $U_1$ & 200 & 1035 \\
 $D_1$ & 37 & 1263\\
 \hline
 \end{tabular}
+\caption{\bf{BCM Calibration Constants for E08-014}}
 \label{tab:bcm_constants}
 \end{table}
 
-The average current, $\langle I_{beam} \rangle$, is thus a product of the number of event triggers seen by a $scaler$ in a certain period of $time$ tracked by a clock scaler and then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run by Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
+The average current, $\langle I_{beam} \rangle$, is thus a product of the number of counts in the $scaler$ measuring beam current in a certain period of $time$ tracked by a clock scaler, and then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run by Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
 
 \begin{equation} \label{eq:charge}
 	Q = \langle I_{beam} \rangle *time
@@ -65,7 +65,6 @@ Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$
 
 \begin{table}[!h]
 \centering
-\caption{\bf{Charge Accumulated per Run}}
 \begin{tabular}{|c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
@@ -81,5 +80,71 @@ Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$
 \textbf{Totals} & \textbf{799956} & \textbf{801062} & \textbf{800509} & \textbf{4.99348e+18} & \textbf{5.00039e+18} & \textbf{4.99693e+18} \\
 \hline
 \end{tabular}
+\caption{\bf{Charge Accumulated per Run}}
 \label{tab:charges}
+\end{table}
+
+\subsection{Dead-time Correction}
+\label{ssec:dead-time}
+
+Now we have measured how many electrons total are incident on our target. However, we have not yet accounted for the electronic dead-time discussed in Section ~\ref{sec:daq} and Equation ~\ref{eq:lt}. While the electronics discard some valid trigger events because the system is busy processing the previous event there are still scalers that record every trigger created regardless of if it is recorded by the main DAQ. This means that the dead-time of the system can be calculated by taking the ratio of the total triggers recorded by the DAQ electronics to the total hardware triggers recorded by the scalers. Table ~\ref{tab:dead-time} contains the dead-time for each run as well as the weighted average of dead-times for the cumulative runs. The weighted average live-time, one minus dead-time, of 95.27$\%$ is then applied as a correction of $\frac{1}{0.9527}$ to the total number of elastic electrons detected.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{Run} & \makecell{\textbf{Hardware}\\ \textbf{$T_3$}} & \makecell{\textbf{Electronic}\\ \textbf{$T_3$}} & \textbf{Live-time}\\
+\hline
+3892 & 49802 & 42982 & 0.86306 \\
+3893 & 485367 & 427476 & 0.88073 \\
+3894 & - & 311724 & 0.87912* \\
+4073 & 106003 & 103741 & 0.97866 \\
+4074 & 1124275 & 1102321 & 0.98047 \\
+4075 & 1152972 & 1129955 & 0.98004 \\  
+\hline
+\makecell{\textbf{Weighted}\\ \textbf{Average}} &  &  & \textbf{0.9527} \\
+\hline
+\end{tabular}
+\caption{{\bf{Live-time per Run}} *Note: Run 3894 had no End of Run readout so the live-time is a weighted average of the two runs, 3892 and 3893, taken the same day.}
+\label{tab:dead-time}
+\end{table}
+
+\subsection{Trigger Efficiency}
+\label{ssec:trigger_eff}
+
+The main trigger, $T_3$, for E08-014 was a coincidence if $S_1$, $S_{2m}$, and the $GC$ detectors. However, this trigger is not perfectly efficient. To measure $T_3$'s efficiency we use trigger $T_4$ which is the coincidence of one of either $S_1$ or $S_{2m}$ and the $GC$. The efficiency of $T_3$ can then be calculated by Equation ~\ref{eq:t3_eff}. Figure ~\ref{fig:t3_eff} shows the $T_3$ efficiencies for each of the runs and Table ~\ref{tab:t3_eff} lists these efficiencies along with the weighted average of the runs. 
+
+\begin{equation} \label{eq:t3_eff}
+	T_3_{eff}
+\end{equation}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{T3_eff.png}
+\end{center}
+\caption{
+{\bf{T3 Efficiency by Run.}} }
+\label{fig:t3_eff}
+\end{figure}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{Run} & \textbf{$T_3$ Efficiency}\\
+\hline
+3892 & 0.969217\\
+3893 & 0.988504\\
+3894 & 0.989435\\
+4073 & 0.988796\\
+4074 & 0.989009\\
+4075 & 0.988678\\   
+\hline
+\makecell{\textbf{Weighted}\\ \textbf{Average}} & \textbf{0.9527} \\
+\hline
+\end{tabular}
+\caption{{\bf{$T_3$ Efficiency by Run}} }
+\label{tab:t3_eff}
 \end{table}
