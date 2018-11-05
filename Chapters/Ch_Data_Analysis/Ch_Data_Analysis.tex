@@ -113,10 +113,10 @@ Now we have measured how many electrons total are incident on our target. Howeve
 \subsection{Trigger Efficiency}
 \label{ssec:trigger_eff}
 
-The main trigger, $T_3$, for E08-014 was a coincidence if $S_1$, $S_{2m}$, and the $GC$ detectors. However, this trigger is not perfectly efficient. To measure $T_3$'s efficiency we use trigger $T_4$ which is the coincidence of one of either $S_1$ or $S_{2m}$ and the $GC$. The efficiency of $T_3$ can then be calculated by Equation ~\ref{eq:t3_eff}. Figure ~\ref{fig:t3_eff} shows the $T_3$ efficiencies for each of the runs and Table ~\ref{tab:t3_eff} lists these efficiencies along with the weighted average of the runs. 
+The main trigger, $T_3$, for E08-014 was a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors. However, this trigger is not perfectly efficient. To measure $T_3$'s efficiency we use trigger $T_4$ which is the coincidence of one of either $S_1$ or $S_{2m}$ and the $GC$. The efficiency of $T_3$ can then be calculated by Equation ~\ref{eq:t3_eff} with $PS_{3,4}$ being the prescale value of $T_3$ or $T_4$ and $n_{T_{3,4}}$ being the number of triggers of either $T_3$ or $T_4$. Figure ~\ref{fig:t3_eff} shows the $T_3$ efficiencies for each of the runs, and Table ~\ref{tab:t3_eff} lists these efficiencies along with the weighted average of the runs. 
 
 \begin{equation} \label{eq:t3_eff}
-	T_3_{eff}
+	T_{3_{eff}} = \frac{PS_{T_3}*n_{T_3}}{PS_{T_3}*n_{T_3}+PS_{T_4}*n_{T_4}}
 \end{equation}
 
 \begin{figure}[!ht]
@@ -142,9 +142,51 @@ The main trigger, $T_3$, for E08-014 was a coincidence if $S_1$, $S_{2m}$, and t
 4074 & 0.989009\\
 4075 & 0.988678\\   
 \hline
-\makecell{\textbf{Weighted}\\ \textbf{Average}} & \textbf{0.9527} \\
+\makecell{\textbf{Weighted}\\ \textbf{Average}} & \textbf{0.988577} \\
 \hline
 \end{tabular}
 \caption{{\bf{$T_3$ Efficiency by Run}} }
 \label{tab:t3_eff}
 \end{table}
+
+\subsection{VDC Single Track Efficiency}
+\label{ssec:vdc_eff}
+
+In general the VDCs are very efficient, but it is possible for particles to make several tracks in the VDCs. This can cause issues with track reconstruction. For the analysis of E08-014 only events making a single track in the VDCs that also passed PID cuts were analyzed. This single track efficiency can be calculated with equation ~\ref{eq:vdc_eff}. Where $N_{track=1}$ is the number of events making only a single track and $N_{0 \leq track \leq 4}$ are the number of events producing between one and four tracks. For the LHRS during experiment E08-014 $\epsilon_{VDC}$ was found to be , and Table ~\ref{tab:vdc_eff} gives the breakdown for both detectors by number of tracks seen. For more detailed information on this calibration see ~\cite{Thesis:Ye} where these values were calculated. 
+
+\begin{equation} \label{eq:vdc_eff}
+	\epsilon_{VDC} = \frac{N_{track=1}}{N_{0 \leq track \leq 4}}
+\end{equation}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{$N_{track}$} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4}\\
+\hline
+HRSL & 0.030$\%$ & 99.175$\%$ & 0.743$\%$ & 0.045$\%$ & 0.005$\%$ \\  
+HRSR & 0.048$\%$ & 99.360$\%$ & 0.545$\%$ & 0.039$\%$ & 0.007$\%$ \\ 
+\hline
+\end{tabular}
+\caption{{\bf{VDC Track Efficiency for HRSs}} }
+\label{tab:vdc_eff}
+\end{table}
+
+\subsection{Particle Identification}
+\label{ssec:pid}
+
+When a trigger is seen it is important to be able to identify what particle caused the trigger. For this analysis we are only interested in electrons, but even at these kinematics a pion occasionally causes a trigger. 
+
+Now that we have demonstrated that very few pions are contaminating our electron sample we must still account for inefficiencies in the GC. During E08-014 one of the ten PMTs in the LHRS GC was slightly inefficient and this PMT happens to fall near the kinematics of this data. To study the GC efficiency we can use $T_3$ the main trigger which was a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors as well as $T_7$ which is a coincidence of $S_1$ and $S_{2m}$. Thus the ratio of $T_3$ + $T_7$ to $T_7$ will yield the GC efficiency for these E08-014 runs. 
+
+Before we find the GC efficiency let us first place some reasonable kinematic and acceptance cuts on the combined data of our six experimental runs (see ~\ref{ssec:cuts} for details on the cut values). Figure ~\ref{fig:gc_eff} shows a plot of $T_7$ on the left and $T_3$ + $T_7$ on the right with physics cuts. These cuts are fairly strict and include a cut on $X_{Bj}$ so there are few events. Still the events form the elastic band shape we would expect. Taking the ratio we find that $\epsilon_{GC} = 196/203 = 0.966$. This is still quite efficient accounting for the slightly inefficient PMT. Knowing the GC inefficiency allows us to scale the final cross section value by 203/196 to correct for this inefficiency.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{GC_Eff.png}
+\end{center}
+\caption{
+{\bf{GC Efficiency.}} The left plot is $T_7$ with physics cuts and the right is $T_3$ + $T_7$ with physics cuts.}
+\label{fig:gc_eff}
+\end{figure}
