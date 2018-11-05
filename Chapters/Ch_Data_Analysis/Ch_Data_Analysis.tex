@@ -176,17 +176,93 @@ HRSR & 0.048$\%$ & 99.360$\%$ & 0.545$\%$ & 0.039$\%$ & 0.007$\%$ \\
 \subsection{Particle Identification}
 \label{ssec:pid}
 
-When a trigger is seen it is important to be able to identify what particle caused the trigger. For this analysis we are only interested in electrons, but even at these kinematics a pion occasionally causes a trigger. 
+When a trigger is seen it is important to be able to identify what particle caused the trigger. For this analysis we are only interested in electrons, but pions occasionally cause triggers as well. Figure ~\ref{fig:pid_pr_ye} shows a plot of the two pion rejector calorimeters used for PID in E08-014. As discussed in Section ~\ref{ssec:em_cal} electrons will leave large signals in the PRs, and pions much smaller signals. Using this property of the PRs we can show the area almost certain to be electrons shaded blue, and the area we expect to be pions is shaded red. Note that the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). The other low energy events not identified as pions are generally delta, or knock-on, electrons which are created when particles strike the metals of the detector frame and spectrometer apertures etc. We can see for this one particular run, that was not part of this analysis, that there is a non-zero pion contamination in this data. 
 
-Now that we have demonstrated that very few pions are contaminating our electron sample we must still account for inefficiencies in the GC. During E08-014 one of the ten PMTs in the LHRS GC was slightly inefficient and this PMT happens to fall near the kinematics of this data. To study the GC efficiency we can use $T_3$ the main trigger which was a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors as well as $T_7$ which is a coincidence of $S_1$ and $S_{2m}$. Thus the ratio of $T_3$ + $T_7$ to $T_7$ will yield the GC efficiency for these E08-014 runs. 
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\linewidth]{PID_PR_Ye.png}
+\end{center}
+\caption{
+{\bf{PID with the Pion Rejectors.}} Image from ~\cite{Thesis:Ye}}.
+\label{fig:pid_pr_ye}
+\end{figure}
+
+Alternatively, we can look at the same data in the GC to identify the particles as in Figure ~\ref{fig:pid_gc_ye}. We discussed how the gas in the GC is chosen for electrons to emit Cherenkov radiation in Section ~\ref{ssec:gc}. Due to this gas choice pions rarely will cause Cherenkov radiation. We can see this difference in ~\ref{fig:pid_gc_ye} by identifying the bulk of the signal, blue, as electrons, and the lowest signals, red, as pions. Again, the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). In this data we see the non-zero pion contamination again. Fortunately, as with the PR plots, the pions and electrons are easy to distinguish from one another.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{PID_GC_Ye.png}
+\end{center}
+\caption{
+{\bf{PID with the Gas Cherenkov.}} Image from ~\cite{Thesis:Ye}}.
+\label{fig:pid_gc_ye}
+\end{figure}
+
+Now let us examine the combined six experimental runs used in this analysis using the PRs and GC. Figure ~\ref{fig:pid_pr} shows the PRs for our data with reasonable physics cuts applied to the data. We see the same `cloud' of electrons in the higher PR ADC channels indicating that electron energy is being well measured by the PRs. The red box in this clod shows a similar region to before where we are almost certain to have `good' electrons. However, when we search for the pion cloud in the lower energy channels, represented by the small red box in the lower left, we see very few pions at all. This is a result of KIN 3.2 producing few pions that can be measured by the detectors so our pion contamination is extremely low. The small number of pions can be eliminated by placing a diagonal cut on the data represented by the green line.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{PID_PR.png}
+\end{center}
+\caption{
+{\bf{PID with the Pion Rejectors.}} }.
+\label{fig:pid_pr}
+\end{figure}
+
+We can also examine the GC, Figure ~\ref{fig:pid_gc}, as we did previously. Once again we have applied reasonable physics cuts to the data. We see a large bulk signal at its strongest between channels 300 and 500, shown between two red lines, as expected. This shows that we are getting good detecting electrons well with the GC. Looking in the lower ADC channels for pions we again see that there seem to be very few in our data. In fact, below ADC channel 80 we see only 15 events showing that there are very few pions in our sample. As a result when making the final cuts to the data only the diagonal cut on the PRs was used to eliminate possible pions and more likely junk electrons which are mostly likely delta electrons.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{PID_GC.png}
+\end{center}
+\caption{
+{\bf{PID with the Gas Cherenkov.}} }.
+\label{fig:pid_gc}
+\end{figure}
+
+Now that we have demonstrated that very few pions are contaminating our electron sample we must still account for inefficiencies in the GC. During E08-014 one of the ten PMTs in the LHRS GC was slightly inefficient and this PMT happens to fall near the kinematics of this data. To study the GC efficiency we can use $T_3$ the main trigger which was a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors as well as $T_7$ which is a coincidence of $S_1$ and $S_{2m}$. Thus the ratio of $T_3$ + $T_7$ to $T_7$ will yield the GC efficiency for these E08-014 runs as shown by Equation ~\ref{eq:gc_eff}. 
+
+\begin{equation} \label{eq:gc_eff}
+	\epsilon_{GC} = \frac{T_3+T_7}{T_7}
+\end{equation}
 
 Before we find the GC efficiency let us first place some reasonable kinematic and acceptance cuts on the combined data of our six experimental runs (see ~\ref{ssec:cuts} for details on the cut values). Figure ~\ref{fig:gc_eff} shows a plot of $T_7$ on the left and $T_3$ + $T_7$ on the right with physics cuts. These cuts are fairly strict and include a cut on $X_{Bj}$ so there are few events. Still the events form the elastic band shape we would expect. Taking the ratio we find that $\epsilon_{GC} = 196/203 = 0.966$. This is still quite efficient accounting for the slightly inefficient PMT. Knowing the GC inefficiency allows us to scale the final cross section value by 203/196 to correct for this inefficiency.
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.9\linewidth]{GC_Eff.png}
+\includegraphics[width=1.1\linewidth]{GC_Eff.png}
 \end{center}
 \caption{
 {\bf{GC Efficiency.}} The left plot is $T_7$ with physics cuts and the right is $T_3$ + $T_7$ with physics cuts.}
 \label{fig:gc_eff}
 \end{figure}
+
+\subsection{Target Boiling}
+\label{ssec:boiling}
+
+As the electron beam passes through the gaseous $^3$He target it causes the target to heat considerably. In the ideal case the target would heat uniformly, but studies of the target boiling effect during E08-014 indicate that the target boiled preferentially based on the target's long axis, $Z_{react}$. Figure ~\ref{fig:boiling_effect} shows events detected along $Z_{react}$ for various beam currents. The two peaks at are the endcaps of the target. It is clear from this plot that the density of the gas across the cell is not constant otherwise the event rate would be approximately constant.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{Boiling_Effect.png}
+\end{center}
+\caption{
+{\bf{$^3$He Boiling Effect.}} Image from ~\cite{Thesis:Ye}}
+\label{fig:boiling_effect}
+\end{figure}
+
+Due to this unusual density profile our Monte Carlo results need to account for this boiling effect otherwise we will have a less accurate simulation of the elastic events. Figure ~\ref{fig:density_profile} shows the step function, blue line, chosen to approximate the target's measured boiling effect which is shown by the red dots. This was implemented by running the MC with one density and then running the MC again with a second density. These MC data runs were then joined by cutting on each dataset where the step in the density profile is located. The cross section results did not vary significantly when this split density profile was implemented. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D.  
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{Density_Profile.png}
+\end{center}
+\caption{
+{\bf{$^3$He Density Profile.}} }
+\label{fig:density_profile}
+\end{figure}
+
+\subsection{$^3$He Elastic Cross Section Monte Carlo}
+\label{ssec:simc}
+
+To extract the final $^3$He elastic cross section value for this analysis a physics simulation Monte Carlo program called SIMC was used. SIMC produces events randomly in a given energy, angle, and momentum acceptance range in the detector and then tracks these events back through the spectrometer to their reaction vertex in the target.
