@@ -246,8 +246,8 @@ As the electron beam passes through the gaseous $^3$He target it causes the targ
 \begin{center}
 \includegraphics[width=1.\linewidth]{Boiling_Effect.png}
 \end{center}
-\caption{
-{\bf{$^3$He Boiling Effect.}} Image from ~\cite{Thesis:Ye}}
+\caption[\bf{$^3$He Boiling Effect.}]{
+{\bf{$^3$He Boiling Effect.}} Image from ~\cite{Thesis:Ye}.}
 \label{fig:boiling_effect}
 \end{figure}
 
@@ -265,4 +265,22 @@ Due to this unusual density profile our Monte Carlo results need to account for 
 \subsection{$^3$He Elastic Cross Section Monte Carlo}
 \label{ssec:simc}
 
-To extract the final $^3$He elastic cross section value for this analysis a physics simulation Monte Carlo program called SIMC was used. SIMC produces events randomly in a given energy, angle, and momentum acceptance range in the detector and then tracks these events back through the spectrometer to their reaction vertex in the target.
+To extract the final $^3$He elastic cross section value for this analysis a physics simulation Monte Carlo program called SIMC was used. This program is primarily used by JLab's halls A and C to simulate electron scattering experiments. SIMC contains the geometry of the Hall A spectrometers including their various apertures and the materials that comprise them. SIMC uses an event generator to create the physics events resulting from electrons scattering from a given target. These events are transported through the spectrometer based on an optics matrix which allows for the transformation of detector coordinates to target coordinates. 
+
+SIMC requires numerous inputs before generating the initial events. The program must be given ranges in momentum, in-plane angle ($\phi$), out-of-plane angle ($\theta$), beam energy, and spectrometer angle. These acceptances are chosen to match the conditions of the real world Hall A experimental setup. SIMC then randomly and uniformly creates particles in the detector in the provided acceptance ranges. SIMC then calculates the energy of each electron produced and weights each event by the cross section and finally applies radiative corrections (see ~\ref{ssec:rc}) to that event. 
+
+SIMC then transforms these events back through the spectrometer to their reaction vertex in the target. Along the way it applies energy losses due to multiple scattering as well as ionization and Bremsstrahlung. The spectrometer magnets are modelled using the COSY INFINITY program ~\cite{cosy}. This program contains the various transformation matrices required to transport particles between the various coordinate systems and through the spectrometer. While being transported through the spectrometer SIMC checks to be sure that all recorded electrons do not strike the walls of the spectrometer or the non-sensitive elements of the detectors in the stack, and that the electrons pass through all apertures in the spectrometer. SIMC also applies a smearing function to the electrons' VDC positions to match the real world VDCs ~\cite{Thesis:Wang}. 
+
+\subsection{Radiative Corrections}
+\label{ssec:rc}
+
+In Chapter ~\ref{ch:elastic} we discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{Radiative_Corrections.png}
+\end{center}
+\caption[\bf{Born and Lowest Order Radiative Correction Diagrams}]{
+{\bf{Born and Lowest Order Radiative Correction Diagrams.}} Image from ~\cite{Thesis:Wang}.}
+\label{fig:rc}
+\end{figure}
