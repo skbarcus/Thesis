@@ -274,7 +274,9 @@ SIMC then transforms these events back through the spectrometer to their reactio
 \subsection{Radiative Corrections}
 \label{ssec:rc}
 
-In Chapter ~\ref{ch:elastic} we discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. 
+In Chapter ~\ref{ch:elastic} we discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. These diagrams can be categorized as external or internal radiative corrections. External corrections are characterized by interactions with other particles that are not the primary scattering source for the electron. These corrections come in the form of Bremsstrahlung radiation and ionization. Bremsstrahlung radiation is the radiation released as photons when electrons are slowed down by the Coulomb fields of particles in the materials the electron is passing through. 
+
+Internal corrections are characterized by the electron interacting with the primary scattering source via the exchange of real or virtual photons. Figure ~\ref{fig:rc} shows the additional first order diagrams for internal corrections along with the Born term diagram. Once more we can break these diagrams in to the two categories of elastic and inelastic corrections. The elastic corrections exchange only virtual photons shown in Figure ~\ref{fig:rc} b), c), and d). The inelastic corrections emit real photons as seen in e) ~\cite{Thesis:Wang}.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -284,3 +286,29 @@ In Chapter ~\ref{ch:elastic} we discussed the lowest order (Born term) Feynman d
 {\bf{Born and Lowest Order Radiative Correction Diagrams.}} Image from ~\cite{Thesis:Wang}.}
 \label{fig:rc}
 \end{figure}
+
+The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses the built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the Peaking approximation discussed in ~\cite{Article:RC2}. These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}.
+
+\begin{equation} \label{eq:rc}
+	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} \frac{\sigma^{Model}_{Rad}}{\sigma^{Model}_{Born}}
+\end{equation}
+
+\subsection{Aluminium Background Subtraction}
+\label{ssec:al}
+
+Many of the events detected by the experiment are derived from electrons scattering off of the Aluminium walls of the target cell. These are not events we want in our cross section measurement so steps are taken to subtract this background out of the sample. This is done by means of a `dummy' Al cell which is an empty Al cell. This dummy cell is placed in the beam and the electrons scattered from it are measured. Since the cell is empty the dummy shows how the Al background of the actual target cell will look. Finally after a few corrections the Al dummy cell data can be subtracted from the production data to give an Al background subtracted result which removes the Al contamination.
+
+The Al background must be scaled to account for the different amount of beam charge that the dummy data collected as compared to the production data. For this analysis the dummy cell result must be multiplied by 21.2708 to match the charge of the experimental runs. The dummy cell also had different thickness walls Al thicknesses as compared to the target cell. To compensate for the larger dummy Al thickness the dummy data was scaled by another 0.1979 times.
+
+Finally when subtracting the Al background found with the dummy cell from the $^3$He cell one must take into account the different radiative corrections due to the Al for the two cells due to the Al thickness differences. The Al dummy cell gives a radiative correction ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.823$ and the $^3$He target cell gives a ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.467$. Lastly, the Al dummy background is scaled by the ratio of the dummy radiative corrections, 1.823, to the target cell corrections, 1.467. The resultant scaled Al background is shown in red in Figure ~\ref{fig:al}. This red histogram is then subtracted from the blue histogram that represents the $^3$He production data that is still contaminated by Aluminium. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Al_Background.png}
+\end{center}
+\caption[\bf{Scaled Aluminium Background}]{
+{\bf{Scaled Aluminium Background.}} The red histogram shows the scaled Al background, and the blue histogram shows the $^3$He production data before the Al background is subtracted.}
+\label{fig:al}
+\end{figure}
+
+Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. 
