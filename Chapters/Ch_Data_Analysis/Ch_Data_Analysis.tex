@@ -262,6 +262,11 @@ Due to this unusual density profile our Monte Carlo results need to account for 
 \label{fig:density_profile}
 \end{figure}
 
+\subsection{Physics Cuts}
+\label{ssec:cuts}
+
+
+
 \subsection{$^3$He Elastic Cross Section Monte Carlo}
 \label{ssec:simc}
 
@@ -270,6 +275,35 @@ To extract the final $^3$He elastic cross section value for this analysis a phys
 SIMC requires numerous inputs before generating the initial events. The program must be given ranges in momentum, in-plane angle ($\phi$), out-of-plane angle ($\theta$), beam energy, and spectrometer angle. These acceptances are chosen to match the conditions of the real world Hall A experimental setup. SIMC then randomly and uniformly creates particles in the detector in the provided acceptance ranges. SIMC then calculates the energy of each electron produced and weights each event by the cross section and finally applies radiative corrections (see ~\ref{ssec:rc}) to that event. 
 
 SIMC then transforms these events back through the spectrometer to their reaction vertex in the target. Along the way it applies energy losses due to multiple scattering as well as ionization and Bremsstrahlung. The spectrometer magnets are modelled using the COSY INFINITY program ~\cite{cosy}. This program contains the various transformation matrices required to transport particles between the various coordinate systems and through the spectrometer. While being transported through the spectrometer SIMC checks to be sure that all recorded electrons do not strike the walls of the spectrometer or the non-sensitive elements of the detectors in the stack, and that the electrons pass through all apertures in the spectrometer. SIMC also applies a smearing function to the electrons' VDC positions to match the real world VDCs ~\cite{Thesis:Wang}. 
+
+Let us now compare the results of SIMC to the real experimental data. For all of these plots reasonable physics and acceptance cuts have been applied. Figure ~\ref{fig:simc_phi} shows the SIMC result for $\phi$ (in-plane angle) in red and the blue shows the experimental data. The agreement between SIMC and data seems to be fairly good, although the SIMC data may fall off a little more quickly. Figure ~\ref{fig:simc_theta} shows the SIMC result for $\theta$ (out-of-plane angle) in red and the blue shows the experimental data. Once again the agreement looks decent, but there seems to be some drop off in the SIMC data in the negative $\theta$ direction.  Figure ~\ref{fig:simc_dp} shows the SIMC result for dP in red and the blue shows the experimental data. Here we see the correct shape, but the SIMC data seems to be shifted a bit. This is probably the result of the optics calibration, and is a known issue with SIMC currently.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{SIMC_vs_Data_Phi.png}
+\end{center}
+\caption[\bf{SIMC $\phi$ vs. Experimental Data $\phi$}]{
+{\bf{SIMC $\phi$ vs. Experimental Data $\phi$.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+\label{fig:simc_phi}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{SIMC_vs_Data_Theta.png}
+\end{center}
+\caption[\bf{SIMC $\theta$ vs. Experimental Data $\theta$}]{
+{\bf{SIMC $\theta$ vs. Experimental Data $\theta$.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+\label{fig:simc_theta}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{SIMC_vs_Data_dP.png}
+\end{center}
+\caption[\bf{SIMC dP vs. Experimental Data dP}]{
+{\bf{SIMC dP vs. Experimental Data dP.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+\label{fig:simc_dp}
+\end{figure}
 
 \subsection{Radiative Corrections}
 \label{ssec:rc}
