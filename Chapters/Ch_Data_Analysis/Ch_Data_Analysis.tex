@@ -262,10 +262,69 @@ Due to this unusual density profile our Monte Carlo results need to account for 
 \label{fig:density_profile}
 \end{figure}
 
-\subsection{Physics Cuts}
+\subsection{Cuts}
 \label{ssec:cuts}
 
+Not all of the electrons we detect necessarily come from regions we are interested in studying. For example, any electrons that originated outside of the target or that have a momentum far away from the momentum setting of the spectrometer are not wanted in our electron sample. To ensure we are studying the electrons scattering from the target we impose a series of physics cuts for the spectrometer's acceptance as well as some of the kinematics. In Section ~\ref{ssec:pid} we already discussed a cut to remove the very small number of pions as well as the delta electrons from our sample. In this section will discuss some of the other major cuts we have imposed on the data which are summarized in Table ~\ref{tab:cuts}. 
 
+\begin{table}[!h]
+\centering
+\begin{tabular}{|r | l l|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{Cut Type} & \textbf{Minimum} & \textbf{Maximum}\\
+\hline
+Y Target & -0.03 m & 0.028 m\\ 
+$\theta$ & -0.049 rad & 0.042 rad\\ 
+$\phi$ & -0.03 rad & 0.03 rad\\ 
+dP & -0.02 & 0.03\\ 
+\hline
+\end{tabular}
+\caption{{\bf{Summary of Acceptance Cuts}} }
+\label{tab:cuts}
+\end{table}
+
+Each of these cuts was made using several techniques. Let us take the Y target ($Y_{tar}=sin\left(\theta_{HRS}\right)Z_{vertex}$) cut as our example. The first technique is a visual assessment of the range of data that we wish to accept. Figure ~\ref{fig:acceptance_y} shows the Y target plot of the experimental data, and the red region shows the range of data we chose to cut on. Notice the two peaks at either end of the data. These peaks are created by the Aluminium end caps and as such are not of interest in the this analysis so they were cut out. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Acceptance_Y.png}
+\end{center}
+\caption[\bf{Y Target Acceptance}]{
+{\bf{Y Target Acceptance.}} The red acceptance region runs from -0.03 m to 0.028 m.}
+\label{fig:acceptance_y}
+\end{figure}
+
+The second technique involves taking initially too wide cuts and continually making the cuts smaller until the cross section result remains stable. When cuts are too large they accept irrelevant electrons which will change the cross section, but once the cuts are strict enough to capture only good electrons the cross section remains stable. Cuts were made such that they accept the maximum number of electrons in the region where the cross section is stable independent of the cuts. The acceptance region chosen for Y target runs from -0.03 m to 0.028 m.
+
+Now let us look at the remaining cuts for $\theta$, $\phi$, and dP. Figure ~\ref{fig:acceptance_th} shows a plot of $\theta$ for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure ~\ref{fig:acceptance_ph} shows a plot of $\phi$ for experiment E08-014. This cut was also primarily made visually, but was also tested with the second method. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure ~\ref{fig:acceptance_dp} shows a plot of dP for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The dP cut runs from -0.02 to 0.03 where $dP = \frac{P-P_0}{P_0}$ and $P$ is the electron momentum and $P_0$ is the spectrometer's momentum setting.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Acceptance_Theta.png}
+\end{center}
+\caption[\bf{$\theta$ Acceptance}]{
+{\bf{$\theta$ Acceptance.}} The red acceptance region runs from -0.042 radians to 0.049 radians.}
+\label{fig:acceptance_th}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Acceptance_Phi.png}
+\end{center}
+\caption[\bf{$\phi$ Acceptance}]{
+{\bf{$\phi$ Acceptance.}} The red acceptance region runs from -0.03 radians to 0.03 radians.}
+\label{fig:acceptance_ph}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Acceptance_dP.png}
+\end{center}
+\caption[\bf{dP Acceptance}]{
+{\bf{dP Acceptance.}} The red acceptance region runs from -0.02 to 0.03.}
+\label{fig:acceptance_dp}
+\end{figure}
 
 \subsection{$^3$He Elastic Cross Section Monte Carlo}
 \label{ssec:simc}
@@ -346,3 +405,11 @@ Finally when subtracting the Al background found with the dummy cell from the $^
 \end{figure}
 
 Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. 
+
+\subsection{Electron Yields to Cross Sections}
+\label{ssec:yield}
+
+At this point we have made numerous cuts and corrections to our data with the goal of getting a clean electron sample scattered from the $^3$He target. Now we must use this data to obtain a cross section. We showed in Figure 
+
+\subsection{Error Approximation}
+\label{ssec:error}
