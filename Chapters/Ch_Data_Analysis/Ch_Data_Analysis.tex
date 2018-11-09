@@ -380,7 +380,9 @@ Internal corrections are characterized by the electron interacting with the prim
 \label{fig:rc}
 \end{figure}
 
-The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses the built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the Peaking approximation discussed in ~\cite{Article:RC2}. These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}.
+The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses the built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the Peaking approximation discussed in ~\cite{Article:RC2}. 
+
+These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}. Figure ~\ref{fig:simc_elastics} shows the $^3$He elastically scatter electron spectrum in $X_{Bj}$. The tail below the elastic peak is due to the radiative corrections, and demonstrates that the corrections are working as intended.
 
 \begin{equation} \label{eq:rc}
 	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} \frac{\sigma^{Model}_{Rad}}{\sigma^{Model}_{Born}}
@@ -429,7 +431,7 @@ Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribu
 	F_{combined} =e^{\left( P_0+P_1*x \right)} + P_2 e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
 \end{equation}
 
-Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the Aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{ssec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect.
+Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the Aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{ssec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -439,6 +441,45 @@ Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corr
 {\bf{Combined Fit of $X_{Bj}$ for E08-014.}} The histogram is the plot of all of the E08-014 $^3$He production runs containing elastic data after applying physics cuts, corrections, and the Aluminium background subtraction. The solid blue line is the combined fit of an exponential, for the quasielastic region, and a Gaussian, for the elastic region.}
 \label{fig:combined}
 \end{figure}
+
+The number of electrons under the Gaussian part of the combined fit is then the number of elastic electrons detected by the experiment prior to some corrections. After physics and acceptance cuts, but before live-time, GC efficiency, Trigger efficiency, and VDC efficiency corrections, experiment E08-014 detected ***565 electrons elastically scattered from $^3$He. Table ~\ref{tab:corrections} shows a summary of the correction values applied to the number of electrons detected. Multiplying the uncorrected yield by all of these corrections factors we find the experimental yield of $^3$He elastically scattered electrons to be ***627 electrons.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|r | l l|}
+\hline
+\textbf{Correction Type} & \textbf{Efficiency ($\%$)} & \textbf{Correction Factor}\\
+\hline
+Live-time & 95.27 & 1.050 \\ 
+GC Efficiency & 96.55 & 1.036 \\ 
+Trigger Efficiency & 98.858 & 1.0155 \\ 
+VDC Efficiency & 99.175 &  1.0083\\ 
+\hline
+\end{tabular}
+\caption{{\bf{Summary of Correction Factors}} }
+\label{tab:corrections}
+\end{table}
+
+Now we need to determine how this electron yield from the production data corresponds to a cross section value. To do this we will use the Monte Carlo simulation program SIMC discussed in ~/ref{ssec:simc}. SIMC has a built in model of the $^3$He cross section that has the correct shape of the form factors and cross section derived from older fits of the $^3$He world data ~\cite{Article:Amroun}. We use SIMC to simulate elastically scattered electron data off of $^3$He corresponding to the same energy, angle, charge, and acceptance cuts as our experiment. This purely elastic data is shown in Figure ~\ref{fig:simc_elastics}. The tail below the elastic peak is due to radiative corrections.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{SIMC_Elastics.png}
+\end{center}
+\caption[\bf{SIMC Elastically Scattered Electrons}]{
+{\bf{SIMC Elastically Scattered Electrons.}} These electrons were generated with the same kinematics, acceptances, and charge of experiment E08-014.}
+\label{fig:simc_elastics}
+\end{figure}
+
+The goal at this point is to use the same combined fit we used for the production data to fit the SIMC data for a direct comparison. Clearly, having the elastic events from SIMC is not yet enough to match our experimental data since the SIMC data has no quasielastic events which make up the bulk of our datasets. To make the SIMC data comparable to the production data we need to add in the equivalent quasielastic events. This was done by taking the same type exponential fit from Equation ~\ref{eq:exp} and fitting the quasielastic region below the elastic peak of the production data. This exponential fit was done in the region where SIMC predicts there to be fewer than ten elastic electrons so as to only fit quasielastic data. 
+
+A histogram was then binned to this fit of the quasielastic data. The new histogram representing only quasielastic data was then summed with the SIMC elastics only histogram in the region before and up to the $^3$He elastic peak. This new combined SIMC and quasielastic histogram is then of the same shape as the production data in the region of interest allowing it to be fit with Equation ~\ref{eq:combined}. The area under the Guassian portions of the combined fits is then directly proportional to the cross section values for SIMC and the production data. 
+
+While the shape of the form factors and cross section built into SIMC is correct the magnitude at Q$^2$ = 35 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fit match the electron yields of SIMC and the experimental data then match. This leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the real data. 
+
+Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and experimental data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastic plus fitted quasielastic histogram in ***. 
+
+As a test of the cross section value we find for the production data we can take that value and plug it into SIMC as the SIMC cross section value. Now running SIMC with the updated cross section value at our kinematics should produce electron yields equal to the experimental yields. This was tested and the electron yields were found to match.
 
 \subsection{Error Approximation}
 \label{ssec:error}
