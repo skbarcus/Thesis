@@ -404,12 +404,41 @@ Finally when subtracting the Al background found with the dummy cell from the $^
 \label{fig:al}
 \end{figure}
 
-Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. 
+Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. This can be seen in Figure ~\ref{fig:combined}.
 
 \subsection{Electron Yields to Cross Sections}
 \label{ssec:yield}
 
-At this point we have made numerous cuts and corrections to our data with the goal of getting a clean electron sample scattered from the $^3$He target. Now we must use this data to obtain a cross section. We showed in Figure 
+At this point we have made numerous cuts and corrections to our data with the goal of getting a clean electron sample scattered from the $^3$He target. Now we must use this data to obtain a cross section. We showed in Figure ~\ref{fig:elastic_xbj} in Section ~\ref{sec:x>2} that experiment E08-014 definitely captured elastically scattered electrons. We can determine how many electrons we detected after we apply all of the physics cuts and corrections to the $X_{Bj}$ plot the production runs.
+
+To find the number of elastically scattered electrons we need to be able to count how many electrons are in the elastic peak. To accomplish this we need a method to fit the data such that the area of the elastic peak can be measured. The $X_{Bj}$ plot can be broken down in to two areas, the quasielastic region and the elastic peak. We want to use one function to describe each region and then combine these two functions and fit the relevant region of $X_{Bj}$ with this combined fit. 
+
+Two functions immediately spring to mind as good candidates for the fit. Recall that the $X_{Bj}$ plot is logarithmic, and notice that the quasielastic region sloping down to the elastic peak appears roughly linear on this log plot. This indicates that an exponential function will likely yield reasonable fit results for the quasielastic region. As we are only interested in elastic electrons in the end we should only need to fit the plot in the region of the elastic peak. To fit the quasielastic region near the elastic peak a two parameter exponential function as in Equation ~\ref{eq:exp} was chosen with $P_0$ and $P_1$ being the free parameters.
+
+\begin{equation} \label{eq:exp}
+	F_{exp} = e^{\left( P_0+P_1*x \right)}
+\end{equation}
+
+Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribution may technically better describe the distribution of the electrons in the elastic peak a simple Gaussian describes the peak equally well. As such, Equation ~\ref{eq:gaus} was chosen to fit the elastic peak with free parameters $P_0$, $P_1$, and $P_2$. Finally by summing Equations ~\ref{eq:exp} and ~\ref{eq:gaus} we have a combined fit that can be used to fit the region of $X_{Bj}$ around the elastic peak. This combined fit is given in Equation ~\ref{eq:combined} with free parameters $P_0$ through $P_4$.
+
+\begin{equation} \label{eq:gaus}
+	F_{Gaus} = P_0 e^{\left( \frac{-1}{2} \left( \frac{x-P_1}{P_2} \right)^2 \right)}
+\end{equation}
+
+\begin{equation} \label{eq:combined}
+	F_{combined} =e^{\left( P_0+P_1*x \right)} + P_2 e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
+\end{equation}
+
+Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the Aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{ssec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Combined_Fit_Xbj.png}
+\end{center}
+\caption[\bf{Combined Fit of $X_{Bj}$ for E08-014}]{
+{\bf{Combined Fit of $X_{Bj}$ for E08-014.}} The histogram is the plot of all of the E08-014 $^3$He production runs containing elastic data after applying physics cuts, corrections, and the Aluminium background subtraction. The solid blue line is the combined fit of an exponential, for the quasielastic region, and a Gaussian, for the elastic region.}
+\label{fig:combined}
+\end{figure}
 
 \subsection{Error Approximation}
 \label{ssec:error}
