@@ -237,10 +237,10 @@ Before we find the GC efficiency let us first place some reasonable kinematic an
 \label{fig:gc_eff}
 \end{figure}
 
-\subsection{Target Boiling}
-\label{ssec:boiling}
+\subsection{Target Density}
+\label{ssec:density}
 
-As the electron beam passes through the gaseous $^3$He target it causes the target to heat considerably. In the ideal case the target would heat uniformly, but studies of the target boiling effect during E08-014 indicate that the target boiled preferentially based on the target's long axis, $Z_{react}$. Figure ~\ref{fig:boiling_effect} shows events detected along $Z_{react}$ for various beam currents. The two peaks at are the endcaps of the target. It is clear from this plot that the density of the gas across the cell is not constant otherwise the event rate would be approximately constant.
+As the electron beam passes through the gaseous $^3$He target it causes the target to heat considerably. In the ideal case the target would heat uniformly, but studies of the target boiling effect during E08-014 indicate that the target boiled preferentially based on the target's long axis, $Z_{react}$. Figure ~\ref{fig:boiling_effect} shows events detected along $Z_{react}$ for various beam currents. The two peaks at either end of the plot are the Aluminium endcaps of the target. It is clear from this plot that the density of the gas across the cell is not constant otherwise the event rate would be approximately constant. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -251,16 +251,54 @@ As the electron beam passes through the gaseous $^3$He target it causes the targ
 \label{fig:boiling_effect}
 \end{figure}
 
-Due to this unusual density profile our Monte Carlo results need to account for this boiling effect otherwise we will have a less accurate simulation of the elastic events. Figure ~\ref{fig:density_profile} shows the step function, blue line, chosen to approximate the target's measured boiling effect which is shown by the red dots. This was implemented by running the MC with one density and then running the MC again with a second density. These MC data runs were then joined by cutting on each dataset where the step in the density profile is located. The cross section results did not vary significantly when this split density profile was implemented. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D.  
+The target boiling effects were the result of using a significantly higher beam current than the $^3$He cells were designed to cool. (This higher current did provide the silver lining of helping to create enough elastic electrons for this analysis to be possible.) To better understand the density of the target when the beam was on Silviu Covrig created a computer simulation of the target and the experimental conditions. The computational fluid dynamics (CFD) simulation studied the behavior of $^4$He based on its density, specific heat, thermal conductivity, and viscosity. The simulation also factored in the conditions of the cell such as pressure and temperature which were measured during the experiment ~\cite{density}. The mechanics of the CFD simulation are best described in Covrig's own words, 
 
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.\linewidth]{Density_Profile.png}
-\end{center}
-\caption{
-{\bf{$^3$He Density Profile.}} }
-\label{fig:density_profile}
-\end{figure}
+\begin{quote}
+This method of calculation is called finite volume element, which means that the volume of the target cell is broken into smaller volumes, a process controlled by the size of the mesh. Fluid dynamics equations, transport equations or equations for any scalar/vector of interest are solved on these elements of volume or computational cells and predictions are made for the fields of temperature, velocity, density etc. in the whole volume of the geometry. At any given z-location along the beam line the raster area is, say, 9 mm 2 or 3 mm by 3 mm. If the mesh size was, say, 0.25 mm, then you could expect about 12x12 or 144 volumetric cells at that z-location. For each of these cells the program predicts the velocity of the fluid, its density, temperature etc. at the center of the cell. If you then make a 2D plot of density vs. beam line z-location, the program plots a vertical dotted line that represents the spread of density among the volumetric cells at that z-location. The spread in value is given by what happens at that z-locations over the area of the raster. The fluid may not have constant velocity in the raster area at that z-location, so heating from the beam will decrease more or less its density in volumetric cells that move slower or faster respectively ~\cite{density}."
+\end{quote}
+
+This target density study was performed on $^4$He so the results of the study need to be related to $^3$He. This can be done by using the isotopic nature of $^3$He and $^4$He as well as the ideal gas law. We can begin by using the relation between the fractional change in density between $^3$He and $^4$He as given in Equation ~\ref{eq:fractional_density}, where $d\rho_{\left(^3He\right)}$ ($d\rho_{\left(^4He\right)}$) is the fractional change in density for $^3$He ($^4$He), $A_3$ ($A_4$) is the number of nucleons for $^3$He ($^4$He), $P_3$ ($P_4$) is the pressure for $^3$He ($^4$He), and $I_3$ ($I_4$) is the beam current for $^3$He ($^4$He) ~\cite{density}. $d\rho$ is defined as $\frac{\rho-\rho_0}{\rho_0}$, where $\rho$ is the density with the beam on and $\rho_0$ is the density with the beam off ~\cite{density}. 
+
+\begin{equation} \label{eq:fractional_density}
+	d\rho_{\left(^3He\right)} = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} * d\rho_{\left(^4He\right)}
+\end{equation}
+
+Using the experimental and simulation values we can rewrite the product in Equation ~\ref{eq:fractional_density} as Equation ~\ref{eq:r1}.
+
+\begin{equation} \label{eq:r1}
+	R_1 = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} = \frac{4}{3}
+\end{equation}
+
+\noindent We can then use the ideal gas law to relate the densities of $^3$He and $^4$He without beam as in Equation ~\ref{eq:density}.
+
+\begin{equation} \label{eq:density}
+	\rho_{0\left(^3He\right)} = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} * \rho_{0\left(^4He\right)}
+\end{equation}
+
+\noindent Once again we can rewrite the product in Equation ~\ref{eq:density} using the experimental and simulation conditions as Equation ~\ref{eq:r2}.
+
+\begin{equation} \label{eq:r2}
+	R_2 = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} = 0.745
+\end{equation}
+
+Finally we can solve Equation ~\ref{eq:fractional_density} for $\rho_{\left(^3He\right)}$ by plugging in Equation ~\ref{eq:density}. This gives us the equation describing the $^3$He density with the beam on as shown in Equation ~\ref{eq:3he_density}.
+
+\begin{equation} \label{eq:3he_density}
+	\rho_{\left(^3He\right)} = R_1 * R_2 * \rho_{\left(^4He\right)} + \rho_{0\left(^3He\right)} * (1-R_2)
+\end{equation}
+
+\noindent We can then get the $^3$He density along the Z axis of the target from the $^4$He CFD simulation results. By integrating over Z we then have the average absolute density of the target. This density was found to be $0.013 \frac{g}{cm^3}$ $\pm 0.0004 \frac{g}{cm^3}$. For a more in depth discussion of this density extraction see ~\cite{density}.
+
+%Due to this unusual density profile our Monte Carlo results need to account for this boiling effect otherwise we will have a less accurate simulation of the elastic events. Figure ~\ref{fig:density_profile} shows the step function, blue line, chosen to approximate the target's measured boiling effect which is shown by the red dots. This was implemented by running the MC with one density and then running the MC again with a second density. These MC data runs were then joined by cutting on each dataset where the step in the density profile is located. The cross section results did not vary significantly when this split density profile was implemented. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D.  
+
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[width=1.\linewidth]{Density_Profile.png}
+%\end{center}
+%\caption{
+%{\bf{$^3$He Density Profile.}} }
+%\label{fig:density_profile}
+%\end{figure}
 
 \subsection{Cuts}
 \label{ssec:cuts}
