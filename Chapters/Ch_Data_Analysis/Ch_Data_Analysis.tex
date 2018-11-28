@@ -469,7 +469,7 @@ Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribu
 	F_{combined} =e^{\left( P_0+P_1*x \right)} + P_2 e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
 \end{equation}
 
-Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the Aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{ssec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
+Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the Aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the number of electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{ssec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -511,11 +511,29 @@ Now we need to determine how this electron yield from the production data corres
 
 The goal at this point is to use the same combined fit we used for the production data to fit the SIMC data for a direct comparison. Clearly, having the elastic events from SIMC is not yet enough to match our experimental data since the SIMC data has no quasielastic events which make up the bulk of our datasets. To make the SIMC data comparable to the production data we need to add in the equivalent quasielastic events. This was done by taking the same type exponential fit from Equation ~\ref{eq:exp} and fitting the quasielastic region below the elastic peak of the production data. This exponential fit was done in the region where SIMC predicts there to be fewer than ten elastic electrons so as to only fit quasielastic data. 
 
-A histogram was then binned to this fit of the quasielastic data. The new histogram representing only quasielastic data was then summed with the SIMC elastics only histogram in the region before and up to the $^3$He elastic peak. This new combined SIMC and quasielastic histogram is then of the same shape as the production data in the region of interest allowing it to be fit with Equation ~\ref{eq:combined}. The area under the Guassian portions of the combined fits is then directly proportional to the cross section values for SIMC and the production data. 
+A histogram was then binned to this fit of the quasielastic data and can be seen in ~\ref{fig:QE_background} as the black histogram. Note that the fit is allowed to extend slightly beyond the elastic peak for the purpose of obtaining a good total fit, but this extended region does not influence the number of electrons found in the elastic peak. The new histogram representing only quasielastic data was then summed with the SIMC elastics only histogram in the region before and up to the $^3$He elastic peak. This new combined SIMC and quasielastic histogram is then of the same shape as the production data in the region of interest allowing it to be fit with Equation ~\ref{eq:combined}. The area under the Guassian portions of the combined fits is then directly proportional to the cross section values for SIMC and the production data. 
 
-While the shape of the form factors and cross section built into SIMC is correct the magnitude at Q$^2$ = 35 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fit match the electron yields of SIMC and the experimental data then match. This leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the real data. 
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Quasielastic_Background.png}
+\end{center}
+\caption[\bf{Histogram Binned to Fit of Quasielastic Background}]{
+{\bf{Histogram Binned to Fit of Quasielastic Background.}} The black histogram is binned to the fit of the quasielastic background of $X_{Bj}$ without the elastic events. The blue histogram shows the production data including elastics with physics cuts for comparison.}
+\label{fig:QE_background}
+\end{figure}
 
-Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and experimental data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastic plus fitted quasielastic histogram in ***. 
+While the shape of the form factors and cross section built into SIMC is correct the magnitude at Q$^2 \approx$ 35 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fit match the electron yields of SIMC and the experimental data then match. This leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the real data. 
+
+Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and experimental data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastic plus fitted quasielastic histogram in red. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Peak_Matched_Xbj_Fits.png}
+\end{center}
+\caption[\bf{Elastic Peak Fits of $^{3}$He Production Runs and SIMC Elastics Summed with QE Background Fit}]{
+{\bf{Elastic Peak Fits of $^{3}$He Production Runs and SIMC Elastics Summed with QE Background Fit.}} The blue histogram shows the production data for E08-014 with physics cuts, and it's elastic peak is fit by the blue line. The red histogram is the sum of the SIMC elastics histogram ~\ref{fig:simc_elastics} and the histogram binned to the fit of the quasielastic background \ref{fig:QE_background}, and it's elastic peak is fit by the red line.}
+\label{fig:final_xs}
+\end{figure}
 
 As a test of the cross section value we find for the production data we can take that value and plug it into SIMC as the SIMC cross section value. Now running SIMC with the updated cross section value at our kinematics should produce electron yields equal to the experimental yields. This was tested and the electron yields were found to match.
 
