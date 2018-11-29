@@ -522,9 +522,9 @@ A histogram was then binned to this fit of the quasielastic data and can be seen
 \label{fig:QE_background}
 \end{figure}
 
-While the shape of the form factors and cross section built into SIMC is correct the magnitude at Q$^2 \approx$ 35 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fit match the electron yields of SIMC and the experimental data then match. This leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the real data. 
+While the shape of the form factors and cross section built into SIMC is correct the magnitude at Q$^2 \approx$ 34.2 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fit match the electron yields of SIMC and the experimental data then match meaning the cross sections are equivalent. This matching of the SIMC yield to the Production yield leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the real data. 
 
-Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and experimental data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastic plus fitted quasielastic histogram in red. 
+Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and experimental data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastics summed with the fitted quasielastic background histogram with its combined fit in red. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -535,7 +535,74 @@ Since the Gaussian areas of the combined fits and the cross sections are directl
 \label{fig:final_xs}
 \end{figure}
 
-As a test of the cross section value we find for the production data we can take that value and plug it into SIMC as the SIMC cross section value. Now running SIMC with the updated cross section value at our kinematics should produce electron yields equal to the experimental yields. This was tested and the electron yields were found to match.
+Table ~\ref{tab:peak_pars} lists the parameters of the total fits to the production data and yield matched SIMC data. The SIMC elastic peak is slightly wider than the production peak indicating that the smearing function in SIMC may be tuned too high. The slight offset between the two elastic peaks is likely due to a small offset in $Z_{target}$, however this should only minimally influence the area under the elastic peak and thus not significantly change the cross section. 
+
+For this analysis the scale factor needed to match the yields, $C_{SIMC}$, was found to be 1.01984. This means that the model cross section needed to be increased by 1.984$\%$ to match the experimental data. When this adjustment is made the model built into SIMC will then yield the cross section for elastic scattering off of $^3$He at our kinematics. This cross section is found to be 1.335 * 10$^{-10}$ fm$^2$/sr or 1.335 * 10$^{-6}$ $\mu$b/sr.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c | l l l l l|}
+\hline
+\makecell{\textbf{Combined Fit Par:}\\ \textbf{Individual Fit Par:}} & \makecell{\textbf{P$_0$}\\ \textbf{Exp. P$_0$}} & \makecell{\textbf{P$_1$}\\ \textbf{Exp. P$_1$}} & \makecell{\textbf{P$_2$}\\ \textbf{Gaus. P$_0$}} & \makecell{\textbf{P$_3$}\\ \textbf{Gaus. P$_1$}} & \makecell{\textbf{P$_4$}\\ \textbf{Gaus. P$_2$}}\\
+\hline
+Production Data: & 16.9593 & -4.38377 & 297.297 & 3.01946 & -0.0151706 \\ 
+\makecell{SIMC Elastics Plus\\ QE Background Fit}: & 16.3564 & -4.11888 & 282.465 & 3.04182 & -0.0177163 \\ 
+\hline
+\end{tabular}
+\caption{{\bf{Combined Exponential and Gaussian Fit Parameters}} }
+\label{tab:peak_pars}
+\end{table}
+
+As a test of the scale factor ($C_{SIMC}$) applied to the SIMC model cross section we can remake the SIMC elastic histogram with the SIMC model multiplied by $C_{SIMC}$. Once a new set of elastic events are generated we can rerun the yield matching code with the new Monte Carlo results. If our scale factor applied to the cross section is correct we would expect the yields of the production data and the new SIMC elastics summed with the QE background to exactly match without any scaling needed (i.e. $C_{SIMC}=1$). This test was performed and the electron yields were found to match with $C_{SIMC}=1$ as desired.
+
+\subsection{Bin Centering Corrections}
+\label{ssec:bin_cor}
+
+Now that we have found the magnitude of our $^3$He elastic cross section we must ask, ``Where should we place this data point in Q$^2$?" The immediately intuitive answer to this question is that we should place this point at the center of our bin in Q$^2$. However, this is not the correct place for our data point because the shape of the cross section across the range of our Q$^2$ bin is not linear.
+ 
+To find the correct location for our data point in Q$^2$ we will follow the procedure laid out in ~\cite{Article:data_placement}. To see the issue with placing our point at the center of our bin let us look at a plot of our cross section at 3.356 GeV seen in Figure ~\ref{fig:xs_bin}. Note that the specific form factors chosen for this cross section are chosen as a representative fit for the group of `good' sum of Gaussian fits discussed in Chapter ***~\ref{Ch:SOG}. A good fit here was determined by having a low $\chi^2$ value and more importantly the physical characteristics we would expect from a form factor. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative.png}
+\end{center}
+\caption[\bf{$^3$He Elastic Cross Section at 3.356 GeV}]{
+{\bf{$^3$He Elastic Cross Section at 3.356 GeV}} This cross section was produced using a representative sit from the sum of Gaussians fits discussed in Chapter ***~\ref{Ch:SOG}}
+\label{fig:xs_bin}
+\end{figure}
+
+We know our point should be located somewhere in the neighborhood of Q$^2 \approx$35 simply from the kinematics of the experiment. Looking around Q$^2 \approx$35 in Figure ~\ref{fig:xs_bin} the plot appears linear. However, the plot is in a log scale indicating that the actual shape is an exponential. To see the true shape of the cross section let us first define our bin in Q$^2$ and then zoom in while removing the log on the Y-axis. 
+
+To find our bin size in Q$^2$ we can use our cuts on the in plane angle $\phi$. Since we know the beam energy we can calculate Q$^2$ using Equations ~\ref{eq:Q^2} and ~\ref{eq:E'} knowing that $\phi$ is the analyzer variable for the arctangent of the deviation from the set spectrometer scattering angle. Table ~\ref{tab:bin} shows the size of our analysis bin in various units. Figure ~\ref{fig:xs_bin_zoom} shows the cross section in the region of the analysis bin with the log plot removed to show the true shape.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c | c c |}
+\hline
+\textbf{Variable} & \textbf{Bin Minimum} & \textbf{Bin Maximum}\\
+\hline
+Analyzer $\phi$ & -0.03 & 0.03\\ 
+\makecell{Deviation from \\ Spectrometer Angle} & -0.29991 & 0.29991\\
+Angle (Radians) & 0.3372 &  0.3972\\
+Angle (Degrees) & 19.32 & 22.75\\
+Q$^2$ (GeV$^2$) & 1.188 & 1.604\\
+Q$^2$ (fm$^{-2}$) & 30.55 & 41.24\\
+\hline
+\end{tabular}
+\caption{{\bf{Bin Width at 3.356 GeV and Spectrometer Setting of 21.04$^\circ$}} }
+\label{tab:bin}
+\end{table}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative_Zoom.png}
+\end{center}
+\caption[\bf{$^3$He Elastic Cross Section at 3.356 GeV Analysis Bin No Log}]{
+{\bf{$^3$He Elastic Cross Section at 3.356 GeV Analysis Bin No Log}} This plot shows the same cross section as Figure ~\ref{fig:xs_bin} except zoomed in on the analysis bin region with the log on the Y-axis removed. The two vertical black lines represent the minimum and maximum Q$^2$ of the analysis bin.}
+\label{fig:xs_bin_zoom}
+\end{figure}
+
+Figure ~\ref{fig:xs_bin_zoom} makes it clear that the cross section across our bin is not linear and thus taking the average of the bin to set our cross section's Q$^2$ value is incorrect. Instead we must account for the fact that the shape of the cross section biases our data towards lower Q$^2$. This can be done by taking a weighted average of the Q$^2$ values in our bin where the weights are the cross section values at each Q$^2$. Performing this calculation we find that the weight average Q$^2$ for our analysis bin is 34.19 fm$^{-2}$. This is a significant deviation from the bin center of 35.90 fm$^{-2}$. We now see that as expected the shape of the cross section requires us to place our data point at a lower Q$^2$ than the bin center.
 
 \subsection{Error Approximation}
 \label{ssec:error}
