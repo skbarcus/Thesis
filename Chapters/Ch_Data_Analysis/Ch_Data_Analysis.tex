@@ -325,18 +325,18 @@ dP & -0.02 & 0.03\\
 \label{tab:cuts}
 \end{table}
 
-Each of these cuts was made using several techniques. Let us take the Y target ($Y_{tar}=sin\left(\theta_{HRS}\right)Z_{vertex}$) cut as our example. The first technique is a visual assessment of the range of data that we wish to accept. Figure ~\ref{fig:acceptance_y} shows the Y target plot of the experimental data, and the red region shows the range of data we chose to cut on. Notice the two peaks at either end of the data. These peaks are created by the aluminium end caps and as such are not of interest in the this analysis so they were cut out. 
+Each of these cuts was made using several techniques. Let us take the Y target ($Y_{tar}=sin\left(\theta_{HRS}\right)Z_{vertex}$) cut as our example. The first technique is a visual assessment of the range of data that we wish to accept. Figure ~\ref{fig:acceptance_y} shows the Y$_{target}$ plot of the experimental data, and the red region shows the range of data we chose to cut on. Notice the two peaks at either end of the data. These peaks are created by the aluminium end caps and as such are not of interest in the this analysis so they were cut out. 
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Acceptance_Y.png}
 \end{center}
-\caption[\bf{Y Target Acceptance}]{
-{\bf{Y Target Acceptance.}} The red acceptance region runs from -0.03 m to 0.028 m.}
+\caption[\bf{Y$_{target}$ Acceptance}]{
+{\bf{Y$_{target}$ Acceptance.}} The red acceptance region runs from -0.03 m to 0.028 m.}
 \label{fig:acceptance_y}
 \end{figure}
 
-The second technique involves taking initially too wide cuts and continually making the cuts smaller until the cross section result remains stable. When cuts are too large they accept irrelevant electrons which will change the cross section, but once the cuts are strict enough to capture only good electrons the cross section remains stable. Cuts were made such that they accept the maximum number of electrons in the region where the cross section is stable independent of the cuts. The acceptance region chosen for Y target runs from -0.03 m to 0.028 m.
+The second technique involves taking initially too wide cuts and continually making the cuts smaller until the cross section result remains stable. When cuts are too large they accept irrelevant electrons which will change the cross section, but once the cuts are strict enough to capture only good electrons the cross section remains stable. Cuts were made such that they accept the maximum number of electrons in the region where the cross section is stable independent of the cuts. The acceptance region chosen for Y$_{target}$ runs from -0.03 m to 0.028 m.
 
 Now let us look at the remaining cuts for $\theta$, $\phi$, and dP. Figure ~\ref{fig:acceptance_th} shows a plot of $\theta$ for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure ~\ref{fig:acceptance_ph} shows a plot of $\phi$ for experiment E08-014. This cut was also primarily made visually, but was also tested with the second method. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure ~\ref{fig:acceptance_dp} shows a plot of dP for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The dP cut runs from -0.02 to 0.03 where $dP = \frac{P-P_0}{P_0}$ and $P$ is the electron momentum and $P_0$ is the spectrometer's momentum setting.
 
@@ -538,7 +538,7 @@ Since the Gaussian areas of the combined fits and the cross sections are directl
 \label{fig:final_xs}
 \end{figure}
 
-Table ~\ref{tab:peak_pars} lists the parameters of the total fits to the production data and yield matched SIMC data. The SIMC elastic peak is slightly wider than the production peak indicating that the smearing function in SIMC may be tuned too high. The slight offset between the two elastic peaks is likely due to a small offset in $Z_{target}$, however this should only minimally influence the area under the elastic peak and thus not significantly change the cross section. 
+Table ~\ref{tab:peak_pars} lists the parameters of the total fits to the production data and yield matched SIMC data. The SIMC elastic peak is slightly wider than the production peak indicating that the smearing function in SIMC may be tuned too high. The slight offset between the two elastic peaks is likely due to a small offset in Z$_{target}$, however this should only minimally influence the area under the elastic peak and thus not significantly change the cross section. 
 
 For this analysis the scale factor needed to match the yields, $C_{SIMC}$, was found to be 1.01984. This means that the model cross section needed to be increased by 1.984$\%$ to match the experimental data. When this adjustment is made the model built into SIMC will then yield the cross section for elastic scattering off of $^3$He at our kinematics. This cross section is found to be 1.335 * 10$^{-10}$ fm$^2$/sr or 1.335 * 10$^{-6}$ $\mu$b/sr.
 
@@ -614,6 +614,42 @@ Thus far we have found the magnitude of the $^3$He elastic cross section as well
 
 Systematic uncertainty describes uncertainty introduced from measuring instruments or incorrectly calibrated simulation tools or models. Systematic errors are reproducible and generally in the same direction so taking more measurements will not significantly reduce them. This section will go into detail on how each source of uncertainty was quantified. Table ~\ref{tab:uncertainty} contains a summary of the experimental uncertainties on the $^3$He elastic cross section that are described in detail below.
 
+\begin{table}[!h]
+\centering
+\begin{tabular}{|l | r |}
+\hline
+\textbf{Uncertainty Source} & \makecell{\textbf{Cross Section}\\ \textbf{Uncertainty}} \\
+\hline
+\textbf{Statistical Sources} &  \\ 
+\hline
+Electron Yield & 4.21$\%$\\
+Al Background Subtraction & 1.1$\%$\\
+\textbf{Total Statistical} &  4.36$\%$\\
+\hline
+\textbf{Systematic Sources} &  \\
+\hline
+Target Density & 3.08$\%$\\
+Optics Calibration & 2.248$\%$\\
+GC Efficiency & 1.32$\%$\\
+Beam/Target Offsets & 1.1$\%$\\
+Radiative Corrections & 1$\%$\\
+Beam Charge & 1$\%$\\
+VDC Single-Track Efficiency & 1$\%$\\
+Trigger Efficiency & 1$\%$\\
+Beam Energy & 0.72$\%$\\
+SIMC Model Comparison to Reality & 0.5$\%$\\
+Y$_{target}$ Position & 0.1$\%$\\
+PR Cut & 0.055$\%$\\ 
+Live-time & 0.01145$\%$\\
+\textbf{Total Systematic} &  4.72$\%$\\
+\hline
+\makecell{\textbf{Total Uncertainty}\\ \textbf{Statistical $\&$ Systematic}} &  6.42$\%$\\
+\hline
+\end{tabular}
+\caption{{\bf{Table of Uncertainties}} }
+\label{tab:uncertainty}
+\end{table}
+
 First let us examine our statistical uncertainties. Our primary source of statistical uncertainty is derived from our yield of elastic electrons. As discussed in Section ~\ref{ssec:yield} experiment E08-014 had a yield of 565 electrons elastically scattered off of $^3$He. The uncertainty on this value is described by Equation ~\ref{eq:uncertainty}, where $N_e$ is the number of elastically scattered electrons. The uncertainty in the number of electrons is directly proportional to the cross section. Thus the statistical uncertainty on the cross section due to the electron yield is 4.21$\%$.
 
 \begin{equation} \label{eq:uncertainty}
@@ -622,7 +658,7 @@ First let us examine our statistical uncertainties. Our primary source of statis
 
 The other source of statistical error comes from the aluminium background subtraction discussed in Section ~\ref{ssec:al}. By subtracting out the Al contamination in the region of the elastic peak we have necessarily introduced another opportunity for uncertainty to creep into our measurement. In the region of the elastic peak, defined as $2.95<X_{Bj}<3.10$, there were 1093 events prior to the Al background subtraction. In this same region there were 34 Al events. We can once again use Equation ~\ref{eq:uncertainty} to estimate the uncertainty on the Al events. We find that these 34 events have an uncertainty of 17$\%$ or $\pm$6 electrons. 
 
-This is a high uncertainty on a small number so to have a conservative estimate I have doubled the $\pm$6 electrons to $\pm$12 electrons. Thus when the Al background is subtracted from the $^3$He production data we have either 1071 (1093-34+12) electrons remaining or 1047 (1093-34-12) electrons remaining. Thus our uncertainty is the mean number of electrons remaining $\pm$12 electrons. This gives 1059 $\pm$12 electrons yielding an uncertainty of 1.133$\%$. Note that this uncertainty is categorized as statistical in nature. It could be reasonably argued to be systematic, but as taking more production data would lower this uncertainty it has been categorized as statistical.
+This is a high uncertainty on a small number so to have a conservative estimate I have doubled the $\pm$6 electrons to $\pm$12 electrons. Thus when the Al background is subtracted from the $^3$He production data we have either 1071 (1093-34+12) electrons remaining or 1047 (1093-34-12) electrons remaining. Thus our uncertainty is the mean number of electrons remaining $\pm$12 electrons. This gives 1059 $\pm$12 electrons yielding an uncertainty of 1.1$\%$. Note that this uncertainty is categorized as statistical in nature. It could be reasonably argued to be systematic, but as taking more production data would lower this uncertainty it has been categorized as statistical.
 
 Next we will account for the systematic uncertainties on our cross section result. The largest source of systematic uncertainty comes from the density of the gaseous $^3$He in the target cell. This issue was discussed in Section ~\ref{ssec:density}. The density study performed in ~\cite{density} lists the uncertainty on the  $^3$He density as 3.08$\%$ which will apply directly to the cross section as the cell density is directly proportional to the cross section.
 
@@ -665,7 +701,7 @@ This is almost sufficient to estimate the optics calibration uncertainty. Howeve
 
 This optics run contained 11 carbon foils evenly space in Y$_{target}$. By finding how many holes each foil had significant data in the Monte Carlo could be configured to match the solid angle acceptance for each of the 11 slices of Y$_{target}$. The Monte Carlo was then run one million times for each of these solid angles and the results of the two $\sigma$ area uncertainties were added in quadrature to find the total solid angle uncertainty. This overall two $\sigma$ uncertainty was found to be 2.248$\%$.
 
-The next largest systematic uncertainty comes from the GC efficiency given by Equation ~\ref{eq:gc_eff} discussed in Section ~\ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation ~\ref{eq:gc_uncertainty} from ~\cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, $T_3$ is the number of events measured by the main trigger, and $T_7$ is the number of events measured by the coincidence trigger. Inserting the relevant values yields an uncertainty on the cross section of 1.320$\%$.
+The next largest systematic uncertainty comes from the GC efficiency given by Equation ~\ref{eq:gc_eff} discussed in Section ~\ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation ~\ref{eq:gc_uncertainty} from ~\cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, $T_3$ is the number of events measured by the main trigger, and $T_7$ is the number of events measured by the coincidence trigger. Inserting the relevant values yields an uncertainty on the cross section of 1.32$\%$.
 
 \begin{equation} \label{eq:gc_uncertainty}
 	\delta_{GC} = \epsilon_{GC} * \frac{\sqrt{T_7-(T_7+T_3)}}{T_7}
@@ -679,5 +715,13 @@ The next largest systematic uncertainty comes from the uncertainty in the beam e
 
 The cross section model in SIMC also introduces some uncertainty to our cross section. This uncertainty has been previously studied in detail and been found to contribute approximately 0.5$\%$ uncertainty to the cross section ~\cite{Thesis:Nguyen}. Note that binning the cross section in X$_{Bj}$ gives less of a change in cross section over the bin than if the data had been binned in E'. This helps to reduce the uncertainty on the cross section from the SIMC model.
 
+The remaining systematic uncertainties are fairly small. Some uncertainty is introduced from the Y$_{target}$ positioning. One can never do better than finding the location of a single optics foil when calibrating Y$_{target}$. These foils can be found with approximately 0.2 mm accuracy. For our 20 cm target this gives an uncertainty of 0.1$\%$ on the Y$_{target}$ position. We will conservatively say that this can introduce up to 0.1$\%$ uncertainty to the final cross section. 
 
+There is also a degree of uncertainty introduced by the pion rejector cut applied to the data. The `good electron' region of the GC spectrum where the events are almost certainly electrons is defined as ADC channels 300-500. In this region there were 51439 events. Applying the PR cut removes 777 of these events from the sample. Using equation ~\ref{eq:uncertainty} the uncertainty on these 777 events is found to be $\pm$28 events. The maximum events remaining after the PR cut is then 50690 (51439-777+28) and the minimum number is 50634 (51439-777-28). The average number of events remaining after the PR cut is then 50662$\pm$28 which gives an uncertainty to the final cross section of only 0.055$\%$.
+
+The final source of measurable uncertainty comes from the live-time calculation discussed in Section ~\ref{ssec:dead-time}. The uncertainty on the live-time can be calculated as in Equation ~\ref{eq:lt_uncertainty}, where $\epsilon_{LT}$ is the live-time for the experiment, $T_{3_{Scaler}}$ is the scaler number of main triggers ($T_3$), and $T_{3_{File}}$ is the electronics output number of main triggers detected. Once more this value directly impacts the cross section. Inserting the relevant values the uncertainty on the cross section due to the live-time uncertainty is found to be 0.01145$\%$.
+
+\begin{equation} \label{eq:lt_uncertainty}
+	\delta_{LT} = \epsilon_{LT} * \frac{\sqrt{T_{3_{Scaler}}-T_{3_{File}}}}{T_{3_{Scaler}}}
+\end{equation}
 
