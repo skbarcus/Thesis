@@ -34,6 +34,10 @@
 
 %Import graphics package
 \usepackage{graphicx}
+%Allow for rotating boxes. (Let's me rotate my world data table.)
+\usepackage[graphicx]{realboxes}
+\usepackage{booktabs,rotating}
+
 
 %Fix spacing issues in text
 \usepackage{microtype}
@@ -89,3 +93,10 @@
 
 %Allows for the making of cells in tables.
 \usepackage{makecell}
+
+%Allows for the use of landscape oriented pages.
+\usepackage{longtable}
+
+%Allows for the use of long tables.
+\usepackage{multirow,bigstrut}
+\usepackage{pdflscape} % for 'landscape' environment. Use \usepackage{lscape} for nonrotated pages in the PDF and \usepackage{pdflscape} for rotated pages in the PDF.
