@@ -8,13 +8,14 @@ This chapter will discuss the world data for elastic $^3$H and $^3$He cross sect
 
 The world data for elastic $^3$H and $^3$He cross sections spans across numerous decades, laboratories, and continents. Due to the expansiveness of the data set there are many inconsistent methodologies employed in the different datasets collected. Efforts were taken to make these comparisons as consistent as possible, however it was often impossible with the exiting literature to be certain which techniques were used. There are also differences in modifications such as radiative correction calculations and Dirac wave Born approximations (DWBA) that would be extremely time consuming to force all data sets into complete methodological agreement. As such some of the datasets fit together are not guaranteed to be completely apples-to-apples comparisons, however the methodological differences result in very minor changes to the final cross sections, and thus do not significantly impact the efficacy of the new global fits.
 
-Table ~\ref{tab:world_data} lists the literature comprising the current world data of $^3$H and $^3$He elastic cross sections compiled for this analysis. The table is organized chronologically from oldest dataset to most recent.
+Table ~\ref{tab:world_data} lists the literature comprising the current world data of $^3$H and $^3$He elastic cross sections compiled for this analysis. The table is organized chronologically from oldest dataset to most recent. The table lists the title of each publication, the first author listed on each publication, the journal the publication appeared in, and the location of the measurement with the year it was published. The table also contains physics data on each experiment. This physics data includes the target type, the rough Q$^2$ range covered by the experiment, whether the paper lists cross sections explicitly, whether the paper lists form factors explicitly, if the paper applied a phase shift correction to account for the plane wave approximation, and finally a brief note on the radiative corrections each paper used. Whenever a table entry wasn't listed or was unclear a ? was used.
  
 
 %\begingroup
 %\begin{sideways}
 \begin{landscape}
 \pagestyle{empty}
+\small
 % Text layout
 \topmargin 2.75cm
 \oddsidemargin 0.5cm
@@ -22,7 +23,7 @@ Table ~\ref{tab:world_data} lists the literature comprising the current world da
 \textwidth 16cm 
 \textheight 21cm
 \hoffset 1.cm
-\voffset -1.cm
+\voffset -1.5cm
 
 %\Rotatebox{90}{
 %\thispagestyle{empty}
@@ -31,27 +32,27 @@ Table ~\ref{tab:world_data} lists the literature comprising the current world da
 %\begin{tabular}%{l c c c c c c c c c c c}
 \hline
 \hline
-\textbf{Title} & \textbf{Authors} & \textbf{Journal} & \thead{Date/\\Location} & \textbf{Target} & \thead{$Q^2$ Range \\ ($fm^{-2}$)} & \thead{Cross \\ Sections} & \thead{Form \\ Factors} & \thead{Phase \\ Shift} & \thead{Radiative \\ Corrections} \\
+\textbf{Title} & \textbf{Authors} & \textbf{Journal} & \textbf{\thead{Date/\\Location}} & \textbf{Target} & \textbf{\thead{Q$^2$ Range \\ (fm$^{-2}$)}} & \textbf{\thead{Cross \\ Sections}} & \textbf{\thead{Form \\ Factors}} & \textbf{\thead{Phase \\ Shift}} & \textbf{\thead{Radiative \\ Corrections}} \\
 \hline
 
-\thead{$^3$H and $^3$He \\ Electromagnetic \\ Form Factors} & \makecell{Amroun,\\ Sick} & \makecell{Nuc. Phys. A579 \\ 596-626} & \makecell{1994\\Saclay} & $^3$He & 2-48 & Yes & Yes & Yes & \makecell{Mo/Tsai, Schwinger \\ and bremsstrahlung +\\ Landau Straggling} \\
+\thead{$^3$H and $^3$He \\ Electromagnetic \\ Form Factors} & \makecell{Amroun} & \makecell{Nuc. Phys. A579 \\ 596-626 \cite{Article:Amroun}} & \makecell{1994*\\Saclay} & $^3$He & 2-48 & Yes & Yes & Yes & \makecell{Mo/Tsai, Schwinger \\ and bremsstrahlung +\\ Landau Straggling} \\
 
-\thead{$^3$H and $^3$He \\ Electromagnetic \\ Form Factors} & \makecell{Amroun,\\ Sick} & \makecell{Nuc. Phys. A579 \\ 596-626} & \makecell{1994\\Saclay} & $^3$H & 1-47 & Yes & Yes & Yes & \makecell{Mo/Tsai, Schwinger \\ and bremsstrahlung +\\ Landau Straggling} \\
+\thead{$^3$H and $^3$He \\ Electromagnetic \\ Form Factors} & \makecell{Amroun} & \makecell{Nuc. Phys. A579 \\ 596-626 \cite{Article:Amroun}} & \makecell{1994*\\Saclay} & $^3$H & 1-47 & Yes & Yes & Yes & \makecell{Mo/Tsai, Schwinger \\ and bremsstrahlung +\\ Landau Straggling} \\
 
-\thead{Elastic Electron \\ Scattering from \\Tritium and Helium-3} & \makecell{Collard,\\ Hofstadter} & \makecell{Phys. Rev. Vol.\\ 138, No. 1B} & \makecell{1965\\SLAC?} & $^3$He & 1-8 & Yes & Yes & ? & Tsai \\
+\thead{Elastic Electron \\ Scattering from \\Tritium and Helium-3} & \makecell{Collard} & \makecell{Phys. Rev. Vol.\\ 138, No. 1B \cite{Article:Collard}} & \makecell{1965*\\SLAC} & $^3$He & 1-8 & Yes & Yes & ? & Tsai \\
 
-\thead{Elastic Electron \\ Scattering from \\Tritium and Helium-3} & \makecell{Collard,\\ Hofstadter} & \makecell{Phys. Rev. Vol.\\ 138, No. 1B} & \makecell{1965\\SLAC?} & $^3$H & 1-8 & Yes & Yes & ? & Tsai \\
+\thead{Elastic Electron \\ Scattering from \\Tritium and Helium-3} & \makecell{Collard} & \makecell{Phys. Rev. Vol.\\ 138, No. 1B \cite{Article:Collard}} & \makecell{1965*\\SLAC} & $^3$H & 1-8 & Yes & Yes & ? & Tsai \\
 
-\thead{Electromagnetic \\Structure of the \\Helium Isotopes} & \makecell{McCarthy,\\ Sick,\\ Whitney} & \makecell{Phys. Rev. C\\ Vol. 15, No. 4,\\1396-1414} & \makecell{1977\\ Stanford HEPL} & $^3$He & 0.3-20 & No & Yes & \makecell{FFs are\\ experimental\\ I believe} & Mo/Tsai \\
+\thead{Electromagnetic \\Structure of the \\Helium Isotopes} & \makecell{McCarthy} & \makecell{Phys. Rev. C\\ Vol. 15, No. 4,\\1396-1414 \cite{Article:McCarthy}} & \makecell{1977\\ Stanford HEPL} & $^3$He & 0.3-20 & No & Yes & \makecell{Yes} & Mo/Tsai \\
 
-\thead{Elastic Scattering\\ from $^3$He and $^4$He at\\ High Momentum Transfer} & \makecell{Arnold,\\ Day,\\ Sick} & \makecell{Phys. Rev. Letters\\ Vol. 40, No. 22} & \makecell{1978\\SLAC} & $^3$He & 18-103 & No & \makecell{Yes \\($A^{1/2}$)} & \makecell{FFs are\\ experimental} & \makecell{No Mention\\ (?)} \\
+\thead{Elastic Scattering\\ from $^3$He and $^4$He at\\ High Momentum Transfer} & \makecell{Arnold,\\ Day,\\ Sick} & \makecell{Phys. Rev. Letters\\ Vol. 40, No. 22} & \makecell{1978*\\SLAC} & $^3$He & 18-103 & No & \makecell{Yes \\($A^{1/2}$)} & \makecell{FFs are\\ experimental} & \makecell{No Mention\\ (?)} \\
 
-\thead{Low-Momentum-Transfer\\ Elastic Electron\\ Scattering from $^3$He} & \makecell{Szalata,\\Lightbody} & \makecell{Phys. Rev. C\\ Vol. 15, No. 4,\\1200-1203} & \makecell{1977\\National Bureau\\ of Standards} & $^3$He & 0.03-0.33 & \makecell{Yes\\$^3$He/$^{12}$C\\Exp.} & \makecell{Yes \\($F_{ch}^2$)\\Divided\\ by Mott} & \makecell{Only for\\FFs} & \makecell{Yes\\ `In the\\Standard\\Fashion'}\\
+\thead{Low-Momentum-Transfer\\ Elastic Electron\\ Scattering from $^3$He} & \makecell{Szalata,\\Lightbody} & \makecell{Phys. Rev. C\\ Vol. 15, No. 4,\\1200-1203} & \makecell{1977*\\National Bureau\\ of Standards} & $^3$He & 0.03-0.33 & \makecell{Yes\\$^3$He/$^{12}$C\\Exp.} & \makecell{Yes \\($F_{ch}^2$)\\Divided\\ by Mott} & \makecell{Only for\\FFs} & \makecell{Yes\\ `In the\\Standard\\Fashion'}\\
 
 \thead{Elastic Electron\\ Scattering from\\ $^3$He and $^4$He} & \makecell{Otterman} & \makecell{Nuclear\\ Physics A436\\ 688-698} & \makecell{1985\\Mainz} & $^3$He & 0.2-3.7 & \makecell{No} & \makecell{Yes} & \makecell{Yes for\\ FFs HADES} & \makecell{Mo/Tsai} \\
 
 
-\thead{$^3$He Magnetic\\ Form Factor} & \makecell{Dunn,\\ Goloskie} & \makecell{Phys. Rev. C\\ Vol. 27, No. 1,\\71-82} & \makecell{1983\\Bates} & $^3$He & 0.08-11 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes for\\ FFs} & \makecell{Bergstrom +\\ Mo/Tsai} \\
+\thead{$^3$He Magnetic\\ Form Factor} & \makecell{Dunn,\\ Goloskie} & \makecell{Phys. Rev. C\\ Vol. 27, No. 1,\\71-82} & \makecell{1983*\\Bates} & $^3$He & 0.08-11 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes for\\ FFs} & \makecell{Bergstrom +\\ Mo/Tsai} \\
 
 \thead{Magnetic Form\\ Factor of $^3$He} & \makecell{Cavedon,\\ Sick,\\ Cardman} & \makecell{Phys. Rev. Letters\\ Vol. 49, No. 14,\\986-989} & \makecell{1982\\Saclay} & $^3$He & 7-32 & \makecell{No \\(In Amroun\\ 1994)} & \makecell{Yes\\ (Exp. $F_M^2$\\ only)} & \makecell{Yes\\ (McCarthy\\ 1977)} & \makecell{Mo/Tsai, Schwinger \\ and bremsstrahlung +\\ Landau Straggling} \\
 
@@ -59,17 +60,17 @@ Table ~\ref{tab:world_data} lists the literature comprising the current world da
 
 \thead{Isoscalar and Isovector\\ Form Factors of\\ $^3$H and $^3$He for\\ Q below 2.9 fm$^{-1}$ from\\ Electron-Scattering\\ Measurements} & \makecell{Beck} & \makecell{Phys. Rev. Letters\\ Vol. 59, No. 14,\\1537-1540} & \makecell{1987\\Bates} & \makecell{$^3$H/\\$^3$He} & 0.03-9 & \makecell{No} & \makecell{Yes\\ (Iso)} & \makecell{Yes} & \makecell{Mo/Tsai} \\
 
-\thead{Isospin Separation\\ of Three-Nucleon\\ Form Factors} & \makecell{Amroun} & \makecell{Phys. Rev. Letters\\ Vol. 69, No. 2,\\ 253-256} & \makecell{1992\\Saclay} & \makecell{$^3$He} & 2.6-37 & \makecell{No\\(See 1994)} & \makecell{No} & \makecell{Yes (XS\\ Corrected)} & \makecell{`Standard'} \\
+\thead{Isospin Separation\\ of Three-Nucleon\\ Form Factors} & \makecell{Amroun} & \makecell{Phys. Rev. Letters\\ Vol. 69, No. 2,\\ 253-256} & \makecell{1992*\\Saclay} & \makecell{$^3$He} & 2.6-37 & \makecell{No\\(See 1994)} & \makecell{No} & \makecell{Yes (XS\\ Corrected)} & \makecell{`Standard'} \\
 
 \thead{Elastic Electron\\ Scattering from\\ $^3$He at High\\ Momentum Transfer} & \makecell{Bernheim,\\ Stovall} & \makecell{Lettere Al\\ Nuovo Cimento\\ Vol. 5, No. 5,\\ 431-434} & \makecell{1972\\Orsay} & \makecell{$^3$He} & 9-16 & \makecell{No} & \makecell{Yes} & \makecell{No\\ Mention} & \makecell{`Usual'} \\
 
-\thead{JLab Measurements\\ of the $^3$He\\ Form Factors at Large\\ Momentum Transfers} & \makecell{Camsonne} & \makecell{arXiv:\\1610.07456} & \makecell{2016\\ JLab} & \makecell{$^3$He} & 25-61 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes\\ $q_{eff}$} & \makecell{Yes} \\
+\thead{JLab Measurements\\ of the $^3$He*\\ Form Factors at Large\\ Momentum Transfers} & \makecell{Camsonne} & \makecell{Phys. Rev. Letters\\ Vol. 119, No. 162501\\1-6 \cite{Article:Alex}} & \makecell{2016*\\ JLab} & \makecell{$^3$He} & 25-61 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes\\ $q_{eff}$} & \makecell{Yes} \\
 
-\thead{Tritium Form\\ factors at\\ Low q} & \makecell{Beck,\\ Lightbody} & \makecell{Phys. Rev. C\\ Vol. 30, No. 5,\\1403-1408} & \makecell{1984\\ NBS\\ MIT} & \makecell{$^3$H} & 0.05-3 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes\\ $q_{eff}$} & \makecell{Mo/Tsai} \\
+\thead{Tritium Form\\ factors at\\ Low q} & \makecell{Beck,\\ Lightbody} & \makecell{Phys. Rev. C\\ Vol. 30, No. 5,\\1403-1408} & \makecell{1984*\\ NBS\\ MIT} & \makecell{$^3$H} & 0.05-3 & \makecell{Yes} & \makecell{Yes} & \makecell{Yes\\ $q_{eff}$} & \makecell{Mo/Tsai} \\
 
-\thead{Measurement of the\\ Elastic Magnetic\\ Form Factor of\\ 3He at High\\ Momentum Transfer} & \makecell{Nakagawa} & \makecell{Phys. Rev. Letters\\ Vol. 86, No. 24,\\ 5446-5449} & \makecell{2001\\ Bates} & \makecell{$^3$He} & 6-43 & \makecell{Yes\\ Exp.} & \makecell{Yes\\ $|F_M|^2$} & \makecell{Yes\\ FFs} & \makecell{Yes} \\
+\thead{Measurement of the\\ Elastic Magnetic\\ Form Factor of\\ 3He at High\\ Momentum Transfer} & \makecell{Nakagawa} & \makecell{Phys. Rev. Letters\\ Vol. 86, No. 24,\\ 5446-5449} & \makecell{2001*\\ Bates} & \makecell{$^3$He} & 6-43 & \makecell{Yes\\ Exp.} & \makecell{Yes\\ $|F_M|^2$} & \makecell{Yes\\ FFs} & \makecell{Yes} \\
 
-\thead{Triton Form\\ Factor from\\ 0.29-1.00 fm$^{-2}$} & \makecell{Beck\\Asai} & \makecell{Phys. Rev. C\\ Vol. 25, No. 3,\\1152-1155} & \makecell{1982\\ Saskatchewan} & \makecell{$^3$H} & 0.29-1 & \makecell{Yes} & \makecell{Yes\\ ($G_E$)} & \makecell{No\\ Mention} & \makecell{Yes (?)\\Meister\\Yennie} \\
+\thead{Triton Form\\ Factor from\\ 0.29-1.00 fm$^{-2}$} & \makecell{Beck\\Asai} & \makecell{Phys. Rev. C\\ Vol. 25, No. 3,\\1152-1155} & \makecell{1982*\\ Saskatchewan} & \makecell{$^3$H} & 0.29-1 & \makecell{Yes} & \makecell{Yes\\ ($G_E$)} & \makecell{No\\ Mention} & \makecell{Yes (?)\\Meister\\Yennie} \\
 %\hline
 %\hline
 %\endhead
@@ -85,6 +86,8 @@ Table ~\ref{tab:world_data} lists the literature comprising the current world da
 %\end{sideways}
 %\endgroup
 %\pagestyle{plain}
+
+The datasets used in the SOG global fits in this thesis are marked with a * after the listed dates. Not all of the datasets were able to be used in this analysis for various reasons. The most common reason a data set is not used is simply that the publication did not list its data points in the publication so they could not be added to the fit. Another common reason was publications listing only the extracted form factors and not cross sections. This is not an issue when the publication also lists the beam energy and scattering angle for each data point (or Q$^2$ and one of either the energy or angle) as the cross section can be computed for using these values. However, numerous publications list only the form factors without energies or angles making it impossible to calculate a cross section for each data point to be used in the global fit. Some publications like Arnold 1978 used different ways to parameterize form factors, and whenever possible these methods were converted to cross sections.
 
 \section{Sum of Gaussians Parameterization}
 \label{sec:sog}
