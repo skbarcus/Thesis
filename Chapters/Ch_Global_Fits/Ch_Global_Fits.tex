@@ -132,4 +132,18 @@ The datasets used in the SOG global fits in this thesis are marked with a * afte
 \section{Sum of Gaussians Parameterization}
 \label{sec:sog}
 
-The sum of Gaussians (SOG) parameterization is a powerful method for fitting nuclear cross section data. 
+The sum of Gaussians (SOG) parameterization is a powerful method for fitting nuclear cross section data developed by Ingo Sick in the early 1970s \cite{Article:SOG}. It attempts to fit elastically scattered electron cross sections by representing the electric (sometimes referred to as the charge F$_{ch}$) and magnetic (F$_{m}$) form factors as the sum of numerous Gaussians. The technique attempts to remain model independent while taking several physical requirements for the form factors and nuclear wave functions in to account. However, a model dependence of sorts does enter the fits in the form of the radii at which the various Gaussians are situated. SOG fits make the extraction of the charge and magnetic form factors easy to extract, and along with them the charge density and charge radii of the target.
+
+Sick outlines the rules for removing a global model dependence when fitting cross section data as follows,
+
+\begin{quote}
+	\begin{enumerate}
+		\item Accept some clearly specified limitation to generality (accept some model dependence), since data with infinite q$_{max}$ are not available (wavelengths smaller than $\lambda = \frac{2\pi}{q_{max}}$ are not determined by experiment).
+		\item Choose a restriction to generality which can be justified by physical arguments.
+		\item Write the density in a manner which decouples densities at different radii as much as possible.\cite{Article:SOG}
+	\end{enumerate}
+\end{quote} 
+
+One of the first physical restrictions that can be applied by the SOG parameterization is on the nuclear charge densities. No structures in the nuclear charge densities are allowed to be larger than the RMS radii of the proton \cite{Article:SOG}. As this thesis is often using \cite{Article:Amroun} as a point of comparison this work employs the same minimum size allowed for structure used by Amroun \textit{et al.} of 0.8 fm, or slightly less than the proton's radius. 
+
+A second restriction comes from the fact that the amplitudes of the high frequency components of the nuclear wave functions have limits placed on them. This can be seen by noting that the Schr{\"o}dinger equation strongly couples the second derivative of the radial wave functions to the proton's separation energy. This implies that the proton will become less bound for larger amplitudes and shorter wavelengths of the radial wave functions. This is yet another reason to forbid certain structures in the nuclear charge density smaller than a certain width \cite{Article:SOG}.
