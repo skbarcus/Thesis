@@ -147,3 +147,23 @@ Sick outlines the rules for removing a global model dependence when fitting cros
 One of the first physical restrictions that can be applied by the SOG parameterization is on the nuclear charge densities. No structures in the nuclear charge densities are allowed to be larger than the RMS radii of the proton \cite{Article:SOG}. As this thesis is often using \cite{Article:Amroun} as a point of comparison this work employs the same minimum size allowed for structure used by Amroun \textit{et al.} of 0.8 fm, or slightly less than the proton's radius. 
 
 A second restriction comes from the fact that the amplitudes of the high frequency components of the nuclear wave functions have limits placed on them. This can be seen by noting that the Schr{\"o}dinger equation strongly couples the second derivative of the radial wave functions to the proton's separation energy. This implies that the proton will become less bound for larger amplitudes and shorter wavelengths of the radial wave functions. This is yet another reason to forbid certain structures in the nuclear charge density smaller than a certain width \cite{Article:SOG}.
+
+Gaussians are taken to build up the structures of the fit since they mimic the peaks of the radial wave functions while also falling off quickly enough so as to not strongly interfere with other Gaussians not nearby satisfying rule 2 above. Gaussians also work well with the rules and limitations imposed earlier. One can write the nuclear charge density as shown in Equation ~\ref{eq:sog_rho_no_tail}, where the charge density is represented as a sum of numerous Gaussians set at different radii R$_i$. The A$_i$ amplitudes are fitted to the cross sectional data. These Gaussians have their full width at half maximum restricted by the parameter $\gamma$ as required by the physical restrictions imposed above. The smallest width structure allowed is given by $\Gamma$ where $\Gamma = 2\gamma \sqrt{ln(2)}$ \cite{Article:SOG}. 
+
+\begin{equation} \label{eq:sog_rho_no_tail}
+	\rho(r) \propto \sum_{i=1}^N A_i e^{-\left( r-R_i \right)^2/\gamma^2}
+\end{equation}
+
+As previously mentioned, the R$_i$ representing the radii at which different Gaussians are located form their own sort of model dependence. Since we are unable to study what happens above q$_{max}$ the R$_i$ are analogous to a model of how the charge density behaves above q$_{max}$. This issue can be resolved by choosing many different R$_i$ values randomly and fitting the A$_i$ to the data for each set of R$_i$ chosen randomly. The choice of R$_i$ may be random but it does have numerous conditions applied. More will be said on the selection of the R$_i$ later on***(maybe have an Ri selection section to link to later). Once a large number of fits of the data using different sets of R$_i$ have been generated the `good' fits must be distinguished from the `bad'. This is done in several ways which will be discussed later on, but include finding lower $\chi^2$ fits as well as making sure the fit's structure appears physical. Once the `good' fits are identified an error band can be built up by plotting each of the fits on top of one another. Once a sufficient number of different `good' R$_i$ sets have been fitted to the data the whole of the available model space has been explored. 
+
+The charge density is expected to have a derivative of zero at a $r=0$. This is not accounted for in Equation ~\ref{eq:sog_rho_no_tail}. To resolve this issue a tail can be added to each Gaussian that represents the Gaussian's behavior at $r<0$. This modified definition of the charge density is given in Equation ~\ref{eq:sog_rho} \cite{Article:SOG}.
+
+\begin{equation} \label{eq:sog_rho}
+	\rho(r) = \frac{Ze}{2 \pi^{3/2}\gamma^3} \sum_{i=1}^N \frac{Q_i}{1+\frac{2R_i^2}{\gamma^2}} \left( e^{-\left( r-R_i \right)^2/\gamma^2} + e^{-\left( r+R_i \right)^2/\gamma^2} \right)
+\end{equation}
+
+\noindent Equation \ref{eq:sog_rho} is normalized by Equation ~\ref{eq:normalization}. The Q$_i$ are now the parameters fitted to the data. The Q$_i$ are required to be positive as they represent the fraction of electric or magnetic charge carried by each Gaussian. $\sum Q_i=1$ is also required of the Q$_i$ terms as all of the charge fractions must sum to the total charge (one). $Z$ is the atomic number of the target and $e$ is the elementary charge \cite{Article:SOG}.
+
+\begin{equation} \label{eq:normalization}
+	4 \pi \int_0^{\infty} \rho(r) r^2 dr = Ze
+\end{equation}
