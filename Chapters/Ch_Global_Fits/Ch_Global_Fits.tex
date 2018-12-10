@@ -127,12 +127,12 @@ Table ~\ref{tab:world_data_3h} lists the literature comprising the current world
 
 
 
-The datasets used in the SOG global fits in this thesis are marked with a * after the listed dates. Not all of the datasets were able to be used in this analysis for various reasons. The most common reason a data set is not used is simply that the publication did not list its data points in the publication so they could not be added to the fit. Another common reason was publications listing only the extracted form factors and not cross sections. This is not an issue when the publication also lists the beam energy and scattering angle for each data point (or Q$^2$ and one of either the energy or angle) as the cross section can be computed for using these values. However, numerous publications list only the form factors without energies or angles making it impossible to calculate a cross section for each data point to be used in the global fit. Some publications like Arnold 1978 used different ways to parameterize form factors, and whenever possible these methods were converted to cross sections.
+The datasets used in the SOG global fits in this thesis are marked with a * after the listed dates. Not all of the datasets were able to be used in this analysis for various reasons. The most common reason a data set is not used is simply that the publication did not list its data points in the publication so they could not be added to the fit. Another common reason was publications listing only the extracted form factors and not cross sections. This is not an issue when the publication also lists the beam energy and scattering angle for each data point (or Q$^2$ and one of either the energy or angle) as the cross section can be computed for using these values. However, numerous publications list only the form factors without energies or angles making it impossible to calculate a cross section for each data point to be used in the global fit. Some publications like Arnold 1978 used different ways to parametrize form factors, and whenever possible these methods were converted to cross sections.
 
-\section{Sum of Gaussians Parameterization}
+\section{Sum of Gaussians Parametrization}
 \label{sec:sog}
 
-The sum of Gaussians (SOG) parameterization is a powerful method for fitting nuclear cross section data developed by Ingo Sick in the early 1970s \cite{Article:SOG}. It attempts to fit elastically scattered electron cross sections by representing the electric (sometimes referred to as the charge F$_{ch}$) and magnetic (F$_{m}$) form factors as the sum of numerous Gaussians. The technique attempts to remain model independent while taking several physical requirements for the form factors and nuclear wave functions in to account. However, a model dependence of sorts does enter the fits in the form of the radii at which the various Gaussians are situated. SOG fits make the extraction of the charge and magnetic form factors easy to extract, and along with them the charge density and charge radii of the target.
+The sum of Gaussians (SOG) parametrization is a powerful method for fitting nuclear cross section data developed by Ingo Sick in the early 1970s \cite{Article:SOG}. It attempts to fit elastically scattered electron cross sections by representing the electric (sometimes referred to as the charge F$_{ch}$) and magnetic (F$_{m}$) form factors as the sum of numerous Gaussians. The technique attempts to remain model independent while taking several physical requirements for the form factors and nuclear wave functions in to account. However, a model dependence of sorts does enter the fits in the form of the radii at which the various Gaussians are situated. SOG fits make the extraction of the charge and magnetic form factors easy to extract, and along with them the charge density and charge radii of the target.
 
 Sick outlines the rules for removing a global model dependence when fitting cross section data as follows,
 
@@ -144,7 +144,7 @@ Sick outlines the rules for removing a global model dependence when fitting cros
 	\end{enumerate}
 \end{quote} 
 
-One of the first physical restrictions that can be applied by the SOG parameterization is on the nuclear charge densities. No structures in the nuclear charge densities are allowed to be larger than the RMS radii of the proton \cite{Article:SOG}. As this thesis is often using \cite{Article:Amroun} as a point of comparison this work employs the same minimum size allowed for structure used by Amroun \textit{et al.} of 0.8 fm, or slightly less than the proton's radius. 
+One of the first physical restrictions that can be applied by the SOG parametrization is on the nuclear charge densities. No structures in the nuclear charge densities are allowed to be larger than the RMS radii of the proton \cite{Article:SOG}. As this thesis is often using \cite{Article:Amroun} as a point of comparison this work employs the same minimum size allowed for structure used by Amroun \textit{et al.} of 0.8 fm, or slightly less than the proton's radius. 
 
 A second restriction comes from the fact that the amplitudes of the high frequency components of the nuclear wave functions have limits placed on them. This can be seen by noting that the Schr{\"o}dinger equation strongly couples the second derivative of the radial wave functions to the proton's separation energy. This implies that the proton will become less bound for larger amplitudes and shorter wavelengths of the radial wave functions. This is yet another reason to forbid certain structures in the nuclear charge density smaller than a certain width \cite{Article:SOG}.
 
@@ -167,3 +167,54 @@ The charge density is expected to have a derivative of zero at a $r=0$. This is 
 \begin{equation} \label{eq:normalization}
 	4 \pi \int_0^{\infty} \rho(r) r^2 dr = Ze
 \end{equation}
+
+When using the plane wave Born approximation (PWBA) the electric and magnetic form factors can be parametrized as in Equation ~\ref{eq:sog_ffs} \cite{Article:SOG}.
+
+\begin{equation} \label{eq:sog_ffs}
+	F_{(ch,m)}(q) = exp \left(-\frac{1}{4} q^2 \gamma^2 \right) \sum^{n}_{i=1} \frac{Q_i{_{(ch,m)}}}{1+2R^2_i/\gamma^2} \left( \cos(qR_i) + \frac{2R^2_i}{\gamma^2} \frac{\sin(qR_i)}{qR_i} \right).
+\end{equation}
+
+\noindent At this point we will follow the procedure laid out in \cite{Article:Amroun} and note that there is a typo in the reference. In that paper in Equation (1) the -1/2 in the exponent should be a -1/4. Again the Q$_i$ are fitted to the data and represent the fraction of the electric or magnetic charge carried by each Gaussian. The R$_i$ are the radii at which the Gaussians are placed. $q$ is the four-momentum transferred via the virtual photon as discussed in Section ~\ref{sec:kinematics}. Lastly $\gamma$ is defined as $\gamma \sqrt{\frac{3}{2}}=0.8$ fm \cite{Article:Amroun}. 
+
+The cross section can be represented in PWBA with the SOG parametrization as shown in Equation ~\ref{eq:xs}.
+
+\begin{equation} \label{eq:xs}
+	\frac{d\sigma}{d\Omega} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \frac{1}{\eta} \left[ \frac{q^2}{\boldsymbol{q}^2}F_{ch}^2(q) + \frac{\mu^2q^2}{2M^2} \left( \frac{1}{2} \frac{q^2}{\boldsymbol{q}^2} + \tan^2 \left( \frac{\theta}{2} \right) \right)F_{m}^2(q) \right]
+\end{equation}
+
+\noindent Here $\eta = 1 + q^2/4M^2$, $q^2$ is the squared four-momentum transfer from ~\ref{eq:Q^2}, $\boldsymbol{q}^2$ is the three-momentum, $\mu$ is the magnetic moment of the target ($\mu_{^3He}$ = -2.1275*(3.0/2.0) and $\mu_{^3H}$ = 2.9788*(3.0/1.0)), and $M$ is the mass of the target (M$_{^3He}$ = 3.0160293 amu and M$_{^3H}$ = 3.0160492 amu) ~\cite{Article:Amroun}. 
+
+The Mott cross section is shown in equation ~\ref{eq:mott}.
+
+\begin{equation} \label{eq:mott}
+	\left( \frac{d\sigma}{d\Omega} \right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 \cos^2 \left( \frac{\theta}{2} \right)^2}{4E_0^2 \sin^2 \left( \frac{\theta}{2} \right)^4} 
+\end{equation}
+ 
+\noindent $Z^2$ accounts for the charge of the target with $Z$ being the target's atomic number, $\frac{E'}{E_0}$ is the recoil factor with $E_0$ being the scattered electrons initial energy and $E'$ is the energy after scattering, $\alpha$ is the fine structure constant, and $\theta$ is the scattering angle. It is extremely important to be mindful of the units one is using when working with these equations. Be cautious of interchanging degrees and radians for the scattering angle, fm$^{-2}$ and GeV$^2$ for the squared four-momentum values, fm$^{-1}$ and GeV for the energies, and amus and GeV for the mass units. Equation ~\ref{eq:gev2fm} shows the equivalent amount of GeV$^2$ to fm$^{-2}$ in nuclear units.
+
+\begin{equation} \label{eq:gev2fm}
+	1 \; GeV^2 \approx 25.7 \; fm^{-2}
+\end{equation}
+
+The assumption that the wave functions of the electrons are plane waves is not entirely correct. The nucleus' charge distorts these wave functions due to the Coulomb interaction and thus shifts the Q$^2$ value to Q$^2_{eff}$ given in Equation ~\ref{eq:qeff}. This leads to Q$^2_{eff}$ taking the place of Q$^2$ in the above equations in this section (i.e. Q$^2$ is taken from the literature and then Q$^2_{eff}$ is then calculated and used in the fits) \cite{Article:Alex}.
+
+\begin{equation} \label{eq:qeff}
+	Q^2_{eff} = Q^2 \left(  1+ \frac{1.5Z\alpha}{E_0*1.12*A^{\frac{1}{3}}}   \right)^2
+\end{equation}
+
+\noindent Here $A$ is the mass number and the other variables are defined above. The three-momentum, $\boldsymbol{q}^2$, is then given by Equation ~\ref{eq:three-momentum} where $\nu=E_0-E'$ as in ~\ref{eq:nu}.
+
+\begin{equation} \label{eq:three-momentum}
+	\boldsymbol{q}^2 = \nu^2 - Q^2_{eff}
+\end{equation}
+
+\section{New SOG Fits}
+\label{sec:new_fits}
+
+The world data for $^3$He and $^3$H described in Section ~\ref{sec:world_data} will be fitted with the sum of Gaussians parametrization described in Section ~\ref{sec:sog} in this section. This section will explain the choices made for each of the SOG fits including the number of Gaussians used to fit the world data and it will also describe the choices made involving the Q$_i$ fit parameters. The placement and spacing of the radii at which the Gaussians are place, R$_i$, will also be discussed as well as the method used to try to optimize the fits by adjusting the R$_i$ spacing while attempting to minimize $\chi^2$. 
+
+\subsection{$^3$He Fits}
+\label{ssec:3he_fits}
+
+\subsection{$^3$H Fits}
+\label{ssec:3h_fits}
