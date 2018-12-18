@@ -416,9 +416,9 @@ Figure ~\ref{fig:simc_dp} shows the SIMC result for dP in red, and the blue show
 \section{Radiative Corrections}
 \label{sec:rc}
 
-In Chapter ~\ref{ch:elastic} we discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. These diagrams can be categorized as external or internal radiative corrections. External corrections are characterized by interactions with other particles that are not the primary scattering source for the electron. These corrections come in the form of Bremsstrahlung radiation and ionization. Bremsstrahlung radiation is the radiation released as photons when electrons are slowed down by the Coulomb fields of particles in the materials the electron is passing through. 
+Chapter ~\ref{ch:elastic} discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. These diagrams can be categorized as external or internal radiative corrections. External corrections are characterized by interactions with other particles that are not the primary scattering source for the electron. These corrections come in the form of Bremsstrahlung radiation and ionization. Bremsstrahlung radiation is the radiation released as photons when electrons are slowed down by the Coulomb fields of particles in the material the electron is passing through. 
 
-Internal corrections are characterized by the electron interacting with the primary scattering source via the exchange of real or virtual photons. Figure ~\ref{fig:rc} shows the additional first order diagrams for internal corrections along with the Born term diagram. Once more we can break these diagrams in to the two categories of elastic and inelastic corrections. The elastic corrections exchange only virtual photons shown in Figure ~\ref{fig:rc} b), c), and d). The inelastic corrections emit real photons as seen in e) ~\cite{Thesis:Wang}.
+Internal corrections are characterized by the electron interacting with the primary scattering source via the exchange of real or virtual photons. Figure ~\ref{fig:rc} shows the additional first order diagrams which must be accounted for along with the Born term diagram. These diagrams can again be separated in to two categories, elastic and inelastic corrections. The elastic corrections exchange only virtual photons shown in Figure ~\ref{fig:rc} b), c), and d). The inelastic corrections emit real photons as seen in e) ~\cite{Thesis:Wang}.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -429,12 +429,12 @@ Internal corrections are characterized by the electron interacting with the prim
 \label{fig:rc}
 \end{figure}
 
-The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses the built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the Peaking approximation discussed in ~\cite{Article:RC2}. 
+The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses a built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the peaking approximation discussed in ~\cite{Article:RC2}. 
 
-These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}. Figure ~\ref{fig:simc_elastics} shows the $^3$He elastically scatter electron spectrum in $X_{Bj}$. The tail below the elastic peak is due to the radiative corrections, and demonstrates that the corrections are working as intended.
+These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}. Figure ~\ref{fig:simc_elastics} shows the $^3$He elastically scattered electron spectrum generated by SIMC in $X_{Bj}$. The tail below the elastic peak is due to the radiative corrections, and demonstrates that the corrections are working as intended.
 
 \begin{equation} \label{eq:rc}
-	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} \frac{\sigma^{Model}_{Rad}}{\sigma^{Model}_{Born}}
+	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} * \frac{\sigma^{Model}_{Born}}{\sigma^{Model}_{Rad}}
 \end{equation}
 
 \section{Aluminium Background Subtraction}
@@ -516,7 +516,7 @@ Now we need to determine how this electron yield from the production data corres
 \includegraphics[width=1.1\linewidth]{SIMC_Elastics.png}
 \end{center}
 \caption[\bf{SIMC Elastically Scattered Electrons}]{
-{\bf{SIMC Elastically Scattered Electrons.}} These electrons were generated with the same kinematics, acceptances, and charge of experiment E08-014.}
+{\bf{SIMC Elastically Scattered Electrons.}} These electrons were generated with the same kinematics, acceptances, and charge as experiment E08-014.}
 \label{fig:simc_elastics}
 \end{figure}
 
