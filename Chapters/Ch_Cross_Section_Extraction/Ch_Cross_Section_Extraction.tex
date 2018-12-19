@@ -63,6 +63,8 @@ Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$
 \label{fig:bcms_4074}
 \end{figure}
 
+\vspace{5mm}
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c c c c c c c|}
@@ -94,6 +96,7 @@ Now we have measured how many electrons total are incident on our target. Howeve
 
 Table ~\ref{tab:live-time} contains the live-time for each run as well as the weighted average of live-times for the cumulative runs. The discrepancy between the live-times for the first and last three runs is due to the differing event rates on the right arm during each of these sets of runs. When the right arm has a higher data rate the live-time for both arms decreases. The weighted average live-time of 95.27$\%$ is then applied as a correction of $\frac{1}{0.9527}$ to the total number of elastic electrons detected.
 
+\vspace{5mm}
 
 \begin{table}[!h]
 \centering
@@ -314,6 +317,8 @@ Finally we can solve Equation ~\ref{eq:fractional_density} for $\rho_{\left(^3He
 
 Not all of the electrons we detect necessarily come from regions we are interested in studying. For example, any electrons that originated outside of the target or that have a momentum greatly different than the momentum setting of the spectrometer are not wanted in our electron sample. To ensure we are studying the electrons scattering from the target we impose a series of physics cuts for the spectrometer's acceptance as well as some of the kinematics. In Section ~\ref{ssec:pid} we already discussed a cut to remove the very small number of pions as well as the delta electrons from our sample. In this section will discuss the other major cuts we have imposed on the data which are summarized in Table ~\ref{tab:cuts}. 
 
+\vspace{5mm}
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{|r | l l|}
@@ -493,6 +498,8 @@ Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corr
 
 The number of electrons under the Gaussian part of the combined fit is then the number of elastic electrons detected by the experiment prior to some corrections. After physics and acceptance cuts, but before live-time, GC efficiency, Trigger efficiency, and VDC efficiency corrections, experiment E08-014 detected 565 electrons elastically scattered from $^3$He. Table ~\ref{tab:corrections} shows a summary of the correction values applied to the number of electrons detected. Multiplying the uncorrected yield by all of these corrections factors we find the experimental yield of electrons elastically scattered from  $^3$He is 627 electrons.
 
+\vspace{5mm}
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{|r | l l|}
@@ -550,6 +557,8 @@ Table ~\ref{tab:peak_pars} lists the parameters of the total fits to the product
 
 For this analysis the scale factor needed to match the yields, $C_{SIMC}$, was found to be 1.01984. This means that the model cross section needed to be increased by 1.984$\%$ to match the experimental data. When this adjustment is made the model built into SIMC will then yield the cross section for elastic scattering off of our $^3$He production data. This cross section is found to be 1.335 * 10$^{-10}$ fm$^2$/sr or 1.335 * 10$^{-6}$ $\mu$b/sr.
 
+\vspace{5mm}
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c | l l l l l|}
@@ -578,13 +587,15 @@ To find the correct location for our data point in Q$^2$ we will follow the proc
 \includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative.png}
 \end{center}
 \caption[\bf{$^3$He Elastic Cross Section at 3.356 GeV}]{
-{\bf{$^3$He Elastic Cross Section at 3.356 GeV}} This cross section was produced using a representative sit from the sum of Gaussians fits discussed in Section ***~\ref{Ch:sog}}
+{\bf{$^3$He Elastic Cross Section at 3.356 GeV}} This cross section was produced using a representative sit from the sum of Gaussians fits discussed in Section *** ~\ref{sec:sog}}
 \label{fig:xs_bin}
 \end{figure}
 
-We know our point should be located somewhere in the neighborhood of Q$^2 \approx$35 simply from the kinematics of the experiment. Looking around Q$^2 \approx$35 in Figure ~\ref{fig:xs_bin} the plot appears linear. However, the plot is in a log scale indicating that the actual shape is an exponential. To see the true shape of the cross section let us first define our bin in Q$^2$ and then zoom in while removing the log on the Y-axis. 
+We know our point should be located somewhere in the neighborhood of Q$^2 \approx$35 simply from the kinematics of the experiment. Looking around Q$^2 \approx$35 in Figure ~\ref{fig:xs_bin} the plot appears linear. However, the plot is in a log scale indicating that the actual shape is an exponential. To see the true shape of the cross section let us first define our bin in Q$^2$, and then zoom in on our region of interest while removing the log on the Y-axis. 
 
 To find our bin size in Q$^2$ we can use our cuts on the in-plane angle $\phi$. Since we know the beam energy we can calculate Q$^2$ using Equations ~\ref{eq:Q^2} and ~\ref{eq:E'} knowing that $\phi$ is the analyzer variable for the arctangent of the deviation from the set spectrometer scattering angle. Table ~\ref{tab:bin} shows the size of our analysis bin in various units. Figure ~\ref{fig:xs_bin_zoom} shows the cross section in the region of the analysis bin with the log plot removed to show the true shape.
+
+\vspace{5mm}
 
 \begin{table}[!h]
 \centering
@@ -608,19 +619,21 @@ Q$^2$ (fm$^{-2}$) & 30.55 & 41.24\\
 \begin{center}
 \includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative_Zoom.png}
 \end{center}
-\caption[\bf{$^3$He Elastic Cross Section at 3.356 GeV Analysis Bin No Log}]{
-{\bf{$^3$He Elastic Cross Section at 3.356 GeV Analysis Bin No Log}} This plot shows the same cross section as Figure ~\ref{fig:xs_bin} except zoomed in on the analysis bin region with the log on the Y-axis removed. The two vertical black lines represent the minimum and maximum Q$^2$ of the analysis bin.}
+\caption[\bf{$^3$He Elastic Cross Section Q$^2$ Bin at 3.356 GeV}]{
+{\bf{$^3$He Elastic Cross Section Q$^2$ Bin at 3.356 GeV}} This plot shows the same cross section as Figure ~\ref{fig:xs_bin}, except zoomed in on the analysis bin region with the log on the Y-axis removed. The two vertical black lines represent the minimum and maximum Q$^2$ of the analysis bin.}
 \label{fig:xs_bin_zoom}
 \end{figure}
 
-Figure ~\ref{fig:xs_bin_zoom} makes it clear that the cross section across our bin is not linear and thus taking the average of the bin to set our cross section's Q$^2$ value is incorrect. Instead we must account for the fact that the shape of the cross section biases our data towards lower Q$^2$. This can be done by taking a weighted average of the Q$^2$ values in our bin where the weights are the cross section values at each Q$^2$. Performing this calculation we find that the weight average Q$^2$ for our analysis bin is 34.19 fm$^{-2}$. This is a significant deviation from the bin center of 35.90 fm$^{-2}$. We now see that as expected the shape of the cross section requires us to place our data point at a lower Q$^2$ than the bin center.
+Figure ~\ref{fig:xs_bin_zoom} makes it clear that the cross section across our bin is not linear, and thus taking the average Q$^2$ of the bin to set our cross section's Q$^2$ value is incorrect. Instead we must account for the fact that the shape of the cross section biases our data towards lower Q$^2$. This can be done by taking a weighted average of the Q$^2$ values in our bin where the weights are the cross section values at each Q$^2$. Performing this calculation we find that the weighted average Q$^2$ for our analysis bin is 34.19 fm$^{-2}$. This is a significant deviation from the bin center of 35.90 fm$^{-2}$. We now see that as expected the shape of the cross section requires us to place our data point at a lower Q$^2$ than the bin center.
 
 \section{Uncertainty Approximation}
 \label{sec:uncertainty}
 
-Thus far we have found the magnitude of the $^3$He elastic cross section as well as determined where to place this data point in Q$^2$. Our next duty is to quantify the various sources of uncertainty that apply to our cross section. The uncertainty can be broken in to statistical uncertainty and systematic uncertainty. Statistical uncertainty describes the innate statistical deviations of measurements of an observable due to the inherent limitations of the tool making the measurements as well as unpredictable experimental conditions and environmental changes. Statistical uncertainty is also derived from the number of measurements made. 
+Thus far, we have found the magnitude of the $^3$He elastic cross section and determined where to place this data point in Q$^2$. Our next duty is to quantify the various sources of uncertainty that apply to our cross section. The uncertainty can be broken in to statistical uncertainty and systematic uncertainty. Statistical uncertainty describes the innate statistical deviations of measurements of an observable due to the inherent limitations of the tool making the measurements as well as unpredictable experimental conditions like environmental fluctuations. Statistical uncertainty can be decreased by increasing the number of measurements made. 
 
 Systematic uncertainty describes uncertainty introduced from measuring instruments or incorrectly calibrated simulation tools or models. Systematic errors are reproducible and generally in the same direction so taking more measurements will not significantly reduce them. This section will go into detail on how each source of uncertainty was quantified. Table ~\ref{tab:uncertainty} contains a summary of the experimental uncertainties on the $^3$He elastic cross section that are described in detail below.
+
+\vspace{5mm}
 
 \begin{table}[!h]
 \centering
@@ -632,7 +645,7 @@ Systematic uncertainty describes uncertainty introduced from measuring instrumen
 \hline
 Electron Yield & 4.21$\%$\\
 Al Background Subtraction & 1.1$\%$\\
-\textbf{Total Statistical} &  4.36$\%$\\
+\textbf{Total Statistical} &  \textbf{4.36$\%$}\\
 \hline
 \textbf{Systematic Sources} &  \\
 \hline
@@ -649,16 +662,16 @@ SIMC Model Comparison to Reality & 0.5$\%$\\
 PR Cut & 0.055$\%$\\ 
 Y$_{target}$ Position & 0.045$\%$\\
 Live-time & 0.01145$\%$\\
-\textbf{Total Systematic} &  4.72$\%$\\
+\textbf{Total Systematic} &  \textbf{4.72$\%$}\\
 \hline
-\makecell{\textbf{Total Uncertainty}\\ \textbf{Statistical $\&$ Systematic}} &  6.42$\%$\\
+\makecell{\textbf{Total Uncertainty}\\ \textbf{Statistical $\&$ Systematic}} &  \textbf{6.42$\%$}\\
 \hline
 \end{tabular}
 \caption{{\bf{Table of Uncertainties}} }
 \label{tab:uncertainty}
 \end{table}
 
-First let us examine our statistical uncertainties. Our primary source of statistical uncertainty is derived from our yield of elastic electrons. As discussed in Section ~\ref{sec:yield} experiment E08-014 had a yield of 565 electrons elastically scattered off of $^3$He. The uncertainty on this value is described by Equation ~\ref{eq:uncertainty}, where $N_e$ is the number of elastically scattered electrons. The uncertainty in the number of electrons is directly proportional to the cross section. Thus the statistical uncertainty on the cross section due to the electron yield is 4.21$\%$.
+First let us examine our statistical uncertainties. Our primary source of statistical uncertainty is derived from our yield of elastic electrons. As discussed in Section ~\ref{sec:yield} experiment E08-014 had a yield of 565 electrons elastically scattered off of $^3$He. The uncertainty on this value is described by Equation ~\ref{eq:uncertainty}, where $N_e$ is the number of elastically scattered electrons. The uncertainty in the number of electrons is directly proportional to the cross section. Thus, the statistical uncertainty on the cross section due to the electron yield is 4.21$\%$.
 
 \begin{equation} \label{eq:uncertainty}
 	\delta_e = \frac{1}{\sqrt{N_e}}
@@ -666,15 +679,15 @@ First let us examine our statistical uncertainties. Our primary source of statis
 
 The other source of statistical error comes from the aluminium background subtraction discussed in Section ~\ref{sec:al}. By subtracting out the Al contamination in the region of the elastic peak we have necessarily introduced another opportunity for uncertainty to creep into our measurement. In the region of the elastic peak, defined as $2.95<X_{Bj}<3.10$, there were 1093 events prior to the Al background subtraction. In this same region there were 34 Al events. We can once again use Equation ~\ref{eq:uncertainty} to estimate the uncertainty on the Al events. We find that these 34 events have an uncertainty of 17$\%$ or $\pm$ 6 electrons. 
 
-This is a high uncertainty on a small number so to have a conservative estimate I have doubled the $\pm$ 6 electrons to $\pm$ 12 electrons. Thus when the Al background is subtracted from the $^3$He production data we have either 1071 (1093 - 34 + 12) electrons remaining or 1047 (1093 - 34 - 12) electrons remaining. Thus our uncertainty is the mean number of electrons remaining $\pm$ 12 electrons. This gives 1059 $\pm$ 12 electrons yielding an uncertainty of 1.1$\%$. Note that this uncertainty is categorized as statistical in nature. It could be reasonably argued to be systematic, but as taking more production data would lower this uncertainty it has been categorized as statistical.
+This is a high uncertainty on a small number so to have a conservative estimate the uncertainty was doubled from $\pm$ 6 electrons to $\pm$ 12 electrons. When the Al background is subtracted from the $^3$He production data we have either 1071 (1093 - 34 + 12) electrons remaining or 1047 (1093 - 34 - 12) electrons remaining. The uncertainty is then $\pm$ 12 electrons from the mean number of electrons remaining after the Al subtraction. This gives 1059 $\pm$ 12 electrons yielding an uncertainty of 1.1$\%$. Note that this uncertainty is categorized as statistical in nature. It could be reasonably argued to be systematic, but as taking more production data would lower this uncertainty it has been categorized as statistical.
 
 Next we will account for the systematic uncertainties on our cross section result. The largest source of systematic uncertainty comes from the density of the gaseous $^3$He in the target cell. This issue was discussed in Section ~\ref{sec:density}. The density study performed in ~\cite{density} lists the uncertainty on the  $^3$He density as 3.08$\%$ which will apply directly to the cross section as the cell density is directly proportional to the cross section.
 
-The next largest source of systematic uncertainty comes from the optics calibration of the HRSs. This calibration was discussed in Section ~\ref{ssec:optics_optimization}. Essentially the precision of this calibration is limited by the physical characteristics of the optics sieve plate used for the calibration shown in Figure ~\ref{fig:sieve}. The optics calibration works essentially by locating where events fall within the holes of the sieve to create a pattern which can be found in the detector and then be connected to the target coordinate system. 
+The next largest source of systematic uncertainty comes from the optics calibration of the HRSs. This calibration was discussed in Section ~\ref{ssec:optics_optimization}. The precision of this calibration is limited by the physical characteristics of the optics sieve plate used for the calibration shown in Figure ~\ref{fig:sieve}. The optics calibration works by locating where electron events fall within the holes of the sieve to create a pattern which can be found in the detector, and then be connected back to the target coordinate system. 
 
-These events fall randomly anywhere inside a given sieve hole. By using the outermost holes of the sieve with data inside of them one can defines an area inside which all the optics data is found. The precision of the measurement of the size of this internal area is limited by the size and spacing of the sieve holes. This gives an uncertainty on the area containing data within the sieve. This area corresponds to the uncertainty in the solid angle from the optics calibration. The solid angle includes the uncertainties of both the in-plane angle ($\phi$) and out-of-plane angle ($\theta$) as well as the momentum $dp$ since that is directly related to $\phi$ due to the scattering being elastic.  
+These electron events fall randomly anywhere inside a given sieve hole. By using the outermost holes of the sieve with data inside of them one can define an area inside which all the optics data is found. The precision of the measurement of the size of this internal area is limited by the size and spacing of the sieve holes. This gives an uncertainty on the area containing data within the sieve. This area corresponds to the uncertainty in the solid angle from the optics calibration. The solid angle includes the uncertainties of both the in-plane angle ($\phi$) and out-of-plane angle ($\theta$) as well as the momentum $dp$ since that is directly related to $\phi$ for elastic scattering.  
 
-To estimate the inherent uncertainty of the optics calibration a Monte Carlo simulating was built. This simulation creates a sieve of $N$ by $M$ holes. Events are then randomly placed in each hole. The events placed in holes on the outer edge of the sieve are then connected by a straight line to their adjacent holes also on the outer edge. Once all of the outer edge holes are connected they create a polygon whose internal area can then be calculated. This process is shown for a 5X5 sieve in Figure ~\ref{fig:sieve_mc}, where there are five of these randomly determined areas shown. 
+To estimate the inherent uncertainty of the optics calibration a Monte Carlo simulating was built. This simulation creates a sieve of $N$ by $M$ holes. Events are then randomly placed in each hole. The electron events placed in holes on the outer edge of the sieve are then connected by a straight line to their adjacent outer edge hole's electron event. Once all of the outer edge holes are connected they create a polygon whose internal area can then be calculated. This process is shown for a 5X5 sieve in Figure ~\ref{fig:sieve_mc}, where there are five of these randomly determined areas shown. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -685,7 +698,7 @@ To estimate the inherent uncertainty of the optics calibration a Monte Carlo sim
 \label{fig:sieve_mc}
 \end{figure}
 
-This process is repeated one million times resulting in one million different possible areas based on the hole sizes, spacings, and where the events were randomly placed. A histogram of all of these possible areas can then be created. This histogram forms an excellent Guassian shape which can then be fit with a Gaussian function. From this Guassian function a standard deviation (one $\sigma$) can be found to estimate the uncertainty of the area. The plot of one million randomly generated areas using ~\ref{fig:sieve_mc} is shown in ~\ref{fig:sieve_mc_gaussian}. By fitting a Gaussian to the histogram of areas the standard deviation is found to be 30.18 mm$^2$ on an area of 5000 mm$^2$. For this analysis a two $\sigma$ (95$\%$) confidence interval was chosen giving an uncertainty of 60.36 mm$^2$ on 5000 mm$^2$ or 1.207$\%$ in this example. 
+This process is repeated one million times resulting in one million different possible areas based on the hole sizes, spacings, and where the events were randomly placed. A histogram of all of these possible areas can then be created. This histogram forms an excellent Guassian shape which can then be fit with a Gaussian function. From this Guassian function a standard deviation (one $\sigma$) can be found to estimate the uncertainty of the area. The plot of one million randomly generated areas using the geometry of ~\ref{fig:sieve_mc} is shown in ~\ref{fig:sieve_mc_gaussian}. By fitting a Gaussian to the histogram of areas the standard deviation is found to be 30.18 mm$^2$ on an area of 5000 mm$^2$. For this analysis a two $\sigma$ (95$\%$) confidence interval was chosen giving an uncertainty of 60.36 mm$^2$ on 5000 mm$^2$ or 1.207$\%$ in this example. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -696,7 +709,7 @@ This process is repeated one million times resulting in one million different po
 \label{fig:sieve_mc_gaussian}
 \end{figure}
 
-This is almost sufficient to estimate the optics calibration uncertainty. However, we can do better than estimating the whole acceptance using one sieve size. This is because as one steps through the target cell in Y$_{target}$ the solid angle acceptance, and thus the sieve size, changes as shown in Figure ~\ref{fig:solid_angle_ytarget}. So to accurately estimate the sieve uncertainty an optic run at similar kinematic settings was studied \cite{shujie_optics}. 
+This is almost sufficient to estimate the optics calibration uncertainty. However, we can do better than estimating the whole acceptance using one sieve size. This is because as one steps through the target cell in Y$_{target}$ the solid angle acceptance, and thus the sieve size, changes as shown in Figure ~\ref{fig:solid_angle_ytarget}. So to accurately estimate the sieve uncertainty an optics run with similar kinematic settings to this analysis' kinematics was studied \cite{shujie_optics}. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -707,27 +720,27 @@ This is almost sufficient to estimate the optics calibration uncertainty. Howeve
 \label{fig:solid_angle_ytarget}
 \end{figure}
 
-This optics run contained 11 carbon foils evenly space in Y$_{target}$. By finding how many holes each foil had significant data in the Monte Carlo could be configured to match the solid angle acceptance for each of the 11 slices of Y$_{target}$. The Monte Carlo was then run one million times for each of these solid angles and the results of the two $\sigma$ area uncertainties were added in quadrature to find the total solid angle uncertainty. This overall two $\sigma$ uncertainty was found to be 2.248$\%$.
+This optics run contained 11 carbon foils evenly space in Y$_{target}$. By finding how many holes each foil had significant data in the Monte Carlo could be configured to match the solid angle acceptance for each of the 11 slices of Y$_{target}$. The Monte Carlo was then run one million times for each of these solid angles, and the results of the two $\sigma$ area uncertainties were added in quadrature to find the total solid angle uncertainty. This overall two $\sigma$ uncertainty was found to contribute 2.248$\%$ uncertainty to the final cross section.
 
-The next largest systematic uncertainty comes from the GC efficiency given by Equation ~\ref{eq:gc_eff} discussed in Section ~\ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation ~\ref{eq:gc_uncertainty} from ~\cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, $T_3$ is the number of events measured by the main trigger, and $T_7$ is the number of events measured by the coincidence trigger. Inserting the relevant values yields an uncertainty on the cross section of 1.32$\%$.
+The next largest systematic uncertainty comes from the GC efficiency given by Equation ~\ref{eq:gc_eff} discussed in Section ~\ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation ~\ref{eq:gc_uncertainty} from ~\cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, T$_3$ is the number of events measured by the main trigger, T$_7$ is the number of events measured by the coincidence trigger, and T$_{3\&7}$ is the number of times both triggers fired. Inserting the relevant values yields an uncertainty on the cross section of 1.32$\%$.
 
 \begin{equation} \label{eq:gc_uncertainty}
-	\delta_{GC} = \epsilon_{GC} * \frac{\sqrt{T_7-(T_7+T_3)}}{T_7}
+	\delta_{GC} = \epsilon_{GC} * \frac{\sqrt{T_7-(T_{3\&7})}}{T_7}
 \end{equation}
 
-There is also a systematic uncertainty introduced by the beam and target offsets with respect to the set spectrometer angle. To estimate this uncertainty the Mott cross section was calculated at two values. One value was 1 mrad above the set spectrometer angle and the other value was set 1 mrad below the set spectrometer angle. These two Mott cross sections then closely represent the uncertainty a reasonably sized offset would introduce to the absolute cross section. This beam and target offset uncertainty is found to be 1.1$\%$.
+There is also a systematic uncertainty introduced by the beam and target offsets with respect to the set spectrometer angle. To estimate this uncertainty the Mott cross section was calculated at E08-014's energy and two angles. One angle was 1 mrad above the set spectrometer angle, and the other value was set 1 mrad below the set spectrometer angle. The difference in these two Mott cross sections then closely represent the uncertainty a reasonably sized offset would introduce to the absolute cross section. This beam and target offset uncertainty is found to be 1.1$\%$.
 
-The systematic uncertainty for radiative corrections in SIMC has been shown to be on the order of 1$\%$ ~\cite{Thesis:Wang}. The uncertainty on the beam charge from the BCMs has also been shown to be 1$\%$ ~\cite{Thesis:Wang}. Both the VDC single track efficiency uncertainty and the trigger efficiency uncertainty are directly proportional to the cross section and have both been estimated to be 1$\%$ ~\cite{Thesis:Ye}.
+The systematic uncertainty on the cross section due to radiative corrections in SIMC has been shown to be on the order of 1$\%$ ~\cite{Thesis:Wang}. The uncertainty on the cross section due to the beam charge measurement from the BCMs has also been shown to be 1$\%$ ~\cite{Thesis:Wang}. Both the VDC single track efficiency uncertainty and the trigger efficiency uncertainty are directly proportional to the cross section, and have both been estimated to be 1$\%$ ~\cite{Thesis:Ye}.
 
 The next largest systematic uncertainty comes from the uncertainty in the beam energy. The beam energy measurement is currently known to have an uncertainty of 0.04$\%$ ~\cite{doug}. However, this is not the uncertainty contributed to the cross section from the beam energy. To find the uncertainty on the cross section SIMC was run two more times with the same cuts and experimental conditions as previously except the beam energy was set 0.04$\%$ higher once and 0.04$\%$ lower once. The resulting cross sections from SIMC then given an upper and lower bound on the cross section due to fluctuations in beam energy. The uncertainty on the cross section from the uncertainty in the beam energy was then found to be 0.72$\%$.
 
-The cross section model in SIMC also introduces some uncertainty to our cross section. This uncertainty has been previously studied in detail and been found to contribute approximately 0.5$\%$ uncertainty to the cross section ~\cite{Thesis:Nguyen}. Note that binning the cross section in X$_{Bj}$ gives less of a change in cross section over the bin than if the data had been binned in E'. This helps to reduce the uncertainty on the cross section from the SIMC model.
+The cross section model in SIMC also introduces some uncertainty to our cross section. This uncertainty has been previously studied in detail, and was found to contribute approximately 0.5$\%$ uncertainty to the cross section ~\cite{Thesis:Nguyen}. Note that binning the cross section in X$_{Bj}$ gives less of a change in cross section over the bin than if the data had been binned in E'. This helps to reduce the uncertainty on the cross section from the SIMC model.
 
-The remaining systematic uncertainties are fairly small. One of these is the degree of uncertainty introduced by the pion rejector cut applied to the data. The `good electron' region of the GC spectrum where the events are almost certainly electrons is defined as ADC channels 300-500. In this region there were 51439 events. Applying the PR cut removes 777 of these events from the sample. Using equation ~\ref{eq:uncertainty} the uncertainty on these 777 events is found to be $\pm$ 28 events. The maximum events remaining after the PR cut is then 50690 (51439 - 777 + 28) and the minimum number is 50634 (51439 - 777 - 28). The average number of events remaining after the PR cut is then 50662 $\pm$ 28 which gives an uncertainty to the final cross section of only 0.055$\%$.
+The remaining systematic uncertainties are fairly small. One of these is the degree of uncertainty introduced by the pion rejector cut applied to the data. The `good electron' region of the GC spectrum where the events are almost certainly electrons is defined as ADC channels 300-500. In this region there were 51439 events. Applying the PR cut removes 777 of these events from the sample. Using equation ~\ref{eq:uncertainty} the uncertainty on these 777 events is found to be $\pm$ 28 events. The maximum events remaining after the PR cut is then 50690 (51439 - 777 + 28), and the minimum number is 50634 (51439 - 777 - 28). The average number of events remaining after the PR cut is then 50662 $\pm$ 28 which gives an uncertainty to the final cross section of only 0.055$\%$.
 
 Some uncertainty is introduced from the Y$_{target}$ positioning. One can never do better than finding the location of a single optics foil when calibrating Y$_{target}$. These foils can be found with approximately 0.2 mm accuracy. For our 20 cm target this gives an uncertainty of 0.1$\%$ on the Y$_{target}$ position. As we did with the beam energy uncertainty we ran SIMC twice more with the minimum and maximum possible Y$_{target}$ offsets and compared the uncertainty this introduces to the cross section. The uncertainties are asymmetric in this case with the positive Y$_{target}$ uncertainty being 0.045$\%$ and the negative being 0.017$\%$. Both values are quite small and barely influence the cross section at all. We will conservatively say that this can introduce up to 0.045$\%$ uncertainty to the final cross section. 
 
-The final source of measurable uncertainty comes from the live-time calculation discussed in Section ~\ref{ssec:live-time}. The uncertainty on the live-time can be calculated as in Equation ~\ref{eq:lt_uncertainty}, where $\epsilon_{LT}$ is the live-time for the experiment, $T_{3_{Scaler}}$ is the scaler number of main triggers ($T_3$), and $T_{3_{File}}$ is the electronics output number of main triggers detected. Once more this value directly impacts the cross section. Inserting the relevant values the uncertainty on the cross section due to the live-time uncertainty is found to be 0.01145$\%$.
+The final source of measurable uncertainty comes from the live-time calculation discussed in Section ~\ref{ssec:live-time}. The uncertainty on the live-time can be calculated as in Equation ~\ref{eq:lt_uncertainty}, where $\epsilon_{LT}$ is the live-time for the experiment, $T_{3_{Scaler}}$ is the scaler number of main triggers ($T_3$), and $T_{3_{File}}$ is the electronics output number of main triggers detected. This value applies directly to the cross section. Inserting the relevant values the uncertainty on the cross section due to the live-time uncertainty is found to be 0.01145$\%$.
 
 \begin{equation} \label{eq:lt_uncertainty}
 	\delta_{LT} = \epsilon_{LT} * \frac{\sqrt{T_{3_{Scaler}}-T_{3_{File}}}}{T_{3_{Scaler}}}
@@ -736,6 +749,10 @@ The final source of measurable uncertainty comes from the live-time calculation 
 \section{Comparisons with Other Measurements}
 \label{sec:comparisons}
 
-Now that we have a value for our cross section with reasonable error bars we want to see how it compares to other measurements and fits. For these comparisons we will use the elastic $^3$He cross section measurements from ~\cite{Article:Alex} as well as the final SOG fit from ~\cite{Article:Amroun}. ~\cite{Article:Alex} took several elastic cross section measurements of $^3$He in similar kinematic regions to those of experiment E08-014. Let us examine the data point measured at the closest kinematic to experiment E08-014. This is the data point taken at E$_0$ = 3.304 GeV and a scattering angle of 20.83$^{\circ}$ giving elastic cross sections of 1.57 $\pm$ 0.10 * 10$^{-6}$ $\mu$b/sr at Q$^2$ = 34.1 fm$^{-2}$. The point found in this analysis is taken at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ giving a cross section of 1.335 $\pm$ 0.086 * 10$^{-6}$ $\mu$b/sr at Q$^2$ = 34.19 fm$^{-2}$. When these two values are compared they are found to be fairly close especially when considering that the Q$^2$ value for this experiment is larger and thus our extracted cross section should be smaller than the point from ~\cite{Article:Alex}.
+Now that we have a value for our cross section with reasonable error bars we want to see how it compares to other measurements and fits. For these comparisons we will use the elastic $^3$He cross section measurements from ~\cite{Article:Alex} as well as the final SOG fit from ~\cite{Article:Amroun}. ~\cite{Article:Alex} took several elastic cross section measurements of $^3$He in similar kinematic regions to those of experiment E08-014. Let us examine the data point measured at the closest kinematic to experiment E08-014. This point was taken at E$_0$ = 3.304 GeV and a scattering angle of 20.83$^{\circ}$ giving elastic cross sections of 1.57 $\pm$ 0.10 * 10$^{-6}$ $\mu$b/sr at Q$^2$ = 34.1 fm$^{-2}$. 
 
-Next let us take the SOG form factor fits from ~\cite{Article:Amroun} and calculate the cross section from these fits at our kinematics. The Amroun fit at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ gives a cross section of  1.887 * 10$^{-6}$ $\mu$b/sr. This is significantly different from the cross section derived in this thesis. However, the data sets from ~\cite{Article:Amroun} had very little data in this high Q$^2$ region. Taking the sever lack of data in this region into account the agreement seems acceptable. Significantly more data in this region was added by ~\cite{Article:Alex} and was included in the global fits in this thesis found in Chapter ~\ref{Ch:global_fits}. Overall, the cross section found in this thesis seems to be in reasonable agreement with other measurements once one accounts for the lack of data in this kinematic region.
+The point found in this analysis is taken at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ giving a cross section of 1.335 $\pm$ 0.086 * 10$^{-6}$ $\mu$b/sr at Q$^2$ = 34.19 fm$^{-2}$. The error bars for these points almost overlap in spite of their slightly different kinematics. These two values can be said to be in reasonable agreement, especially considering that the Q$^2$ value for this experiment is larger. This implies that our extracted cross section should be smaller than the point from ~\cite{Article:Alex} which agrees with the data.
+
+Next let us take the SOG form factor fits from ~\cite{Article:Amroun} and calculate the cross section from these fits at our kinematics. The Amroun fit at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ gives a cross section of  1.887 * 10$^{-6}$ $\mu$b/sr. This is significantly different from the cross section derived in this thesis. However, the data sets from ~\cite{Article:Amroun} had very little data in this high Q$^2$ region. 
+
+Taking the previous sever lack of data in this region, and the agreement with other new measurements in this region, into account this discrepancy seems reasonable. Significantly more data in this region was added by ~\cite{Article:Alex}, and this data was included in the global fits in this thesis found in Chapter ~\ref{ch:global_fits}. Overall, the cross section found in this thesis seems to be in reasonable agreement with other measurements, and indicates that older fits may shift noticeably when the new higher Q$^2$ data is introduced.
