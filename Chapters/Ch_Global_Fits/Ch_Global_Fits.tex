@@ -215,6 +215,50 @@ The assumption that the wave functions of the electrons are plane waves is not e
 
 The world data for $^3$H and $^3$He described in Section ~\ref{sec:world_data} will be fitted with the sum of Gaussians parametrization described in Section ~\ref{sec:sog} in this section. This section will explain the choices made for each of the SOG fits such as the number of Gaussians used to fit the world data. It will also describe the choices made involving the Q$_i$ fit parameters. The placement and spacing of the R$_i$ radii at which the Gaussians are placed will also be discussed. A method used to try to optimize the fits by adjusting the R$_i$ spacing while attempting to minimize $\chi^2$ will be described. 
 
+\subsection{Gaussian Radii Placement}
+\label{ssec:radii}
+
+As mentioned in Section ~\ref{sec:sog} the R$_i$ are the radii at which the SOG Gaussians are place. This means that they represent a sort of model dependence. To explore all of the model space many different random R$_i$ combinations must be used to fit the world data. However, selecting the R$_i$ totally at random is extremely inefficient since we are only interested in R$_i$ combinations that yield reasonable fits and physical form factors. 
+
+To explore the R$_i$ combinations we are interested in effectively a few rules can be applied to their selection. The first of which is that there is some radii, R$_{max}$, beyond which the charge density has fallen almost to zero. Therefore, there is no reason to position and R$_i$ beyond R$_{max}$. For $^3$H and $^3$He R$_{max}$ is $\approx$ 5 fm, although it is allowed to diverge from this radii as the fits are optimized. For the majority of fits, after the optimization procedure discussed below, 4 fm $<$ R$_{max}$ $<$ 6 fm centered around 5 fm.
+
+Once a reasonable upper limit on the radii is established the spacing of the R$_i$ from one another must be set. It has been found that the spacing of R$_i$ for R$_i$ $<$ R$_{max}$/2 should be approximately half as far apart as the R$_i$ spacing for the radii positioned above R$_{max}$/2 \cite{Article:SOG}. This is done so that the charge density region with more charge, i.e. closer to the nucleus, is described by more Gaussians. This allows the structure to be better captured by the SOG fits. Further away from the nucleus, where there is less charge, fewer Gaussians are needed to accurately describe the structure of the charge density.   
+
+Once the R$_i$ are selected each combination of R$_i$ are fitted using the SOG parametrization. Since we are interested in the fits that best describe the data while producing form factors that conform to the physical priors we expect it is logical to search for the lowest $\chi^2$ fits and check the form factors visually for physicality. We define $\chi^2$ as in Equation ~\ref{eq:chi2}, where $N$ is the number of data points being fit, $\sigma_{exp}$ is the experimentally measured cross section at a particular Q$^2$, $\sigma_{fit}$ is the cross section given by the global fit at the same Q$^2$ as the experimental cross section, and $\Delta$ is the total uncertainty attached to the experimental cross section at a given Q$^2$. A lower $\chi^2$ value naively indicates a better fit, but numerous flaws can occur when using only $\chi^2$ \cite{doug_stats}.  
+
+\begin{equation} \label{eq:chi2}
+	\chi^2 = \sum_{n=1}^N \frac{\left( \sigma_{exp}-\sigma_{fit} \right)^2}{\Delta^2}
+\end{equation}
+
+Initial R$_i$ spacings tend to be fairly unfavorable and produce large $\chi^2$ values and strangely shaped form factors. To minimize the $\chi^2$ as much as possible the R$_i$ values need to be allowed to shift. This is accomplished by first fitting the data with an initial set of R$_i$ values. After the initial fit is done each of the R$_i$ values is then optimized. If R$_0$ was initially 0.2 fm the fit would then be redone with R$_0$ = 0.1 fm and then R$_0$ = 0.3 fm. The R$_i$ are each shifted up and down 0.1 fm until $\chi^2$ gets larger. The R$_i$ that yielded the smallest $\chi^2$ is then kept as the `optimal' R$_i$. Once this procedure is completed for each R$_i$ in ascending order the lowest, or at least close to the lowest, $\chi^2$ value for R$_i$ similar to the initial R$_i$ has been found.  
+
+As an example, let us examine the initial R$_i$ spacings for $^3$H using eight Gaussians. While the order of the Gaussians is irrelevant it is easier to code the R$_i$ in ascending radii length. Next we choose R$_0$-R$_7$ to meet the rules defined above. We want all of the R$_i$ to sum to approximately 5 fm, and the R$_i$ spacing between consecutive Gaussians should be smaller at smaller radii. For $^3$H with eight Gaussians the initial R$_i$ spacing is produced within given ranges randomly and then optimized as previously described. The ranges for the R$_i$ spacings are divided in steps of 0.1 fm. The first Gaussian is placed near R = 0 fm and was chosen to be R$_0$ = 0.2-0.3 fm. This means that R$_0$ was randomly selected to initially be 0.2 fm or 0.3 fm. Note that an R$_0$ of 0 fm leads to poles in the parametrization. To avoid this issue a small number is used in place of 0 if R$_0$ = 0 fm is found to be the optimal radius. 
+
+After the first Gaussian is placed at R$_0$ Gaussians R$_{1-7}$ are placed by semi-randomly choosing their distance from the radii prior to them. The spacing for R$_{1-4}$ = 0.5-0.6 fm, and the spacing for R$_{5-7}$ = 0.8-0.9 fm. Notice that the radii further from the nucleus are placed approximately twice as far apart as the inner radii in accordance with the rules previously described. We can take the average spacing of each consecutive radius and sum them to find R$_{max}$. Doing this we find 0.25 fm + 4*0.55 fm + 3*0.85 fm = 5 fm which is the target R$_{max}$. This process is then repeated for hundreds of semi-randomly generated R$_i$ sets which span the model space for $^3$H and $^3$He. 
+
+\subsection{Number of Gaussians}
+\label{ssec:ngaus}
+
+To utilize the SOG parametrization it is necessary to select the number of Gaussians to use for each fit. This process involves balancing several competing interests. If too few Gaussians are used the structure of the form factors may not be described in enough detail, but if too many Gaussians are used the data may be overfit. Overfitting would lead to the statistical noise in the data being mistaken for signal. The goal is then to fit the data as well as possible with no more parameters than required. 
+
+Several tools are used in selecting the number of Gaussians to be used for $^3$H and $^3$He. Among these are the $\chi^2$ value, the reduced $\chi^2$ value, Bayesian information criterion, Akaike information criterion, the sums of the fractions of the electric and magnetic charges held by the Gaussians, and finally a visual inspection of the form factors for known physical characteristics. By combining these different tests it is possible to determine how many Gaussians provides and optimal fit while noting that it is not uncommon for two consecutive numbers of Gaussians to yield reasonably similar fits \cite{doug_stats}.
+
+Reduced $\chi^2$, or r$\chi^2$, is similar to $\chi^2$ from Equation ~\ref{eq:chi2} except that it takes the number of data points and the number of parameters used in the fit in to account. The equation for reduced $\chi^2$ used in this analysis is given in Equation ~\ref{eq:rchi2}, where $\chi^2$ is from ~\ref{eq:chi2}, $N$ is the number of data points in the fit, and $N_{var}$ is the number of free parameters, or variables, used in the fit. Note that while $\chi^2$ must always decrease with the number of parameters added r$\chi^2$ can increase if too many parameters have been added. This makes finding the fits with the lowest r$\chi^2$ an elementary, but still useful, test that the proper number of parameters are being use to describe the data.
+
+\begin{equation} \label{eq:rchi2}
+	r\chi^2 = \frac{\chi^2}{N-N_{var}-1}
+\end{equation}
+
+The next two tests applied to determine the number of Gaussians to use in the SOG fits are Akaike information criterion (AIC) defined in Equation ~\ref{eq:AIC} \cite{Article:AIC} and Bayesian information criterion (BIC) defined in Equation ~\ref{eq:BIC} \cite{Article:BIC}. AIC and BIC are both a more advanced type of statistical test useful for selecting the proper model to use. The primary difference between the two is that BIC applies a larger penalty based on the number of model parameters used to fit the data. The way to select the correct model is to find the lowest AIC and BIC values, while remembering that these tests may choose slightly different models than the other tests. To determine how much difference there is between the different models
+
+\begin{equation} \label{eq:AIC}
+	AIC = 
+\end{equation}
+
+\begin{equation} \label{eq:BIC}
+	BIC = 
+\end{equation}
+
 \subsection{$^3$He Fits}
 \label{ssec:3he_fits}
 
