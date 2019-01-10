@@ -239,9 +239,9 @@ After the first Gaussian is placed at R$_0$ Gaussians R$_{1-7}$ are placed by se
 \subsection{Number of Gaussians}
 \label{ssec:ngaus}
 
-To utilize the SOG parametrization it is necessary to select the number of Gaussians, N$_{Gaus}$, to use for each fit. This process involves balancing several competing interests. If too few Gaussians are used the structure of the form factors may not be described in enough detail, but if too many Gaussians are used the data may be overfit. Overfitting would lead to the statistical noise in the data being mistaken for signal. The goal is then to fit the data as well as possible with no more parameters than required. 
+To utilize the SOG parametrization it is necessary to select the number of Gaussians, N$_{Gaus}$, to use for each fit. This process involves balancing several competing interests. If too few Gaussians are used the structure of the form factors may not be described in enough detail, but if too many Gaussians are used the data may be overfit. Overfitting would lead to the statistical noise in the data being mistaken for signal. The goal is then to fit the data as well as possible with no more parameters than required. A commonly used tool for selecting the best model is to calculate the $\chi^2$ value for a fit, however this is insufficient and can often be deceptive and lead to issues such as overfitting \cite{doug_stats}. 
 
-Several tools are used in selecting the number of Gaussians to be used for $^3$H and $^3$He. Among these are the $\chi^2$ value, the reduced $\chi^2$ value, Bayesian information criterion, Akaike information criterion, the sums of the fractions of the electric and magnetic charges held by the Gaussians, the percentage of fits that were deemed `good', and finally a visual inspection of the form factors for known physical characteristics. By combining these different tests it is possible to determine how many Gaussians provides and optimal fit while noting that it is not uncommon for two consecutive numbers of Gaussians to yield reasonably similar fits \cite{doug_stats}.
+To avoid this issue numerous other tests and metrics were applied when selecting N$_{Gaus}$ for $^3$H and $^3$He. Among these are the $\chi^2$ value, the reduced $\chi^2$ value, Bayesian information criterion, Akaike information criterion, the sums of the fractions of the electric and magnetic charges held by the Gaussians, the percentage of fits that were deemed `good', and finally a visual inspection of the form factors for known physical characteristics. By combining these different tests it is possible to determine how many Gaussians provides and optimal fit while noting that it is not uncommon for two consecutive numbers of Gaussians to yield reasonably similar fits \cite{doug_stats}.
 
 Reduced $\chi^2$, or r$\chi^2$, is similar to $\chi^2$ from Equation ~\ref{eq:chi2} except that it takes the number of data points and the number of parameters used in the fit in to account. The equation for reduced $\chi^2$ used in this analysis is given in Equation ~\ref{eq:rchi2}, where $\chi^2$ is from ~\ref{eq:chi2}, $N$ is the number of data points in the fit, and $N_{var}$ is the number of free parameters, or variables, used in the fit. Note that while $\chi^2$ must always decrease with the number of parameters added r$\chi^2$ can increase if too many parameters have been added. This makes finding the fits with the lowest r$\chi^2$ an elementary, but still useful, test that the proper number of parameters are being use to describe the data.
 
@@ -269,24 +269,55 @@ Previous analyses have also done a good job locating the first minima of the for
 
 Now that we have established the tools with which to select a model let us determine how many Gaussians to use when fitting $^3$H and $^3$He. $^3$He will be examined first due to there being more and often higher quality data for $^3$He than $^3$H. The method used to determine the number of Gaussians (i.e. the model) to use to fit the data was to run 100 fits of $^3$He with various numbers of Gaussians and then compute the various tests and metrics laid out above. These results were then compared and the `optimal' number of Gaussians was determined.
 
-Table ~\ref{tab:3he_ngaus} shows the results of this analysis for $^3$He.
+Table ~\ref{tab:3he_ngaus} shows the results of this model selection analysis for $^3$He. All of the values in the table are averages of the surviving `good' fits and the best values are bolded as is the final selection for the N$_{Gaus}$. $\chi^2_{max}$ is the maximum $\chi^2$ that removed all of the nonphysical dip minima in the charge form factor and $\%$ `Good' is the percentage of the 100 fits that survived this cut. Note that not all of these factors are weighted equally. The highest preference is given to BIC and AIC followed by r$\chi^2$ and visually inspecting the form factors. The other factors add more detailed information and are used more as tiebreakers and to raise red flags if something major is wrong.
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{|c c c|}
+\begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{BCM} & \textbf{$K'_{offset}$} & \textbf{$C_{V-to-F}$} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \textbf{$\%$ `Good'} \\
 \hline
-$U_1$ & 200 & 1035 \\
-$D_1$ & 37 & 1263\\
+8 & 584.902 & 2.41695 & 255.440 & 223.228 & \textbf{1.00769} & 1.11065 & 765 & 11 \\
+9 & 470.435 & 1.96014 & 204.590 & 172.375 & 1.00851 & \textbf{1.02161} & 521 & 58 \\
+10 & 469.177 & 1.97133 & 209.454 & 173.793 & 1.00812 & 1.08196 & 519 & 66 \\
+11 & 445.136 & 1.88617 & \textbf{201.387} & 162.233 & 1.00843 & 1.04007 & 503 & 67 \\
+\textbf{12} & \textbf{436.264} & \textbf{1.86438} & 201.727 & \textbf{159.045} & 1.00839 & 1.02557 & 501 & \textbf{75} \\
+13 & 439.084 & 1.89260 & 208.924 & 162.685 & 1.00947 & 1.03975 & 500 & 56 \\
 \hline
 \end{tabular}
 \caption{\bf{Determination of N$_{Gaus}$ for $^3$He}}
 \label{tab:3he_ngaus}
 \end{table}
 
-Table ~\ref{tab:3h_ngaus} shows the results of this analysis for $^3$H.
+Examining Table ~\ref{tab:3he_ngaus} it is clear that no model had the best value in every category so some further analysis is required to select N$_{Gaus}$ for $^3$He. N$_{Gaus}$ = 12 has the best value in both r$\chi^2$ and AIC which are both important metrics. Examining the other big metric of the BIC it can be seen that N$_{Gaus}$ = 12 and N$_{Gaus}$ = 11 have nearly identical BIC values. In fact $\Delta$BIC$<0.4$ which indicates a negligible preference between the models. All of the $\sum$Q$_{i_{ch}}$ values are fairly close offering little insight. The $\sum$Q$_{i_{m}}$ value for N$_{Gaus}$ = 12 is on the better end of the spectrum as well. N$_{Gaus}$ = 12 also had the most fits converge to be designated good fits with physical looking charge form factors. N$_{Gaus}$ = 12 also had the lowest average $\chi^2$ value, but this metric can be misleading as $\chi^2$ must always decrease as the number of parameters increases, however the different R$_i$ configurations and averaging the results makes this not necessarily true for the value in the table. Upon reviewing these metrics it is fairly clear the N$_{Gaus}$ = 12 is the best model to use for fitting the $^3$He data.
+
+Table ~\ref{tab:3h_ngaus} mirrors Table ~\ref{tab:3he_ngaus} and shows the results of this model selection analysis for $^3$H. It is immediately obvious that the $\chi^2$ values are larger for $^3$H than they were for $^3$He. This is because there are fewer data points especially at higher Q$^2$. The $\sum$Q$_i$ values are also further from unity with the magnetic charges being especially far off. Once again this is a product of the dearth of high Q$^2$ data in the world data. If more $^3$H data could be obtained at high Q$^2$ these values would likely fall more in line with our prior expectations. The poor $\sum$Q$_{i_{m}}$ agreement with the expectation of unity also demonstrates the analysis value of not forcing the Q$_i$ to sum to unity which could hide the need for more high Q$^2$ data.
+
+There are two entries for N$_{Gaus}$ = 8 labelled close and wide. These refer to the initial spacing of the R$_i$ values. For the close entry R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.3-0.4, and R$_{5-7}$ = 0.5-0.6, and for the wide entry R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section ~\ref{ssec:radii}. This meant for the close R$_i$ the average starting R$_{max}$ = 3.3 fm and for the wide spacing R$_{max}$ = 5 fm which is what we expect from previous analyses ~\cite{Article:Amroun}. This test was done to see if the final fit results depended on the starting R$_i$ values or if the R$_i$ optimization produced consistent results with less reasonable initial R$_i$ values.
+
+Fortunately, the results for the closer and wider R$_i$ spacings come out very similar indicating that the initial choice of R$_i$ does not significantly change the final result. This test had also previously been done for $^3$He with N$_{Gaus}$ = 10 with similar results to $^3$H with N$_{Gaus}$ = 8. The major differences were that the close less reasonable R$_i$ took longer for the R$_i$ optimization code to process, as would be expected. The close R$_i$ also had fewer fits converge to be designated `good' indicating that more of the initial R$_i$ may have been more unfavorable than the wider spacings. Thus, if the initial R$_i$ distributions are off the final fit results should generally still be reliable.  
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \textbf{$\%$ `Good'} \\
+\hline
+7 & 611.690 & 2.79310 & \textbf{263.039} & 238.851 & \textbf{1.08373} & 1.32730 & 611.7 & 1\\
+8 close & 601.836 & 2.77344 & 264.694 & 237.051 & 1.09013 & 1.32859 & 603 & 32\\
+\textbf{8} wide & 601.752 & 2.79892 & 264.661 & \textbf{237.018} & 1.08970 & 1.33270 & 603 & 39\\
+9 & 601.768 & 2.82579 & 270.123 & 239.025 & 1.08849 & 1.31982 & 604 & \textbf{95}\\
+10 & 601.893 & 2.84416 & 275.627 & 241.074 & 1.09248 & \textbf{1.29611} & 603 & 78\\
+11 & \textbf{600.750} & \textbf{2.77305} & 280.637 & 242.629 & 1.08699 & 1.34100 & 602 & 88\\
+\hline
+\end{tabular}
+\caption{\bf{Determination of N$_{Gaus}$ for $^3$H}}
+\label{tab:3h_ngaus}
+\end{table}
+
+Again, the agreement between the metrics is not unanimous, and in fact it is even less clear than for $^3$He. Let us begin by examining the lowest BIC value for N$_{Gaus}$ = 7. The other metrics also look decent until one notices that only one fit met the standards for a `good' fit. This failure for the vast majority of fits to look physical indicates that N$_{Gaus}$ = 7 is probably not a good choice for the best model. Examining the lowest AIC value for the wider R$_i$ spacings and N$_{Gaus}$ = 8 the other metrics look acceptable with a reasonable number converging to `goodness'. $\Delta$BIC for the wider R$_i$ spacings and N$_{Gaus}$ = 8 compared to N$_{Gaus}$ = 7 is only 1.6 indicating that there is little reason to prefer one model over the other. The higher Gaussian fits look reasonable as well, but the AIC, and especially BIC, grow significantly as N$_{Gaus}$ increases ruling out these fits so we select N$_{Gaus}$ = 8 with the wider initial R$_i$ spacings.
 
 \subsection{$^3$He Fits}
 \label{ssec:3he_fits}
