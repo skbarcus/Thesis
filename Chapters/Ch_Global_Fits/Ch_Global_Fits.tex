@@ -269,14 +269,14 @@ Previous analyses have also done a good job locating the first minima of the for
 
 Now that we have established the tools with which to select a model let us determine how many Gaussians to use when fitting $^3$H and $^3$He. $^3$He will be examined first due to there being more and often higher quality data for $^3$He than $^3$H. The method used to determine the number of Gaussians (i.e. the model) to use to fit the data was to run 100 fits of $^3$He with various numbers of Gaussians and then compute the various tests and metrics laid out above. These results were then compared and the `optimal' number of Gaussians was determined.
 
-Table ~\ref{tab:3he_ngaus} shows the results of this model selection analysis for $^3$He. All of the values in the table are averages of the surviving `good' fits and the best values are bolded as is the final selection for the N$_{Gaus}$. $\chi^2_{max}$ is the maximum $\chi^2$ that removed all of the nonphysical dip minima in the charge form factor and $\%$ `Good' is the percentage of the 100 fits that survived this cut. Note that not all of these factors are weighted equally. The highest preference is given to BIC and AIC followed by r$\chi^2$ and visually inspecting the form factors. The other factors add more detailed information and are used more as tiebreakers and to raise red flags if something major is wrong.
+Table ~\ref{tab:3he_ngaus} shows the results of this model selection analysis for $^3$He. All of the values in the table are averages of the surviving `good' fits and the best values are bolded as is the final selection for the N$_{Gaus}$. $\chi^2_{max}$ is the maximum $\chi^2$ cut that removed all of the nonphysical dip minima in the charge form factor, and `Good Fits' is the number of the 100 fits that survived this cut. Note that not all of these factors are weighted equally. The highest preference is given to BIC and AIC followed by r$\chi^2$ and visually inspecting the form factors. The other factors add more detailed information and are used more as tiebreakers and to raise red flags if something major is wrong.
 
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \textbf{$\%$ `Good'} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 \hline
 8 & 584.902 & 2.41695 & 255.440 & 223.228 & \textbf{1.00769} & 1.11065 & 765 & 11 \\
 9 & 470.435 & 1.96014 & 204.590 & 172.375 & 1.00851 & \textbf{1.02161} & 521 & 58 \\
@@ -303,11 +303,11 @@ Fortunately, the results for the closer and wider R$_i$ spacings come out very s
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \textbf{$\%$ `Good'} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 \hline
 7 & 611.690 & 2.79310 & \textbf{263.039} & 238.851 & \textbf{1.08373} & 1.32730 & 611.7 & 1\\
 8 close & 601.836 & 2.77344 & 264.694 & 237.051 & 1.09013 & 1.32859 & 603 & 32\\
-\textbf{8} wide & 601.752 & 2.79892 & 264.661 & \textbf{237.018} & 1.08970 & 1.33270 & 603 & 39\\
+\textbf{8 wide} & 601.752 & 2.79892 & 264.661 & \textbf{237.018} & 1.08970 & 1.33270 & 603 & 39\\
 9 & 601.768 & 2.82579 & 270.123 & 239.025 & 1.08849 & 1.31982 & 604 & \textbf{95}\\
 10 & 601.893 & 2.84416 & 275.627 & 241.074 & 1.09248 & \textbf{1.29611} & 603 & 78\\
 11 & \textbf{600.750} & \textbf{2.77305} & 280.637 & 242.629 & 1.08699 & 1.34100 & 602 & 88\\
@@ -321,6 +321,34 @@ Again, the agreement between the metrics is not unanimous, and in fact it is eve
 
 \subsection{$^3$He Fits}
 \label{ssec:3he_fits}
+
+Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred fits with the pseudorandom starting R$_i$ values along with the R$_i$ optimization procedure. The initial spacing of the R$_i$ values for these fits was R$_0$ = 0.1-0.2, R$_{1-6}$ = 0.3-0.4, and R$_{7-11}$ = 0.5-0.6 as explained in Section ~\ref{ssec:radii}. A total of 1352 individual fits using the pseudorandom R$_i$ values were generated. Table ~\ref{tab:3he_fits} shows the results of these 1352 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 500 in the same fashion as Tables ~\ref{tab:3he_ngaus} and ~\ref{tab:3h_ngaus}. 852 fits survive the $\chi^2$ cut of 500, and the remaining fits have charge form factors with the desired sharp minima.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+\hline
+12 & 523.743 & 2.23822 & 249.063 & 184.771 & 1.01018 & 1.04558 & No Cut & 1352\\
+12 & 436.564 & 1.86566 & 201.908 & 159.223 & 1.00840 & 1.02235 & 500 & 852\\
+\hline
+\end{tabular}
+\caption{\bf{Metrics for Final $^3$He Fits}}
+\label{tab:3he_fits}
+\end{table}
+
+Now let's examine the fits from ~\ref{tab:3he_fits} visually. Figure ~\ref{fig:3he_fch_no_cut} shows the results of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
+\end{center}
+\caption[\bf{Charge Form Factors from 1352 $^3$He Fits}]{
+{\bf{Charge Form Factors from 1352 $^3$He Fits}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
+\label{fig:3he_fch_no_cut}
+\end{figure}
 
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
