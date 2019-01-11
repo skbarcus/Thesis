@@ -261,7 +261,7 @@ The next two tests applied to determine the number of Gaussians to use in the SO
 
 When selecting the number of Gaussians to use the sum of the electric and magnetic charges is also examined. The sum of the Q$_i$ charges should sum to a charge of unity, however the fits do not enforce this requirement. Instead the sum of the Q$_i$ are allowed to fluctuate with the best fit values of the individual Q$_i$. This then makes the sums another sort of test of the goodness of each fit. A `better' fit, or one that complies more with our predetermined knowledge of the form factors, will have Q$_i$ sums closer to unity. Values further from unity can indicate a worse fit, but they also help to indicate where more data is needed.
 
-Finally a visual inspection of the form factors is applied. It is known that the form factors should have sharp minima as discussed in Section ~\ref{sec:ffs}. Often the fits will have only a dip in the form factor where a sharp minimum should exist and can thus be discarded. An example of this is seen in Figure ***. These nonphysical dip only fits tend to have higher $\chi^2$ values so cutting on $\chi^2$ can generally eliminate them. More specifically, this is done by plotting the charge form factor F$_{ch}$ and lowering the $\chi^2$ cut until all of the dip only minima fits are removed leaving only the sharp minima expected. These remaining fits are deemed to be the `good' fits. This process is done with the charge form factor as we have better data there. This procedure generally improves the corresponding magnetic form factors as well, but the lack of high Q$^2$ data for F$_m$ leads to more nonphysical or odd fits of F$_m$.
+Finally a visual inspection of the form factors is applied. It is known that the form factors should have sharp minima as discussed in Section ~\ref{sec:ffs}. Often the fits will have only a dip in the form factor where a sharp minimum should exist and can thus be discarded. An example of this is seen in Figure ~\ref{fig:3he_fch_no_cut}. These nonphysical dip only fits tend to have higher $\chi^2$ values so cutting on $\chi^2$ can generally eliminate them. More specifically, this is done by plotting the charge form factor F$_{ch}$ and lowering the $\chi^2$ cut until all of the dip only minima fits are removed leaving only the sharp minima expected. These remaining fits are deemed to be the `good' fits. This process is done with the charge form factor as we have better data there. This procedure generally improves the corresponding magnetic form factors as well, but the lack of high Q$^2$ data for F$_m$ leads to more nonphysical or odd fits of F$_m$.
 
 When fitting with any number of Gaussians many of the fit results do not meet the definition of a `good' fit described above. The percentage of the `good' fits to total fits is representative of the likelihood of fits of N$_{Gaus}$ to converge to physical looking fits. Assume N$_{Gaus}$ = 9 gives a good fit 40$\%$ of the time and N$_{Gaus}$ = 8 gives a good fit 5$\%$ of the time and has a slightly lower average BIC than N$_{Gaus}$ = 9. This analysis takes the low convergence rate as evidence against the slightly lower BIC results and may favor the marginally higher BIC results assuming $\Delta$BIC is small. 
 
@@ -339,15 +339,46 @@ Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred 
 \label{tab:3he_fits}
 \end{table}
 
-Now let's examine the fits from ~\ref{tab:3he_fits} visually. Figure ~\ref{fig:3he_fch_no_cut} shows the results of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. 
+Now let's examine the first set of fits from ~\ref{tab:3he_fits} visually. Figure ~\ref{fig:3he_fch_no_cut} shows the resulting charge form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. The first feature to notice is that many of the fits are behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. Numerous fits also have first or second minima located in the already well understood region of 20-30 fm$^{-2}$ where there are not expected to be minima. We want to eliminate these kinds of fits as we know them to be nonphysical from theory and prior measurements. 
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
 \end{center}
 \caption[\bf{Charge Form Factors from 1352 $^3$He Fits}]{
-{\bf{Charge Form Factors from 1352 $^3$He Fits}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
+{\bf{Charge Form Factors from 1352 $^3$He Fits}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
 \label{fig:3he_fch_no_cut}
+\end{figure}
+
+To eliminate these fits we can impose a cut, $\chi^2_{max}$, which removes fits with higher $\chi^2$ as described in Section ~\ref{ssec:ngaus}. Removing higher $\chi^2$ fits will generally remove the worse fits first hopefully eliminating the least physical looking results. A cut of $\chi^2_{max}$ = 500 on these fits results in the plot in Figure ~\ref{fig:3he_fch_cut}. By lowing $\chi^2_{max}$ until the last of the dip only minima were removed we have eliminated the nonphysical fits leaving only the desired `good' fits. Now it is clear that our results for the $^3$He charge form factor are in excellent agreement with \cite{Article:Amroun}. No changes were expected in the charge form factor due to the addition of more high Q$^2$ data as the charge form factor is dominated by the low Q$^2$ data which was already robust. If the new high Q$^2$ data is going to change our understanding of a form factor it is far more likely to be the magnetic form factor.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Fch_3He_n12_852.png}
+\end{center}
+\caption[\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
+{\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits.}
+\label{fig:3he_fch_cut}
+\end{figure}
+
+Figure ~\ref{fig:3he_fm_no_cut} shows the resulting magnetic form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together.
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Fm_3He_n12_1352.png}
+\end{center}
+\caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits}]{
+{\bf{Magnetic Form Factors from 1352 $^3$He Fits}} These magnetic form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
+\label{fig:3he_fm_no_cut}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.1\linewidth]{Fm_3He_n12_852.png}
+\end{center}
+\caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
+{\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These magnetic form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits.}
+\label{fig:3he_fm_cut}
 \end{figure}
 
 \subsection{$^3$H Fits}
