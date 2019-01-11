@@ -346,7 +346,7 @@ Now let's examine the first set of fits from ~\ref{tab:3he_fits} visually. Figur
 \includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
 \end{center}
 \caption[\bf{Charge Form Factors from 1352 $^3$He Fits}]{
-{\bf{Charge Form Factors from 1352 $^3$He Fits}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
+{\bf{Charge Form Factors from 1352 $^3$He Fits}} These charge form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
 \label{fig:3he_fch_no_cut}
 \end{figure}
 
@@ -357,29 +357,50 @@ To eliminate these fits we can impose a cut, $\chi^2_{max}$, which removes fits 
 \includegraphics[width=1.1\linewidth]{Fch_3He_n12_852.png}
 \end{center}
 \caption[\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
-{\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These charge form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits.}
+{\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These charge form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
 \label{fig:3he_fch_cut}
 \end{figure}
 
-Figure ~\ref{fig:3he_fm_no_cut} shows the resulting magnetic form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together.
+Figure ~\ref{fig:3he_fm_no_cut} shows the resulting magnetic form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. As with the charge form factor, with no cuts applied, there are many nonphysical fits. Most of these are identified by the location of their first minima being unreasonable, or by the minima not being sharp. It is expected that the magnetic form factor fits will be less clean than the charge form factor fits due to the relative lack of high Q$^2$ data. This is also why the $\chi^2_{max}$ cut was applied to the charge form factor instead of the magnetic. These fits can be greatly cleaned up once the $\chi^2_{max}$ cut is applied.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Fm_3He_n12_1352.png}
 \end{center}
 \caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits}]{
-{\bf{Magnetic Form Factors from 1352 $^3$He Fits}} These magnetic form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits.}
+{\bf{Magnetic Form Factors from 1352 $^3$He Fits}} These magnetic form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
 \label{fig:3he_fm_no_cut}
 \end{figure}
+
+Figure ~\ref{fig:3he_fm_cut} shows the resulting magnetic form factors of each of the 852 fits of the $^3$He world data that survive the $\chi^2_{max}$ = 500 cut plotted together. Immediate it is obvious that the cut has removed most of the nonphysical and bizarre looking results. However, unlike the charge form factor we are no longer in excellent agreement with the fit from \cite{Article:Amroun}. This is to be expected because the new data points from \cite{Article:Alex} and the point from this analysis add many new high Q$^2$ data points to the world data. The magnetic form factor is mostly influenced by these high Q$^2$ points unlike the charge form factor which is more influenced by low Q$^2$ points. So it is unsurprising that the charge form factor remains the same while the magnetic form factor evolved with the addition of new data.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Fm_3He_n12_852.png}
 \end{center}
 \caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
-{\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These magnetic form factors were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits.}
+{\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}} These magnetic form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
 \label{fig:3he_fm_cut}
 \end{figure}
 
+The new fits with the new datasets added indicate that the first diffractive minima for the $^3$He magnetic form factor is a few femtometers higher in Q$^2$ than previously though. The consensus of fits places this minima at 19-20 fm as opposed to the previous location of 18 fm.  
+
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
+
+Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fits with the pseudorandom starting R$_i$ values along with the R$_i$ optimization procedure. The initial spacing of the R$_i$ values for these fits was R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section ~\ref{ssec:radii}. A total of 2600 individual fits using the pseudorandom R$_i$ values were generated. Table ~\ref{tab:3he_fits} shows the results of these 1352 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 603 in the same fashion as Tables ~\ref{tab:3he_ngaus} and ~\ref{tab:3h_ngaus}. 908 fits survive the $\chi^2$ cut of 603, and the remaining fits have charge form factors with the desired sharp minima.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+\hline
+8 & 611.385 & 2.81744 & 266.175 & 238.532 & 1.08866 & 1.33481 & No Cut & 2600\\
+8 & 601.840 & 2.77346 & 264.695 & 237.053 & 1.08991 & 1.32926 & 603 & 908\\
+\hline
+\end{tabular}
+\caption{\bf{Metrics for Final $^3$H Fits}}
+\label{tab:3he_fits}
+\end{table}
