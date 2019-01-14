@@ -385,6 +385,25 @@ Figure ~\ref{fig:3he_fm_cut} shows the resulting magnetic form factors of each o
 
 The new fits with the new datasets added indicate that the first diffractive minima for the $^3$He magnetic form factor is a few femtometers higher in Q$^2$ than previously though. The consensus of fits places this minima at 19-20 fm as opposed to the previous location of 18 fm.  
 
+Now that we have functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3he_charge_density} shows the charge densities for $^3$He prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3he_charge_density_no_cut} as well as the charge density for $^3$He with a $\chi^2_{max}$ cut = 500 in ~\ref{fig:3he_charge_density_cut}. Without the cut the charge density shapes are quite variable at small radii and vary widely in magnitude. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the only charge densities remaining are extremely consistent in shape and magnitude. Below a radius of about 0.5 fm the charge density comes to a relatively stable plateau. We also note that the charge density tapers off by a radii of 5 fm justifying our guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Charge_Density_3He_n12_1352.png}
+  \caption{Charge densities of 1352 $^3$He fits with no $\chi^2_{max}$ cut.}
+  \label{fig:3he_charge_density_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Charge_Density_3He_n12_852.png}
+  \caption{Charge densities of 852 $^3$He fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \label{fig:3he_charge_density_cut}
+\end{subfigure}
+\caption{\bf{$^3$He Charge densities.}}
+\label{fig:3he_charge_density}
+\end{figure}
+
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
 
@@ -450,3 +469,24 @@ Figure ~\ref{fig:3h_fm_cut} shows the resulting magnetic form factors of each of
 {\bf{Magnetic Form Factors from 2600 $^3$H Fits $\chi^2_{max}$ = 603.}} These magnetic form factors (red lines) were derived from 2600 fits of the $^3$H world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 603 cut was applied removing the nonphysical fits leaving 908 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
 \label{fig:3h_fm_cut}
 \end{figure}
+
+Using the functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3h_charge_density} shows the charge densities for $^3$H prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3h_charge_density_no_cut} as well as the charge density for $^3$H with a $\chi^2_{max}$ cut = 603 in ~\ref{fig:3h_charge_density_cut}. Without the cut the charge density appears to be bundled in two different groups, one predicting a higher density at a radius of zero and one predicting a lower density at zero. There is even a single fit which failed to converge well centered around 2 fm. Each of these groups has a fairly wide spread of magnitudes at low radii. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the higher bundle of fits disappears leaving only the lower. 
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Charge_Density_3H_n8_2600.png}
+  \caption{Charge densities of 2600 $^3$H fits with no $\chi^2_{max}$ cut.}
+  \label{fig:3h_charge_density_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Charge_Density_3H_n8_908.png}
+  \caption{Charge densities of 908 $^3$H fits surviving a $\chi^2_{max}$ = 603 cut.}
+  \label{fig:3h_charge_density_cut}
+\end{subfigure}
+\caption{\bf{$^3$H Charge densities.}}
+\label{fig:3h_charge_density}
+\end{figure}
+
+The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with higher charge density at low radii. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}.
