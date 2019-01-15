@@ -339,53 +339,59 @@ Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred 
 \label{tab:3he_fits}
 \end{table}
 
-Now examine the first set of fits from ~\ref{tab:3he_fits} visually. Figure ~\ref{fig:3he_fch_no_cut} shows the resulting charge form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. The first feature to notice is that many of the fits are behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. Numerous fits also have first or second minima located in the already well understood region of 20-30 fm$^{-2}$ where there are not expected to be minima. We want to eliminate these kinds of fits as we know them to be nonphysical from theory and prior measurements. 
+Table ~\ref{tab:3he_fits} shows that the $\chi^2_{max}$ cut improves all of the metrics as expected. Of the 1352 fits 852, 63$\%$, survive the $\chi^2_{max}$ cut showing that the fits are not struggling to converge. There are 259 data points for $^3$He resulting in a $\chi^2$ of 436.564. This works out to a $\chi^2$ of 1.686 per data point. This indicates a reasonably good fit, but could be decreased if the individual data sets were given a floating normalization. This analysis chose not to apply this normalization so as to better represent the current state of the world data including it's uncertainties and disagreements.
+
+The $\sum$Q$_{i_{ch}}$ = 1.00840 when we expect it to equal unity from physical considerations of the form factors discussed in Section ~\ref{sec:ffs}. This means the fits on average see 0.840$\%$ more electric charge than expected. This occurs because we did not force the form factors to approach unity at the origin. Again, we hope to represent the world data as is and use the $\sum$Q$_{i}$ to indicate the quality of the available data. If we forced the form factors to unity at the origin they would artificially turn over even more at small radii. Still, $\sum$Q$_{i_{ch}}$ = 1.00840 is close to one and indicates that the world data describes the charge form factor for $^3$He well. $\sum$Q$_{i_{m}}$ = 1.02235 shows an excess of 2.235$\%$ in the magnetic charge which is worse than the electric charge due again to the lack of high Q$^2$ data. Even so, the magnetic form factor for $^3$He from the fits seems to correspond well with our prior expectations. 
+
+Now let's examine the fits from Table ~\ref{tab:3he_fits} visually. Figure ~\ref{fig:3he_fch} shows the resulting charge form factors of each of the 1352 fits of the $^3$He world data. Figure ~\ref{fig:3he_fch_no_cut} shows the 1352 fits without any $\chi^2_{max}$ cut, and Figure ~\ref{fig:3he_fch_cut} shows the 852 fits surviving a $\chi^2_{max}$ = 500 cut. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. 
 
 \begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
-\end{center}
-\caption[\bf{Charge Form Factors from 1352 $^3$He Fits}]{
-{\bf{Charge Form Factors from 1352 $^3$He Fits.}} These charge form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3he_fch_no_cut}
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
+  \caption{\bf{Charge Form Factors from 1352 $^3$He Fits with no $\chi^2_{max}$ cut.}}
+  \label{fig:3he_fch_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fch_3He_n12_852.png}
+  \caption{\bf{Charge Form Factors from 852 $^3$He Fits surviving a $\chi^2_{max}$ = 500 cut.}}
+  \label{fig:3he_fch_cut}
+\end{subfigure}
+\caption[\bf{$^3$He Charge Form Factors.}] {
+{\bf{$^3$He Charge Form Factors.}} These charge form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. The blue line is the fit from \cite{Article:Amroun}.}
+\label{fig:3he_fch}
 \end{figure}
 
-To eliminate these fits we can impose a cut, $\chi^2_{max}$, which removes fits with higher $\chi^2$ as described in Section ~\ref{ssec:ngaus}. Removing higher $\chi^2$ fits will generally remove the worse fits first hopefully eliminating the least physical looking results. A cut of $\chi^2_{max}$ = 500 on these fits results in the plot in Figure ~\ref{fig:3he_fch_cut}. By lowing $\chi^2_{max}$ until the last of the dip only minima were removed we have eliminated the nonphysical fits leaving only the desired `good' fits. Now it is clear that our results for the $^3$He charge form factor are in excellent agreement with \cite{Article:Amroun}. No changes were expected in the charge form factor due to the addition of more high Q$^2$ data as the charge form factor is dominated by the low Q$^2$ data which was already robust. If the new high Q$^2$ data is going to change our understanding of a form factor it is far more likely to be the magnetic form factor.
+First examine the 1352 fits with no $\chi^2_{max}$ cut in Figure ~\ref{fig:3he_fch_no_cut}. The first feature to notice is that many of the fits are behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. Numerous fits also have first or second minima located in the already well understood region of 20-30 fm$^{-2}$ where there are not expected to be minima. We want to eliminate these kinds of fits as we know them to be nonphysical from theory and prior measurements. 
+
+To eliminate these fits we can impose a cut, $\chi^2_{max}$, which removes fits with higher $\chi^2$ as described in Section ~\ref{ssec:ngaus}. Removing higher $\chi^2$ fits will generally remove the worse fits first hopefully eliminating the least physical looking results. A cut of $\chi^2_{max}$ = 500 on these 1352 fits results in 852 fits surviving and shown in the plot in Figure ~\ref{fig:3he_fch_cut}. By lowing $\chi^2_{max}$ until the last of the dip only minima were removed we have eliminated the nonphysical fits leaving only the desired `good' fits. Now it is clear that our results for the $^3$He charge form factor are in excellent agreement with \cite{Article:Amroun}. No changes were expected in the charge form factor due to the addition of more high Q$^2$ data as the charge form factor is dominated by the low Q$^2$ data which was already robust. If the new high Q$^2$ data is going to change our understanding of a form factor it is far more likely to be the magnetic form factor.
+
+Figure ~\ref{fig:3he_fm} shows the resulting magnetic form factors of each of the 1352 fits of the $^3$He world data. Figure ~\ref{fig:3he_fm_no_cut} shows the 1352 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3he_fm_cut} shows the 852 fits surviving the $\chi^2_{max}$ = 500 cut. Beginning with the fits without a $\chi^2_{max}$ cut from Figure ~\ref{fig:3he_fm_no_cut} there are many nonphysical fits again. Most of these are identified by the location of their first minima being unreasonable, or by the minima not being sharp. It is expected that the magnetic form factor fits will be less clean than the charge form factor fits due to the relative lack of high Q$^2$ data. This is also why the $\chi^2_{max}$ cut was applied to the charge form factor instead of the magnetic. These fits can be greatly cleaned up once the $\chi^2_{max}$ cut is applied.
 
 \begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fch_3He_n12_852.png}
-\end{center}
-\caption[\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
-{\bf{Charge Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500.}} These charge form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3he_fch_cut}
-\end{figure}
-
-Figure ~\ref{fig:3he_fm_no_cut} shows the resulting magnetic form factors of each of the 1352 fits of the $^3$He world data without any $\chi^2_{max}$ cut plotted together. As with the charge form factor, with no cuts applied, there are many nonphysical fits. Most of these are identified by the location of their first minima being unreasonable, or by the minima not being sharp. It is expected that the magnetic form factor fits will be less clean than the charge form factor fits due to the relative lack of high Q$^2$ data. This is also why the $\chi^2_{max}$ cut was applied to the charge form factor instead of the magnetic. These fits can be greatly cleaned up once the $\chi^2_{max}$ cut is applied.
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fm_3He_n12_1352.png}
-\end{center}
-\caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits}]{
-{\bf{Magnetic Form Factors from 1352 $^3$He Fits.}} These magnetic form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3he_fm_no_cut}
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fm_3He_n12_1352.png}
+  \caption{\bf{Magnetic Form Factors from 1352 $^3$He Fits with no $\chi^2_{max}$ cut.}}
+  \label{fig:3he_fm_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fm_3He_n12_852.png}
+  \caption{\bf{Magnetic Form Factors from 852 $^3$He Fits surviving a $\chi^2_{max}$ = 500 cut.}}
+  \label{fig:3he_fm_cut}
+\end{subfigure}
+\caption[\bf{$^3$He Magnetic Form Factors.}] {
+{\bf{$^3$He Charge Form Factors.}} These Magnetic form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. The blue line is the fit from \cite{Article:Amroun}.}
+\label{fig:3he_fm}
 \end{figure}
 
 Figure ~\ref{fig:3he_fm_cut} shows the resulting magnetic form factors of each of the 852 fits of the $^3$He world data that survive the $\chi^2_{max}$ = 500 cut plotted together. Immediate it is obvious that the cut has removed most of the nonphysical and bizarre looking results. However, unlike the charge form factor we are no longer in excellent agreement with the fit from \cite{Article:Amroun}. This is to be expected because the new data points from \cite{Article:Alex} and the point from this analysis add many new high Q$^2$ data points to the world data. The magnetic form factor is mostly influenced by these high Q$^2$ points unlike the charge form factor which is more influenced by low Q$^2$ points. So it is unsurprising that the charge form factor remains the same while the magnetic form factor evolved with the addition of new data.
 
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fm_3He_n12_852.png}
-\end{center}
-\caption[\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500}]{
-{\bf{Magnetic Form Factors from 1352 $^3$He Fits $\chi^2_{max}$ = 500.}} These magnetic form factors (red lines) were derived from 1352 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 500 cut was applied removing the nonphysical fits leaving 852 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3he_fm_cut}
-\end{figure}
-
 The new fits with the new datasets added indicate that the first diffractive minima for the $^3$He magnetic form factor is a few femtometers higher in Q$^2$ than previously though. The consensus of fits places this minima at 19-20 fm as opposed to the previous location of 18 fm.  
 
-Now that we have functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3he_charge_density} shows the charge densities for $^3$He prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3he_charge_density_no_cut} as well as the charge density for $^3$He with a $\chi^2_{max}$ cut = 500 in ~\ref{fig:3he_charge_density_cut}. Without the cut the charge density shapes are quite variable at small radii and vary widely in magnitude. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the only charge densities remaining are extremely consistent in shape and magnitude. Below a radius of about 0.5 fm the charge density comes to a relatively stable plateau. We also note that the charge density tapers off by a radii of 5 fm justifying our guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+Now that we have functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3he_charge_density} shows the charge densities for $^3$He prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3he_charge_density_no_cut} as well as the charge density for $^3$He with a $\chi^2_{max}$ cut = 500 in ~\ref{fig:3he_charge_density_cut}. Without the cut the charge density shapes are quite variable at small radii and vary widely in magnitude. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the only charge densities remaining are extremely consistent in shape and magnitude. Below a radius of about 0.5 fm the charge density comes to a relatively stable plateau. If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down slightly near the origin instead of showing the plateauing behavior we observe. We also note that the charge density tapers off by a radii of 5 fm justifying our guess of R$_{max}$ in Section ~\ref{ssec:radii}.
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -424,51 +430,55 @@ Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fi
 \label{tab:3h_fits}
 \end{table}
 
-Figure ~\ref{fig:3h_fch_no_cut} shows the first set charge form factors from each of the 2600 fits from ~\ref{tab:3h_fits} without any $\chi^2_{max}$ cut plotted together. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. It is important to note that no new data has been added for $^3$H so we do not expect our results to diverge much from past results like \cite{Article:Amroun}. This makes the $^3$H results more useful to check the consistency of our methodology with past results and as a point of comparison to the $^3$He results. It was initially hoped that new $^3$H data would be available for this analysis from the planned experiment E12-14-009 \cite{3h_proposal} which was the original basis for this thesis. Unfortunately, due to budget uncertainty and continuing resolutions this experiment was cancelled. Happily, Hall A was able to take some elastic $^3$H data in the end, and once this data has been analyzed it should be a simple matter to add it to this analysis.
+Table ~\ref{tab:3h_fits} shows that the $\chi^2_{max}$ cut again improves all of the metrics as expected. Of the 2600 fits 908, 35$\%$, survive the $\chi^2_{max}$ cut. This shows that the fits have more difficulty converging than they did for $^3$He, but they still converge with enough regularity to get a useful and reliable sample of fits. There are 234 data points for $^3$H resulting in a $\chi^2$ of 601.840. This works out to a $\chi^2$ of 2.572 per data point. This value is significantly higher than the value for $^3$He of 1.686 implying that the data for $^3$H is not as robust. The fits still look very reasonable and agree decently with past results. If the individual data sets were given a floating normalization the $\chi^2$ would lower significantly, but this would mask the actual state of the $^3$H world data. 
+
+The $\sum$Q$_{i_{ch}}$ = 1.08991 when we expect it to equal unity from physical considerations of the form factors discussed in Section ~\ref{sec:ffs}. This means the fits on average see 8.991$\%$ more electric charge than expected. Again, this occurs because we did not force the form factors to approach unity at the origin, but this demonstrates our relatively worse lack of understanding of the charge form factor for $^3$H compared to $^3$He. If we forced the form factors to unity at the origin they would artificially turn over even more at small radii. $\sum$Q$_{i_{m}}$ = 1.32926 shows an excess of 32.926$\%$ in the magnetic charge which is much worse than the charge form factor for $^3$H or either form factor for $^3$He. Now we see the analytical use of not forcing the Q$_i$ to sum to unity artificially. If we had done this it would not be nearly as clear that most of our uncertainty about the $^3$H form factors comes from our lack of understanding of the magnetic form factor. This continues to stress the need for more high Q$^2$ data for $^3$H to improve our understanding of the form factors significantly.
+
+Figure ~\ref{fig:3h_fch} shows the charge form factors from each of the 2600 fits from Table ~\ref{tab:3h_fits}. Figure ~\ref{fig:3h_fch_no_cut} shows the 2600 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3h_fch_cut} shows the 908 fits surviving a $\chi^2_{max}$ = 603 cut. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. It is important to note that no new data has been added for $^3$H so we do not expect our results to diverge much from past results like \cite{Article:Amroun}. This makes the $^3$H results more useful to check the consistency of our methodology with past results and as a point of comparison to the $^3$He results. It was initially hoped that new $^3$H data would be available for this analysis from the planned experiment E12-14-009 \cite{3h_proposal} which was the original basis for this thesis. Unfortunately, due to budget uncertainty and continuing resolutions this experiment was cancelled. Happily, Hall A was able to take some elastic $^3$H data in the end, and once this data has been analyzed it should be a simple matter to add it to this analysis.
 
 \begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fch_3H_n8_2600.png}
-\end{center}
-\caption[\bf{Charge Form Factors from 2600 $^3$H Fits}]{
-{\bf{Charge Form Factors from 2600 $^3$H Fits.}} These charge form factors (red lines) were derived from 2600 fits of the $^3$H world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3h_fch_no_cut}
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fch_3H_n8_2600.png}
+  \caption{\bf{Charge Form Factors from 2600 $^3$H Fits with no $\chi^2_{max}$ cut.}}
+  \label{fig:3h_fch_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fch_3H_n8_908.png}
+  \caption{\bf{Charge Form Factors from 908 $^3$H Fits surviving a $\chi^2_{max}$ = 603 cut.}}
+  \label{fig:3h_fch_cut}
+\end{subfigure}
+\caption[\bf{$^3$H Charge Form Factors.}] {
+{\bf{$^3$H Charge Form Factors.}} These charge form factors (red lines) were derived from 2600 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. The blue line is the fit from \cite{Article:Amroun}.}
+\label{fig:3h_fch}
 \end{figure}
 
-Again, we notice that many of the fits are behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. These are even more shallow than the $^3$He dips and often almost miss the first minima entirely. There are even two fits that seemingly failed to converge at all and stand out wildly from the others. The location of the first minima looks to be in good agreement with previous measurements even without the nonphysical fits being removed. The second minima, however, is barely pinned down at all. It seems as though it could be located anywhere from Q$^2$ = 26 - 60+ fm$^{-2}$ with a denser grouping around 30 fm$^{-2}$ or not exist at all according to the current data. 
+Looking at Figure ~\ref{fig:3h_fch_no_cut} without a $\chi^2_{max}$ cut we notice that many of the fits are again behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. These are even more shallow than the $^3$He dips and often almost miss the first minima entirely. There are even two fits that seemingly failed to converge at all and stand out wildly from the others. The location of the first minima looks to be in good agreement with previous measurements even without the nonphysical fits being removed. The second minima, however, is barely pinned down at all. It seems as though it could be located anywhere from Q$^2$ = 26 - 60+ fm$^{-2}$ with a denser grouping around 30 fm$^{-2}$ or not exist at all according to the current data. 
 
-Figure ~\ref{fig:3h_fch_cut} shows the resulting charge form factors of each of the 908 fits of the $^3$H world data that survive the $\chi^2_{max}$ = 603 cut plotted together. Immediate it is obvious that the cut has removed most of the nonphysical and bizarre looking results. The results remain in reasonable agreement with \cite{Article:Amroun} except the peak after the first minuma is higher and falls off faster. The cluster of second minima near 30 fm$^{-2}$ has almost entirely disappeared. There is still no determination of the location of a secondary diffractive minima with the current data indicating it could be located anywhere from  Q$^2$ = 30 - 60+ fm$^{-2}$ or not exist at all. There is simply not enough high precision data in the world data to make any determinations beyond approximately 25 fm$^{-2}$.
+Now we apply the $\chi^2_{max}$ = 603 cut, and get Figure ~\ref{fig:3h_fch_cut} with the resulting charge form factors that survive. Immediately it is obvious that the cut has removed most of the nonphysical and bizarre looking results. The results remain in reasonable agreement with \cite{Article:Amroun} except the peak after the first minima is higher and falls off faster. The cluster of second minima near 30 fm$^{-2}$ has almost entirely disappeared. There is still no determination of the location of a secondary diffractive minima with the current data indicating it could be located anywhere from  Q$^2$ = 30 - 60+ fm$^{-2}$ or not exist at all. There is simply not enough high precision data in the world data to make any determinations beyond approximately 25 fm$^{-2}$.
+
+Figure ~\ref{fig:3h_fm} shows the resulting magnetic form factors of each of the 2600 fits of the $^3$H world data. Figure ~\ref{fig:3h_fm_no_cut} shows the 2600 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3h_fm_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. Beginning with the fits without a $\chi^2_{max}$ cut in Figure ~\ref{fig:3h_fm_no_cut} we see that as with the charge form factor there are many nonphysical fits. Most of these are dip only minima. The fits are decently consistent overall, and the location of the first minima is consistent with past results. Again, the magnetic form factor is less well determined than the charge form factor fits due to the relative lack of high Q$^2$ data. 
 
 \begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fch_3H_n8_908.png}
-\end{center}
-\caption[\bf{Charge Form Factors from 2600 $^3$H Fits $\chi^2_{max}$ = 603}]{
-{\bf{Charge Form Factors from 2600 $^3$H Fits $\chi^2_{max}$ = 603.}} These charge form factors (red lines) were derived from 2600 fits of the $^3$H world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 603 cut was applied removing the nonphysical fits leaving 908 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3h_fch_cut}
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fm_3H_n8_2600.png}
+  \caption{\bf{Magnetic Form Factors from 2600 $^3$H Fits with no $\chi^2_{max}$ cut.}}
+  \label{fig:3h_fm_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{Fm_3H_n8_908.png}
+  \caption{\bf{Magnetic Form Factors from 908 $^3$H Fits surviving a $\chi^2_{max}$ = 603 cut.}}
+  \label{fig:3h_fm_cut}
+\end{subfigure}
+\caption[\bf{$^3$H Magnetic Form Factors.}] {
+{\bf{$^3$H Magnetic Form Factors.}} These Magnetic form factors (red lines) were derived from 2600 fits of the $^3$He world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. The blue line is the fit from \cite{Article:Amroun}.}
+\label{fig:3h_fm}
 \end{figure}
 
-Figure ~\ref{fig:3h_fm_no_cut} shows the resulting magnetic form factors of each of the 2600 fits of the $^3$H world data without any $\chi^2_{max}$ cut plotted together. As with the charge form factor, with no cuts applied, there are many nonphysical fits. Most of these are dip only minima. The fits are decently consistent overall, and the location of the first minima is consistent with past results. Again, the magnetic form factor is less well determined than the charge form factor fits due to the relative lack of high Q$^2$ data. 
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fm_3H_n8_2600.png}
-\end{center}
-\caption[\bf{Magnetic Form Factors from 2600 $^3$H Fits}]{
-{\bf{Magnetic Form Factors from 2600 $^3$H Fits.}} These magnetic form factors (red lines) were derived from 2600 fits of the $^3$H world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. No $\chi^2_{max}$ cut was applied resulting in many nonphysical fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3h_fm_no_cut}
-\end{figure}
-
-Figure ~\ref{fig:3h_fm_cut} shows the resulting magnetic form factors of each of the 908 fits of the $^3$H world data that survive the $\chi^2_{max}$ = 603 cut plotted together. Once again, the cut has removed most of the nonphysical and bizarre looking results. After this cut our results still remain in agreement with \cite{Article:Amroun} and others. This is as we expect since no new $^3$H data was added to the world data. The fits indicate that a secondary diffractive minima could be anywhere from Q$^2$ = 36 - 60+ fm$^{-2}$ and offer little insight beyond this range. Collecting more high Q$^2$ data is again the best way to improve our knowledge of the $^3$H magnetic form factor.
-
-\begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.1\linewidth]{Fm_3H_n8_908.png}
-\end{center}
-\caption[\bf{Magnetic Form Factors from 2600 $^3$H Fits $\chi^2_{max}$ = 603}]{
-{\bf{Magnetic Form Factors from 2600 $^3$H Fits $\chi^2_{max}$ = 603.}} These magnetic form factors (red lines) were derived from 2600 fits of the $^3$H world data using the pseudorandom R$_i$ values and the R$_i$ optimization procedure. A $\chi^2_{max}$ = 603 cut was applied removing the nonphysical fits leaving 908 `good' fits. The blue line is the fit from \cite{Article:Amroun}.}
-\label{fig:3h_fm_cut}
-\end{figure}
+Next we examine the magnetic form factors of the 908 fits of the $^3$H world data that survive the $\chi^2_{max}$ = 603 cut shown in Figure ~\ref{fig:3h_fm_cut}. Once again, the cut has removed most of the nonphysical and bizarre looking results. After this cut our results still remain in agreement with \cite{Article:Amroun} and others. This is as we expect since no new $^3$H data was added to the world data. The fits indicate that a secondary diffractive minima could be anywhere from Q$^2$ = 36 - 60+ fm$^{-2}$ and offer little insight beyond this range. Collecting more high Q$^2$ data is again the best way to improve our knowledge of the $^3$H magnetic form factor.
 
 Using the functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3h_charge_density} shows the charge densities for $^3$H prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3h_charge_density_no_cut} as well as the charge density for $^3$H with a $\chi^2_{max}$ cut = 603 in ~\ref{fig:3h_charge_density_cut}. Without the cut the charge density appears to be bundled in two different groups, one predicting a higher density at a radius of zero and one predicting a lower density at zero. There is even a single fit which failed to converge well centered around 2 fm. Each of these groups has a fairly wide spread of magnitudes at low radii. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the higher bundle of fits disappears leaving only the lower. 
 
@@ -489,4 +499,4 @@ Using the functions describing the form factors we can calculate the charge dens
 \label{fig:3h_charge_density}
 \end{figure}
 
-The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with higher charge density at low radii. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with higher charge density at low radii. If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down significantly near the origin instead of showing the plateauing behavior we observe. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}.
