@@ -406,8 +406,27 @@ Now that we have functions describing the form factors we can calculate the char
   \caption{Charge densities of 852 $^3$He fits surviving a $\chi^2_{max}$ = 500 cut.}
   \label{fig:3he_charge_density_cut}
 \end{subfigure}
-\caption{\bf{$^3$He Charge densities.}}
+\caption{\bf{$^3$He Charge Densities.}}
 \label{fig:3he_charge_density}
+\end{figure}
+
+Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge radii for each of the individual fits. Figure ~\ref{fig:3he_rms_deriv} shows a plot of the 1352 charge radii resulting from the fits of $^3$He world data. Figure ~\ref{fig:3he_rms_deriv_no_cut} shows the 1352 fits without a $\chi^2_{max}$ cut, and ~\ref{fig:3he_rms_deriv_cut} shows the 852 fits surviving the $\chi^2_{max}$ = 500 cut. Notice that after the cut is applied the second peak at higher radii disappears indicating that it was nonphysical form factors that were yielding these larger radii. The average of all the RMS charge radii surviving the fit was 1.90086 fm (***figure our number of digits later). A Gaussian fit to these radii finds a mean of 1.90102 fm with a standard deviation of 0.0014419 fm. We see that the radii are well grouped and form a reasonable semblance of a Gaussian distribution.
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{RMS_deriv_3He_n12_1352.png}
+  \caption{RMS charge radii of 1352 $^3$He fits with no $\chi^2_{max}$ cut.}
+  \label{fig:3he_rms_deriv_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{RMS_deriv_3He_n12_852.png}
+  \caption{RMS charge radii of 852 $^3$He fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \label{fig:3he_rms_deriv_cut}
+\end{subfigure}
+\caption{\bf{$^3$He RMS Charge Radii.}}
+\label{fig:3he_rms_deriv}
 \end{figure}
 
 \subsection{$^3$H Fits}
@@ -495,8 +514,28 @@ Using the functions describing the form factors we can calculate the charge dens
   \caption{Charge densities of 908 $^3$H fits surviving a $\chi^2_{max}$ = 603 cut.}
   \label{fig:3h_charge_density_cut}
 \end{subfigure}
-\caption{\bf{$^3$H Charge densities.}}
+\caption{\bf{$^3$H Charge Densities.}}
 \label{fig:3h_charge_density}
 \end{figure}
 
 The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with higher charge density at low radii. If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down significantly near the origin instead of showing the plateauing behavior we observe. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+
+Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge radii for each of the individual fits. Figure ~\ref{fig:3h_rms_deriv} shows a plot of the 2600 charge radii resulting from the fits of $^3$H world data. Figure ~\ref{fig:3h_rms_deriv_no_cut} shows the 2600 fits without a $\chi^2_{max}$ cut, and ~\ref{fig:3h_rms_deriv_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. The cut remove some of the radii at the edges of the distribution, but does not significantly alter its shape. The average of all the RMS charge radii surviving the fit was 2.02038 fm (***figure our number of digits later). A Gaussian fit to these radii finds a mean of 2.01915 fm with a standard deviation of 0.0132725 fm. The $^3$H radii are less well grouped than the $^3$He radii and form a less well defined Gaussian distribution, but they still appear to be clustered roughly around a mean value without errant peaks separated from the prime distribution.
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{RMS_deriv_3H_n8_2600.png}
+  \caption{RMS charge radii of 2600 $^3$H fits with no $\chi^2_{max}$ cut.}
+  \label{fig:3h_rms_deriv_no_cut}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.1\linewidth]{RMS_deriv_3H_n8_908.png}
+  \caption{RMS charge radii of 908 $^3$H fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \label{fig:3h_rms_deriv_cut}
+\end{subfigure}
+\caption{\bf{$^3$H RMS Charge Radii.}}
+\label{fig:3h_rms_deriv}
+\end{figure}
+
