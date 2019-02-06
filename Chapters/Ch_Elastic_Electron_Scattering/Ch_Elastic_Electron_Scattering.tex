@@ -130,7 +130,7 @@ Now $isin\left(\frac{Rq}{\hbar}\right) \xrightarrow{} 0$ and we can drop the $is
 \noindent Integrating over $\phi$ and $\cos(\omega)$ we obtain equation ~\ref{eq:ff_expanded_r} ~\cite{Book:Povh}.
 
 \begin{equation} \label{eq:ff_expanded_r}
-	F(q^2) = 4\pi \int_0^\infty \rho(r) r^2 dr - 4\pi \frac{q^2}{6\hbar^2} \int_0^\infty f(r) r^4 dr
+	F(q^2) = 4\pi \int_0^\infty \rho(r) r^2 dr - 4\pi \frac{q^2}{6\hbar^2} \int_0^\infty \rho(r) r^4 dr
 \end{equation}
 
 If we require that $\rho(r)$ be normalized such that $4\pi \int_0^\infty \rho(r) r^2 dr = 1$ then we can define the mean square charge radius as in equation ~\ref{eq:rms}.
@@ -171,10 +171,10 @@ At this point we are still claiming that the recoil of the struck particle is ne
 
 Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in ~\ref{eq:energy_estimate} along with $h \approx 4.136 *10^{-15} eV*s$ and $c\approx 3*10^{8} m/s$ yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
 
-Taking the recoil of the target in to account one finds that the recoil factor is given by equation ~\ref{eq:recoil}. 
+Taking the recoil of the target in to account one finds that the recoil factor is given by Equation ~\ref{eq:recoil} from Equation ~\ref{eq:E'}. 
 
 \begin{equation} \label{eq:recoil}
-\frac{E'}{E_0} = \frac{1}{1+\frac{2E}{M} sin^2 \left( \frac{\theta}{2} \right)}
+\frac{E'}{E_0} = \frac{1}{1+\frac{2E_0}{M} sin^2 \left( \frac{\theta}{2} \right)}
 \end{equation}
 
 \noindent Adding the factor of $\frac{E'}{E_0}$ to the Mott cross section gives equation ~\ref{eq:mott_recoil}.
@@ -189,7 +189,7 @@ Taking the recoil of the target in to account one finds that the recoil factor i
 \left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 cos^2\left( \frac{\theta}{2} \right)}{4E_0^2 sin^4\left( \frac{\theta}{2} \right)}
 \end{equation}
 
-At this point in the analysis we have accounted for spin, relativity, and recoil. However, we have still neglected the fact that many targets have a magnetic moment that will also interact with the electrons it scatters. Equation ~\ref{eq:mu} shows the magnetic moment for a pointlike spin 1/2 particle of mass $M$. With the $g=2$ factor coming from Dirac theory.  
+At this point in the analysis we have accounted for charge, spin, relativity, and recoil. However, we have still neglected the fact that many targets have a magnetic moment that will also interact with the electrons it scatters. Equation ~\ref{eq:mu} shows the magnetic moment for a pointlike spin 1/2 particle of mass $M$. With the $g=2$ factor coming from Dirac theory.  
 
 \begin{equation} \label{eq:mu}
 \mu = g \frac{e\hbar}{4M}
