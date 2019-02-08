@@ -391,7 +391,7 @@ Figure ~\ref{fig:3he_fm_cut} shows the resulting magnetic form factors of each o
 
 The new fits with the new datasets added indicate that the first diffractive minima for the $^3$He magnetic form factor is a few femtometers higher in Q$^2$ than previously though. The consensus of fits places this minima at 19-20 fm as opposed to the previous location of 18 fm.  
 
-Now that we have functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3he_charge_density} shows the charge densities for $^3$He prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3he_charge_density_no_cut} as well as the charge density for $^3$He with a $\chi^2_{max}$ cut = 500 in ~\ref{fig:3he_charge_density_cut}. Without the cut the charge density shapes are quite variable at small radii and vary widely in magnitude. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the only charge densities remaining are extremely consistent in shape and magnitude. Below a radius of about 0.5 fm the charge density comes to a relatively stable plateau. If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down slightly near the origin instead of showing the plateauing behavior we observe. We also note that the charge density tapers off by a radii of 5 fm justifying our guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+Now that we have functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3he_charge_density} shows the charge densities for $^3$He prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3he_charge_density_no_cut} as well as the charge density for $^3$He with a $\chi^2_{max}$ cut = 500 in ~\ref{fig:3he_charge_density_cut}. Without the cut the charge density shapes are quite variable at small radii and vary widely in magnitude. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the only charge densities remaining are extremely consistent in shape and magnitude. Below a radius of about 0.5 fm the charge density comes to a relatively stable plateau. We also note that the charge density tapers off by a radii of 5 fm justifying our guess of R$_{max}$ in Section ~\ref{ssec:radii}. %If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down slightly near the origin instead of showing the plateauing behavior we observe.
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -469,6 +469,67 @@ We also see that our prior that R$_{max}$ will be $\approx$ 5 fm agrees with the
 \end{subfigure}
 \caption{\bf{$^3$He RMS Charge Radii.}}
 \label{fig:3he_ri}
+\end{figure}
+
+The set of new world data fits for $^3$He have essentially created an error band for the form factors by spanning the set of R$_i$ models. To make these new fits applicable a specific parametrization of the form factors is required. To select this representative fit for $^3$He a single fit at the middle of the distribution of all new fits, with physical characteristics and reasonable values for the metrics listed in Table ~\ref{tab:3he_ngaus}, was selected. Table ~\ref{tab:3he_rep_fit_pars} and Table ~\ref{tab:3he_rep_fit_stats} show the parameters for the representative fit of the $^3$He world data along with the metrics used to test the `goodness' of the fit respectively.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c l l|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{R$_i$ (fm)} & \textbf{Q$_{i_{ch}}$} & \textbf{Q$_{i_{m}}$}\\
+\hline
+1 & 0.3 & 0.0996392 & 0.159649 \\
+2 & 0.7 & 0.214304 & 0.0316168 \\
+3 & 0.9 & 0.0199385 & 0.277843 \\
+4 & 1.1 & 0.195676 & 0.0364955 \\
+5 & 1.5 & 0.0785533 & 0.0329718 \\
+6 & 1.6 & 0.167223 & 0.233469 \\
+7 & 2.2 & 0.126926 & 0.117059 \\
+8 & 2.7 & 0.0549379 & 0.0581085 \\
+9 & 3.3 & 0.0401401 & 0.0485212 \\
+10 & 4.2 & 0.0100803 & 1.77602e-12 \\
+11 & 4.3 & 0.0007217 & 0.0240927 \\
+12 & 4.8 & 4.98962e-12 & 8.94934e-12 \\           
+\hline
+\end{tabular}
+\caption{\bf{Parameters for $^3$He World Data Representative Fit}}
+\label{tab:3he_rep_fit_pars}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
+\hline
+12 & 436.097 & 1.86366 & 268.312 & 158.948 & 1.00814 & 1.01983\\
+\hline
+\end{tabular}
+\caption{\bf{Metrics for $^3$He World Data Representative Fit}}
+\label{tab:3he_rep_fit_stats}
+\end{table}
+
+Figure ~\ref{fig:3he_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$He world data fits. The charge form factor error band is very well determined until Q$^2$ $\approx$ 55 fm$^{-2}$ where it begins to expand. The magnetic form factor is very well determined below  Q$^2$ $\approx$ 12 fm$^{-2}$. As F$_m$ approaches its first minimum the error band expands considerably producing a range of about 4 fm$^{-2}$ in Q$^2$ where the diffractive minimum is located. The error band then tightens again between 22 and 36 fm$^{-2}$ with the addition of the new $^3$He data from JLab and this analysis. The error band then expands again as a possible second diffractive minimum is approached due to leaving the Q$^2$ range in which robust experimental data exists. 
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Fch_Rep_Fit.png}
+  \caption{\bf{$^3$He Charge Form Factor for the New Representative Fit of World Data.}}
+  \label{fig:3he_fch_rep_fit}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Fm_Rep_Fit.png}
+  \caption{\bf{$^3$He Magnetic Form Factor for the New Representative Fit of World Data.}}
+  \label{fig:3he_fm_rep_fit}
+\end{subfigure}
+\caption[\bf{$^3$He Form Factors for the New Representative Fit of World Data.}] {
+{\bf{$^3$He Form Factors for the New Representative Fit of World Data.}} The selected representative fit is shown in black and its error band is shaded in red.}
+\label{fig:3he_rep_fit}
 \end{figure}
 
 \subsection{$^3$H Fits}
@@ -560,7 +621,7 @@ Using the functions describing the form factors we can calculate the charge dens
 \label{fig:3h_charge_density}
 \end{figure}
 
-The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with higher charge density at low radii. If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down significantly near the origin instead of showing the plateauing behavior we observe. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}.
+The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with larger charge density at low radii. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}. %If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down significantly near the origin instead of showing the plateauing behavior we observe.
 
 Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge radii for each of the individual fits. Figure ~\ref{fig:3h_rms_deriv} shows a plot of the 2600 charge radii resulting from the fits of $^3$H world data. Figure ~\ref{fig:3h_rms_deriv_no_cut} shows the 2600 fits without a $\chi^2_{max}$ cut, and ~\ref{fig:3h_rms_deriv_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. The cut remove some of the radii at the edges of the distribution, but does not significantly alter its shape. The average of all the RMS charge radii surviving the fit was 2.02038 fm (***figure our number of digits later). A Gaussian fit to these radii finds a mean of 2.01915 fm with a standard deviation of 0.0132725 fm. The $^3$H radii are less well grouped than the $^3$He radii and form a less well defined Gaussian distribution, but they still appear to be clustered roughly around a mean value without errant peaks separated from the prime distribution.
 
@@ -619,6 +680,61 @@ Plotted in Figure ~\ref{fig:3h_ri} are the R$_i$ values, ~\ref{fig:3h_ri_ind}, a
 \label{fig:3h_ri}
 \end{figure}
 
+A representative fit for the $^3$H form factors was selected in the same manner one was selected for $^3$He in Section ~\ref{ssec:3he_fits}. Table ~\ref{tab:3h_rep_fit_pars} and Table ~\ref{tab:3h_rep_fit_stats} show the parameters for the representative fit of the $^3$H world data along with the metrics used to test the `goodness' of the fit respectively. Figure ~\ref{fig:3h_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$H world data fits. The charge form factor error band is well determined past the first minimum until about Q$^2$ $\approx$ 24 fm$^{-2}$ where it begins to expand. Above Q$^2$ $\approx$ 24 fm$^{-2}$ there is alomost no knowledge of the shape or magnitude of F$_{ch}$ due to a lack of high Q$^2$ data. The magnetic form factor is fairly well determined through the first minimum and up to Q$^2$ $\approx$ 30 fm$^{-2}$. As F$_m$ passes above Q$^2$ $\approx$ 30 fm$^{-2}$ there is again almost no information about the form factor. Once again, to improve the understanding of the $^3$H form factors more high Q$^2$ and back angle data is required.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c l l|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{R$_i$ (fm)} & \textbf{Q$_{i_{ch}}$} & \textbf{Q$_{i_{m}}$}\\
+\hline
+1 & 0.3 & 0.151488 & 0.190646 \\
+2 & 0.8 & 0.348372 & 0.301416 \\
+3 & 1.4 & 0.29635 & 0.318972 \\
+4 & 1.9 & 0.0978631 & 0.159433 \\
+5 & 2.5 & 0.121983 & 0.173933 \\
+6 & 3.3 & 0.0242654 & 0.106361 \\
+7 & 4.1 & 0.049329 & 0.0665564 \\
+8 & 4.8 & 4.40751e-11 & 0.0148866 \\          
+\hline
+\end{tabular}
+\caption{\bf{Parameters for $^3$H World Data Representative Fit}}
+\label{tab:3h_rep_fit_pars}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c c c c c c c|}
+\hline
+%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
+\hline
+8 & 601.882 & 2.77365 & 264.712 & 237.069 & 1.08965 & 1.3322\\
+\hline
+\end{tabular}
+\caption{\bf{Metrics for $^3$H World Data Representative Fit}}
+\label{tab:3h_rep_fit_stats}
+\end{table}
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3H_Fch_Rep_Fit.png}
+  \caption{\bf{$^3$H Charge Form Factor for the New Representative Fit of World Data.}}
+  \label{fig:3h_fch_rep_fit}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3H_Fm_Rep_Fit.png}
+  \caption{\bf{$^3$H Magnetic Form Factor for the New Representative Fit of World Data.}}
+  \label{fig:3h_fm_rep_fit}
+\end{subfigure}
+\caption[\bf{$^3$H Form Factors for the New Representative Fit of World Data.}] {
+{\bf{$^3$H Form Factors for the New Representative Fit of World Data.}} The selected representative fit is shown in black and its error band is shaded in red.}
+\label{fig:3h_rep_fit}
+\end{figure}
+
 \subsection{$^3$He Comparison with Theory and Previous Measurements}
 \label{ssec:3he_comparison_with_theory}
 
@@ -665,7 +781,7 @@ $\chi$EFT 500 and the CST predictions both fail to predict the $^3$He F$_m$ well
 
 This analysis found a $^3$He charge radius of 1.90 fm with a standard deviation of 0.00144 fm from the new fits to world data in Section ~\ref{ssec:3he_fits}. Previous measurements from Saclay and Bates found charge radii of 1.96 fm $\pm$ 0.03 fm and 1.87 fm $\pm$ 0.03 fm respectively ~\cite{3h_proposal}. The new world data fits are slotting nicely in between these two experimental results. Theoretical predictions of the $^3$He charge radius also exist. Green's function Monte Carlo (GFMC) methods predict a charge radius of 1.96 fm $\pm$ 0.01 fm and chiral effective field theory ($\chi$EFT) predicts a radius of 1.962 fm $\pm$ 0.004 fm ~\cite{3h_proposal}. Both of these predictions are larger than the radius found by this analysis, but the experimental fit results and theory predictions are still fairly close.
 
-Recall that the charge radius is determined by the slope of the charge form factor at a Q$^2$ of zero, and that the value of F$_{ch}$ at Q$^2$ = 0 is the same as the value of $\sum$Q$_i{_{ch}}$. From physical considerations we expect $\sum$Q$_i{_{ch}}$ = 1 as discussed in Section ~\ref{sec:sog}. However, this analysis chose not to force the Q$_i$ parameters to sum to unity as not doing so provides another useful measure of the completeness of the world data without glossing over gaps and disagreement between the various measurements. For the $^3$He fits the average $\sum$Q$_i{_{ch}}$ = 1.00840 so the data and fit are doing an excellent job agreeing with our prior expectation with $\sum$Q$_i{_{ch}}$ only being slightly high. This would increase the negative magnitude of the F$_{ch}$ slope a small amount so the charge radius we find would have been very slightly smaller if we had forced $\sum$Q$_i{_{ch}}$ = 1.
+Recall that the charge radius is determined by the slope of the charge form factor at a Q$^2$ of zero, and that the value of F$_{ch}$ at Q$^2$ = 0 is the same as the value of $\sum$Q$_i{_{ch}}$. From physical considerations we expect $\sum$Q$_i{_{ch}}$ = 1 as discussed in Section ~\ref{sec:sog}. However, this analysis chose not to force the Q$_i$ parameters to sum to unity as not doing so provides another useful measure of the completeness of the world data without glossing over gaps and disagreement between the various measurements. For the $^3$He fits the average $\sum$Q$_i{_{ch}}$ = 1.00840 so the data and fit are doing an excellent job agreeing with our prior expectation with $\sum$Q$_i{_{ch}}$ only being slightly high. This would increase the negative magnitude of the F$_{ch}$ slope a small amount so the charge radius we find would have been very slightly smaller if we had forced $\sum$Q$_i{_{ch}}$ = 1. 
 
 \subsection{$^3$H Comparison with Theory and Previous Measurements}
 \label{ssec:3h_comparison_with_theory}
