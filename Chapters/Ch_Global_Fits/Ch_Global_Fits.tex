@@ -532,6 +532,52 @@ Figure ~\ref{fig:3he_rep_fit} shows plots of the representative charge and magne
 \label{fig:3he_rep_fit}
 \end{figure}
 
+This representative fit can be examined in even greater detail by comparing it to the world data distribution seen in Figure ~\ref{fig:3he_data_distribution}. Again, we find the comparison with the fit from ~\cite{Article:Amroun} to be in strong agreement for F$_{ch}$. We also see that the first minimum of F$_m$ has shifted up in Q$^2$. Looking at the distribution of the world data it becomes clear that most of the data exists below Q$^2$ $\approx$ 12 and above that value it becomes quite sparse. This analysis has previously discussed the need for more high Q$^2$ data, and Figure ~\ref{fig:3he_data_distribution} reinforces how the dearth of this data is restricting our understanding of the $^3$He form factors.
+
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{3He_Data_Distribution.png}
+	\end{center}
+	\caption[\bf{$^3$He Representative Form Factors and World Data Distribution}]{
+	{\bf{$^3$He Representative Form Factors and World Data Distribution.}} The top two plots show the $^3$He F$_{ch}$ and F$_m$ versus Q$^2$ and the lowest plot shows the $^3$He world data distribution in Q$^2$ used in this analysis.}
+	\label{fig:3he_data_distribution}
+\end{figure}
+
+This representative fit has a total $\chi^2$ of 436 and a reduced $\chi^2$ of 1.86 for 259 $^3$He elastic cross sections. Recall that this analysis did not float the normalization of the different datasets leading to a slightly larger $\chi^2$. When examining how well the representative fit is describing the data it can be helpful to look at the $\chi^2$ values for each data individual point in each dataset as shown in Figure ~\ref{fig:3he_rep_fit_chi2_q2}. This plot indicates that much of the total $\chi^2$ comes from the older datasets found in Collard and Szalata. The point from this analysis (orange) has a $\chi^2$ of $\approx$ 4. 
+
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{3He_Rep_Chi2_vs_Q2.png}
+	\end{center}
+	\caption[\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$}]{
+	{\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$.}} .}
+	\label{fig:3he_data_distribution}
+\end{figure}
+
+It can also be illuminating to look at the residual of the fit for each data point in each dataset as shown in Figure ~\ref{fig:3he_rep_fit_residual}. Note that, since the plot encompasses many orders of magnitude the residual is plotted as Equation ~\ref{eq:residual}, where $\sigma_{exp}$ is the experimental cross section measured and $\sigma_{fit}$ is the cross section predicted by the fit at those same kinematics. Firstly, there are two heavy outliers from Arnold, but this is not very surprising since these points were taken at very high Q$^2$. Zooming in on the remaining points they mostly look to be normally distributed about zero, although the points from Collard may lie a little high as do some of the high Q$^2$ points from Amroun. This indicates that floating the normalizations of the different datasets would not have improved the overall $\chi^2$ significantly. We also find that the point from this analysis lies below the representative fit.
+
+\begin{equation} \label{eq:residual}
+	Residual = \frac{\sigma_{exp}-\sigma_{fit}}{\sigma_{fit}}
+\end{equation}
+
+\begin{figure}[!ht]
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Rep_Residual.png}
+  \caption{\bf{No Zoom.}}
+  \label{fig:3he_fch_rep_fit}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Rep_Residual_Zoom.png}
+  \caption{\bf{Zoomed In.}}
+  \label{fig:3he_fm_rep_fit}
+\end{subfigure}
+\caption[\bf{$^3$He Representative Fit Residual vs. Q$^2$}] {
+{\bf{$^3$He Representative Fit Residual vs. Q$^2$.}} The upper plot shows a view of each data point's residual, and the lower plot shows a zoomed in version without the two high residual points for clarity.}
+\label{fig:3he_rep_fit_residual}
+\end{figure}
+
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
 
@@ -735,6 +781,41 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 \label{fig:3h_rep_fit}
 \end{figure}
 
+The representative fit can again be studied against the distribution of the world data shown in Figure ~\ref{fig:3h_data_distribution}. Both the charge and magnetic form factors agree well with  ~\cite{Article:Amroun} until a Q$^2$ of approximately 35 to 40 fm$^{-2}$ which makes sense as no new data was added for $^3$H. Looking at the distribution of the world data it becomes clear that most of the data exists below Q$^2$ $\approx$ 10 and is sparse above there tapering off completely around Q$^2$ $\approx$ 32 fm$^{-2}$. As with $^3$He the dearth of high Q$^2$ $^3$H elastic scattering data is restricting our understanding of the form factors.
+
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{3H_Data_Distribution.png}
+	\end{center}
+	\caption[\bf{$^3$H Representative Form Factors and World Data Distribution}]{
+	{\bf{$^3$H Representative Form Factors and World Data Distribution.}} The top two plots show the $^3$H F$_{ch}$ and F$_m$ versus Q$^2$ and the lowest plot shows the $^3$H world data distribution in Q$^2$ used in this analysis.}
+	\label{fig:3h_data_distribution}
+\end{figure}
+
+Figure ~\ref{fig:3h_rep_fit_chi2_q2} shows a plot of $\chi^2$ versus Q$^2$ for each data point in each dataset in the global fits. 
+
+This representative fit has a total $\chi^2$ of 602 and a reduced $\chi^2$ of 2.77 for 234 $^3$H elastic cross sections. Recall that this analysis did not float the normalization of the different datasets leading to a larger $\chi^2$. Figure ~\ref{fig:3h_rep_fit_chi2_q2} shows a plot of $\chi^2$ versus Q$^2$ for each data point in each dataset in the global fits. The highest Q$^2$ data points come from the older datasets of Collard and Beck. It is interesting to note that there seems to be some structure to the Amroun dataset which will be discussed more shortly. 
+
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{3He_Rep_Chi2_vs_Q2.png}
+	\end{center}
+	\caption[\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$}]{
+	{\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$.}} }
+	\label{fig:3he_rep_fit_chi2_q2}
+\end{figure}
+
+The plot of the representative fit's residual, given by Equation ~\ref{eq:residual}, is shown in Figure ~\ref{fig:3h_rep_fit_residual}. The residual plot for $^3$H is more revealing than that of $^3$He. While there are no obvious outliers there is significant structure. The data points from Amroun seem to be low on average and the points from Collard appear to be high. The Beck data points seem fairly normally distributed. This means that if the normalization had been floated the $\chi^2$ could be reduced significantly as there do seem to be strong biases based on the experiments. 
+
+\begin{figure}[!ht]
+	\begin{center}
+	\includegraphics[width=1.0\linewidth]{3H_Rep_Residual.png}
+	\end{center}
+	\caption[\bf{$^3$H Representative Fit Residual vs. Q$^2$}]{
+	{\bf{$^3$H Representative Fit Residual vs. Q$^2$.}} }
+	\label{fig:3h_rep_fit_residual}
+\end{figure}
+
 \subsection{$^3$He Comparison with Theory and Previous Measurements}
 \label{ssec:3he_comparison_with_theory}
 
@@ -745,8 +826,6 @@ Paraphrasing the description of the conventional approach used by Macucci \texti
 The $\chi$EFT predictions in Marcucci \textit{et al}. uses the chiral symmetry of QDC to describe the internal strong and EM interactions. This technique requires momentum space cutoffs to regularize operators with divergent behavior at large momenta. These cutoffs are selected at 500 MeV for one model and 600 MeV for the other $\chi$EFT model ~\cite{Article:Marcucci}.
 
 The final theoretical model employed in Marcucci \textit{et al}. is the covariant spectator theorem (CST). Again paraphrasing ~\cite{Article:Marcucci} CST is a covariant field theory where nucleons and light mesons are used as the effective degrees of freedom. Currents and form factors can be extracted from the field theory's approximate solutions. This theory is also fully relativistic.
-
-In addition to Amroun's fit and the theory predictions two representative fits to the world data for $^3$He and $^3$H tritium were chosen. These representative fits were chosen as they were at the center of the error bands created by the many different R$_i$ combination fits seen in sections ~\ref{ssec:3he_fits} and ~\ref{ssec:3h_fits}. ***Move this rep fit stuff into the fits subsections
 
 Figure ~\ref{fig:3he_fch_theory} shows the new $^3$He F$_{ch}$ fits from this analysis, the representative fit from this analysis, Amroun \textit{et al}.'s previous fit and error band, and the four theory predications from Marcucci \textit{et al}. It is immediately clear that the new fits (red) are in excellent agreement with the fit from Amroun \textit{et al}. These fits are very tightly grouped and agree well until Q$^2$ $\approx$ 60 fm$^{-2}$. This makes sense due to the abundance of low Q$^2$ data for $^3$He we expect the charge form factor to be well understood. 
 
