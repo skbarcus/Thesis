@@ -652,7 +652,23 @@ It can also be illuminating to look at the residual of the fit for each data poi
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
 
-Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fits with the pseudorandom starting R$_i$ values along with the R$_i$ optimization procedure. The initial spacing of the R$_i$ values for these fits was R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section ~\ref{ssec:radii}. A total of 2600 individual fits using the pseudorandom R$_i$ values were generated. Table ~\ref{tab:3he_fits} shows the results of these 1352 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 603 in the same fashion as Tables ~\ref{tab:3he_ngaus} and ~\ref{tab:3h_ngaus}. 908 fits survive the $\chi^2$ cut of 603, and the remaining fits have charge form factors with the desired sharp minima.
+Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fits with the pseudorandom starting R$_i$ values along with the R$_i$ optimization procedure. The initial spacing of the R$_i$ values for these fits was R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section ~\ref{ssec:radii}. A total of 2600 individual fits using the pseudorandom R$_i$ values were generated. Table ~\ref{tab:3he_fits} shows the results of these 2600 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 603 in the same fashion as Tables ~\ref{tab:3he_ngaus} and ~\ref{tab:3h_ngaus}. 908 fits survive the $\chi^2$ cut of 603, and the remaining fits have charge form factors with the desired sharp minima.
+
+%\vspace{6mm}
+%\begin{table}[!h]
+%\centering
+%\begin{tabular}{|c c c c c c c c c|}
+%\hline
+%%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+%\hline
+%8 & 611.385 & 2.81744 & 266.175 & 238.532 & 1.08866 & 1.33481 & No Cut & 2600\\
+%8 & 601.840 & 2.77346 & 264.695 & 237.053 & 1.08991 & 1.32926 & 603 & 908\\
+%\hline
+%\end{tabular}
+%\caption{\bf{Metrics for Final $^3$H Fits}}
+%\label{tab:3h_fits}
+%\end{table}
 
 \vspace{6mm}
 \begin{table}[!h]
@@ -662,17 +678,17 @@ Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fi
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
 \textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
 \hline
-8 & 611.385 & 2.81744 & 266.175 & 238.532 & 1.08866 & 1.33481 & No Cut & 2600\\
-8 & 601.840 & 2.77346 & 264.695 & 237.053 & 1.08991 & 1.32926 & 603 & 908\\
+8 & 611.4 & 2.817 & 266.2 & 238.5 & 1.089 & 1.335 & No Cut & 2600\\
+8 & 601.8 & 2.773 & 264.7 & 237.1 & 1.090 & 1.329 & 603 & 908\\
 \hline
 \end{tabular}
 \caption{\bf{Metrics for Final $^3$H Fits}}
 \label{tab:3h_fits}
 \end{table}
 
-Table ~\ref{tab:3h_fits} shows that the $\chi^2_{max}$ cut again improves all of the metrics as expected. Of the 2600 fits 908, 35$\%$, survive the $\chi^2_{max}$ cut. This shows that the fits have more difficulty converging than they did for $^3$He, but they still converge with enough regularity to get a useful and reliable sample of fits. There are 234 data points for $^3$H resulting in a $\chi^2$ of 601.840. This works out to a $\chi^2$ of 2.572 per data point. This value is significantly higher than the value for $^3$He of 1.686 implying that the data for $^3$H is not as robust. The fits still look very reasonable and agree decently with past results. If the individual data sets were given a floating normalization the $\chi^2$ would lower significantly, but this would mask the actual state of the $^3$H world data. 
+Table ~\ref{tab:3h_fits} shows that the $\chi^2_{max}$ cut again improves all of the metrics as expected. Of the 2600 fits 908, 35$\%$, survive the $\chi^2_{max}$ cut. This shows that the fits have more difficulty converging than they did for $^3$He, but they still converge with enough regularity to get a useful and reliable sample of fits. There are 234 data points for $^3$H resulting in a $\chi^2$ of 601.8. This works out to a $\chi^2$ of 2.572 per data point. This value is significantly higher than the value for $^3$He of 1.686 implying that the data for $^3$H is not as robust. Later in this section we will see that much of this larger $\chi^2$ is due to disagreement between the various experimental measurements. If the individual data sets were given a floating normalization the $\chi^2$ would lower significantly, but this would mask the actual state of the $^3$H world data. The fits still look very reasonable and agree well with past results.%601.840,
 
-The $\sum$Q$_{i_{ch}}$ = 1.08991 when we expect it to equal unity from physical considerations of the form factors discussed in Section ~\ref{sec:ffs}. This means the fits on average see 8.991$\%$ more electric charge than expected. Again, this occurs because we did not force the form factors to approach unity at the origin, but this demonstrates our relatively worse lack of understanding of the charge form factor for $^3$H compared to $^3$He. If we forced the form factors to unity at the origin they would artificially turn over even more at small radii. $\sum$Q$_{i_{m}}$ = 1.32926 shows an excess of 32.926$\%$ in the magnetic charge which is much worse than the charge form factor for $^3$H or either form factor for $^3$He. Now we see the analytical use of not forcing the Q$_i$ to sum to unity artificially. If we had done this it would not be nearly as clear that most of our uncertainty about the $^3$H form factors comes from our lack of understanding of the magnetic form factor. This continues to stress the need for more high Q$^2$ data for $^3$H to improve our understanding of the form factors significantly.
+The $\sum$Q$_{i_{ch}}$ = 1.090 when we expect it to equal unity from physical considerations of the form factors discussed in Section ~\ref{sec:ffs}. This means the fits on average see 9$\%$ more electric charge than expected. Again, this occurs because we did not force the form factors to approach unity at the origin, but this demonstrates our relatively worse understanding of the charge form factor for $^3$H compared to $^3$He. If we forced the form factors to unity at the origin they would artificially turn over even more at small radii. $\sum$Q$_{i_{m}}$ = 1.329 shows an excess of 32.9$\%$ in the magnetic charge which is much worse than the charge form factor for $^3$H or either form factor for $^3$He. Now we see the analytical use of not forcing the Q$_i$ to sum to unity artificially. If we had done this it would not be nearly as clear that most of our uncertainty about the $^3$H form factors comes from our lack of understanding of the magnetic form factor. This continues to stress the need for more high Q$^2$ and back angle data for $^3$H to improve our understanding of the form factors.%1.08991, 1.32926
 
 Figure ~\ref{fig:3h_fch} shows the charge form factors from each of the 2600 fits from Table ~\ref{tab:3h_fits}. Figure ~\ref{fig:3h_fch_no_cut} shows the 2600 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3h_fch_cut} shows the 908 fits surviving a $\chi^2_{max}$ = 603 cut. Plotted along with this analysis' fits in red is a blue line representing the average result from \cite{Article:Amroun} in the range that analysis considered its fits to be valid. It is important to note that no new data has been added for $^3$H so we do not expect our results to diverge much from past results like \cite{Article:Amroun}. This makes the $^3$H results more useful to check the consistency of our methodology with past results and as a point of comparison to the $^3$He results. It was initially hoped that new $^3$H data would be available for this analysis from the planned experiment E12-14-009 \cite{3h_proposal} which was the original basis for this thesis. Unfortunately, due to budget uncertainty and continuing resolutions this experiment was cancelled. Happily, Hall A was able to take some elastic $^3$H data in the end, and once this data has been analyzed it should be a simple matter to add it to this analysis.
 
@@ -694,11 +710,11 @@ Figure ~\ref{fig:3h_fch} shows the charge form factors from each of the 2600 fit
 \label{fig:3h_fch}
 \end{figure}
 
-Looking at Figure ~\ref{fig:3h_fch_no_cut} without a $\chi^2_{max}$ cut we notice that many of the fits are again behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minima is expected. These are even more shallow than the $^3$He dips and often almost miss the first minima entirely. There are even two fits that seemingly failed to converge at all and stand out wildly from the others. The location of the first minima looks to be in good agreement with previous measurements even without the nonphysical fits being removed. The second minima, however, is barely pinned down at all. It seems as though it could be located anywhere from Q$^2$ = 26 - 60+ fm$^{-2}$ with a denser grouping around 30 fm$^{-2}$ or not exist at all according to the current data. 
+Looking at Figure ~\ref{fig:3h_fch_no_cut} we notice that many of the fits are again behaving in a nonphysical manner. We observe numerous dip only minima where the first sharp minimum is expected. These are even more shallow than the $^3$He dips and often almost miss the first minima entirely. There are even two fits that seemingly failed to converge at all and stand out wildly from the others. The location of the first minima look to be in good agreement with previous measurements even without the nonphysical fits being removed. The second minima, however, is barely pinned down at all. It seems as though it could be located anywhere from Q$^2$ = 26 - 60+ fm$^{-2}$ with a denser grouping around 30 fm$^{-2}$. Some of the fits indicate the presence of a second minimum at much higher Q$^2$ based on the current data. 
 
-Now we apply the $\chi^2_{max}$ = 603 cut, and get Figure ~\ref{fig:3h_fch_cut} with the resulting charge form factors that survive. Immediately it is obvious that the cut has removed most of the nonphysical and bizarre looking results. The results remain in reasonable agreement with \cite{Article:Amroun} except the peak after the first minima is higher and falls off faster. The cluster of second minima near 30 fm$^{-2}$ has almost entirely disappeared. There is still no determination of the location of a secondary diffractive minima with the current data indicating it could be located anywhere from  Q$^2$ = 30 - 60+ fm$^{-2}$ or not exist at all. There is simply not enough high precision data in the world data to make any determinations beyond approximately 25 fm$^{-2}$.
+Now we apply the $\chi^2_{max}$ = 603 cut, and get Figure ~\ref{fig:3h_fch_cut} with the resulting charge form factors that survive. Immediately it is obvious that the cut has removed most of the nonphysical and bizarre looking results. The results remain in reasonable agreement with \cite{Article:Amroun} except the peak after the first minima is higher and falls off faster. The cluster of second minima near 30 fm$^{-2}$ has almost entirely disappeared. There is still no determination of the location of a secondary diffractive minima with the current data indicating it could be located anywhere from  Q$^2$ = 30 - 60+ fm$^{-2}$ or not exist at all. There is simply not enough high precision data in the world data to make any determinations beyond Q$^2$ $\approx$ 25 fm$^{-2}$.
 
-Figure ~\ref{fig:3h_fm} shows the resulting magnetic form factors of each of the 2600 fits of the $^3$H world data. Figure ~\ref{fig:3h_fm_no_cut} shows the 2600 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3h_fm_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. Beginning with the fits without a $\chi^2_{max}$ cut in Figure ~\ref{fig:3h_fm_no_cut} we see that as with the charge form factor there are many nonphysical fits. Most of these are dip only minima. The fits are decently consistent overall, and the location of the first minima is consistent with past results. Again, the magnetic form factor is less well determined than the charge form factor fits due to the relative lack of high Q$^2$ data. 
+Figure ~\ref{fig:3h_fm} shows the resulting magnetic form factors of each of the 2600 fits of the $^3$H world data. Figure ~\ref{fig:3h_fm_no_cut} shows the 2600 fits without any $\chi^2_{max}$ cut plotted together, and Figure ~\ref{fig:3h_fm_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. Beginning with the fits without a $\chi^2_{max}$ cut in Figure ~\ref{fig:3h_fm_no_cut} we see that as with the charge form factor there are many nonphysical fits. Most of these are dip only minima. The fits are decently consistent overall, and the location of the first minima is consistent with past results. 
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -718,7 +734,7 @@ Figure ~\ref{fig:3h_fm} shows the resulting magnetic form factors of each of the
 \label{fig:3h_fm}
 \end{figure}
 
-Next we examine the magnetic form factors of the 908 fits of the $^3$H world data that survive the $\chi^2_{max}$ = 603 cut shown in Figure ~\ref{fig:3h_fm_cut}. Once again, the cut has removed most of the nonphysical and bizarre looking results. After this cut our results still remain in agreement with \cite{Article:Amroun} and others. This is as we expect since no new $^3$H data was added to the world data. The fits indicate that a secondary diffractive minima could be anywhere from Q$^2$ = 36 - 60+ fm$^{-2}$ and offer little insight beyond this range. Collecting more high Q$^2$ data is again the best way to improve our knowledge of the $^3$H magnetic form factor.
+Next we examine the magnetic form factors of the 908 fits of the $^3$H world data that survive the $\chi^2_{max}$ = 603 cut shown in Figure ~\ref{fig:3h_fm_cut}. Once again, the cut has removed most of the nonphysical and bizarre looking results. After this cut our results still remain in agreement with \cite{Article:Amroun}. This is as we expect since no new $^3$H data was added to the world data. The fits indicate that a secondary diffractive minima could be anywhere from Q$^2$ = 36 - 60+ fm$^{-2}$ and offer little insight beyond this range. Again, the magnetic form factor is less well determined than the charge form factor fits due to the relative lack of high Q$^2$ and back angle data, and collecting more of this data is the best way to improve our knowledge of the $^3$H magnetic form factor. 
 
 Using the functions describing the form factors we can calculate the charge densities as discussed in Section ~\ref{sec:sog}. Figure ~\ref{fig:3h_charge_density} shows the charge densities for $^3$H prior to the $\chi^2_{max}$ cut's application in ~\ref{fig:3h_charge_density_no_cut} as well as the charge density for $^3$H with a $\chi^2_{max}$ cut = 603 in ~\ref{fig:3h_charge_density_cut}. Without the cut the charge density appears to be bundled in two different groups, one predicting a higher density at a radius of zero and one predicting a lower density at zero. There is even a single fit which failed to converge well centered around 2 fm. Each of these groups has a fairly wide spread of magnitudes at low radii. However, once the nonphysical fits are removed by the $\chi^2_{max}$ cut the higher bundle of fits disappears leaving only the lower. 
 
@@ -741,7 +757,7 @@ Using the functions describing the form factors we can calculate the charge dens
 
 The shapes of the $^3$H charge densities of the `good' fits are fairly consistent, but where they reach the origin still has a much wider spread than $^3$He's charge density. Once again this is due to the dearth of data for $^3$H, especially at higher kinematics. Below a radius of about 0.5 fm the charge density turns over and comes to to a plateau. This turnover occurs at smaller radii for fits with larger charge density at low radii. Again, the charge density tapers off by a radii of 5 fm justifying the guess of R$_{max}$ in Section ~\ref{ssec:radii}. %If we had artificially forced the Q$_i$ parameters to sum to one these charge densities would need to turn down significantly near the origin instead of showing the plateauing behavior we observe.
 
-Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge radii for each of the individual fits. Figure ~\ref{fig:3h_rms_deriv} shows a plot of the 2600 charge radii resulting from the fits of $^3$H world data. Figure ~\ref{fig:3h_rms_deriv_no_cut} shows the 2600 fits without a $\chi^2_{max}$ cut, and ~\ref{fig:3h_rms_deriv_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. The cut remove some of the radii at the edges of the distribution, but does not significantly alter its shape. The average of all the RMS charge radii surviving the fit was 2.02038 fm (***figure our number of digits later). A Gaussian fit to these radii finds a mean of 2.01915 fm with a standard deviation of 0.0132725 fm. The $^3$H radii are less well grouped than the $^3$He radii and form a less well defined Gaussian distribution, but they still appear to be clustered roughly around a mean value without errant peaks separated from the prime distribution.
+Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge radii for each of the individual fits. Figure ~\ref{fig:3h_rms_deriv} shows a plot of the 2600 charge radii resulting from the fits of $^3$H world data. Figure ~\ref{fig:3h_rms_deriv_no_cut} shows the 2600 fits without a $\chi^2_{max}$ cut, and ~\ref{fig:3h_rms_deriv_cut} shows the 908 fits surviving the $\chi^2_{max}$ = 603 cut. The cut removes some of the radii at the edges of the distribution, but it does not significantly alter its overall shape. The average of all the RMS charge radii surviving the cut was 2.020 fm. A Gaussian fit to these radii finds a mean of 2.019 fm with a standard deviation of 0.0132 fm. The $^3$H radii are less well grouped than the $^3$He radii and form a less well defined Gaussian distribution, but they still appear to be clustered roughly around a mean value without errant peaks separated from the prime distribution.%2.02038, 2.01915, 0.0132725
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -760,7 +776,7 @@ Using Equation ~\ref{eq:rms_derivative} we can also calculate the RMS charge rad
 \label{fig:3h_rms_deriv}
 \end{figure}
 
-As was done with $^3$He, the parameters of the $^3$H fits can be plotted for further insight. Figure ~\ref{fig:3h_qi} shows the Q$_i$ fit parameters discussed in ~\ref{sec:sog} with Figure ~\ref{fig:3h_qch} showing the $Q_{i_{ch}}$ parameters and Figure ~\ref{fig:3h_qm} showing the $Q_{i_{m}}$ parameters. Each of the 8 parameters is shown up to a maximum value of 0.5. As previously, the structure of the parameters plots did not vary significantly after the $\chi^2_{max}$ cut was applied so only the plots with the cut are shown. The results are consistent with those of $^3$He in Section ~\ref{ssec:3he_fits} in that the Q$_i$ values are larger for the inner Gaussians placed at smaller radii, and they have the strongest influence on the overall fits. The Q$_i$ are still strongly coupled to the R$_i$ distribution, or `model', of each individual fit with wide spreads in the Q$_i$ parameter values, especially for the inner Q$_i$ .
+As was done with $^3$He, the parameters of the $^3$H fits can be plotted for further insight. Figure ~\ref{fig:3h_qi} shows the Q$_i$ fit parameters discussed in ~\ref{sec:sog} with Figure ~\ref{fig:3h_qch} showing the $Q_{i_{ch}}$ parameters and Figure ~\ref{fig:3h_qm} showing the $Q_{i_{m}}$ parameters. Each of the 8 parameters is shown up to a maximum value of 0.5. As previously, the structure of the parameter plots did not vary significantly after the $\chi^2_{max}$ cut was applied so only the plots with the cut are shown. The results are consistent with those of $^3$He in Section ~\ref{ssec:3he_fits} in that the Q$_i$ values are larger for the inner Gaussians placed at smaller radii, and thus they have the strongest influence on the overall fits. The Q$_i$ are still strongly coupled to the R$_i$ distribution, or `model', of each individual fit with wide spreads in the Q$_i$ parameter values, especially for the inner Q$_i$ .
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -779,7 +795,7 @@ As was done with $^3$He, the parameters of the $^3$H fits can be plotted for fur
 \label{fig:3h_qi}
 \end{figure}
 
-Plotted in Figure ~\ref{fig:3h_ri} are the R$_i$ values, ~\ref{fig:3h_ri_ind}, and the separation between consecutive R$_i$ values, ~\ref{fig:3h_ri_sep}, of the fits of the $^3$H world data in fm. The insights gleaned from these plots parallel those found for $^3$He in Section ~\ref{ssec:3he_fits}. The R$_i$ values are well grouped indicating the fitting procedure is finding similar results regardless of the pseudorandom initial conditions. Again we see that  R$_{max}$ $\approx$ 5 fm. Finally the distance between consecutive R$_i$ values still fluctuates somewhat, but the separations tend to converge to a central value, and the separation between consecutive R$_i$ values roughly doubles for the larger half of the radii.
+Plotted in Figure ~\ref{fig:3h_ri} are the R$_i$ values (~\ref{fig:3h_ri_ind}) and the separation between consecutive R$_i$ values (~\ref{fig:3h_ri_sep}) of the fits of the $^3$H world data in fm. The insights gleaned from these plots parallel those found for $^3$He in Section ~\ref{ssec:3he_fits}. The R$_i$ values are well grouped indicating the fitting procedure is finding similar results regardless of the pseudorandom initial conditions. Again we see that  R$_{max}$ $\approx$ 5 fm. Finally, the distance between consecutive R$_i$ values still fluctuates somewhat, but the separations tend to converge to a central value, and the separation between consecutive R$_i$ values roughly doubles for the larger half of the radii.
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -798,9 +814,9 @@ Plotted in Figure ~\ref{fig:3h_ri} are the R$_i$ values, ~\ref{fig:3h_ri_ind}, a
 \label{fig:3h_ri}
 \end{figure}
 
-A representative fit for the $^3$H form factors was selected in the same manner one was selected for $^3$He in Section ~\ref{ssec:3he_fits}. Table ~\ref{tab:3h_rep_fit_pars} and Table ~\ref{tab:3h_rep_fit_stats} show the parameters for the representative fit of the $^3$H world data along with the metrics used to test the `goodness' of the fit respectively. Figure ~\ref{fig:3h_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$H world data fits. The charge form factor error band is well determined past the first minimum until about Q$^2$ $\approx$ 24 fm$^{-2}$ where it begins to expand. Above Q$^2$ $\approx$ 24 fm$^{-2}$ there is alomost no knowledge of the shape or magnitude of F$_{ch}$ due to a lack of high Q$^2$ data. The magnetic form factor is fairly well determined through the first minimum and up to Q$^2$ $\approx$ 30 fm$^{-2}$. As F$_m$ passes above Q$^2$ $\approx$ 30 fm$^{-2}$ there is again almost no information about the form factor. Once again, to improve the understanding of the $^3$H form factors more high Q$^2$ and back angle data is required.
+A representative fit for the $^3$H form factors was selected in the same manner as the one selected for $^3$He in Section ~\ref{ssec:3he_fits}. Table ~\ref{tab:3h_rep_fit_pars} and Table ~\ref{tab:3h_rep_fit_stats} show the parameters for the representative fit of the $^3$H world data along with the metrics used to test the `goodness' of the fit respectively. Figure ~\ref{fig:3h_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$H world data fits. The charge form factor error band is well determined past the first minimum until about Q$^2$ $\approx$ 24 fm$^{-2}$ where it begins to expand. Above Q$^2$ $\approx$ 24 fm$^{-2}$ there is alomost no knowledge of the shape or magnitude of F$_{ch}$ due to a lack of high Q$^2$ data. The magnetic form factor is fairly well determined through the first minimum and up to Q$^2$ $\approx$ 30 fm$^{-2}$. As F$_m$ passes above Q$^2$ $\approx$ 30 fm$^{-2}$ there is almost no information about the form factor. Once again, to improve the understanding of the $^3$H form factors more high Q$^2$ and back angle data is required.
 
-\vspace{6mm}
+%\vspace{6mm}
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c c l l|}
@@ -822,6 +838,20 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 \label{tab:3h_rep_fit_pars}
 \end{table}
 
+%\begin{table}[!h]
+%\centering
+%\begin{tabular}{|c c c c c c c|}
+%\hline
+%%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
+%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
+%\hline
+%8 & 601.882 & 2.77365 & 264.712 & 237.069 & 1.08965 & 1.3322\\
+%\hline
+%\end{tabular}
+%\caption{\bf{Metrics for $^3$H World Data Representative Fit}}
+%\label{tab:3h_rep_fit_stats}
+%\end{table}
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{|c c c c c c c|}
@@ -829,7 +859,7 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
 \textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{r$\chi^2$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
 \hline
-8 & 601.882 & 2.77365 & 264.712 & 237.069 & 1.08965 & 1.3322\\
+8 & 601.9 & 2.774 & 264.7 & 237.1 & 1.089 & 1.332\\
 \hline
 \end{tabular}
 \caption{\bf{Metrics for $^3$H World Data Representative Fit}}
@@ -854,7 +884,7 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 \label{fig:3h_rep_fit}
 \end{figure}
 
-The representative fit can again be studied against the distribution of the world data shown in Figure ~\ref{fig:3h_data_distribution}. Both the charge and magnetic form factors agree well with  ~\cite{Article:Amroun} until a Q$^2$ of approximately 35 to 40 fm$^{-2}$ which makes sense as no new data was added for $^3$H. Looking at the distribution of the world data it becomes clear that most of the data exists below Q$^2$ $\approx$ 10 and is sparse above there tapering off completely around Q$^2$ $\approx$ 32 fm$^{-2}$. As with $^3$He the dearth of high Q$^2$ $^3$H elastic scattering data is restricting our understanding of the form factors.
+Again, the representative fit can be studied against the distribution of the world data shown in Figure ~\ref{fig:3h_data_distribution}. Both the charge and magnetic form factors agree well with  ~\cite{Article:Amroun} until a Q$^2$ of approximately 35 to 40 fm$^{-2}$ which makes sense as no new data was added for $^3$H. Looking at the distribution of the world data it becomes clear that most of the data exists below Q$^2$ $\approx$ 10 and is sparse above there tapering off completely around Q$^2$ $\approx$ 32 fm$^{-2}$. As with $^3$He, the dearth of high Q$^2$ and back angle $^3$H elastic scattering data is restricting our understanding of the form factors.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -865,9 +895,7 @@ The representative fit can again be studied against the distribution of the worl
 	\label{fig:3h_data_distribution}
 \end{figure}
 
-Figure ~\ref{fig:3h_rep_fit_chi2_q2} shows a plot of $\chi^2$ versus Q$^2$ for each data point in each dataset in the global fits. 
-
-This representative fit has a total $\chi^2$ of 602 and a reduced $\chi^2$ of 2.77 for 234 $^3$H elastic cross sections. Recall that this analysis did not float the normalization of the different datasets leading to a larger $\chi^2$. Figure ~\ref{fig:3h_rep_fit_chi2_q2} shows a plot of $\chi^2$ versus Q$^2$ for each data point in each dataset in the global fits. The highest Q$^2$ data points come from the older datasets of Collard and Beck. It is interesting to note that there seems to be some structure to the Amroun dataset which will be discussed more shortly. 
+This representative fit has a total $\chi^2$ of 601.9 for 234 $^3$H elastic cross sections. This results in an average $\chi^2$ per point of 2.572. Recall that this analysis did not float the normalization of the different datasets leading to a larger $\chi^2$. Figure ~\ref{fig:3h_rep_fit_chi2_q2} shows a plot of $\chi^2$ versus Q$^2$ for each data point in each dataset in the global fits. The highest Q$^2$ data points come from the older datasets of Collard and Beck. It is interesting to note that there seems to be some structure to the Amroun dataset which will be discussed more shortly. 
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -875,7 +903,7 @@ This representative fit has a total $\chi^2$ of 602 and a reduced $\chi^2$ of 2.
 	\end{center}
 	\caption[\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$}]{
 	{\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$.}} }
-	\label{fig:3he_rep_fit_chi2_q2}
+	\label{fig:3h_rep_fit_chi2_q2}
 \end{figure}
 
 The plot of the representative fit's residual, given by Equation ~\ref{eq:residual}, is shown in Figure ~\ref{fig:3h_rep_fit_residual}. The residual plot for $^3$H is more revealing than that of $^3$He. While there are no obvious outliers there is significant structure. The data points from Amroun seem to be low on average and the points from Collard appear to be high. The Beck data points seem fairly normally distributed. This means that if the normalization had been floated the $\chi^2$ could be reduced significantly as there do seem to be strong biases based on the experiments. 
