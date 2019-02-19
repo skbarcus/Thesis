@@ -649,6 +649,13 @@ It can also be illuminating to look at the residual of the fit for each data poi
 \label{fig:3he_rep_fit_residual}
 \end{figure}
 
+\subsection{Revisiting the E08-014 Cross Section}
+\label{ssec:xs_revisit}
+
+Now that we have obtained a new representative fit for the expanded set of world data it is prudent to revisit the cross section extracted in Chapter ~\ref{ch:xs}. To find the elastic cross section for $^3$He presented earlier the elastic electrons were simulated with the Monte Carlo SIMC. This Monte Carlo had a previous fit for the $^3$He cross section from ~\cite{Article:Amroun}. We now have a fit that incorporates more high Q$^2$ data in the region of this analysis' cross section measurement. Let us now replace the previous fit in SIMC with our new fit and recalculate the cross section.
+
+Once again the cross section in SIMC will be scaled by a constant value until the elastic electron yield from simulation matches that of the experiment. SIMC will then produce the average cross section for our $^3$He data point. Since the shape of the two fits should be similar, and the cross section clearly does not change based on the fit used, we expect to find a very similar cross section value with the new fit compared to the value from the previous fit. Matching the electron yields requires scaling the SIMC cross section by a constant value of C$_{SIMC}$ = 1.23197. This is a larger scale factor than previously and is due to the decreased magnitude of F$_m$ in the new fit at this point's Q$^2$ of 34.19 fm$^{-2}$. The cross section yielded by SIMC after the yields are matched is found to be 1.345 * 10$^{-6}$ $\pm$ 0.086 $\mu$b/sr. This is in extremely close agreement (better than 1$\%$) with the previous fit's cross section of 1.335 $\pm$ 0.086 $\mu$b/sr as we expected.
+
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
 
@@ -999,3 +1006,9 @@ Examining the success of the four theoretical models at predicting the experimen
 This analysis found a $^3$H charge radius of 2.02 fm with a standard deviation of 0.0133 fm as discussed in Section ~\ref{ssec:3h_fits}. Past measurements from Saclay found a charge radius of 1.76 fm $\pm$ 0.09 fm, and measurements from Bates found a charge radius of 1.68 fm $\pm$ 0.03 fm ~\cite{3h_proposal}. GFMC predictions estimate a radius of 1.77 fm $\pm$ 0.01 fm, and $\chi$EFT predicts a radius of 1.756 fm $\pm$ 0.006 fm. Clearly the new world data fits are finding a significantly larger charge radius than past results and theory. However, it is easy to see why this analysis is in disagreement with past measurements. Because this analysis did not force $\sum$Q$_i{_{ch}}$ = 1 as discussed in Sections ~\ref{sec:sog} and ~\ref{ssec:3he_comparison_with_theory} the slope of the form factor at Q$^2$ = 0 is purely determined by the free parameters Q$_i$. 
 
 For the $^3$H charge radius the the average $\sum$Q$_i{_{ch}}$ for the new world data fits was 1.08991, or almost 9$\%$ larger than if the free parameters were forced to sum to unity. This higher F$_{ch}$ value at Q$^2$ = 0 means that the negative slope of the form factor has a larger magnitude than if F$_{ch}$ were forced to unity at Q$^2$ = 0. Equation ~\ref{eq:rms_derivative} shows that a larger negative slope will yield a larger charge radius. This analysis' larger radius is due to not forcing $\sum$Q$_i{_{ch}}$ = 1 as past fits have done. Now it is clear that the $^3$H world data is either less complete and accurate and/or there is more disagreement between the different experiments' results (in this case it is both) than is the case for $^3$He. This would have been hard to identify if the $\sum$Q$_i{_{ch}}$ were forced to sum to unity or if we had floated the normalizations of the different experiments.
+
+%\begin{equation}
+%    1 + 1 = 2
+%    \label{eq:sum1}
+%  \text{\equationlabels{1st sum}}
+%\end{equation}
