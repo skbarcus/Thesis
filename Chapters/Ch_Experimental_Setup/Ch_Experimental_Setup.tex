@@ -108,6 +108,7 @@ An accurate measure of the electron beam's energy is necessary to obtain accurat
 
 \begin{equation} \label{eq:arc}
 	p = k \frac{\int \overrightarrow{\rm \textbf{B}} \cdot \overrightarrow{\rm \textbf{d}}l}{\theta}
+	\text{\equationlabels{Beam Momentum (Arc Method)}}
 \end{equation}
 
 \subsection{Beam Position Monitors}
@@ -233,6 +234,7 @@ When operating at a high enough voltage the sense wires are efficient to above 9
 
 \begin{equation} \label{eq:wire_efficiency}
 	\epsilon = \frac{\kappa}{\kappa + \lambda}
+	\text{\equationlabels{VDC Wire Efficiency}}
 \end{equation}
 
 \begin{figure}[!ht]
@@ -261,6 +263,7 @@ The electron's drift time can be used to calculate the distance the particle was
 
 \begin{equation} \label{eq:distance}
 	x(t') = \frac{1}{k} \int_{t_0}^{t'} \frac{dN}{dt} dt
+	\text{\equationlabels{VDC Drift Distance}}
 \end{equation}
 
 The ultimate job of the VDCs is to reconstruct the charged particles' trajectories. A typical particle trajectory passes through all four wire planes in the two VDCs as shown in the left side of figure ~\ref{fig:trajectory}. Because there are two wire planes per VDC the two locations where the particle was determined to cross each of the VDC's wire planes can be used to create a trajectory as seen in the right side of figure ~\ref{fig:trajectory}. In this case the trajectory can be described by four variables where one has defined a $U-V$ plane starting from (0,0) in the right side of the figure ~\cite{Article:VDCs}. 
@@ -278,14 +281,17 @@ The first two variables are the two $U-V$ coordinates of the crossing point of t
 
 \begin{equation} \label{eq:u}
 	U = U1
+	\text{\equationlabels{VDC U}}
 \end{equation}
 
 \begin{equation} \label{eq:v}
 	V = V_1-\Delta V = V_1 - l_0 tan\left( \theta_V \right)
+	\text{\equationlabels{VDC V}}
 \end{equation}
 
 \begin{equation} \label{eq:theta_uv}
 	tan\left( \theta_{U(V)} \right) = \frac{U_2-U_1}{d}
+	\text{\equationlabels{VDC $\theta_{U(V)}$}}
 \end{equation}
 
 \subsection{Scintillator Counters}
@@ -311,6 +317,7 @@ Located in the detector stack between the S$_1$ and S$_{2m}$ scintillator planes
 
 \begin{equation} \label{eq:threshold}
 	v_{th} = \frac{c}{n}
+	\text{\equationlabels{Gas Cherenkov Velocity Threshold}}
 \end{equation}
 
 \begin{figure}[!ht]
@@ -324,12 +331,14 @@ Located in the detector stack between the S$_1$ and S$_{2m}$ scintillator planes
 
 \begin{equation} \label{eq:shock_wave_angle}
 	cos(\theta) = \frac{1}{\beta n}
+	\text{\equationlabels{Cherenkov Shock Wave Angle}}
 \end{equation}
 
 GC detectors are especially useful for particle discrimination, in particular, for distinguishing between electron and pion events. GCs are able to discriminate between particles of different mass because of the momentum threshold required to create Cherenkov radiation shown in equation ~\ref{eq:momentum_threshold}. The Hall A GC is generally filled with CO$_2$ which has an index of refraction of $n=1.00041$. Therefore, the momentum threshold for an electron is $p_{th}=0.0178$ GeV and for a pion it is $p_{th}=4.87$ GeV. The HRSs cover a momentum range of up to about 4.3 GeV thus electrons generally create a signal passing through the GC while the pions generally do not. It is still possible for pions to interact with the gas or the detector structures and create low energy $\delta$-electrons that can be seen by the GC, but this is a low probability process. When in normal operation the GC can generally detect electrons with an efficiency of over 99$\%$ ~\cite{Thesis:Ye}.
 
 \begin{equation} \label{eq:momentum_threshold}
 	p_{th} = \frac{mc}{\sqrt{n^2-1}}
+	\text{\equationlabels{Gas Cherenkov Momentum Threshold}}
 \end{equation}
 
 The Hall A GCs each contain ten spherical mirrors which focus the Cherenkov light onto ten PMTs as seen in figure ~\ref{fig:gc}. The LHRS GC has a detector path length of 80 cm and produces an average of 7 photoelectrons per event, and the RHRS GC has a detector path length of 130 cm and yields on average 12 photoelectrons per event. ~\cite{Article:HallA} ~\cite{Article:GC}. Each PMT signal passes through a 10X amplifier before being split in two. One of these two signals is sent to an ADC and put in the run data stream for offline analysis. The other signal is again split in two and one of these two new signals is converted and sent to a digital TDC. The remaining PMT signal is summed with the PMT signals of the nine other PMTs. This summed signal is converted to a digital signal and then is used as part of the efficiency triggers while the experiment runs. The combined GC signal was also added to the main production trigger during experiment E08-014 to prevent pions from firing the main trigger ~\cite{Thesis:Ye}.
@@ -389,6 +398,7 @@ The first method is to `prescale' the data meaning that the system doesn't try t
 
 \begin{equation} \label{eq:lt}
 	LT = \frac{ps_i * T_i^{acc}}{T_i}
+	\text{\equationlabels{Live Time}}
 \end{equation}
 
 Another method of preventing data from being lost to electronic dead-time is by placing the data in a buffer before analyzing it. The buffer is essentially an electronic storage bin where the raw data is kept in computer memory until the system has processed all the events preceding the buffered event. As long as the buffer is large enough all the events can be processed eventually without loss. This allows the experiment to run as fast as the front end electronics are capable of running ~\cite{DAQ}. 
@@ -492,6 +502,7 @@ The FCS is another rotated coordinate system as shown in figure ~\ref{fig:fcs}. 
 
 \begin{equation} \label{eq:rel_mom}
 	\delta p = \frac{p-p_0}{p_0}
+	\text{\equationlabels{Momentum Fraction (dP)}}
 \end{equation}
 
 \subsection{Spectrometer Optics Optimization Procedure}
@@ -519,26 +530,32 @@ Now that we understand the coordinate systems in Hall A we must calibrate the op
 		y	   \\
 		\phi
 	\end{matrix} \right]_{fp}
+	\text{\equationlabels{Optics Matrix}}
 \end{equation}
 
 \begin{equation} \label{eq:delta_tg}
 	\delta = \sum_{j,k,l} D_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+	\text{\equationlabels{Momentum Fraction ($\delta$)}}
 \end{equation}
 
 \begin{equation} \label{eq:theta_tg}
 	\theta_{tg} = \sum_{j,k,l} T_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+	\text{\equationlabels{$\theta_{tg}$}}
 \end{equation}
 
 \begin{equation} \label{eq:y_tg}
 	y_{tg} = \sum_{j,k,l} Y_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+	\text{\equationlabels{$y_{tg}$}}
 \end{equation}
 
 \begin{equation} \label{eq:phi_tg}
 	\phi_{tg} = \sum_{j,k,l} P_{j,k,l} \theta_{fp}^j y_{fp}^k \phi_{fp}^l
+	\text{\equationlabels{$\phi_{tg}$}}
 \end{equation}
 
 \begin{equation} \label{eq:tensor}
 	D_{j,k,l} = \sum_{i=1}^m C_i^{D_{j,k,l}} x_{fp}^i
+	\text{\equationlabels{Optics Tensors ($D_{j,k,l}$)}}
 \end{equation}
 
 This matrix is calibrated by placing a sieve slit, shown in figure ~\ref{fig:sieve}, over the spectrometer entrance. The sieve has a series of holes with a well known pattern. This pattern then shows up in the focal plane data and by knowing the hole locations well the focal plane data can be correlated with the sieve holes.  The variables ~\ref{eq:theta_tg}, ~\ref{eq:y_tg}, and ~\ref{eq:phi_tg} described above turn out to be impractical to work with. As such a set of three more user friendly variables are defined. 
@@ -556,12 +573,15 @@ The first of these variables is $Z_{react}$ which describes the point of interac
 
 \begin{equation} \label{eq:zreact}
 	Z_{react} = \frac{-\left( y_{tg} + D_y \right) + x_{beam}\left( cos\left( \theta_0 \right) - \phi_{tg} sin\left( \theta_0 \right) \right)}{\phi_{tg} cos\left( \theta_0 \right) + sin\left( \theta_0 \right)}
+	\text{\equationlabels{Interaction Vertex ($Z_{react}$)}}
 \end{equation}
 
 \begin{equation} \label{eq:xsieve}
 	x_{sieve} = x_{tg} + L \theta_{tg}
+	\text{\equationlabels{Horizontal Sieve Position ($x_{sieve}$)}}
 \end{equation}
 
 \begin{equation} \label{eq:ysieve}
 	y_{sieve} = y_{tg} + L \phi_{tg}
+	\text{\equationlabels{Vertical Sieve Position ($y_{sieve}$)}}
 \end{equation}
