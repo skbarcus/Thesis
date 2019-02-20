@@ -14,6 +14,7 @@ The theoretical origins of a differential cross section were explored in ~\ref{s
 
 \begin{equation} \label{eq:exp_xs}
 	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \frac{ps*N_e}{N_{in}*\rho *LT* \epsilon_{det}} \frac{1}{\Delta\Omega\Delta P \Delta Z}
+	\text{\equationlabels{Experimental Cross Section}}
 \end{equation}
 
 Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic dead-time in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle fraction covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
@@ -25,6 +26,7 @@ As the the cross section extraction is essentially an exercise in electron count
 
 \begin{equation} \label{eq:bcms}
 	\langle I_{beam} \rangle = \frac{\frac{scaler}{time}-K'_{offset}}{C_{V-to-F}}
+	\text{\equationlabels{BCM Calibration}}
 \end{equation}
 
 \begin{table}[!h]
@@ -46,10 +48,12 @@ The average current, $\langle I_{beam} \rangle$, is thus dependent upon the numb
 
 \begin{equation} \label{eq:charge}
 	Q = \langle I_{beam} \rangle *time
+	\text{\equationlabels{Beam Charge}}
 \end{equation}
 
 \begin{equation} \label{eq:electrons}
 	N_{in} = \frac{Q}{e}
+	\text{\equationlabels{Number of Incident Electrons}}
 \end{equation}
 
 Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$ BCMs for experimental run 4074. During E08-014 the target beam current was 120 $\mu$A. When the beam `trips' (abruptly turns off) and when the beam current is being brought up to the target current it tends to be somewhat unstable. These events can be seen in the trailing edges and leading edges of the gaps in the BCM current measurement. Due to the beam's instability at these times measurements taken during them are discarded by placing cuts on the current spectrum represented by the red lines in ~\ref{fig:bcms_4074}. These lines are placed two scaler readouts, about 4 seconds per readout, before (after) the BCMs register 90$\%$ of the 120 $\mu$A operating current for the falling (rising) edge. This analysis was performed for each run of KIN 3.2 and the results are shown in Table ~\ref{tab:charges}.
@@ -126,6 +130,7 @@ The main trigger, $T_3$, for E08-014 was a coincidence of $S_1$, $S_{2m}$, and t
 
 \begin{equation} \label{eq:t3_eff}
 	T_{3_{eff}} = \frac{PS_{T_3}*n_{T_3}}{PS_{T_3}*n_{T_3}+PS_{T_4}*n_{T_4}}
+	\text{\equationlabels{T$_3$ Efficiency}}
 \end{equation}
 
 \begin{figure}[!ht]
@@ -165,6 +170,7 @@ In general the VDCs are very efficient, but it is possible for particles to make
 
 \begin{equation} \label{eq:vdc_eff}
 	\epsilon_{VDC} = \frac{N_{track=1}}{N_{0 \leq track \leq 4}}
+	\text{\equationlabels{VDC Efficiency}}
 \end{equation}
 
 \begin{table}[!h]
@@ -236,6 +242,7 @@ Now that we have demonstrated that very few pions are contaminating our electron
 
 \begin{equation} \label{eq:gc_eff}
 	\epsilon_{GC} = \frac{T_{3\&7}}{T_7}
+	\text{\equationlabels{GC Efficiency}}
 \end{equation}
 
 Before we find the GC efficiency let us first place some reasonable kinematic and acceptance cuts on the combined data of our six experimental runs (see ~\ref{sec:cuts} for details on the cut values). Figure ~\ref{fig:gc_eff} shows a plot of $T_7$ on the left and $T_{3\&7}$ on the right with physics cuts. These cuts are fairly strict and include a cut on $X_{Bj}$ to isolate the elastic peak so there are few events. The events form the characteristic elastic band shape across the GC PMTs. Taking the ratio we find that $\epsilon_{GC} = 196/203 = 0.966$. This is still fairly efficient accounting for the slightly inefficient PMT. Knowing the GC inefficiency allows us to scale the electron yield by 203/196 to correct for this inefficiency.
@@ -273,30 +280,35 @@ This target density study was performed on $^4$He so the results of the study ne
 
 \begin{equation} \label{eq:fractional_density}
 	d\rho_{\left(^3He\right)} = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} * d\rho_{\left(^4He\right)}
+	\text{\equationlabels{Fractional Target Density}}
 \end{equation}
 
 Using the experimental and simulation values we can rewrite the product in Equation ~\ref{eq:fractional_density} as Equation ~\ref{eq:r1}.
 
 \begin{equation} \label{eq:r1}
 	R_1 = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} = \frac{4}{3}
+	\text{\equationlabels{R$_1$}}
 \end{equation}
 
 \noindent We can then use the ideal gas law to relate the densities of $^3$He and $^4$He without beam as in Equation ~\ref{eq:density}.
 
 \begin{equation} \label{eq:density}
 	\rho_{0\left(^3He\right)} = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} * \rho_{0\left(^4He\right)}
+	\text{\equationlabels{$^4$He Target Density Conversion to $^3$He Target Density}}
 \end{equation}
 
 \noindent Once again we can rewrite the product in Equation ~\ref{eq:density} using the experimental and simulation conditions as Equation ~\ref{eq:r2}.
 
 \begin{equation} \label{eq:r2}
 	R_2 = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} = 0.745
+	\text{\equationlabels{R$_2$}}
 \end{equation}
 
 Finally we can solve Equation ~\ref{eq:fractional_density} for $\rho_{\left(^3He\right)}$ by plugging in Equation ~\ref{eq:density}. This gives us the equation describing the $^3$He density with the beam on as shown in Equation ~\ref{eq:3he_density}.
 
 \begin{equation} \label{eq:3he_density}
 	\rho_{\left(^3He\right)} = R_1 * R_2 * \rho_{\left(^4He\right)} + \rho_{0\left(^3He\right)} * (1-R_2)
+	\text{\equationlabels{$^3$He Target Density}}
 \end{equation}
 
 \noindent We can then get the $^3$He density along the Z axis of the target from the $^4$He CFD simulation results. By integrating over the Z axis we find the average absolute density of the target. This density was found to be $0.013 \frac{g}{cm^3}$ $\pm 0.0004 \frac{g}{cm^3}$. For a more in depth discussion of this density extraction see ~\cite{density}.
@@ -440,6 +452,7 @@ These radiative corrections now allow us to compare our Monte Carlo elastic data
 
 \begin{equation} \label{eq:rc}
 	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} * \frac{\sigma^{Model}_{Born}}{\sigma^{Model}_{Rad}}
+	\text{\equationlabels{Radiative Corrections}}
 \end{equation}
 
 \section{Aluminium Background Subtraction}
@@ -473,16 +486,19 @@ Two functions immediately spring to mind as good candidates for the fit. Recall 
 
 \begin{equation} \label{eq:exp}
 	F_{exp} = e^{\left( P_0+P_1*x \right)}
+	\text{\equationlabels{Exponential Fit}}
 \end{equation}
 
 Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribution may technically better describe the distribution of the electrons in the elastic peak a simple Gaussian describes the peak equally well. As such, Equation ~\ref{eq:gaus} was chosen to fit the elastic peak with free parameters $P_0$, $P_1$, and $P_2$. Finally by summing Equations ~\ref{eq:exp} and ~\ref{eq:gaus} we have a combined fit that can be used to fit the region of $X_{Bj}$ around the elastic peak. This combined fit is given in Equation ~\ref{eq:combined} with free parameters $P_0$ through $P_4$.
 
 \begin{equation} \label{eq:gaus}
 	F_{Gaus} = P_0 * e^{\left( \frac{-1}{2} \left( \frac{x-P_1}{P_2} \right)^2 \right)}
+	\text{\equationlabels{Gaussian Fit}}
 \end{equation}
 
 \begin{equation} \label{eq:combined}
 	F_{combined} = e^{\left( P_0+P_1*x \right)} + P_2 * e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
+	\text{\equationlabels{Combined Exponential and Gaussian Fit}}
 \end{equation}
 
 Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the number of electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{sec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
@@ -675,6 +691,7 @@ First let us examine our statistical uncertainties. Our primary source of statis
 
 \begin{equation} \label{eq:uncertainty}
 	\delta_e = \frac{1}{\sqrt{N_e}}
+	\text{\equationlabels{Elastic Electron Yield Uncertainty}}
 \end{equation}
 
 The other source of statistical error comes from the aluminium background subtraction discussed in Section ~\ref{sec:al}. By subtracting out the Al contamination in the region of the elastic peak we have necessarily introduced another opportunity for uncertainty to creep into our measurement. In the region of the elastic peak, defined as $2.95<X_{Bj}<3.10$, there were 1093 events prior to the Al background subtraction. In this same region there were 34 Al events. We can once again use Equation ~\ref{eq:uncertainty} to estimate the uncertainty on the Al events. We find that these 34 events have an uncertainty of 17$\%$ or $\pm$ 6 electrons. 
@@ -726,6 +743,7 @@ The next largest systematic uncertainty comes from the GC efficiency given by Eq
 
 \begin{equation} \label{eq:gc_uncertainty}
 	\delta_{GC} = \epsilon_{GC} * \frac{\sqrt{T_7-(T_{3\&7})}}{T_7}
+	\text{\equationlabels{GC Uncertainty}}
 \end{equation}
 
 There is also a systematic uncertainty introduced by the beam and target offsets with respect to the set spectrometer angle. To estimate this uncertainty the Mott cross section was calculated at E08-014's energy and two angles. One angle was 1 mrad above the set spectrometer angle, and the other value was set 1 mrad below the set spectrometer angle. The difference in these two Mott cross sections then closely represent the uncertainty a reasonably sized offset would introduce to the absolute cross section. This beam and target offset uncertainty is found to be 1.1$\%$.
@@ -744,6 +762,7 @@ The final source of measurable uncertainty comes from the live-time calculation 
 
 \begin{equation} \label{eq:lt_uncertainty}
 	\delta_{LT} = \epsilon_{LT} * \frac{\sqrt{T_{3_{Scaler}}-T_{3_{File}}}}{T_{3_{Scaler}}}
+	\text{\equationlabels{Live Time Uncertainty}}
 \end{equation}
 
 \section{Comparisons with Other Measurements}

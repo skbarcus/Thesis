@@ -152,28 +152,32 @@ Gaussians are used to build the structure of the fits since they mimic the peaks
 
 \begin{equation} \label{eq:sog_rho_no_tail}
 	\rho(r) \propto \sum_{i=1}^N A_i e^{-\left( r-R_i \right)^2/\gamma^2}
+	\text{\equationlabels{SOG Charge Density (No Tails)}}
 \end{equation}
 
-As previously mentioned, the R$_i$, representing the radii at which different Gaussians are located, form their own sort of model dependence. Since we are unable to study what happens above q$_{max}$ the R$_i$ are analogous to a model of how the charge density behaves above q$_{max}$. This issue can be resolved by choosing many different R$_i$ values randomly and fitting the A$_i$ to the data for each set of R$_i$ chosen randomly. The choice of R$_i$ may be random but it does have numerous conditions applied. More will be said on the selection of the R$_i$ later on***(maybe have an Ri selection section to link to later). 
+As previously mentioned, the R$_i$, representing the radii at which different Gaussians are located, form their own sort of model dependence. Since we are unable to study what happens above q$_{max}$ the R$_i$ are analogous to a model of how the charge density behaves above q$_{max}$. This issue can be resolved by choosing many different R$_i$ values randomly and fitting the A$_i$ to the data for each set of R$_i$ chosen randomly. The choice of R$_i$ may be random, but it does have numerous conditions applied. More will be said on the selection of the R$_i$ later in Section ~\ref{ssec:radii}. 
 
-Once a large number of fits of the data using different sets of R$_i$ have been generated the `good' fits must be distinguished from the `bad'. This is done in several ways which will be discussed in more detail in Section ***, and include finding lower $\chi^2$ fits as well as making sure the fit's form factors appear physical. Once the `good' fits are identified an error band can be built up by plotting each of the fits on top of one another. After a sufficient number of different `good' R$_i$ sets have been fitted to the data the whole of the available model space has been explored. 
+Once a large number of fits of the data using different sets of R$_i$ have been generated the `good' fits must be distinguished from the `bad'. This is done in several ways which will be discussed in more detail in Section ~\ref{ssec:ngaus}, and include finding lower $\chi^2$ fits as well as making sure the fit's form factors appear physical. Once the `good' fits are identified an error band can be built up by plotting each of the fits on top of one another. After a sufficient number of different `good' R$_i$ sets have been fitted to the data the whole of the available model space has been explored. 
 
 The charge density is expected to have a derivative of zero at a $r=0$. This is not accounted for in Equation ~\ref{eq:sog_rho_no_tail}. To resolve this issue a tail can be added to each Gaussian that represents the Gaussian's behavior at $r<0$. This modified definition of the charge density is given in Equation ~\ref{eq:sog_rho} \cite{Article:SOG}.
 
 \begin{equation} \label{eq:sog_rho}
 	\rho(r) = \frac{Ze}{2 \pi^{3/2}\gamma^3} \sum_{i=1}^N \frac{Q_i}{1+\frac{2R_i^2}{\gamma^2}} \left( e^{-\left( r-R_i \right)^2/\gamma^2} + e^{-\left( r+R_i \right)^2/\gamma^2} \right)
+	\text{\equationlabels{SOG Charge Density (Tails)}}
 \end{equation}
 
 \noindent Equation \ref{eq:sog_rho} is normalized by Equation ~\ref{eq:normalization}. The Q$_i$ are now the parameters fitted to the data. The Q$_i$ are required to be positive as they represent the fraction of electric or magnetic charge carried by each Gaussian. $\sum Q_i=1$ is also required of the Q$_i$ terms as all of the charge fractions must sum to the total charge (one). $Z$ is the atomic number of the target and $e$ is the elementary charge \cite{Article:SOG}.
 
 \begin{equation} \label{eq:normalization}
 	4 \pi \int_0^{\infty} \rho(r) r^2 dr = Ze
+	\text{\equationlabels{Charge Density Normalization}}
 \end{equation}
 
 When using the plane wave Born approximation (PWBA) the electric and magnetic form factors can be parametrized as in Equation ~\ref{eq:sog_ffs} \cite{Article:SOG}.
 
 \begin{equation} \label{eq:sog_ffs}
 	F_{(ch,m)}(q) = exp \left(-\frac{1}{4} q^2 \gamma^2 \right) \sum^{n}_{i=1} \frac{Q_i{_{(ch,m)}}}{1+2R^2_i/\gamma^2} \left( \cos(qR_i) + \frac{2R^2_i}{\gamma^2} \frac{\sin(qR_i)}{qR_i} \right)
+	\text{\equationlabels{SOG Form Factors}}
 \end{equation}
 
 \noindent At this point we will follow the procedure laid out in \cite{Article:Amroun} and note that there is a typo in the reference. In \cite{Article:Amroun} Equation (1) the -1/2 in the exponent should be a -1/4. Again the Q$_i$ are fitted to the data and represent the fraction of the electric or magnetic charge carried by each Gaussian. The R$_i$ are the radii at which the Gaussians are placed. $q$ is the four-momentum transferred via the virtual photon as discussed in Section ~\ref{sec:kinematics}. Lastly $\gamma$ is defined as $\gamma \sqrt{\frac{3}{2}}=0.8$ fm \cite{Article:Amroun}. 
@@ -182,6 +186,7 @@ The cross section can be represented in PWBA with the SOG parametrization as sho
 
 \begin{equation} \label{eq:xs}
 	\frac{d\sigma}{d\Omega} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \frac{1}{\eta} \left[ \frac{q^2}{\boldsymbol{q}^2}F_{ch}^2(q) + \frac{\mu^2q^2}{2M^2} \left( \frac{1}{2} \frac{q^2}{\boldsymbol{q}^2} + \tan^2 \left( \frac{\theta}{2} \right) \right)F_{m}^2(q) \right]
+	\text{\equationlabels{SOG Cross Section}}
 \end{equation}
 
 \noindent Here $\eta = 1 + q^2/4M^2$, $q^2$ is the squared four-momentum transfer from ~\ref{eq:Q^2}, $\boldsymbol{q}^2$ is the three-momentum, $\mu$ is the magnetic moment of the target ($\mu_{^3He}$ = -2.1275*(3.0/2.0) and $\mu_{^3H}$ = 2.9788*(3.0/1.0)), and $M$ is the mass of the target (M$_{^3He}$ = 3.0160293 amu and M$_{^3H}$ = 3.0160492 amu) ~\cite{Article:Amroun}. 
@@ -190,24 +195,28 @@ The Mott cross section is shown in equation ~\ref{eq:mott}.
 
 \begin{equation} \label{eq:mott}
 	\left( \frac{d\sigma}{d\Omega} \right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 \cos^2 \left( \frac{\theta}{2} \right)^2}{4E_0^2 \sin^2 \left( \frac{\theta}{2} \right)^4} 
+	\text{\equationlabels{Mott Equation}}
 \end{equation}
  
 \noindent $Z^2$ accounts for the charge of the target with $Z$ being the target's atomic number, $\frac{E'}{E_0}$ is the recoil factor with $E_0$ being the scattered electrons initial energy and $E'$ is the energy after scattering, $\alpha$ is the fine structure constant, and $\theta$ is the scattering angle. It is extremely important to be mindful of the units one is using when working with these equations. Be cautious of interchanging degrees and radians for the scattering angle, fm$^{-2}$ and GeV$^2$ for the squared four-momentum values, fm$^{-1}$ and GeV for the energies, and amus and GeV for the mass units. Equation ~\ref{eq:gev2fm} shows the equivalent amount of GeV$^2$ to fm$^{-2}$ in nuclear units.
 
 \begin{equation} \label{eq:gev2fm}
 	1 \; GeV^2 \approx 25.7 \; fm^{-2}
+	\text{\equationlabels{GeV$^2$ to fm$^{-2}$ Conversion}}
 \end{equation}
 
 The assumption that the wave functions of the electrons are plane waves is not entirely correct. The nucleus' charge distorts these wave functions due to the Coulomb interaction, and thus shifts the Q$^2$ value to Q$^2_{eff}$ given in Equation ~\ref{eq:qeff}. This leads to Q$^2_{eff}$ taking the place of Q$^2$ in the above equations in this section (i.e. Q$^2$ is taken from the literature and then Q$^2_{eff}$ is then calculated and used in the fits) \cite{Article:Alex}.
 
 \begin{equation} \label{eq:qeff}
 	Q^2_{eff} = Q^2 \left(  1+ \frac{1.5Z\alpha}{E_0*1.12*A^{\frac{1}{3}}}   \right)^2
+	\text{\equationlabels{Q$^2$-Effective}}
 \end{equation}
 
 \noindent Here $A$ is the mass number and the other variables are defined above. The three-momentum, $\boldsymbol{q}^2$, is then given by Equation ~\ref{eq:three-momentum} where $\nu=E_0-E'$ as in ~\ref{eq:nu}.
 
 \begin{equation} \label{eq:three-momentum}
 	\boldsymbol{q}^2 = \nu^2 - Q^2_{eff}
+	\text{\equationlabels{Electron Three Momentum}}
 \end{equation}
 
 \section{New SOG Fits}
@@ -224,10 +233,11 @@ To explore the R$_i$ combinations we want to apply a few rules to their selectio
 
 Once a reasonable upper limit on the radii is established the spacing separating the R$_i$ from one another must be determined. It has been found that the spacing of the R$_i$ for R$_i$ $<$ R$_{max}$/2 should be approximately half as far apart as the R$_i$ spacing for the radii positioned at R$_i$ $>$ R$_{max}$/2 \cite{Article:SOG}. This is done so that the charge density region with more charge, i.e. closer to the nucleus, is described by more Gaussians. This allows the structure to be better captured by the SOG fits. Further away from the nucleus, where there is less charge, fewer Gaussians are needed to accurately describe the structure of the charge density.   
 
-Once the R$_i$ are selected each combination of R$_i$ are fitted using the SOG parametrization. Since we are interested in the fits that best describe the data it is logical to search for the lowest $\chi^2$ fits. We also want fits that produce form factors that conform to the physical priors we expect so it is important to inspect the form factors visually for physicality. We define $\chi^2$ as in Equation ~\ref{eq:chi2}, where $N$ is the number of data points being fit, $\sigma_{exp}$ is the experimentally measured cross section at a particular Q$^2$, $\sigma_{fit}$ is the cross section given by the global fit at the same Q$^2$ as the experimental cross section, and $\Delta$ is the total uncertainty attached to the experimental cross section at the given Q$^2$. A lower $\chi^2$ value naively indicates a better fit, but numerous flaws can occur when using only $\chi^2$ \cite{doug_stats}. Numerous other tests for the `goodness' of the fit were also applied to avoid this problem and are discussed in ~\ref{ssec:ngaus}.  
+Once the R$_i$ are selected each combination of R$_i$ are fitted using the SOG parametrization. Since we are interested in the fits that best describe the data it is logical to search for the lowest $\chi^2$ fits. We also want fits that produce form factors that conform to the physical priors we expect so it is important to inspect the form factors visually for physicality. We define $\chi^2$ as in Equation ~\ref{eq:chi2}, where $N$ is the number of data points being fit, $\sigma_{exp}$ is the experimentally measured cross section at a particular Q$^2$, $\sigma_{fit}$ is the cross section given by the global fit at the same Q$^2$ as the experimental cross section, and $\Delta$ is the total uncertainty attached to the experimental cross section at the given Q$^2$. (Note that all $\chi^2$ minimization fits in this analysis were performed using Minuit which can be found in reference ~\cite{minuit}.) A lower $\chi^2$ value naively indicates a better fit, but numerous flaws can occur when using only $\chi^2$ \cite{doug_stats}. Numerous other tests for the `goodness' of the fit were also applied to avoid this problem and are discussed in ~\ref{ssec:ngaus}.  
 
 \begin{equation} \label{eq:chi2}
 	\chi^2 = \sum_{n=1}^N \frac{\left( \sigma_{exp}-\sigma_{fit} \right)^2}{\Delta^2}
+	\text{\equationlabels{$\chi^2$}}
 \end{equation}
 
 Initial R$_i$ spacings tend to be fairly unfavorable and produce large $\chi^2$ values and strangely shaped form factors. To minimize the $\chi^2$ as much as possible the R$_i$ values need to be allowed to shift. This is accomplished by first fitting the data with an initial set of R$_i$ values. After the initial fit is done each of the R$_i$ values is then optimized. If R$_0$ was initially 0.2 fm the fit would then be redone with R$_0$ = 0.1 fm and then R$_0$ = 0.3 fm. The R$_i$ are each shifted up and down 0.1 fm until $\chi^2$ gets larger. The R$_i$ that yielded the smallest $\chi^2$ is then kept as the `optimal' R$_i$. Once this procedure is completed for each R$_i$ in ascending order the lowest, or at least close to the lowest, $\chi^2$ value for R$_i$ similar to the initial R$_i$ has been found.  
@@ -247,16 +257,19 @@ Reduced $\chi^2$, or r$\chi^2$, is similar to $\chi^2$ from Equation ~\ref{eq:ch
 
 \begin{equation} \label{eq:rchi2}
 	r\chi^2 = \frac{\chi^2}{N-N_{var}-1}
+	\text{\equationlabels{Reduced $\chi^2$}}
 \end{equation}
 
 The next two tests applied to determine the number of Gaussians to use in the SOG fits are Akaike information criterion (AIC) defined in Equation ~\ref{eq:AIC} \cite{Article:AIC} and Bayesian information criterion (BIC) defined in Equation ~\ref{eq:BIC} \cite{Article:BIC} \cite{doug_stats}. AIC and BIC are both a more advanced type of statistical test useful for selecting the proper model to use. The primary difference between the two is that BIC applies a larger penalty based on the number of model parameters used to fit the data. The way to select the correct model is to find the lowest AIC and BIC values, while remembering that these tests may choose slightly different models than the other tests and each other. To determine how much more evidence there is for one model versus another we can look at the difference between their BIC values, $\Delta$BIC. A $\Delta$BIC of $0<\Delta$BIC$<2$ indicates no real difference between models, $2<\Delta$BIC$<6$ indicates that there is positive evidence for the lower valued model, $6<\Delta$BIC$<10$ indicates strong evidence for the lower valued model, and $\Delta$BIC$>10$ indicates very strong evidence for the lower valued model \cite{Article:Delta_BIC}.
 
 \begin{equation} \label{eq:AIC}
 	AIC = N \ln\left( \frac{\chi^2}{N} \right) + 2 N_{var}
+	\text{\equationlabels{Akaike Information Criterion}}
 \end{equation}
 
 \begin{equation} \label{eq:BIC}
 	BIC = N \ln\left( \frac{\chi^2}{N} \right) +  \ln\left( N \right) N_{var}
+	\text{\equationlabels{Bayesian Information Criterion}}
 \end{equation}
 
 When selecting the number of Gaussians to use the sum of the electric and magnetic charges is also examined. The sum of the Q$_i$ charges should sum to a charge of unity, however the fits do not enforce this requirement. Instead the sum of the Q$_i$ are allowed to fluctuate with the best fit values of the individual Q$_i$. This then makes the sums another sort of test of the goodness of each fit. A `better' fit, or one that complies more with our predetermined knowledge of the form factors, will have Q$_i$ sums closer to unity. Values further from unity can indicate a worse fit, but they also help to indicate where more data is needed.
@@ -583,7 +596,7 @@ The set of new world data fits for $^3$He have essentially created an error band
 \label{tab:3he_rep_fit_stats}
 \end{table}
 
-Figure ~\ref{fig:3he_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$He world data fits. The charge form factor error band is very well determined until Q$^2$ $\approx$ 55 fm$^{-2}$ where it begins to expand. The magnetic form factor is very well determined below  Q$^2$ $\approx$ 12 fm$^{-2}$. As F$_m$ approaches its first minimum the error band expands considerably producing a range of about 4 fm$^{-2}$ in Q$^2$ where the diffractive minimum is located. The error band then tightens again between 22 and 36 fm$^{-2}$ with the addition of the new $^3$He data from JLab and this analysis. The error band then expands again as a possible second diffractive minimum is approached due to leaving the Q$^2$ range in which robust experimental data exists. 
+Figure ~\ref{fig:3he_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$He world data fits. The charge form factor error band is very well determined until Q$^2$ $\approx$ 55 fm$^{-2}$ where it begins to expand. (Note that the error bands used for $^3$He and $^3$H in this thesis were created and/or digitized with the incredibly useful free tool ~\cite{web_plot_digitizer}.) The magnetic form factor is very well determined below  Q$^2$ $\approx$ 12 fm$^{-2}$. As F$_m$ approaches its first minimum the error band expands considerably producing a range of about 4 fm$^{-2}$ in Q$^2$ where the diffractive minimum is located. The error band then tightens again between 22 and 36 fm$^{-2}$ with the addition of the new $^3$He data from JLab and this analysis. The error band then expands again as a possible second diffractive minimum is approached due to leaving the Q$^2$ range in which robust experimental data exists. 
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -622,13 +635,14 @@ This representative fit has a total $\chi^2$ of 436.1 and a reduced $\chi^2$ of 
 	\end{center}
 	\caption[\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$}]{
 	{\bf{$^3$He Representative Fit $\chi^2$ vs. Q$^2$.}} }
-	\label{fig:3he_data_distribution}
+	\label{fig:3he_rep_fit_chi2_q2}
 \end{figure}
 
 It can also be illuminating to look at the residual of the fit for each data point in each dataset as shown in Figure ~\ref{fig:3he_rep_fit_residual}. Note that since the plot encompasses many orders of magnitude the residual is plotted as Equation ~\ref{eq:residual}, where $\sigma_{exp}$ is the experimental cross section measured and $\sigma_{fit}$ is the cross section predicted by the fit at those same kinematics. Firstly, there are two heavy outliers from Arnold, but this is not very surprising since these points were taken at very high Q$^2$. Zooming in on the remaining points they mostly look to be normally distributed about zero, although the points from Collard may lie a little high as do some of the high Q$^2$ points from Amroun. This indicates that floating the normalizations of the different datasets would not have improved the overall $\chi^2$ significantly. We also find that the point from this analysis lies below the representative fit.
 
 \begin{equation} \label{eq:residual}
 	Residual = \frac{\sigma_{exp}-\sigma_{fit}}{\sigma_{fit}}
+	\text{\equationlabels{SOG Fit Residual}}
 \end{equation}
 
 \begin{figure}[!ht]
@@ -821,7 +835,7 @@ Plotted in Figure ~\ref{fig:3h_ri} are the R$_i$ values (~\ref{fig:3h_ri_ind}) a
 \label{fig:3h_ri}
 \end{figure}
 
-A representative fit for the $^3$H form factors was selected in the same manner as the one selected for $^3$He in Section ~\ref{ssec:3he_fits}. Table ~\ref{tab:3h_rep_fit_pars} and Table ~\ref{tab:3h_rep_fit_stats} show the parameters for the representative fit of the $^3$H world data along with the metrics used to test the `goodness' of the fit respectively. Figure ~\ref{fig:3h_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$H world data fits. The charge form factor error band is well determined past the first minimum until about Q$^2$ $\approx$ 24 fm$^{-2}$ where it begins to expand. Above Q$^2$ $\approx$ 24 fm$^{-2}$ there is alomost no knowledge of the shape or magnitude of F$_{ch}$ due to a lack of high Q$^2$ data. The magnetic form factor is fairly well determined through the first minimum and up to Q$^2$ $\approx$ 30 fm$^{-2}$. As F$_m$ passes above Q$^2$ $\approx$ 30 fm$^{-2}$ there is almost no information about the form factor. Once again, to improve the understanding of the $^3$H form factors more high Q$^2$ and back angle data is required.
+A representative fit for the $^3$H form factors was selected in the same manner as the one selected for $^3$He in Section ~\ref{ssec:3he_fits}. Table ~\ref{tab:3h_rep_fit_pars} and Table ~\ref{tab:3h_rep_fit_stats} show the parameters for the representative fit of the $^3$H world data along with the metrics used to test the `goodness' of the fit respectively. Figure ~\ref{fig:3h_rep_fit} shows plots of the representative charge and magnetic form factors for the new $^3$H world data fits (error bands were again created with ~\cite{web_plot_digitizer}). The charge form factor error band is well determined past the first minimum until about Q$^2$ $\approx$ 24 fm$^{-2}$ where it begins to expand. Above Q$^2$ $\approx$ 24 fm$^{-2}$ there is alomost no knowledge of the shape or magnitude of F$_{ch}$ due to a lack of high Q$^2$ data. The magnetic form factor is fairly well determined through the first minimum and up to Q$^2$ $\approx$ 30 fm$^{-2}$. As F$_m$ passes above Q$^2$ $\approx$ 30 fm$^{-2}$ there is almost no information about the form factor. Once again, to improve the understanding of the $^3$H form factors more high Q$^2$ and back angle data is required.
 
 %\vspace{6mm}
 \begin{table}[!h]
@@ -935,7 +949,7 @@ The $\chi$EFT predictions in Marcucci \textit{et al}. uses the chiral symmetry o
 
 The final theoretical model employed in Marcucci \textit{et al}. is the covariant spectator theorem (CST). Again, paraphrasing ~\cite{Article:Marcucci} CST is a covariant field theory where nucleons and light mesons are used as the effective degrees of freedom. Currents and form factors can be extracted from the field theory's approximate solutions. This theory is also fully relativistic.
 
-Figure ~\ref{fig:3he_fch_theory} shows the new $^3$He F$_{ch}$ fits from this analysis, the representative fit from this analysis, Amroun \textit{et al}.'s previous fit and error band, and the four theory predications from Marcucci \textit{et al}. It is immediately clear that the new fits (red) are in excellent agreement with the fit from Amroun \textit{et al}. These fits are very tightly grouped and agree well until Q$^2$ $\approx$ 60 fm$^{-2}$. This makes sense as the abundance of high precision low Q$^2$ data for $^3$He means we expect the charge form factor to be well understood. 
+Figure ~\ref{fig:3he_fch_theory} shows the new $^3$He F$_{ch}$ fits from this analysis, the representative fit from this analysis, Amroun \textit{et al}.'s previous fit and error band, and the four theory predications from Marcucci \textit{et al}. (Note that the error bands from Amroun and the theory curves from Marcucci were digitized with the tool found in ~\cite{web_plot_digitizer}). It is immediately clear that the new fits (red) are in excellent agreement with the fit from Amroun \textit{et al}. These fits are very tightly grouped and agree well until Q$^2$ $\approx$ 60 fm$^{-2}$. This makes sense as the abundance of high precision low Q$^2$ data for $^3$He means we expect the charge form factor to be well understood. 
 
 
 \begin{figure}[!ht]
@@ -973,7 +987,7 @@ Recall that the charge radius is determined by the slope of the charge form fact
 \subsection{$^3$H Comparison with Theory and Previous Measurements}
 \label{ssec:3h_comparison_with_theory}
 
-We can apply the same comparisons to past fits and theory predictions performed in Section ~\ref{ssec:3he_comparison_with_theory} to $^3$H as well. Figure ~\ref{fig:3h_fch_theory} shows the charge form factor fits and theory predictions for $^3$H in the same manner as was done for $^3$He. Comparing this analysis' fits to ~\cite{Article:Amroun} they are in good agreement. The first minimum is almost identical, and the error bands overlap nicely, although there is a slight difference in magnitude after the first minimum. This is likely due to this analysis having access to the data of fewer experiments than ~\cite{Article:Amroun} had. The fits diverge above Q$^2$ of 25 fm$^{-2}$ due to a lack of data in this region. Since no new elastic $^3$H data has been added to the world data we expect to have strong agreement with the previous fits of the same data, and the agreement of the two results demonstrates the consistency of our technique with past techniques. 
+We can apply the same comparisons to past fits and theory predictions performed in Section ~\ref{ssec:3he_comparison_with_theory} to $^3$H as well. Figure ~\ref{fig:3h_fch_theory} shows the charge form factor fits and theory predictions for $^3$H in the same manner as was done for $^3$He. (Note that the error bands from Amroun and the theory curves from Marcucci were digitized with the tool found in ~\cite{web_plot_digitizer}). Comparing this analysis' fits to ~\cite{Article:Amroun} they are in good agreement. The first minimum is almost identical, and the error bands overlap nicely, although there is a slight difference in magnitude after the first minimum. This is likely due to this analysis having access to the data of fewer experiments than ~\cite{Article:Amroun} had. The fits diverge above Q$^2$ of 25 fm$^{-2}$ due to a lack of data in this region. Since no new elastic $^3$H data has been added to the world data we expect to have strong agreement with the previous fits of the same data, and the agreement of the two results demonstrates the consistency of our technique with past techniques. 
 
 \begin{figure}[!ht]
 	\begin{center}
