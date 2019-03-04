@@ -10,19 +10,19 @@ This chapter will explore the various analyses used to extract a $^3$He elastic 
 \section{Experimental Cross Section}
 \label{sec:exp_xs}
 
-The theoretical origins of a differential cross section were explored in ~\ref{sec:xs}. However, this derivation is not particularly useful for extracting an actual experimental cross section. In practice extracting a cross section is essentially an exercise in electron counting. Let us now write the cross section as an experimentalist understands it as in Equation ~\ref{eq:exp_xs}. Each of these variables will be examined in detail later in this chapter.
+The theoretical origins of a differential cross section were explored in \ref{sec:xs}. However, this derivation is not particularly useful for extracting an actual experimental cross section. In practice extracting a cross section is essentially an exercise in electron counting. Let us now write the cross section as an experimentalist understands it as in Equation \ref{eq:exp_xs}. Each of these variables will be examined in detail later in this chapter.
 
 \begin{equation} \label{eq:exp_xs}
-	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \frac{ps*N_e}{N_{in}*\rho *LT* \epsilon_{det}} \frac{1}{\Delta\Omega\Delta P \Delta Z}
+	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \frac{ps \; N_e}{N_{in} \; \rho \; LT \; \epsilon_{det}} \frac{1}{\Delta\Omega\Delta P \Delta Z}
 	\text{\equationlabels{Experimental Cross Section}}
 \end{equation}
 
-Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic dead-time in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle fraction covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
+Here $ps$ represents the prescale value of the given trigger being examined. $N_e$ is the number of electrons detected by the experiment that survive physics cuts, like particle identification, and acceptance cuts. $N_{in}$ is the number of electrons incident on the target, and can be calculated from the cumulative beam charge. $\rho$ is the target's density. $LT$ is the livetime correction which accounts for events missed due to electronic dead-time in the DAQ. $\epsilon_{det}$ represents the product of all of the detector efficiencies such as the GC, VDC single track, EM calorimeter, and trigger efficiencies. $\Delta\Omega$ represent the solid angle covered by the spectrometer after acceptance cuts. $\Delta P$ is the momentum acceptance seen by the spectrometer after acceptance cuts. Finally $\Delta Z$ represents the length of the target seen by the spectrometer.
 
 \section{Beam Charge}
 \label{sec:charge}
 
-As the the cross section extraction is essentially an exercise in electron counting let us begin by finding the charge of the electron beam during any given experimental run. This process begins with the U and D BCMs measuring the beam current prior to the beam striking the target. These BCMs are calibrated according to Equation ~\ref{eq:bcms}, and the constants can be found in Table ~\ref{tab:bcm_constants}. The BCM calibration for experiment E08-014 can be read about in more detail in ~\cite{bcm_calibration} where these equations are found. The final constants in the table were updated after the analysis in ~\cite{bcm_calibration}, and were provided via private communication with Dien Nguyen.
+First we begin by finding the charge of the electron beam during any given experimental run. This process begins with the U and D BCMs measuring the beam current prior to the beam striking the target. These BCMs are calibrated according to Equation \ref{eq:bcms}, and the constants can be found in Table \ref{tab:bcm_constants}. The BCM calibration for experiment E08-014 can be read about in more detail in \cite{bcm_calibration} where these equations are found. The final constants in the table were updated after the analysis in \cite{bcm_calibration}, and were provided via private communication with Dien Nguyen.
 
 \begin{equation} \label{eq:bcms}
 	\langle I_{beam} \rangle = \frac{\frac{scaler}{time}-K'_{offset}}{C_{V-to-F}}
@@ -44,10 +44,10 @@ $D_1$ & 37 & 1263\\
 \label{tab:bcm_constants}
 \end{table}
 
-The average current, $\langle I_{beam} \rangle$, is thus dependent upon the number of counts in the $scaler$ measuring beam current in a certain period of $time$ tracked by a clock scaler which is then modified by the two calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run using Equation ~\ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation ~\ref{eq:electrons}.
+The average current, $\langle I_{beam} \rangle$, is thus dependent upon the number of counts in the $scaler$ measuring beam current in a certain period of $time$ tracked by a clock scaler which is then modified by the two known calibration constants $K'_{offset}$ and $C_{V-to-F}$. Now that we have a current we can calculate the charge, $Q$, of the beam during a run using Equation \ref{eq:charge}. We can then divide the charge by the elementary charge of the electron, $e$, to find the total number of electrons incident on our target, $N_{in}$, as in Equation \ref{eq:electrons}.
 
 \begin{equation} \label{eq:charge}
-	Q = \langle I_{beam} \rangle *time
+	Q = \langle I_{beam} \rangle \times time
 	\text{\equationlabels{Beam Charge}}
 \end{equation}
 
@@ -56,7 +56,7 @@ The average current, $\langle I_{beam} \rangle$, is thus dependent upon the numb
 	\text{\equationlabels{Number of Incident Electrons}}
 \end{equation}
 
-Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$ BCMs for experimental run 4074. During E08-014 the target beam current was 120 $\mu$A. When the beam `trips' (abruptly turns off) and when the beam current is being brought up to the target current it tends to be somewhat unstable. These events can be seen in the trailing edges and leading edges of the gaps in the BCM current measurement. Due to the beam's instability at these times measurements taken during them are discarded by placing cuts on the current spectrum represented by the red lines in ~\ref{fig:bcms_4074}. These lines are placed two scaler readouts, about 4 seconds per readout, before (after) the BCMs register 90$\%$ of the 120 $\mu$A operating current for the falling (rising) edge. This analysis was performed for each run of KIN 3.2 and the results are shown in Table ~\ref{tab:charges}.
+Figure \ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$ BCMs for experimental run 4074. During E08-014 the target beam current was 120 $\mu$A. When the beam `trips' (abruptly turns off) and when the beam current is being brought up to the desired current it tends to be somewhat unstable. These events can be seen in the trailing edges and leading edges of the gaps in the BCM current measurement. Due to the beam's instability at these times measurements taken during them are discarded by placing cuts on the current spectrum represented by the red lines in Figure \ref{fig:bcms_4074}. These lines are placed two scaler readouts, about 4 seconds per readout, before (after) the BCMs register 90$\%$ of the 120 $\mu$A operating current for the falling (rising) edge. This analysis was performed for each run of KIN 3.2 and the results are shown in Table \ref{tab:charges}.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -76,14 +76,14 @@ Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
 \textbf{Run} & \makecell{\textbf{Charge}\\ \textbf{$U_1$ ($\mu C$)}} & \makecell{\textbf{Charge}\\ \textbf{$D_1$ ($\mu C$)}} & \makecell{\textbf{Average}\\ \textbf{Charge}\\ ($\mu C$)} & \makecell{\textbf{Electrons} \\ $U_1$} & \makecell{\textbf{Electrons} \\ $D_1$} & \makecell{\textbf{Average} \\ \textbf{Electrons}}\\
 \hline
-3892 & 5568.68 & 6015.81 & 5792.25 & 3.47608 * 10$^{16}$ & 3.75519 * 10$^{16}$ & 3.61564 * 10$^{16}$ \\
-3893 & 118261 & 118016 & 118138 & 7.38207 * 10$^{17}$ & 7.36678 * 10$^{17}$ & 7.37443 * 10$^{17}$ \\
-3894 & 136502 & 138131 & 137316 & 8.5207 * 10$^{17}$ & 8.62243e * 10$^{17}$ & 8.57157 * 10$^{17}$ \\
-4073 & 7656.35 & 7654.74 & 7655.54 & 4.77924 * 10$^{16}$ & 4.77824 * 10$^{16}$ & 4.77874 * 10$^{16}$ \\
-4074 & 251551 & 251227 & 251389 & 1.57023 * 10$^{18}$ & 1.56821 * 10$^{18}$ & 1.56922 * 10$^{18}$ \\
-4075 & 280417 & 280017 & 280217 & 1.75042 * 10$^{18}$ & 1.74792 * 10$^{18}$ & 1.74917 * 10$^{18}$ \\
+3892 & 5568.68 & 6015.81 & 5792.25 & 3.47608 $\times$ 10$^{16}$ & 3.75519 $\times$ 10$^{16}$ & 3.61564 $\times$ 10$^{16}$ \\
+3893 & 118261 & 118016 & 118138 & 7.38207 $\times$ 10$^{17}$ & 7.36678 $\times$ 10$^{17}$ & 7.37443 $\times$ 10$^{17}$ \\
+3894 & 136502 & 138131 & 137316 & 8.5207 $\times$ 10$^{17}$ & 8.62243e $\times$ 10$^{17}$ & 8.57157 $\times$ 10$^{17}$ \\
+4073 & 7656.35 & 7654.74 & 7655.54 & 4.77924 $\times$ 10$^{16}$ & 4.77824 $\times$ 10$^{16}$ & 4.77874 $\times$ 10$^{16}$ \\
+4074 & 251551 & 251227 & 251389 & 1.57023 $\times$ 10$^{18}$ & 1.56821 $\times$ 10$^{18}$ & 1.56922 $\times$ 10$^{18}$ \\
+4075 & 280417 & 280017 & 280217 & 1.75042 $\times$ 10$^{18}$ & 1.74792 $\times$ 10$^{18}$ & 1.74917 $\times$ 10$^{18}$ \\
 \hline
-\textbf{Totals} & \textbf{799956} & \textbf{801062} & \textbf{800509} & \textbf{4.99348 * 10$^{18}$} & \textbf{5.00039 * 10$^{18}$} & \textbf{4.99693 * 10$^{18}$} \\
+\textbf{Totals} & \textbf{799956} & \textbf{801062} & \textbf{800509} & \textbf{4.99348 $\times$ 10$^{18}$} & \textbf{5.00039 $\times$ 10$^{18}$} & \textbf{4.99693 $\times$ 10$^{18}$} \\
 \hline
 \end{tabular}
 \caption[Charge Accumulated per Run]{\bf{Charge Accumulated per Run}}
@@ -96,9 +96,9 @@ Figure ~\ref{fig:bcms_4074} shows the current as measured by the $U_1$ and $D_1$
 \subsection{Live-time Correction}
 \label{ssec:live-time}
 
-Now we have measured how many electrons total are incident on our target. However, we have not yet accounted for the electronic dead-time discussed in Section ~\ref{sec:daq} and Equation ~\ref{eq:lt}. While the electronics discard some valid trigger events because the system is busy processing the previous event there are still scalers that record every trigger created regardless of if it is recorded by the main DAQ. This means that the live-time of the system can be calculated by taking the ratio of the total triggers recorded by the DAQ electronics to the total hardware triggers recorded by the scalers. 
+Now we have measured how many total electrons are incident on our target. However, we have not yet accounted for the electronic dead-time discussed in Section \ref{sec:daq} and Equation \ref{eq:lt}. While the electronics discard some valid trigger events because the system is busy processing the previous event there are still scalers that record every trigger created regardless of if it is recorded by the main DAQ. This means that the live-time of the system can be calculated by taking the ratio of the total triggers recorded by the DAQ electronics to the total hardware triggers recorded by the scalers. 
 
-Table ~\ref{tab:live-time} contains the live-time for each run as well as the weighted average of live-times for the cumulative runs. The discrepancy between the live-times for the first and last three runs is due to the differing event rates on the right arm during each of these sets of runs. When the right arm has a higher data rate the live-time for both arms decreases. The weighted average live-time of 95.27$\%$ is then applied as a correction of $\frac{1}{0.9527}$ to the total number of elastic electrons detected.
+Table \ref{tab:live-time} contains the live-time for each run as well as the weighted average of live-times for the cumulative runs. The discrepancy between the live-times for the first and last three runs is due to the differing event rates on the right arm during each of these sets of runs. When the right arm has a higher data rate the live-time for both arms decreases. The weighted average live-time of 95.27$\%$ is then applied as a correction of $\frac{1}{0.9527}$ to the total number of elastic electrons detected.
 
 \vspace{5mm}
 
@@ -126,10 +126,10 @@ Table ~\ref{tab:live-time} contains the live-time for each run as well as the we
 \subsection{Trigger Efficiency}
 \label{ssec:trigger_eff}
 
-The main trigger, $T_3$, for E08-014 was a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors. However, this trigger is not perfectly efficient. To measure $T_3$'s efficiency we use trigger $T_4$ which is the coincidence of one of either $S_1$ or $S_{2m}$ and the $GC$. The efficiency of $T_3$ can then be calculated by Equation ~\ref{eq:t3_eff}. Here $PS_{3,4}$ are the prescale values of $T_3$ or $T_4$, and $n_{T_{3,4}}$ are the number of triggers of either $T_3$ or $T_4$. Figure ~\ref{fig:t3_eff} shows the $T_3$ efficiencies for each of the runs, and Table ~\ref{tab:t3_eff} lists these efficiencies along with the weighted average of the runs. 
+The main trigger, T$_3$, for E08-014 was a coincidence of S$_1$, S$_{2m}$, and the GC detectors. However, this trigger is not perfectly efficient. To measure T$_3$'s efficiency we use trigger T$_4$ which is the coincidence of one of either S$_1$ or S$_{2m}$ and the GC. The efficiency of T$_3$ can then be calculated by Equation \ref{eq:t3_eff}. Here $PS_{3,4}$ are the prescale values of T$_3$ or T$_4$, and $n_{T_{3,4}}$ are the number of triggers of either T$_3$ or T$_4$. Figure \ref{fig:t3_eff} shows the T$_3$ efficiencies for each of the runs, and Table \ref{tab:t3_eff} lists these efficiencies along with the weighted average of the runs. 
 
 \begin{equation} \label{eq:t3_eff}
-	T_{3_{eff}} = \frac{PS_{T_3}*n_{T_3}}{PS_{T_3}*n_{T_3}+PS_{T_4}*n_{T_4}}
+	T_{3_{eff}} = \frac{PS_{T_3}\times n_{T_3}}{PS_{T_3}\times n_{T_3}+PS_{T_4}\times n_{T_4}}
 	\text{\equationlabels{T$_3$ Efficiency}}
 \end{equation}
 
@@ -149,14 +149,14 @@ The main trigger, $T_3$, for E08-014 was a coincidence of $S_1$, $S_{2m}$, and t
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
 \textbf{Run} & \textbf{$T_3$ Efficiency}\\
 \hline
-3892 & 0.969217\\
-3893 & 0.988504\\
-3894 & 0.989435\\
-4073 & 0.988796\\
-4074 & 0.989009\\
-4075 & 0.988678\\   
+3892 & 0.9692\\%0.969217
+3893 & 0.9885\\%0.988504
+3894 & 0.9894\\%0.989435
+4073 & 0.9888\\%0.988796
+4074 & 0.9890\\%0.989009
+4075 & 0.9887\\%0.988678  
 \hline
-\makecell{\textbf{Weighted}\\ \textbf{Average}} & \textbf{0.988577} \\
+\makecell{\textbf{Weighted}\\ \textbf{Average}} & \textbf{0.9886} \\%0.988577
 \hline
 \end{tabular}
 \caption[$T_3$ Efficiency by Run]{{\bf{$T_3$ Efficiency by Run}} }
@@ -166,7 +166,7 @@ The main trigger, $T_3$, for E08-014 was a coincidence of $S_1$, $S_{2m}$, and t
 \subsection{VDC Single Track Efficiency}
 \label{ssec:vdc_eff}
 
-In general the VDCs are very efficient, but it is possible for particles to make several tracks in the VDCs. This can cause issues with track reconstruction. For the analysis of E08-014 only events making a single track in the VDCs that also passed PID cuts were analyzed. This single track efficiency can be calculated with equation ~\ref{eq:vdc_eff}. Where $N_{track=1}$ is the number of events making only a single track and $N_{0 \leq track \leq 4}$ are the number of events producing between one and four tracks. For the LHRS during experiment E08-014 $\epsilon_{VDC}$ was found to be 99.175$\%$, and Table ~\ref{tab:vdc_eff} gives the breakdown for both detectors by number of tracks seen. This introduces a small correction factor of $\frac{1}{0.99175}$ to the electron yield. For more detailed information on this calibration see ~\cite{Thesis:Ye} where these values were calculated. 
+In general the VDCs are very efficient, but it is possible for particles to make several tracks in the VDCs. This can cause issues with track reconstruction. For the analysis of E08-014 only events making a single track in the VDCs that also passed PID cuts were analyzed. This single track efficiency can be calculated with equation \ref{eq:vdc_eff}. Where $N_{track=1}$ is the number of events making only a single track and $N_{0 \leq track \leq 4}$ are the number of events producing between one and four tracks. For the LHRS during experiment E08-014 $\epsilon_{VDC}$ was found to be 99.175$\%$, and Table \ref{tab:vdc_eff} gives the breakdown for both detectors by number of tracks seen. This introduces a small correction factor of $\frac{1}{0.99175}$ to the electron yield. For more detailed information on this calibration see \cite{Thesis:Ye} where these values were calculated. 
 
 \begin{equation} \label{eq:vdc_eff}
 	\epsilon_{VDC} = \frac{N_{track=1}}{N_{0 \leq track \leq 4}}
@@ -191,29 +191,29 @@ HRSR & 0.048$\%$ & 99.360$\%$ & 0.545$\%$ & 0.039$\%$ & 0.007$\%$ \\
 \subsection{Particle Identification}
 \label{ssec:pid}
 
-When a trigger is seen it is important to be able to identify what particle caused the trigger. For this analysis we are only interested in electrons, but pions occasionally cause triggers as well. Figure ~\ref{fig:pid_pr_ye} shows a plot of the two pion rejector calorimeters used for PID in E08-014. As discussed in Section ~\ref{ssec:em_cal} electrons will leave large signals in the PRs, and pions much smaller signals. Using this property of the PRs we can show the area almost certain to be electrons shaded blue, and the area we expect to be pions is shaded red. Note that the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). The other low energy events not identified as pions are generally delta, or knock-on, electrons which are created when particles strike the metals of the detector frame and spectrometer apertures etc. We can see for this one particular run, that was not part of this analysis, that there is a non-zero pion contamination in this data. 
+When a trigger is seen it is important to be able to identify what particle caused the trigger. For this analysis we are only interested in electrons, but pions occasionally cause triggers as well. Figure \ref{fig:pid_pr_ye} shows a plot of the two pion rejector calorimeters used for PID in E08-014. As discussed in Section \ref{ssec:em_cal} electrons will leave large signals in the PRs, and pions much smaller signals. Using this property of the PRs we can show the area almost certain to be electrons shaded blue, and the area we expect to be pions is shaded red. Note that the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). The other low energy events not identified as pions are generally delta, or knock-on, electrons which are created when particles strike the metals of the detector frame and spectrometer apertures etc. We can see for this one particular run, that was not part of this analysis, that there is a non-zero pion contamination in this data. 
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=0.9\linewidth]{PID_PR_Ye.png}
 \end{center}
 \caption[PID with the Pion Rejectors]{
-{\bf{PID with the Pion Rejectors.}} Image from ~\cite{Thesis:Ye}.}
+{\bf{PID with the Pion Rejectors.}} Image from \cite{Thesis:Ye}.}
 \label{fig:pid_pr_ye}
 \end{figure}
 
-Alternatively, we can look at the same data in the GC to identify the particles as in Figure ~\ref{fig:pid_gc_ye}. We discussed how the gas in the GC is chosen for electrons to emit Cherenkov radiation in Section ~\ref{ssec:gc}. Due to this gas choice pions rarely create Cherenkov radiation in the GC. We can see this difference in ~\ref{fig:pid_gc_ye} by identifying the bulk of the signal, blue, as electrons, and the lowest signals, red, as pions. Again, the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). In this data we see the non-zero pion contamination again. Fortunately, as with the PR plots, the pions and electrons are easy to distinguish from one another.
+Alternatively, we can look at the same data in the GC to identify the particles as in Figure \ref{fig:pid_gc_ye}. We discussed how the gas in the GC is chosen for electrons to emit Cherenkov radiation in Section \ref{ssec:gc}. Due to this gas choice pions rarely create Cherenkov radiation in the GC. We can see this difference in Figure \ref{fig:pid_gc_ye} by identifying the bulk of the signal, blue, as electrons, and the lowest signals, red, as pions. Again, the blue (red) region is not all of the electrons (pions), but triggers in the blue (red) region are almost certainly electrons (pions). In this data we see the non-zero pion contamination again. Fortunately, as with the PR plots, the pions and electrons are easy to distinguish from one another.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{PID_GC_Ye.png}
 \end{center}
 \caption[PID with the Gas Cherenkov]{
-{\bf{PID with the Gas Cherenkov.}} Image from ~\cite{Thesis:Ye}.}
+{\bf{PID with the Gas Cherenkov.}} Image from \cite{Thesis:Ye}.}
 \label{fig:pid_gc_ye}
 \end{figure}
 
-Now let us examine the combined six experimental runs used in this analysis using the PRs and GC. Figure ~\ref{fig:pid_pr} shows the PRs for our data with reasonable physics cuts applied to the data. We see the same `cloud' of electrons in the higher PR ADC channels indicating that electron energy is being well measured by the PRs. The red box in this cloud shows a similar region to before where we are almost certain to have `good' electrons. However, when we search for the pion cloud in the lower energy channels, represented by the small red box in the lower left, we see very few pions at all. This is a result of KIN 3.2 producing few pions that can be measured by the detectors so our pion contamination is extremely low. The small number of pions can be eliminated by placing a diagonal cut on the data represented by the green line in Figure ~\ref{fig:pid_pr}.
+Now let us examine the combined six experimental runs used in this analysis using the PRs and GC. Figure \ref{fig:pid_pr} shows the PRs for our data with reasonable physics cuts applied to the data. We see the same `cloud' of electrons in the higher PR ADC channels indicating that electron energy is being well measured by the PRs. The red box in this cloud shows a similar region to before where we are almost certain to have `good' electrons. However, when we search for the pion cloud in the lower energy channels, represented by the small red box in the lower left, we see very few pions at all. This is a result of KIN 3.2 producing few pions that can be measured by the detectors so our pion contamination is extremely low. The small number of pions can be eliminated by placing a diagonal cut on the data represented by the green line in Figure \ref{fig:pid_pr}. Note that the only cut actually applied to the data was the diagonal green line. The red boxes were only used to check the pion contamination, but the red cuts were not applied to the final data.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -224,7 +224,7 @@ Now let us examine the combined six experimental runs used in this analysis usin
 \label{fig:pid_pr}
 \end{figure}
 
-We can also examine the GC, Figure ~\ref{fig:pid_gc}, as we did previously. Once again we have applied reasonable physics cuts to the data. We see a large bulk signal at its strongest between channels 300 and 500, shown between two red lines, as expected. This shows that we are detecting electrons well with the GC. Looking in the lower ADC channels for pions we again see that there seem to be very few in our data. In fact, below ADC channel 80 we see only 15 events showing that there are very few pions in our sample. As a result when making the final cuts to the data only the diagonal cut on the PRs was used to eliminate possible pions, and more likely, junk electrons which are most probably delta electrons.
+We can also examine the GC, Figure \ref{fig:pid_gc}, as we did previously. Once again we have applied reasonable physics cuts to the data. We see a large bulk signal at its strongest between channels 300 and 500, shown between two red lines, as expected. This shows that we are detecting electrons well with the GC. Looking in the lower ADC channels for pions we again see that there seem to be very few in our data. In fact, below ADC channel 80 we see only 15 events showing that there are very few pions in our sample. As a result when making the final cuts to the data only the diagonal cut on the PRs was used to eliminate possible pions, and more likely, junk electrons which are most probably delta electrons.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -238,14 +238,14 @@ We can also examine the GC, Figure ~\ref{fig:pid_gc}, as we did previously. Once
 \subsection{Gas Cherenkov Efficiency}
 \label{ssec:gc_eff}
 
-Now that we have demonstrated that very few pions are contaminating our electron sample we must still account for inefficiencies in the GC. During E08-014 one of the ten PMTs in the LHRS GC was slightly inefficient, and this PMT happens to measure electrons with the kinematics of those elastically scattered from $^3$He at this analysis' kinematics. To study the GC efficiency we can use $T_3$, the main trigger, which is a coincidence of $S_1$, $S_{2m}$, and the $GC$ detectors as well as $T_7$, which is a coincidence of $S_1$ and $S_{2m}$. Thus the ratio of events firing both $T_3$ and $T_7$ ($T_{3\&7}$) to $T_7$ will yield the GC efficiency for these E08-014 runs as shown by Equation ~\ref{eq:gc_eff} ~\cite{dien_gc}. 
+Now that we have demonstrated that very few pions are contaminating our electron sample we must still account for inefficiencies in the GC. During E08-014 one of the ten PMTs in the LHRS GC was slightly inefficient, and this PMT happens to measure electrons with the kinematics of those elastically scattered from $^3$He at this analysis' kinematics. To study the GC efficiency we can use T$_3$, the main trigger, which is a coincidence of S$_1$, S$_{2m}$, and the GC detectors as well as T$_7$, which is a coincidence of S$_1$ and S$_{2m}$. Thus the ratio of events firing both T$_3$ and T$_7$ (T$_{3\&7}$) to T$_7$ will yield the GC efficiency for these E08-014 runs as shown by Equation \ref{eq:gc_eff} \cite{dien_gc}. 
 
 \begin{equation} \label{eq:gc_eff}
 	\epsilon_{GC} = \frac{T_{3\&7}}{T_7}
 	\text{\equationlabels{GC Efficiency}}
 \end{equation}
 
-Before we find the GC efficiency let us first place some reasonable kinematic and acceptance cuts on the combined data of our six experimental runs (see ~\ref{sec:cuts} for details on the cut values). Figure ~\ref{fig:gc_eff} shows a plot of $T_7$ on the left and $T_{3\&7}$ on the right with physics cuts. These cuts are fairly strict and include a cut on $X_{Bj}$ to isolate the elastic peak so there are few events. The events form the characteristic elastic band shape across the GC PMTs. Taking the ratio we find that $\epsilon_{GC} = 196/203 = 0.966$. This is still fairly efficient accounting for the slightly inefficient PMT. Knowing the GC inefficiency allows us to scale the electron yield by 203/196 to correct for this inefficiency.
+Before we find the GC efficiency let us first place some reasonable kinematic and acceptance cuts on the combined data of our six experimental runs (see Section \ref{sec:cuts} for details on the cut values). Figure \ref{fig:gc_eff} shows a plot of $T_7$ on the left and $T_{3\&7}$ on the right with physics cuts. These cuts are fairly strict and include a cut on $X_{Bj}$ to isolate the elastic peak so there are few events. The events form the characteristic elastic band shape across the GC PMTs. Taking the ratio we find that $\epsilon_{GC} = 196/203 = 0.966$. This is still fairly efficient accounting for the slightly inefficient PMT. Knowing the GC inefficiency allows us to scale the electron yield by 203/196 to correct for this inefficiency.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -259,61 +259,61 @@ Before we find the GC efficiency let us first place some reasonable kinematic an
 \section{Target Density}
 \label{sec:density}
 
-As the electron beam passes through the gaseous $^3$He target it causes the target to heat considerably. In the ideal case the target would heat uniformly, but studies of the target boiling effect during E08-014 indicate that the target boiled preferentially based on the target's long axis, $Z_{react}$. Figure ~\ref{fig:boiling_effect} shows events detected along $Z_{react}$ for various beam currents. The two peaks at either end of the plot are the aluminium endcaps of the target. It is clear from this plot that the density of the gas across the cell is not constant otherwise the event rate would be approximately constant. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D. 
+As the electron beam passes through the gaseous $^3$He target it causes the target to heat considerably. In the ideal case the target would heat uniformly, but studies of the target boiling effect during E08-014 indicate that the target boiled preferentially based on the target's long axis, $Z_{react}$. Figure \ref{fig:boiling_effect} shows events detected along $Z_{react}$ for various beam currents. The two peaks at either end of the plot are the aluminium endcaps of the target. It is clear from this plot that the density of the gas across the cell is not constant otherwise the event rate would be approximately constant. For a detailed discussion of the target boiling studies see \cite{Thesis:Ye} Section 5.4.1 and Appendix D. 
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.\linewidth]{Boiling_Effect.png}
 \end{center}
 \caption[$^3$He Boiling Effect]{
-{\bf{$^3$He Boiling Effect.}} Image from ~\cite{Thesis:Ye}.}
+{\bf{$^3$He Boiling Effect.}} Image from \cite{Thesis:Ye}.}
 \label{fig:boiling_effect}
 \end{figure}
 
-The target boiling effects were the result of using a significantly higher beam current than the $^3$He cells were designed to cool ~\cite{dave}. (This higher current did provide the silver lining of helping to create enough elastic electrons for this analysis to be possible.) To better understand the density of the target when the beam was on Silviu Covrig created a computer simulation of the target under the experimental conditions. The computational fluid dynamics (CFD) simulation studied the behavior of $^4$He based on its density, specific heat, thermal conductivity, and viscosity. The simulation also factored in the conditions of the cell such as pressure and temperature which were measured during the experiment ~\cite{density}. The mechanics of the CFD simulation are best described in Covrig's own words, 
+The target boiling effects were the result of using a significantly higher beam current than the $^3$He cells were designed to cool \cite{dave}. (This higher current did provide the silver lining of helping to create enough elastic electrons for this analysis to be possible.) To better understand the density of the target when the beam was on Silviu Covrig created a computer simulation of the target under the experimental conditions. The computational fluid dynamics (CFD) simulation studied the behavior of $^4$He based on its density, specific heat, thermal conductivity, and viscosity. The simulation also factored in the conditions of the cell such as pressure and temperature which were measured during the experiment \cite{density}. The mechanics of the CFD simulation are best described in Covrig's own words, 
 
 \begin{quote}
-``This method of calculation is called finite volume element, which means that the volume of the target cell is broken into smaller volumes, a process controlled by the size of the mesh. Fluid dynamics equations, transport equations or equations for any scalar/vector of interest are solved on these elements of volume or computational cells and predictions are made for the fields of temperature, velocity, density etc. in the whole volume of the geometry. At any given z-location along the beam line the raster area is, say, 9 mm 2 or 3 mm by 3 mm. If the mesh size was, say, 0.25 mm, then you could expect about 12x12 or 144 volumetric cells at that z-location. For each of these cells the program predicts the velocity of the fluid, its density, temperature etc. at the center of the cell. If you then make a 2D plot of density vs. beam line z-location, the program plots a vertical dotted line that represents the spread of density among the volumetric cells at that z-location. The spread in value is given by what happens at that z-locations over the area of the raster. The fluid may not have constant velocity in the raster area at that z-location, so heating from the beam will decrease more or less its density in volumetric cells that move slower or faster respectively ~\cite{density}."
+``This method of calculation is called finite volume element, which means that the volume of the target cell is broken into smaller volumes, a process controlled by the size of the mesh. Fluid dynamics equations, transport equations or equations for any scalar/vector of interest are solved on these elements of volume or computational cells and predictions are made for the fields of temperature, velocity, density etc. in the whole volume of the geometry. At any given z-location along the beam line the raster area is, say, 9 mm 2 or 3 mm by 3 mm. If the mesh size was, say, 0.25 mm, then you could expect about 12x12 or 144 volumetric cells at that z-location. For each of these cells the program predicts the velocity of the fluid, its density, temperature etc. at the center of the cell. If you then make a 2D plot of density vs. beam line z-location, the program plots a vertical dotted line that represents the spread of density among the volumetric cells at that z-location. The spread in value is given by what happens at that z-locations over the area of the raster. The fluid may not have constant velocity in the raster area at that z-location, so heating from the beam will decrease more or less its density in volumetric cells that move slower or faster respectively \cite{density}."
 \end{quote}
 
-This target density study was performed on $^4$He so the results of the study need to be related to $^3$He. This can be done by using the isotopic nature of $^3$He and $^4$He as well as the ideal gas law. We can begin by using the relation between the fractional change in density between $^3$He and $^4$He as given in Equation ~\ref{eq:fractional_density}, where $d\rho_{\left(^3He\right)}$ ($d\rho_{\left(^4He\right)}$) is the fractional change in density for $^3$He ($^4$He), $A_3$ ($A_4$) is the number of nucleons for $^3$He ($^4$He), $P_3$ ($P_4$) is the pressure for $^3$He ($^4$He), and $I_3$ ($I_4$) is the beam current for $^3$He ($^4$He) ~\cite{density}. $d\rho$ is defined as $\frac{\rho-\rho_0}{\rho_0}$, where $\rho$ is the density with the beam on and $\rho_0$ is the density with the beam off ~\cite{density}. 
+This target density study was performed on $^4$He so the results of the study need to be related to $^3$He. This can be done by using the isotopic nature of $^3$He and $^4$He as well as the ideal gas law. We can begin by using the relation between the fractional change in density between $^3$He and $^4$He as given in Equation \ref{eq:fractional_density}, where $d\rho_{\left(^3He\right)}$ ($d\rho_{\left(^4He\right)}$) is the fractional change in density for $^3$He ($^4$He), $A_3$ ($A_4$) is the number of nucleons for $^3$He ($^4$He), $P_3$ ($P_4$) is the pressure for $^3$He ($^4$He), and $I_3$ ($I_4$) is the beam current for $^3$He ($^4$He) \cite{density}. $d\rho$ is defined as $\frac{\rho-\rho_0}{\rho_0}$, where $\rho$ is the density with the beam on and $\rho_0$ is the density with the beam off \cite{density}. 
 
 \begin{equation} \label{eq:fractional_density}
-	d\rho_{\left(^3He\right)} = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} * d\rho_{\left(^4He\right)}
+	d\rho_{\left(^3He\right)} = \frac{A_4}{A_3} \times \frac{P_4}{P_3} \times \frac{I_3}{I_4} \times d\rho_{\left(^4He\right)}
 	\text{\equationlabels{Fractional Target Density}}
 \end{equation}
 
-Using the experimental and simulation values we can rewrite the product in Equation ~\ref{eq:fractional_density} as Equation ~\ref{eq:r1}.
+Using the experimental and simulation values we can rewrite the product in Equation \ref{eq:fractional_density} as Equation \ref{eq:r1}.
 
 \begin{equation} \label{eq:r1}
-	R_1 = \frac{A_4}{A_3} * \frac{P_4}{P_3} * \frac{I_3}{I_4} = \frac{4}{3}
+	R_1 = \frac{A_4}{A_3} \times \frac{P_4}{P_3} \times \frac{I_3}{I_4} = \frac{4}{3}
 	\text{\equationlabels{R$_1$}}
 \end{equation}
 
-\noindent We can then use the ideal gas law to relate the densities of $^3$He and $^4$He without beam as in Equation ~\ref{eq:density}.
+\noindent We can then use the ideal gas law to relate the densities of $^3$He and $^4$He without beam as in Equation \ref{eq:density}.
 
 \begin{equation} \label{eq:density}
-	\rho_{0\left(^3He\right)} = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} * \rho_{0\left(^4He\right)}
+	\rho_{0\left(^3He\right)} = \frac{A_3}{A_4} \times \frac{P_3}{P_4} \times \frac{T_4}{T_3} \times \rho_{0\left(^4He\right)}
 	\text{\equationlabels{$^4$He Target Density Conversion to $^3$He Target Density}}
 \end{equation}
 
-\noindent Once again we can rewrite the product in Equation ~\ref{eq:density} using the experimental and simulation conditions as Equation ~\ref{eq:r2}.
+\noindent Once again we can rewrite the product in Equation \ref{eq:density} using the experimental and simulation conditions as Equation \ref{eq:r2}.
 
 \begin{equation} \label{eq:r2}
-	R_2 = \frac{A_3}{A_4} * \frac{P_3}{P_4} * \frac{T_4}{T_3} = 0.745
+	R_2 = \frac{A_3}{A_4} \times \frac{P_3}{P_4} \times \frac{T_4}{T_3} = 0.745
 	\text{\equationlabels{R$_2$}}
 \end{equation}
 
-Finally we can solve Equation ~\ref{eq:fractional_density} for $\rho_{\left(^3He\right)}$ by plugging in Equation ~\ref{eq:density}. This gives us the equation describing the $^3$He density with the beam on as shown in Equation ~\ref{eq:3he_density}.
+Finally we can solve Equation \ref{eq:fractional_density} for $\rho_{\left(^3He\right)}$ by plugging in Equation \ref{eq:density}. This gives us the equation describing the $^3$He density with the beam on as shown in Equation \ref{eq:3he_density}.
 
 \begin{equation} \label{eq:3he_density}
-	\rho_{\left(^3He\right)} = R_1 * R_2 * \rho_{\left(^4He\right)} + \rho_{0\left(^3He\right)} * (1-R_2)
+	\rho_{\left(^3He\right)} = R_1 \times R_2 \times \rho_{\left(^4He\right)} + \rho_{0\left(^3He\right)} \times (1-R_2)
 	\text{\equationlabels{$^3$He Target Density}}
 \end{equation}
 
-\noindent We can then get the $^3$He density along the Z axis of the target from the $^4$He CFD simulation results. By integrating over the Z axis we find the average absolute density of the target. This density was found to be $0.013 \frac{g}{cm^3}$ $\pm 0.0004 \frac{g}{cm^3}$. For a more in depth discussion of this density extraction see ~\cite{density}.
+\noindent We can then get the $^3$He density along the Z axis of the target from the $^4$He CFD simulation results. By integrating over the Z axis we find the average absolute density of the target. This density was found to be $0.013 \frac{g}{cm^3}$ $\pm 0.0004 \frac{g}{cm^3}$. For a more in depth discussion of this density extraction see \cite{density}.
 
-%Due to this unusual density profile our Monte Carlo results need to account for this boiling effect otherwise we will have a less accurate simulation of the elastic events. Figure ~\ref{fig:density_profile} shows the step function, blue line, chosen to approximate the target's measured boiling effect which is shown by the red dots. This was implemented by running the MC with one density and then running the MC again with a second density. These MC data runs were then joined by cutting on each dataset where the step in the density profile is located. The cross section results did not vary significantly when this split density profile was implemented. For a detailed discussion of the target boiling studies see ~\cite{Thesis:Ye} Section 5.4.1 and Appendix D.  
+%Due to this unusual density profile our Monte Carlo results need to account for this boiling effect otherwise we will have a less accurate simulation of the elastic events. Figure \ref{fig:density_profile} shows the step function, blue line, chosen to approximate the target's measured boiling effect which is shown by the red dots. This was implemented by running the MC with one density and then running the MC again with a second density. These MC data runs were then joined by cutting on each dataset where the step in the density profile is located. The cross section results did not vary significantly when this split density profile was implemented. For a detailed discussion of the target boiling studies see \cite{Thesis:Ye} Section 5.4.1 and Appendix D.  
 
 %\begin{figure}[!ht]
 %\begin{center}
@@ -327,7 +327,7 @@ Finally we can solve Equation ~\ref{eq:fractional_density} for $\rho_{\left(^3He
 \section{Cuts}
 \label{sec:cuts}
 
-Not all of the electrons we detect necessarily come from regions we are interested in studying. For example, any electrons that originated outside of the target or that have a momentum greatly different than the momentum setting of the spectrometer are not wanted in our electron sample. To ensure we are studying the electrons scattering from the target we impose a series of physics cuts for the spectrometer's acceptance as well as some of the kinematics. In Section ~\ref{ssec:pid} we already discussed a cut to remove the very small number of pions as well as the delta electrons from our sample. In this section will discuss the other major cuts we have imposed on the data which are summarized in Table ~\ref{tab:cuts}. 
+Not all of the electrons we detect necessarily come from regions we are interested in studying. For example, any electrons that originated outside of the target or that have a momentum greatly different than the momentum setting of the spectrometer are not wanted in our electron sample. To ensure we are studying the electrons scattering from the target we impose a series of physics cuts for the spectrometer's acceptance as well as some of the kinematics. In Section \ref{ssec:pid} we already discussed a cut to remove the very small number of pions as well as the delta electrons from our sample. In this section will discuss the other major cuts we have imposed on the data which are summarized in Table \ref{tab:cuts}. 
 
 \vspace{5mm}
 
@@ -348,7 +348,7 @@ dP & -0.02 & 0.03\\
 \label{tab:cuts}
 \end{table}
 
-Each of these cuts was made using several techniques. Let us take the Y target ($Y_{tar}=sin\left(\theta_{HRS}\right)Z_{vertex}$) cut as our example. The first technique is a visual assessment of the range of data that we wish to accept. Figure ~\ref{fig:acceptance_y} shows the Y$_{target}$ plot of the experimental data, and the red region shows the range of data we chose to cut on. Notice the two peaks at either end of the data. These peaks are created by the aluminium end caps, and as such are not of interest in this analysis. To remove these peaks from the sample two cuts were placed on Y$_{target}$. 
+Each of these cuts was made using several techniques. Let us take the Y target ($Y_{tar}=sin\left(\theta_{HRS}\right)Z_{vertex}$) cut as our example. The first technique is a visual assessment of the range of data that we wish to accept. Figure \ref{fig:acceptance_y} shows the Y$_{target}$ plot of the experimental data, and the red region shows the range of data we chose to cut on. Notice the two peaks at either end of the data. These peaks are created by the aluminium end caps, and as such are not of interest in this analysis. To remove these peaks from the sample two cuts were placed on Y$_{target}$. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -361,7 +361,7 @@ Each of these cuts was made using several techniques. Let us take the Y target (
 
 The second technique involves intentionally using cuts that are too wide, and then continually making the cuts smaller until the cross section result remains stable. When the cuts are too wide regions without the $^3$He gas and/or outside of our kinematic region of interest are accepted giving a cross section value that is dependent on the placements of the cuts. Once the cuts are strict enough to capture only the electrons elastically scattered from $^3$He the cross section becomes stable. Cuts were made such that they accept the maximum number of electrons in the region where the cross section is stable independent of the cuts. Using both techniques the acceptance region for Y$_{target}$ was chosen as the region between -0.03 m to 0.028 m.
 
-Now let us look at the remaining cuts for $\theta$, $\phi$, and dP. Figure ~\ref{fig:acceptance_th} shows a plot of $\theta$ (the out-of-plane angle) for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure ~\ref{fig:acceptance_ph} shows a plot of $\phi$ (the in-plane angle) for experiment E08-014. This cut was made both visually and with the second method of reducing the cut width until the cross section value becomes stable. The second method is more important for $\phi$ than for $\theta$ since the cross section is more sensitive to $\phi$. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure ~\ref{fig:acceptance_dp} shows a plot of dP for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The dP cut runs from -0.02 to 0.03, where $dP = \frac{P-P_0}{P_0}$, $P$ is the electron momentum, and $P_0$ is the spectrometer's momentum setting.
+Now let us look at the remaining cuts for $\theta$, $\phi$, and dP. Figure \ref{fig:acceptance_th} shows a plot of $\theta$ (the out-of-plane angle) for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure \ref{fig:acceptance_ph} shows a plot of $\phi$ (the in-plane angle) for experiment E08-014. This cut was made both visually and with the second method of reducing the cut width until the cross section value becomes stable. The second method is more important for $\phi$ than for $\theta$ since the cross section is more sensitive to $\phi$. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure \ref{fig:acceptance_dp} shows a plot of dP for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The dP cut runs from -0.02 to 0.03, where $dP = \frac{P-P_0}{P_0}$, $P$ is the electron momentum, and $P_0$ is the spectrometer's momentum setting.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -395,11 +395,11 @@ Now let us look at the remaining cuts for $\theta$, $\phi$, and dP. Figure ~\ref
 
 To extract the final $^3$He elastic cross section value for this analysis a physics simulation Monte Carlo program called SIMC was used. This program is primarily used by JLab's halls A and C to simulate electron scattering experiments. SIMC contains the geometry of the Hall A spectrometers including their various apertures and the materials that comprise them. SIMC uses an event generator to create electrons which then scatter from a given target. These events are transported through the spectrometer based on an optics matrix which allows for the transformation of detector coordinates to target coordinates. SIMC then records the final states of the scattered electrons as if they were viewed by a detector.
 
-SIMC requires numerous inputs before generating the initial events. The program must be given ranges in momentum, in-plane angle ($\phi$), out-of-plane angle ($\theta$), beam energy, and spectrometer angle. These acceptances are chosen to match the conditions of the real world Hall A experimental setup. Note that the initial SIMC solid angle variable acceptances ($\phi$ and $\theta$) were made 15$\%$ larger than the final cuts used in the analysis. This was done so that SIMC can apply a smearing function to these variables which more accurately reflects real world behavior. SIMC then randomly and uniformly generates particles in the detector in the provided acceptance ranges. Next SIMC calculates the energy of each electron produced, weights each event by a cross section model, and finally applies radiative corrections (see ~\ref{sec:rc}) to each event. 
+SIMC requires numerous inputs before generating the initial events. The program must be given ranges in momentum, in-plane angle ($\phi$), out-of-plane angle ($\theta$), beam energy, and spectrometer angle. These acceptances are chosen to match the conditions of the real world Hall A experimental setup. Note that the initial SIMC solid angle variable acceptances ($\phi$ and $\theta$) were made 15$\%$ larger than the final cuts used in the analysis. This was done so that SIMC can apply a smearing function to these variables which more accurately reflects real world behavior. SIMC then randomly and uniformly generates particles in the detector in the provided acceptance ranges. Next SIMC calculates the energy of each electron produced, weights each event by a cross section model, and finally applies radiative corrections (see \ref{sec:rc}) to each event. 
 
-SIMC then transforms these events back through the spectrometer to their reaction vertex in the target. Along the way it applies energy losses due to multiple scattering as well as ionization and Bremsstrahlung. The spectrometer magnets are modelled using the COSY INFINITY program ~\cite{cosy}. This program contains the various transformation matrices required to transport particles between the various coordinate systems and through the spectrometer. While being transported through the spectrometer SIMC checks to be sure that all recorded electrons do not strike the walls of the spectrometer or any non-sensitive elements of the detectors in the stack. It also checks that the electrons pass through all apertures in the spectrometer. SIMC also applies a smearing function to the electrons' VDC positions to match the real world VDCs ~\cite{Thesis:Wang}. 
+SIMC then transforms these events back through the spectrometer to their reaction vertex in the target. Along the way it applies energy losses due to multiple scattering as well as ionization and Bremsstrahlung. The spectrometer magnets are modelled using the COSY INFINITY program \cite{cosy}. This program contains the various transformation matrices required to transport particles between the various coordinate systems and through the spectrometer. While being transported through the spectrometer SIMC checks to be sure that all recorded electrons do not strike the walls of the spectrometer or any non-sensitive elements of the detectors in the stack. It also checks that the electrons pass through all apertures in the spectrometer. SIMC also applies a smearing function to the electrons' VDC positions to match the real world VDCs \cite{Thesis:Wang}. 
 
-Let us now compare the results of SIMC to the real experimental data. For all of these plots reasonable physics and acceptance cuts have been applied. Figure ~\ref{fig:simc_phi} shows the SIMC result for $\phi$ (in-plane angle) in red, and the blue shows the experimental data. The agreement between SIMC and data seems to be fairly good, although the SIMC data may fall off a little more quickly. Figure ~\ref{fig:simc_theta} shows the SIMC result for $\theta$ (out-of-plane angle) in red, and the blue shows the experimental data. Once again the agreement looks decent, but there seems to be some drop off in the SIMC data in the negative $\theta$ direction.  
+Let us now compare the results of SIMC to the real experimental data. For all of these plots reasonable physics and acceptance cuts have been applied. Figure \ref{fig:simc_phi} shows the SIMC result for $\phi$ (in-plane angle) in red, and the blue shows the experimental data. The agreement between SIMC and data seems to be fairly good, although the SIMC data may fall off a little more quickly. Figure \ref{fig:simc_theta} shows the SIMC result for $\theta$ (out-of-plane angle) in red, and the blue shows the experimental data. Once again the agreement looks decent, but there seems to be some drop off in the SIMC data in the negative $\theta$ direction.  
 
 \begin{figure}[!ht]
 \begin{center}
@@ -419,7 +419,7 @@ Let us now compare the results of SIMC to the real experimental data. For all of
 \label{fig:simc_theta}
 \end{figure}
 
-Figure ~\ref{fig:simc_dp} shows the SIMC result for dP in red, and the blue shows the experimental data. Here we see the correct shape, but the SIMC data seems to be shifted a bit. This is probably the result of the optics calibration, and is a known issue with SIMC currently. Past analyses have found that this small offset in dP does not substantially influence the cross section results ~\cite{dien}.
+Figure \ref{fig:simc_dp} shows the SIMC result for dP in red, and the blue shows the experimental data. Here we see the correct shape, but the SIMC data seems to be shifted a bit. This is probably the result of the optics calibration, and is a known issue with SIMC currently. Past analyses have found that this small offset in dP does not substantially influence the cross section results \cite{dien}.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -433,25 +433,25 @@ Figure ~\ref{fig:simc_dp} shows the SIMC result for dP in red, and the blue show
 \section{Radiative Corrections}
 \label{sec:rc}
 
-Chapter ~\ref{ch:elastic} discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. These diagrams can be categorized as external or internal radiative corrections. External corrections are characterized by interactions with other particles that are not the primary scattering source for the electron. These corrections come in the form of Bremsstrahlung radiation and ionization. Bremsstrahlung radiation is the radiation released as photons when electrons are slowed down by the Coulomb fields of particles in the material the electron is passing through. 
+Chapter \ref{ch:elastic} discussed the lowest order (Born term) Feynman diagram for elastic electron scattering. While this is a good first approximation other diagrams contribute significantly to the cross section and must be accounted for as well. These diagrams can be categorized as external or internal radiative corrections. External corrections are characterized by interactions with other particles that are not the primary scattering source for the electron. These corrections come in the form of Bremsstrahlung radiation and ionization. Bremsstrahlung radiation is the radiation released as photons when electrons are slowed down by the Coulomb fields of particles in the material the electron is passing through. 
 
-Internal corrections are characterized by the electron interacting with the primary scattering source via the exchange of real or virtual photons. Figure ~\ref{fig:rc} shows the additional first order diagrams which must be accounted for along with the Born term diagram. These diagrams can again be separated in to two categories, elastic and inelastic corrections. The elastic corrections exchange only virtual photons shown in Figure ~\ref{fig:rc} b), c), and d). The inelastic corrections emit real photons as seen in e) ~\cite{Thesis:Wang}.
+Internal corrections are characterized by the electron interacting with the primary scattering source via the exchange of real or virtual photons. Figure \ref{fig:rc} shows the additional first order diagrams which must be accounted for along with the Born term diagram. These diagrams can again be separated in to two categories, elastic and inelastic corrections. The elastic corrections exchange only virtual photons shown in Figure \ref{fig:rc} b), c), and d). The inelastic corrections emit real photons as seen in e) \cite{Thesis:Wang}.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.\linewidth]{Radiative_Corrections.png}
 \end{center}
 \caption[Born and Lowest Order Radiative Correction Diagrams]{
-{\bf{Born and Lowest Order Radiative Correction Diagrams.}} Image from ~\cite{Thesis:Wang}.}
+{\bf{Born and Lowest Order Radiative Correction Diagrams.}} Image from \cite{Thesis:Wang}.}
 \label{fig:rc}
 \end{figure}
 
-The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see ~\cite{Article:RC} and ~\cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in ~\cite{Thesis:Yao} and ~\cite{Thesis:Slifer}. XEMC uses a built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the peaking approximation discussed in ~\cite{Article:RC2}. 
+The radiative corrections for E08-014 were calculated by the program XEMC. For a detailed discussion of the radiative corrections applied by XEMC see \cite{Article:RC} and \cite{Article:RC2}. This program is derived from a previous program called RadCor which is detailed in \cite{Thesis:Yao} and \cite{Thesis:Slifer}. XEMC uses a built in cross section model to calculate the Born cross section, without radiative corrections, and the radiative cross section. XEMC also uses the peaking approximation discussed in \cite{Article:RC2}. 
 
-These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation ~\ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section ~\cite{Thesis:Ye}. Figure ~\ref{fig:simc_elastics} shows the $^3$He elastically scattered electron spectrum generated by SIMC in $X_{Bj}$. The tail below the elastic peak is due to the radiative corrections, and demonstrates that the corrections are working as intended.
+These radiative corrections now allow us to compare our Monte Carlo elastic data to our experimental data by means of Equation \ref{eq:rc}. Where $\sigma^{Exp}_{Rad}$ is the experimental cross section, $\sigma^{Exp}_{Born}$ is the experimental Born cross section, $\sigma^{Model}_{Rad}$ is the model radiative cross section, and $\sigma^{Model}_{Born}$ is the model Born cross section \cite{Thesis:Ye}. Figure \ref{fig:simc_elastics} shows the $^3$He elastically scattered electron spectrum generated by SIMC in $X_{Bj}$. The tail below the elastic peak is due to the radiative corrections, and demonstrates that the corrections are working as intended.
 
 \begin{equation} \label{eq:rc}
-	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} * \frac{\sigma^{Model}_{Born}}{\sigma^{Model}_{Rad}}
+	\sigma^{Exp}_{Born} = \sigma^{Exp}_{Rad} \times \frac{\sigma^{Model}_{Born}}{\sigma^{Model}_{Rad}}
 	\text{\equationlabels{Radiative Corrections}}
 \end{equation}
 
@@ -462,7 +462,7 @@ Many of the events detected by the experiment are derived from electrons scatter
 
 To subtract the Al from the dummy cell the total charge experienced by the dummy cell and the $^3$He target cell must be the same. This means that the Al background must be scaled to account for the different amount of beam charge that the dummy data collected as compared to the production data. For this analysis the dummy cell result must be multiplied by 21.2708 to match the charge of the experimental runs. The dummy cell also had different Al wall thicknesses as compared to the target cell. To compensate for the larger dummy Al wall thickness the dummy data was scaled by another 0.1979 times.
 
-Finally when subtracting the Al background of the dummy cell from the $^3$He cell one must take into account the different radiative corrections due to the differing Al thicknesses. The Al dummy cell gives a radiative correction ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.823$ and the $^3$He target cell gives a ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.467$. To account for the different radiative corrections the Al dummy background is scaled by the ratio of the dummy radiative corrections, 1.823, to the target cell corrections, 1.467. The resultant scaled Al background is shown in red in Figure ~\ref{fig:al}. This red histogram is then subtracted from the blue histogram that represents the $^3$He production data that is still contaminated by aluminium. 
+Finally when subtracting the Al background of the dummy cell from the $^3$He cell one must take into account the different radiative corrections due to the differing Al thicknesses. The Al dummy cell gives a radiative correction ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.823$ and the $^3$He target cell gives a ratio of $\sigma^{Model}_{Born}/\sigma^{Model}_{Rad} = 1.467$. To account for the different radiative corrections the Al dummy background is scaled by the ratio of the dummy radiative corrections, 1.823, to the target cell corrections, 1.467. The resultant scaled Al background is shown in red in Figure \ref{fig:al}. This red histogram is then subtracted from the blue histogram that represents the $^3$He production data that is still contaminated by aluminium. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -473,35 +473,35 @@ Finally when subtracting the Al background of the dummy cell from the $^3$He cel
 \label{fig:al}
 \end{figure}
 
-Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. This can be seen in Figure ~\ref{fig:combined}.
+Since the production data was taken on $^3$He we do not anticipate seeing events at $X_{Bj} > 3$ since that is the elastic peak. However, there are clearly events in this region above the elastic peak. These events must be coming from something other than the $^3$He gas. Notice that above the $^3$He elastic peak the scaled Al background closely matches the production background. This is strong evidence that these events are coming from scattering off of the Al of the cell. Once the Al background is subtracted out most of these events disappear leaving us with only the desired electrons that were scattered from the $^3$He target. This can be seen in Figure \ref{fig:combined}.
 
 \section{Electron Yields to Cross Sections}
 \label{sec:yield}
 
-At this point we have made numerous cuts and corrections to our data with the goal of getting a clean electron sample scattered from the $^3$He target. Now we must use this data to obtain a cross section. We showed in Figure ~\ref{fig:elastic_xbj} in Section ~\ref{sec:x>2} that experiment E08-014 definitely captured elastically scattered electrons. We can determine how many electrons we detected after we apply all of the physics cuts and corrections to the $X_{Bj}$ plot of the production runs.
+At this point we have made numerous cuts and corrections to our data with the goal of getting a clean electron sample scattered from the $^3$He target. Now we must use this data to obtain a cross section. We showed in Figure \ref{fig:elastic_xbj} in Section \ref{sec:x>2} that experiment E08-014 definitely captured elastically scattered electrons. We can determine how many electrons we detected after we apply all of the physics cuts and corrections to the $X_{Bj}$ plot of the production runs.
 
 To find the number of elastically scattered electrons we need to be able to count how many electrons are in the elastic peak. To accomplish this we need a method to fit the data such that the area of the elastic peak can be measured. The $X_{Bj}$ plot can be broken down in to two areas, the quasielastic region and the elastic peak. We want to use one function to describe each region, and then combine these two functions to fit the relevant region of $X_{Bj}$ with this combined fit. 
 
-Two functions immediately spring to mind as good candidates for the fit. Recall that the $X_{Bj}$ plot is logarithmic, and notice that the quasielastic region sloping down to the elastic peak appears roughly linear on this log plot. This indicates that an exponential function will likely yield reasonable fit results for the quasielastic region. As we are only interested in elastic electrons we only need to fit the quasielastic region near the elastic peak ($X_{Bj}>$2.5). To fit the quasielastic region near the elastic peak a two parameter exponential function as in Equation ~\ref{eq:exp} was chosen with $P_0$ and $P_1$ being free parameters.
+Two functions immediately spring to mind as good candidates for the fit. Recall that the $X_{Bj}$ plot is logarithmic, and notice that the quasielastic region sloping down to the elastic peak appears roughly linear on this log plot. This indicates that an exponential function will likely yield reasonable fit results for the quasielastic region. As we are only interested in elastic electrons we only need to fit the quasielastic region near the elastic peak ($X_{Bj}>$2.5). To fit the quasielastic region near the elastic peak a two parameter exponential function as in Equation \ref{eq:exp} was chosen with $P_0$ and $P_1$ being free parameters.
 
 \begin{equation} \label{eq:exp}
-	F_{exp} = e^{\left( P_0+P_1*x \right)}
+	F_{exp} = e^{\left( P_0+P_1\times x \right)}
 	\text{\equationlabels{Exponential Fit}}
 \end{equation}
 
-Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribution may technically better describe the distribution of the electrons in the elastic peak a simple Gaussian describes the peak equally well. As such, Equation ~\ref{eq:gaus} was chosen to fit the elastic peak with free parameters $P_0$, $P_1$, and $P_2$. Finally by summing Equations ~\ref{eq:exp} and ~\ref{eq:gaus} we have a combined fit that can be used to fit the region of $X_{Bj}$ around the elastic peak. This combined fit is given in Equation ~\ref{eq:combined} with free parameters $P_0$ through $P_4$.
+Next we want to fit the elastic peak around $X_{Bj}=3$. While a Poisson distribution may technically better describe the distribution of the electrons in the elastic peak a simple Gaussian describes the peak equally well. As such, Equation \ref{eq:gaus} was chosen to fit the elastic peak with free parameters $P_0$, $P_1$, and $P_2$. Finally by summing Equations \ref{eq:exp} and \ref{eq:gaus} we have a combined fit that can be used to fit the region of $X_{Bj}$ around the elastic peak. This combined fit is given in Equation \ref{eq:combined} with free parameters $P_0$ through $P_4$.
 
 \begin{equation} \label{eq:gaus}
-	F_{Gaus} = P_0 * e^{\left( \frac{-1}{2} \left( \frac{x-P_1}{P_2} \right)^2 \right)}
+	F_{Gaus} = P_0 \times e^{\left( \frac{-1}{2} \left( \frac{x-P_1}{P_2} \right)^2 \right)}
 	\text{\equationlabels{Gaussian Fit}}
 \end{equation}
 
 \begin{equation} \label{eq:combined}
-	F_{combined} = e^{\left( P_0+P_1*x \right)} + P_2 * e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
+	F_{combined} = e^{\left( P_0+P_1\times x \right)} + P_2 \times e^{\left( \frac{-1}{2} \left( \frac{x-P_3}{P_4} \right)^2 \right)}
 	\text{\equationlabels{Combined Exponential and Gaussian Fit}}
 \end{equation}
 
-Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the aluminium background subtraction we get the result seen in Figure ~\ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the number of electrons found in the elastic peak. We can also see that as we discussed in Section ~\ref{sec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
+Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corrections, and the aluminium background subtraction we get the result seen in Figure \ref{fig:combined}, where the solid blue line is the combined fit. The combined fit seems to be doing a good job of capturing the quasielastic region before the elastic peak while also locating the elastic peak well. The fit is allowed to extend slightly beyond the peak for the purpose of creating some analysis histograms, but this extended region does not influence the number of electrons found in the elastic peak. We can also see that as we discussed in Section \ref{sec:al} once the Al background is subtracted out there are almost no events above the $^3$He elastic peak as we expect. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -512,7 +512,7 @@ Applying the combined fit to the $X_{Bj}$ plot after applying physics cuts, corr
 \label{fig:combined}
 \end{figure}
 
-The number of electrons under the Gaussian part of the combined fit is then the number of elastic electrons detected by the experiment prior to some corrections. After physics and acceptance cuts, but before live-time, GC efficiency, Trigger efficiency, and VDC efficiency corrections, experiment E08-014 detected 565 electrons elastically scattered from $^3$He. Table ~\ref{tab:corrections} shows a summary of the correction values applied to the number of electrons detected. Multiplying the uncorrected yield by all of these corrections factors we find the experimental yield of electrons elastically scattered from  $^3$He is 627 electrons.
+The number of electrons under the Gaussian part of the combined fit is then the number of elastic electrons detected by the experiment prior to some corrections. After physics and acceptance cuts, but before live-time, GC efficiency, Trigger efficiency, and VDC efficiency corrections, experiment E08-014 detected 565 electrons elastically scattered from $^3$He. Table \ref{tab:corrections} shows a summary of the correction values applied to the number of electrons detected. Multiplying the uncorrected yield by all of these corrections factors we find the experimental yield of electrons elastically scattered from  $^3$He is 627 electrons.
 
 \vspace{5mm}
 
@@ -532,7 +532,7 @@ VDC Efficiency & 99.175 &  1.0083\\
 \label{tab:corrections}
 \end{table}
 
-Now we need to determine how this electron yield from the production data corresponds to a cross section value. To do this we will use the Monte Carlo simulation program SIMC discussed in ~\ref{sec:simc}. SIMC has a built in model of the $^3$He cross section that has the correct shape of the form factors and cross section derived from older fits of the $^3$He world data ~\cite{Article:Amroun}. We use SIMC to simulate electrons elastically scattered off of $^3$He with the same energy, angle, charge, and acceptance cuts as our experiment. This purely elastic data is shown in Figure ~\ref{fig:simc_elastics}. The tail below the elastic peak is due to radiative corrections.
+Now we need to determine how this electron yield from the production data corresponds to a cross section value. To do this we will use the Monte Carlo simulation program SIMC discussed in \ref{sec:simc}. SIMC has a built in model of the $^3$He cross section that has the correct shape of the form factors and cross section derived from older fits of the $^3$He world data \cite{Article:Amroun}. We use SIMC to simulate electrons elastically scattered off of $^3$He with the same energy, angle, charge, and acceptance cuts as our experiment. This purely elastic data is shown in Figure \ref{fig:simc_elastics}. The tail below the elastic peak is due to radiative corrections.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -543,9 +543,9 @@ Now we need to determine how this electron yield from the production data corres
 \label{fig:simc_elastics}
 \end{figure}
 
-The goal at this point is to use the same combined fit we used for the production data to fit the SIMC data for a direct comparison. Clearly, having the elastic events from SIMC is not yet enough to match our experimental data since the SIMC data has no quasielastic events which make up the bulk of our dataset. To make the SIMC data comparable to the production data we need to add in the equivalent quasielastic events. This was done by taking the same type of exponential fit from Equation ~\ref{eq:exp} and fitting the quasielastic region below the elastic peak of the production data. This exponential fit was done in the region where SIMC predicts there to be fewer than ten elastic electrons so as to only fit quasielastic data. 
+The goal at this point is to use the same combined fit we used for the production data to fit the SIMC data for a direct comparison. Clearly, having the elastic events from SIMC is not yet enough to match our experimental data since the SIMC data has no quasielastic events which make up the bulk of our dataset. To make the SIMC data comparable to the production data we need to add in the equivalent quasielastic events. This was done by taking the same type of exponential fit from Equation \ref{eq:exp} and fitting the quasielastic region below the elastic peak of the production data. This exponential fit was done in the region where SIMC predicts there to be fewer than ten elastic electrons so as to only fit quasielastic data. 
 
-A histogram was then binned to this fit of the quasielastic data and can be seen in ~\ref{fig:QE_background} as the black histogram. Note that the fit is allowed to extend slightly beyond the elastic peak for the purpose of obtaining a good total fit, but this extended region does not influence the number of electrons found in the elastic peak. The new histogram representing only quasielastic data was then summed with the SIMC elastics only histogram in the region before and up to the $^3$He elastic peak. This new combined SIMC and quasielastic histogram is then of the same shape as the production data in the region of interest allowing it to be fit with Equation ~\ref{eq:combined}. The areas under the Guassian portions of the combined fits are then directly proportional to the cross section values for SIMC and the production data since the elastic electron yields are proportional to the cross sections. 
+A histogram was then binned to this fit of the quasielastic data and can be seen in \ref{fig:QE_background} as the black histogram. Note that the fit is allowed to extend slightly beyond the elastic peak for the purpose of obtaining a good total fit, but this extended region does not influence the number of electrons found in the elastic peak. The new histogram representing only quasielastic data was then summed with the SIMC elastics only histogram in the region before and up to the $^3$He elastic peak. This new combined SIMC and quasielastic histogram is then of the same shape as the production data in the region of interest allowing it to be fit with Equation \ref{eq:combined}. The areas under the Guassian portions of the combined fits are then directly proportional to the cross section values for SIMC and the production data since the elastic electron yields are proportional to the cross sections. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -558,20 +558,20 @@ A histogram was then binned to this fit of the quasielastic data and can be seen
 
 While the shape of the form factors and cross section built into SIMC is correct the magnitude at $Q^2$ $\approx$ 34.2 fm$^{-2}$ is likely off. This is why the SIMC elastic electron yield doesn't perfectly match the experimental data electron yield. So to find the cross section value of the production data we scale the SIMC elastic data by a constant magnitude up or down until the area of the Gaussian portion of the combined SIMC fit, the elastic electron yield, matches the area of the Gaussian portion of the combined fit of the production data. When the two Gaussian areas of the combined fits match the electron yields of SIMC and the experimental data then match meaning the cross sections are equivalent. This matching of the SIMC yield to the production yield leaves us with the scale factor, $C_{SIMC}$, we applied to the SIMC data to match the production data. 
 
-Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and production data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure ~\ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastics histogram summed with the fitted quasielastic background histogram with its combined fit in red. 
+Since the Gaussian areas of the combined fits and the cross sections are directly proportional, and we have matched the Gaussian areas of SIMC and production data, we can multiply the cross section value in SIMC by $C_{SIMC}$ to find the cross section value of the production data. Figure \ref{fig:final_xs} shows the $X_{Bj}$ plot for the production data and it's combined exponential and Gaussian fit in blue as well as the SIMC elastics histogram summed with the fitted quasielastic background histogram with its combined fit in red. 
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Peak_Matched_Xbj_Fits.png}
 \end{center}
 \caption[Elastic Peak Fits of $^{3}$He Production Runs and SIMC Elastics Summed with QE Background Fit]{
-{\bf{Elastic Peak Fits of $^{3}$He Production Runs and SIMC Elastics Summed with QE Background Fit.}} The blue histogram shows the production data for E08-014 with physics cuts, and it's elastic peak is fit by the blue line. The red histogram is the sum of the SIMC elastics histogram ~\ref{fig:simc_elastics} and the histogram binned to the fit of the quasielastic background \ref{fig:QE_background}, and it's elastic peak is fit by the red line.}
+{\bf{Elastic Peak Fits of $^{3}$He Production Runs and SIMC Elastics Summed with QE Background Fit.}} The blue histogram shows the production data for E08-014 with physics cuts, and it's elastic peak is fit by the blue line. The red histogram is the sum of the SIMC elastics histogram \ref{fig:simc_elastics} and the histogram binned to the fit of the quasielastic background \ref{fig:QE_background}, and it's elastic peak is fit by the red line.}
 \label{fig:final_xs}
 \end{figure}
 
-Table ~\ref{tab:peak_pars} lists the parameters of the total fits to the production data and yield matched SIMC data. The SIMC elastic peak is slightly wider than the production peak indicating that the smearing function in SIMC may be tuned too high. The slight offset between the two elastic peaks is likely due to a small offset in Z$_{target}$, however this should not influence the area under the elastic peak and thus not change the resultant cross section. 
+Table \ref{tab:peak_pars} lists the parameters of the total fits to the production data and yield matched SIMC data. The SIMC elastic peak is slightly wider than the production peak indicating that the smearing function in SIMC may be tuned too high. The slight offset between the two elastic peaks is likely due to a small offset in Z$_{target}$, however this should not influence the area under the elastic peak and thus not change the resultant cross section. 
 
-For this analysis the scale factor needed to match the yields, $C_{SIMC}$, was found to be 1.01984. This means that the model cross section needed to be increased by 1.984$\%$ to match the experimental data. When this adjustment is made the model built into SIMC will then yield the cross section for elastic scattering off of our $^3$He production data. This cross section is found to be 1.335 * 10$^{-10}$ fm$^2$/sr or 1.335 * 10$^{-6}$ $\mu$b/sr.
+For this analysis the scale factor needed to match the yields, $C_{SIMC}$, was found to be 1.01984. This means that the model cross section needed to be increased by 1.984$\%$ to match the experimental data. When this adjustment is made the model built into SIMC will then yield the cross section for elastic scattering off of our $^3$He production data. This cross section is found to be 1.335 $\times$ 10$^{-10}$ fm$^2$/sr or 1.335 $\times$ 10$^{-6}$ $\mu$b/sr.
 
 \vspace{5mm}
 
@@ -596,20 +596,20 @@ To test if the scale factor ($C_{SIMC}$) is reasonable we can remake the SIMC el
 
 Now that we have found the magnitude of our $^3$He elastic cross section we must ask, ``Where should we place this data point in $Q^2$?" The immediately intuitive answer to this question is that we should place this point at the center of our bin in $Q^2$. However, this is not the correct place for our data point because the shape of the cross section across the range of our $Q^2$ bin is not linear.
  
-To find the correct location for our data point in $Q^2$ we will follow the procedure laid out in ~\cite{Article:data_placement}. To see the issue with placing our point at the center of our bin let us look at a plot of our cross section at 3.356 GeV seen in Figure ~\ref{fig:xs_bin}. Note that the specific form factors chosen for this cross section are chosen as a representative fit for the group of `good' sum of Gaussian fits as discussed later in Section ~\ref{ssec:3he_fits}. A `good' fit here was determined by having a low $\chi^2$ value and more importantly the physical characteristics we would expect from a form factor. For a plot of the new cross section fit, the previous cross section fit from ~\cite{Article:Amroun}, and the $^3$He cross section measured in this analysis see Section ~\ref{ssec:3he_fits} and Figure ~\ref{fig:3he_cross_section}.
+To find the correct location for our data point in $Q^2$ we will follow the procedure laid out in \cite{Article:data_placement}. To see the issue with placing our point at the center of our bin let us look at a plot of our cross section at 3.356 GeV seen in Figure \ref{fig:xs_bin}. Note that the specific form factors chosen for this cross section are chosen as a representative fit for the group of `good' sum of Gaussian fits as discussed later in Section \ref{ssec:3he_fits}. A `good' fit here was determined by having a low $\chi^2$ value and more importantly the physical characteristics we would expect from a form factor. For a plot of the new cross section fit, the previous cross section fit from \cite{Article:Amroun}, and the $^3$He cross section measured in this analysis see Section \ref{ssec:3he_fits} and Figure \ref{fig:3he_cross_section}.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative.png}
 \end{center}
 \caption[$^3$He Elastic Cross Section at $E_0$ = 3.356 GeV]{
-{\bf{$^3$He Elastic Cross Section at $E_0$ = 3.356 GeV}} This cross section was produced using a representative fit from the sum of Gaussians fits discussed in Section ~\ref{ssec:3he_fits}. Notice that the shape of the log plot looks linear in the region of $Q^2$ $\approx$ 35 fm$^{-2}$.}
+{\bf{$^3$He Elastic Cross Section at $E_0$ = 3.356 GeV}} This cross section was produced using a representative fit from the sum of Gaussians fits discussed in Section \ref{ssec:3he_fits}. Notice that the shape of the log plot looks linear in the region of $Q^2$ $\approx$ 35 fm$^{-2}$.}
 \label{fig:xs_bin}
 \end{figure}
 
-We know our point should be located somewhere in the neighborhood of $Q^2$ $\approx$ 35 fm$^{-2}$ simply from the kinematics of the experiment. Looking around $Q^2$ $\approx$ 35 fm$^{-2}$ in Figure ~\ref{fig:xs_bin} the plot appears linear. However, the plot is in a log scale indicating that the actual shape is an exponential. To see the true shape of the cross section let us first define our bin in $Q^2$, and then zoom in on our region of interest while removing the log on the Y-axis. 
+We know our point should be located somewhere in the neighborhood of $Q^2$ $\approx$ 35 fm$^{-2}$ simply from the kinematics of the experiment. Looking around $Q^2$ $\approx$ 35 fm$^{-2}$ in Figure \ref{fig:xs_bin} the plot appears linear. However, the plot is in a log scale indicating that the actual shape is an exponential. To see the true shape of the cross section let us first define our bin in $Q^2$, and then zoom in on our region of interest while removing the log on the Y-axis. 
 
-To find our bin size in $Q^2$ we can use our cuts on the in-plane angle $\phi$. Since we know the beam energy we can calculate $Q^2$ using Equations ~\ref{eq:Q^2} and ~\ref{eq:E'} knowing that $\phi$ is the analyzer variable for the arctangent of the deviation from the set spectrometer scattering angle. Table ~\ref{tab:bin} shows the size of our analysis bin in various units. Figure ~\ref{fig:xs_bin_zoom} shows the cross section in the region of the analysis bin with the log plot removed to show the true shape.
+To find our bin size in $Q^2$ we can use our cuts on the in-plane angle $\phi$. Since we know the beam energy we can calculate $Q^2$ using Equations \ref{eq:Q^2} and \ref{eq:E'} knowing that $\phi$ is the analyzer variable for the arctangent of the deviation from the set spectrometer scattering angle. Table \ref{tab:bin} shows the size of our analysis bin in various units. Figure \ref{fig:xs_bin_zoom} shows the cross section in the region of the analysis bin with the log plot removed to show the true shape.
 
 \vspace{5mm}
 
@@ -636,18 +636,18 @@ $Q^2$ (fm$^{-2}$) & 30.55 & 41.24\\
 \includegraphics[width=1.1\linewidth]{XS_3356MeV_Representative_Zoom.png}
 \end{center}
 \caption[$^3$He Elastic Cross Section $Q^2$ Bin at $E_0$ 3.356 GeV]{
-{\bf{$^3$He Elastic Cross Section $Q^2$ Bin at 3.356 GeV}} This plot shows the same cross section as Figure ~\ref{fig:xs_bin}, except zoomed in on the analysis bin region with the log on the $Y$-axis removed. The two vertical black lines represent the minimum and maximum $Q^2$ of the analysis bin.}
+{\bf{$^3$He Elastic Cross Section $Q^2$ Bin at 3.356 GeV}} This plot shows the same cross section as Figure \ref{fig:xs_bin}, except zoomed in on the analysis bin region with the log on the $Y$-axis removed. The two vertical black lines represent the minimum and maximum $Q^2$ of the analysis bin.}
 \label{fig:xs_bin_zoom}
 \end{figure}
 
-Figure ~\ref{fig:xs_bin_zoom} makes it clear that the cross section across our bin is not linear, and thus taking the average $Q^2$ of the bin to set our cross section's $Q^2$ value is incorrect. Instead we must account for the fact that the shape of the cross section biases our data towards lower $Q^2$. This can be done by taking a weighted average of the $Q^2$ values in our bin where the weights are the cross section values at each $Q^2$. Performing this calculation we find that the weighted average $Q^2$ for our analysis bin is 34.19 fm$^{-2}$. This is a significant deviation from the bin center of 35.90 fm$^{-2}$. We now see that as expected the shape of the cross section requires us to place our data point at a lower $Q^2$ than the bin center.
+Figure \ref{fig:xs_bin_zoom} makes it clear that the cross section across our bin is not linear, and thus taking the average $Q^2$ of the bin to set our cross section's $Q^2$ value is incorrect. Instead we must account for the fact that the shape of the cross section biases our data towards lower $Q^2$. This can be done by taking a weighted average of the $Q^2$ values in our bin where the weights are the cross section values at each $Q^2$. Performing this calculation we find that the weighted average $Q^2$ for our analysis bin is 34.19 fm$^{-2}$. This is a significant deviation from the bin center of 35.90 fm$^{-2}$. We now see that as expected the shape of the cross section requires us to place our data point at a lower $Q^2$ than the bin center.
 
 \section{Uncertainty Approximation}
 \label{sec:uncertainty}
 
 Thus far, we have found the magnitude of the $^3$He elastic cross section and determined where to place this data point in $Q^2$. Our next duty is to quantify the various sources of uncertainty that apply to our cross section. The uncertainty can be broken in to statistical uncertainty and systematic uncertainty. Statistical uncertainty describes the innate statistical deviations of measurements of an observable due to the inherent limitations of the tool making the measurements as well as unpredictable experimental conditions like environmental fluctuations. Statistical uncertainty can be decreased by increasing the number of measurements made. 
 
-Systematic uncertainty describes uncertainty introduced from measuring instruments or incorrectly calibrated simulation tools or models. Systematic errors are reproducible and generally in the same direction so taking more measurements will not significantly reduce them. This section will go into detail on how each source of uncertainty was quantified. Table ~\ref{tab:uncertainty} contains a summary of the experimental uncertainties on the $^3$He elastic cross section that are described in detail below.
+Systematic uncertainty describes uncertainty introduced from measuring instruments or incorrectly calibrated simulation tools or models. Systematic errors are reproducible and generally in the same direction so taking more measurements will not significantly reduce them. This section will go into detail on how each source of uncertainty was quantified. Table \ref{tab:uncertainty} contains a summary of the experimental uncertainties on the $^3$He elastic cross section that are described in detail below.
 
 \vspace{5mm}
 
@@ -687,24 +687,24 @@ Live-time & 0.01145$\%$\\
 \label{tab:uncertainty}
 \end{table}
 
-First let us examine our statistical uncertainties. Our primary source of statistical uncertainty is derived from our yield of elastic electrons. As discussed in Section ~\ref{sec:yield} experiment E08-014 had a yield of 565 electrons elastically scattered off of $^3$He. The uncertainty on this value is described by Equation ~\ref{eq:uncertainty}, where $N_e$ is the number of elastically scattered electrons. The uncertainty in the number of electrons is directly proportional to the cross section. Thus, the statistical uncertainty on the cross section due to the electron yield is 4.21$\%$.
+First let us examine our statistical uncertainties. Our primary source of statistical uncertainty is derived from our yield of elastic electrons. As discussed in Section \ref{sec:yield} experiment E08-014 had a yield of 565 electrons elastically scattered off of $^3$He. The uncertainty on this value is described by Equation \ref{eq:uncertainty}, where $N_e$ is the number of elastically scattered electrons. The uncertainty in the number of electrons is directly proportional to the cross section. Thus, the statistical uncertainty on the cross section due to the electron yield is 4.21$\%$.
 
 \begin{equation} \label{eq:uncertainty}
 	\delta_e = \frac{1}{\sqrt{N_e}}
 	\text{\equationlabels{Elastic Electron Yield Uncertainty}}
 \end{equation}
 
-The other source of statistical error comes from the aluminium background subtraction discussed in Section ~\ref{sec:al}. By subtracting out the Al contamination in the region of the elastic peak we have necessarily introduced another opportunity for uncertainty to creep into our measurement. In the region of the elastic peak, defined as $2.95<X_{Bj}<3.10$, there were 1093 events prior to the Al background subtraction. In this same region there were 34 Al events. We can once again use Equation ~\ref{eq:uncertainty} to estimate the uncertainty on the Al events. We find that these 34 events have an uncertainty of 17$\%$ or $\pm$ 6 electrons. 
+The other source of statistical error comes from the aluminium background subtraction discussed in Section \ref{sec:al}. By subtracting out the Al contamination in the region of the elastic peak we have necessarily introduced another opportunity for uncertainty to creep into our measurement. In the region of the elastic peak, defined as $2.95<X_{Bj}<3.10$, there were 1093 events prior to the Al background subtraction. In this same region there were 34 Al events. We can once again use Equation \ref{eq:uncertainty} to estimate the uncertainty on the Al events. We find that these 34 events have an uncertainty of 17$\%$ or $\pm$ 6 electrons. 
 
 This is a high uncertainty on a small number so to have a conservative estimate the uncertainty was doubled from $\pm$ 6 electrons to $\pm$ 12 electrons. When the Al background is subtracted from the $^3$He production data we have either 1071 (1093 - 34 + 12) electrons remaining or 1047 (1093 - 34 - 12) electrons remaining. The uncertainty is then $\pm$ 12 electrons from the mean number of electrons remaining after the Al subtraction. This gives 1059 $\pm$ 12 electrons yielding an uncertainty of 1.1$\%$. Note that this uncertainty is categorized as statistical in nature. It could be reasonably argued to be systematic, but as taking more production data would lower this uncertainty it has been categorized as statistical.
 
-Next we will account for the systematic uncertainties on our cross section result. The largest source of systematic uncertainty comes from the density of the gaseous $^3$He in the target cell. This issue was discussed in Section ~\ref{sec:density}. The density study performed in ~\cite{density} lists the uncertainty on the  $^3$He density as 3.08$\%$ which will apply directly to the cross section as the cell density is directly proportional to the cross section.
+Next we will account for the systematic uncertainties on our cross section result. The largest source of systematic uncertainty comes from the density of the gaseous $^3$He in the target cell. This issue was discussed in Section \ref{sec:density}. The density study performed in \cite{density} lists the uncertainty on the  $^3$He density as 3.08$\%$ which will apply directly to the cross section as the cell density is directly proportional to the cross section.
 
-The next largest source of systematic uncertainty comes from the optics calibration of the HRSs. This calibration was discussed in Section ~\ref{ssec:optics_optimization}. The precision of this calibration is limited by the physical characteristics of the optics sieve plate used for the calibration shown in Figure ~\ref{fig:sieve}. The optics calibration works by locating where electron events fall within the holes of the sieve to create a pattern which can be found in the detector, and then be connected back to the target coordinate system. 
+The next largest source of systematic uncertainty comes from the optics calibration of the HRSs. This calibration was discussed in Section \ref{ssec:optics_optimization}. The precision of this calibration is limited by the physical characteristics of the optics sieve plate used for the calibration shown in Figure \ref{fig:sieve}. The optics calibration works by locating where electron events fall within the holes of the sieve to create a pattern which can be found in the detector, and then be connected back to the target coordinate system. 
 
 These electron events fall randomly anywhere inside a given sieve hole. By using the outermost holes of the sieve with data inside of them one can define an area inside which all the optics data is found. The precision of the measurement of the size of this internal area is limited by the size and spacing of the sieve holes. This gives an uncertainty on the area containing data within the sieve. This area corresponds to the uncertainty in the solid angle from the optics calibration. The solid angle includes the uncertainties of both the in-plane angle ($\phi$) and out-of-plane angle ($\theta$) as well as the momentum $dp$ since that is directly related to $\phi$ for elastic scattering.  
 
-To estimate the inherent uncertainty of the optics calibration a Monte Carlo simulating was built. This simulation creates a sieve of $N$ by $M$ holes. Events are then randomly placed in each hole. The electron events placed in holes on the outer edge of the sieve are then connected by a straight line to their adjacent outer edge hole's electron event. Once all of the outer edge holes are connected they create a polygon whose internal area can then be calculated. This process is shown for a 5X5 sieve in Figure ~\ref{fig:sieve_mc}, where there are five of these randomly determined areas shown. 
+To estimate the inherent uncertainty of the optics calibration a Monte Carlo simulating was built. This simulation creates a sieve of $N$ by $M$ holes. Events are then randomly placed in each hole. The electron events placed in holes on the outer edge of the sieve are then connected by a straight line to their adjacent outer edge hole's electron event. Once all of the outer edge holes are connected they create a polygon whose internal area can then be calculated. This process is shown for a 5X5 sieve in Figure \ref{fig:sieve_mc}, where there are five of these randomly determined areas shown. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -715,7 +715,7 @@ To estimate the inherent uncertainty of the optics calibration a Monte Carlo sim
 \label{fig:sieve_mc}
 \end{figure}
 
-This process is repeated one million times resulting in one million different possible areas based on the hole sizes, spacings, and where the events were randomly placed. A histogram of all of these possible areas can then be created. This histogram forms an excellent Guassian shape which can then be fit with a Gaussian function. From this Guassian function a standard deviation (one $\sigma$) can be found to estimate the uncertainty of the area. The plot of one million randomly generated areas using the geometry of ~\ref{fig:sieve_mc} is shown in ~\ref{fig:sieve_mc_gaussian}. By fitting a Gaussian to the histogram of areas the standard deviation is found to be 30.18 mm$^2$ on an area of 5000 mm$^2$. For this analysis a two $\sigma$ (95$\%$) confidence interval was chosen giving an uncertainty of 60.36 mm$^2$ on 5000 mm$^2$ or 1.207$\%$ in this example. 
+This process is repeated one million times resulting in one million different possible areas based on the hole sizes, spacings, and where the events were randomly placed. A histogram of all of these possible areas can then be created. This histogram forms an excellent Guassian shape which can then be fit with a Gaussian function. From this Guassian function a standard deviation (one $\sigma$) can be found to estimate the uncertainty of the area. The plot of one million randomly generated areas using the geometry of \ref{fig:sieve_mc} is shown in \ref{fig:sieve_mc_gaussian}. By fitting a Gaussian to the histogram of areas the standard deviation is found to be 30.18 mm$^2$ on an area of 5000 mm$^2$. For this analysis a two $\sigma$ (95$\%$) confidence interval was chosen giving an uncertainty of 60.36 mm$^2$ on 5000 mm$^2$ or 1.207$\%$ in this example. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -726,7 +726,7 @@ This process is repeated one million times resulting in one million different po
 \label{fig:sieve_mc_gaussian}
 \end{figure}
 
-This is almost sufficient to estimate the optics calibration uncertainty. However, we can do better than estimating the whole acceptance using one sieve size. This is because as one steps through the target cell in Y$_{target}$ the solid angle acceptance, and thus the sieve size, changes as shown in Figure ~\ref{fig:solid_angle_ytarget}. So to accurately estimate the sieve uncertainty an optics run with similar kinematic settings to this analysis' kinematics was studied \cite{shujie_optics}. 
+This is almost sufficient to estimate the optics calibration uncertainty. However, we can do better than estimating the whole acceptance using one sieve size. This is because as one steps through the target cell in Y$_{target}$ the solid angle acceptance, and thus the sieve size, changes as shown in Figure \ref{fig:solid_angle_ytarget}. So to accurately estimate the sieve uncertainty an optics run with similar kinematic settings to this analysis' kinematics was studied \cite{shujie_optics}. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -739,39 +739,39 @@ This is almost sufficient to estimate the optics calibration uncertainty. Howeve
 
 This optics run contained 11 carbon foils evenly space in Y$_{target}$. By finding how many holes each foil had significant data in the Monte Carlo could be configured to match the solid angle acceptance for each of the 11 slices of Y$_{target}$. The Monte Carlo was then run one million times for each of these solid angles, and the results of the two $\sigma$ area uncertainties were added in quadrature to find the total solid angle uncertainty. This overall two $\sigma$ uncertainty was found to contribute 2.248$\%$ uncertainty to the final cross section.
 
-The next largest systematic uncertainty comes from the GC efficiency given by Equation ~\ref{eq:gc_eff} discussed in Section ~\ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation ~\ref{eq:gc_uncertainty} from ~\cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, T$_3$ is the number of events measured by the main trigger, T$_7$ is the number of events measured by the coincidence trigger, and T$_{3\&7}$ is the number of times both triggers fired. Inserting the relevant values yields an uncertainty on the cross section of 1.32$\%$.
+The next largest systematic uncertainty comes from the GC efficiency given by Equation \ref{eq:gc_eff} discussed in Section \ref{ssec:gc_eff}. The uncertainty on this efficiency is directly proportional to the uncertainty in the cross section and is given in Equation \ref{eq:gc_uncertainty} from \cite{dien_gc}. Here $\epsilon_{GC}$ is the efficiency of the GC, T$_3$ is the number of events measured by the main trigger, T$_7$ is the number of events measured by the coincidence trigger, and T$_{3\&7}$ is the number of times both triggers fired. Inserting the relevant values yields an uncertainty on the cross section of 1.32$\%$.
 
 \begin{equation} \label{eq:gc_uncertainty}
-	\delta_{GC} = \epsilon_{GC} * \frac{\sqrt{T_7-(T_{3\&7})}}{T_7}
+	\delta_{GC} = \epsilon_{GC} \times \frac{\sqrt{T_7-(T_{3\&7})}}{T_7}
 	\text{\equationlabels{GC Uncertainty}}
 \end{equation}
 
 There is also a systematic uncertainty introduced by the beam and target offsets with respect to the set spectrometer angle. To estimate this uncertainty the Mott cross section was calculated at E08-014's energy and two angles. One angle was 1 mrad above the set spectrometer angle, and the other value was set 1 mrad below the set spectrometer angle. The difference in these two Mott cross sections then closely represent the uncertainty a reasonably sized offset would introduce to the absolute cross section. This beam and target offset uncertainty is found to be 1.1$\%$.
 
-The systematic uncertainty on the cross section due to radiative corrections in SIMC has been shown to be on the order of 1$\%$ ~\cite{Thesis:Wang}. The uncertainty on the cross section due to the beam charge measurement from the BCMs has also been shown to be 1$\%$ ~\cite{Thesis:Wang}. Both the VDC single track efficiency uncertainty and the trigger efficiency uncertainty are directly proportional to the cross section, and have both been estimated to be 1$\%$ ~\cite{Thesis:Ye}.
+The systematic uncertainty on the cross section due to radiative corrections in SIMC has been shown to be on the order of 1$\%$ \cite{Thesis:Wang}. The uncertainty on the cross section due to the beam charge measurement from the BCMs has also been shown to be 1$\%$ \cite{Thesis:Wang}. Both the VDC single track efficiency uncertainty and the trigger efficiency uncertainty are directly proportional to the cross section, and have both been estimated to be 1$\%$ \cite{Thesis:Ye}.
 
-The next largest systematic uncertainty comes from the uncertainty in the beam energy. The beam energy measurement is currently known to have an uncertainty of 0.04$\%$ ~\cite{doug}. However, this is not the uncertainty contributed to the cross section from the beam energy. To find the uncertainty on the cross section SIMC was run two more times with the same cuts and experimental conditions as previously except the beam energy was set 0.04$\%$ higher once and 0.04$\%$ lower once. The resulting cross sections from SIMC then given an upper and lower bound on the cross section due to fluctuations in beam energy. The uncertainty on the cross section from the uncertainty in the beam energy was then found to be 0.72$\%$.
+The next largest systematic uncertainty comes from the uncertainty in the beam energy. The beam energy measurement is currently known to have an uncertainty of 0.04$\%$ \cite{doug}. However, this is not the uncertainty contributed to the cross section from the beam energy. To find the uncertainty on the cross section SIMC was run two more times with the same cuts and experimental conditions as previously except the beam energy was set 0.04$\%$ higher once and 0.04$\%$ lower once. The resulting cross sections from SIMC then given an upper and lower bound on the cross section due to fluctuations in beam energy. The uncertainty on the cross section from the uncertainty in the beam energy was then found to be 0.72$\%$.
 
-The cross section model in SIMC also introduces some uncertainty to our cross section. This uncertainty has been previously studied in detail, and was found to contribute approximately 0.5$\%$ uncertainty to the cross section ~\cite{Thesis:Nguyen}. Note that binning the cross section in X$_{Bj}$ gives less of a change in cross section over the bin than if the data had been binned in E'. This helps to reduce the uncertainty on the cross section from the SIMC model.
+The cross section model in SIMC also introduces some uncertainty to our cross section. This uncertainty has been previously studied in detail, and was found to contribute approximately 0.5$\%$ uncertainty to the cross section \cite{Thesis:Nguyen}. Note that binning the cross section in X$_{Bj}$ gives less of a change in cross section over the bin than if the data had been binned in E'. This helps to reduce the uncertainty on the cross section from the SIMC model.
 
-The remaining systematic uncertainties are fairly small. One of these is the degree of uncertainty introduced by the pion rejector cut applied to the data. The `good electron' region of the GC spectrum where the events are almost certainly electrons is defined as ADC channels 300-500. In this region there were 51439 events. Applying the PR cut removes 777 of these events from the sample. Using equation ~\ref{eq:uncertainty} the uncertainty on these 777 events is found to be $\pm$ 28 events. The maximum events remaining after the PR cut is then 50690 (51439 - 777 + 28), and the minimum number is 50634 (51439 - 777 - 28). The average number of events remaining after the PR cut is then 50662 $\pm$ 28 which gives an uncertainty to the final cross section of only 0.055$\%$.
+The remaining systematic uncertainties are fairly small. One of these is the degree of uncertainty introduced by the pion rejector cut applied to the data. The `good electron' region of the GC spectrum where the events are almost certainly electrons is defined as ADC channels 300-500. In this region there were 51439 events. Applying the PR cut removes 777 of these events from the sample. Using equation \ref{eq:uncertainty} the uncertainty on these 777 events is found to be $\pm$ 28 events. The maximum events remaining after the PR cut is then 50690 (51439 - 777 + 28), and the minimum number is 50634 (51439 - 777 - 28). The average number of events remaining after the PR cut is then 50662 $\pm$ 28 which gives an uncertainty to the final cross section of only 0.055$\%$.
 
 Some uncertainty is introduced from the Y$_{target}$ positioning. One can never do better than finding the location of a single optics foil when calibrating Y$_{target}$. These foils can be found with approximately 0.2 mm accuracy. For our 20 cm target this gives an uncertainty of 0.1$\%$ on the Y$_{target}$ position. As we did with the beam energy uncertainty we ran SIMC twice more with the minimum and maximum possible Y$_{target}$ offsets and compared the uncertainty this introduces to the cross section. The uncertainties are asymmetric in this case with the positive Y$_{target}$ uncertainty being 0.045$\%$ and the negative being 0.017$\%$. Both values are quite small and barely influence the cross section at all. We will conservatively say that this can introduce up to 0.045$\%$ uncertainty to the final cross section. 
 
-The final source of measurable uncertainty comes from the live-time calculation discussed in Section ~\ref{ssec:live-time}. The uncertainty on the live-time can be calculated as in Equation ~\ref{eq:lt_uncertainty}, where $\epsilon_{LT}$ is the live-time for the experiment, $T_{3_{Scaler}}$ is the scaler number of main triggers ($T_3$), and $T_{3_{File}}$ is the electronics output number of main triggers detected. This value applies directly to the cross section. Inserting the relevant values the uncertainty on the cross section due to the live-time uncertainty is found to be 0.01145$\%$.
+The final source of measurable uncertainty comes from the live-time calculation discussed in Section \ref{ssec:live-time}. The uncertainty on the live-time can be calculated as in Equation \ref{eq:lt_uncertainty}, where $\epsilon_{LT}$ is the live-time for the experiment, $T_{3_{Scaler}}$ is the scaler number of main triggers ($T_3$), and $T_{3_{File}}$ is the electronics output number of main triggers detected. This value applies directly to the cross section. Inserting the relevant values the uncertainty on the cross section due to the live-time uncertainty is found to be 0.01145$\%$.
 
 \begin{equation} \label{eq:lt_uncertainty}
-	\delta_{LT} = \epsilon_{LT} * \frac{\sqrt{T_{3_{Scaler}}-T_{3_{File}}}}{T_{3_{Scaler}}}
+	\delta_{LT} = \epsilon_{LT} \times \frac{\sqrt{T_{3_{Scaler}}-T_{3_{File}}}}{T_{3_{Scaler}}}
 	\text{\equationlabels{Live Time Uncertainty}}
 \end{equation}
 
 \section{Comparisons with Other Measurements}
 \label{sec:comparisons}
 
-Now that we have a value for our cross section with reasonable error bars we want to see how it compares to other measurements and fits. For these comparisons we will use the elastic $^3$He cross section measurements from ~\cite{Article:Alex} as well as the final SOG fit from ~\cite{Article:Amroun}. ~\cite{Article:Alex} took several elastic cross section measurements of $^3$He in similar kinematic regions to those of experiment E08-014. Let us examine the data point measured at the closest kinematic to experiment E08-014. This point was taken at E$_0$ = 3.304 GeV and a scattering angle of 20.83$^{\circ}$ giving elastic cross sections of 1.57 $\pm$ 0.10 * 10$^{-6}$ $\mu$b/sr at $Q^2$ = 34.1 fm$^{-2}$. 
+Now that we have a value for our cross section with reasonable error bars we want to see how it compares to other measurements and fits. For these comparisons we will use the elastic $^3$He cross section measurements from \cite{Article:Alex} as well as the final SOG fit from \cite{Article:Amroun}. \cite{Article:Alex} took several elastic cross section measurements of $^3$He in similar kinematic regions to those of experiment E08-014. Let us examine the data point measured at the closest kinematic to experiment E08-014. This point was taken at E$_0$ = 3.304 GeV and a scattering angle of 20.83$^{\circ}$ giving elastic cross sections of 1.57 $\pm$ 0.10 $\times$ 10$^{-6}$ $\mu$b/sr at $Q^2$ = 34.1 fm$^{-2}$. 
 
-The point found in this analysis is taken at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ giving a cross section of 1.335 $\pm$ 0.086 * 10$^{-6}$ $\mu$b/sr at $Q^2$ = 34.19 fm$^{-2}$. The error bars for these points almost overlap in spite of their slightly different kinematics. These two values can be said to be in reasonable agreement, especially considering that the $Q^2$ value for this experiment is larger. This implies that our extracted cross section should be smaller than the point from ~\cite{Article:Alex} which agrees with the data.
+The point found in this analysis is taken at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ giving a cross section of 1.335 $\pm$ 0.086 $\times$ 10$^{-6}$ $\mu$b/sr at $Q^2$ = 34.19 fm$^{-2}$. The error bars for these points almost overlap in spite of their slightly different kinematics. These two values can be said to be in reasonable agreement, especially considering that the $Q^2$ value for this experiment is larger. This implies that our extracted cross section should be smaller than the point from \cite{Article:Alex} which agrees with the data.
 
-Next let us take the SOG form factor fits from ~\cite{Article:Amroun} and calculate the cross section from these fits at our kinematics. The Amroun fit at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ gives a cross section of  1.887 * 10$^{-6}$ $\mu$b/sr. This is significantly different from the cross section derived in this thesis. However, the data sets from ~\cite{Article:Amroun} had very little data in this high $Q^2$ region. 
+Next let us take the SOG form factor fits from \cite{Article:Amroun} and calculate the cross section from these fits at our kinematics. The Amroun fit at E$_0$ = 3.356 GeV and a scattering angle of 20.51$^{\circ}$ gives a cross section of  1.887 $\times$ 10$^{-6}$ $\mu$b/sr. This is significantly different from the cross section derived in this thesis. However, the data sets from \cite{Article:Amroun} had very little data in this high $Q^2$ region. 
 
-Taking the previous sever lack of data in this region, and the agreement with other new measurements in this region, into account this discrepancy seems reasonable. Significantly more data in this region was added by ~\cite{Article:Alex}, and this data was included in the global fits in this thesis found in Chapter ~\ref{ch:global_fits}. Overall, the cross section found in this thesis seems to be in reasonable agreement with other measurements, and indicates that older fits may shift noticeably when the new higher $Q^2$ data is introduced.
+Taking the previous sever lack of data in this region, and the agreement with other new measurements in this region, into account this discrepancy seems reasonable. Significantly more data in this region was added by \cite{Article:Alex}, and this data was included in the global fits in this thesis found in Chapter \ref{ch:global_fits}. Overall, the cross section found in this thesis seems to be in reasonable agreement with other measurements, and indicates that older fits may shift noticeably when the new higher $Q^2$ data is introduced.
