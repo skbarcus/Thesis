@@ -309,4 +309,15 @@ Now we can define a value called the reduced cross section by dividing the exper
 	\text{\equationlabels{Reduced Cross Section}}
 \end{equation}
 
-\noindent If one plots the reduced cross section against $\epsilon$ we see that we are plotting the equation of a line. (Note: I could make and add a Rosenbluth plot here, but I don't know if it's worth it since it was never part of my analysis.) Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the $y$-intercept as $\tau G_M^2\left(Q^2\right)$ \cite{Book:Povh}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in Section \ref{sec:sog} we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
+\noindent If one plots the reduced cross section against $\epsilon$ we see that we are plotting the equation of a line. Figure \ref{fig:rosenbluth_sep} shows an example of a Rosenbluth separation using data from Reference \cite{Article:Alex}. The first point used was taken at 3.304 GeV and 27.24$^{\circ}$ with a $\frac{d\sigma}{d\Omega}$ of 2.77 $\pm$ 0.39 $\times$ 10$^{-13}$ cm$^2$/sr and the second point was at taken at 0.9893 GeV and 140.31$^{\circ}$ with a $\frac{d\sigma}{d\Omega}$ of 3.27 $\pm$ 0.13 $\times$ 10$^{-15}$ cm$^2$/sr. Both points have the same $Q^2$ value, 55.1 fm$^{-2}$, as required to perform a Rosenbluth separation. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=1.\linewidth]{Rosenbluth_Separation.png}
+\end{center}
+\caption[Rosenbluth Separtation]{
+{\bf{Rosenbluth Separtation.}} An example Rosenbluth separation using data at $Q^2$ = 55.1 fm$^{-2}$ from Reference \cite{Article:Alex}. From this separation we find $F_{ch}$ = 6.98 $\times$ 10$^{-5}$ and $F_m$ = 3.33 $\times$ 10$^{-5}$, where we have converted $G_E$ and $G_M$ to the $F_{ch}$ and $F_m$ form factors used in this analysis.}
+\label{fig:rosenbluth_sep}
+\end{figure}
+
+Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the $y$-intercept as $\tau G_M^2\left(Q^2\right)$ \cite{Book:Povh}. Taking the data from our example separation and converting $G_E$ and $G_M$ to $F_{ch}$ and $F_m$ we find that $F_{ch}$ = 6.98 $\times$ 10$^{-5}$ and $F_m$ = 3.33 $\times$ 10$^{-5}$, where we have neglected to treat the uncertainty for simplicity. These form factor values are in agreement with the calculations made in Reference \cite{Article:Alex}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in Section \ref{sec:sog} we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
