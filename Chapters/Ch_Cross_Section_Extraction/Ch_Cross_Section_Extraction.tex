@@ -198,7 +198,7 @@ When a trigger is seen it is important to be able to identify what particle caus
 \includegraphics[width=0.9\linewidth]{PID_PR_Ye.png}
 \end{center}
 \caption[PID with the Pion Rejectors]{
-{\bf{PID with the Pion Rejectors.}} Image from \cite{Thesis:Ye}.}
+{\bf{PID with the Pion Rejectors.}} This plot does not show the data used in this analysis. It is intended only to show where we expect to see certain particles in this thesis' analysis. The $X$-axis represents pion-rejector 1, and the $Y$-axis represents pion-rejector 2. Both axes are in units of ADC channel. Pions are found in the lower energy ADC channels. The red box indicates an area in which the particles are almost certainly pions, but the red box is not a cut applied to the data. The electrons are found in the higher energy ADC channels. The blue box indicates an area in which the particles are almost certainly electrons, but the blue box is not a cut applied to the data. The boxed regions were only used to check the pion contamination. Image from \cite{Thesis:Ye}.}
 \label{fig:pid_pr_ye}
 \end{figure}
 
@@ -209,7 +209,7 @@ Alternatively, we can look at the same data in the GC to identify the particles 
 \includegraphics[width=1.1\linewidth]{PID_GC_Ye.png}
 \end{center}
 \caption[PID with the Gas Cherenkov]{
-{\bf{PID with the Gas Cherenkov.}} Image from \cite{Thesis:Ye}.}
+{\bf{PID with the Gas Cherenkov.}} This plot does not show the data used in this analysis. It is intended only to show where we expect to see certain particles in this thesis' analysis. The $X$-axis is in units of ADC channel, and the $Y$-axis is the number of events detected. Pions are found in the lower energy ADC channels. The red area shows where almost all of the particles should be pions, but the red area is not a cut applied to the data. Electrons are found in the bulk of the distribution between ADC channels 100 and 1400. The blue area shows where almost all of the particles should be electrons, but the blue area is not a cut applied to the data. The shaded areas were only used to check the pion contamination. Image from \cite{Thesis:Ye}.}
 \label{fig:pid_gc_ye}
 \end{figure}
 
@@ -220,7 +220,7 @@ Now let us examine the combined six experimental runs used in this analysis usin
 \includegraphics[width=1.\linewidth]{PID_PR.png}
 \end{center}
 \caption[PID with the Pion Rejectors]{
-{\bf{PID with the Pion Rejectors.}} }
+{\bf{PID with the Pion Rejectors.}} This plot shows the six runs used in this analysis. The $X$-axis represents pion-rejector 2, and the $Y$-axis represents pion-rejector 1. Both axes are in units of ADC channel. The red box in the low energy ADC channels shows a region in which pions would be located if they were in the data. Few events are located in this pion region indicating few pions are contaminating the sample. The red box in the cloud of events in higher ADC channels indicates the region in which events should definitely be electrons. These boxes were only used to check the pion contamination but are not cuts applied to the data. The green line is a cut applied to the final data. This cut removes junk events, delta electrons, and any of the few pions in the sample below the green line.}
 \label{fig:pid_pr}
 \end{figure}
 
@@ -231,7 +231,7 @@ We can also examine the GC, Figure \ref{fig:pid_gc}, as we did previously. Once 
 \includegraphics[width=1.\linewidth]{PID_GC.png}
 \end{center}
 \caption[PID with the Gas Cherenkov]{
-{\bf{PID with the Gas Cherenkov.}} }
+{\bf{PID with the Gas Cherenkov.}} This plot shows the GC ADC for the six runs used in this analysis. The $X$-axis is in units of ADC channel, and the $Y$-axis is the number of events detected. Pions would be found in the lower energy ADC channels below the red line at channel 80, but that region contains almost no events so there are very few pions in the sample. The area between the red lines at channels 300 and 500 shows where almost all of the particles should be electrons. The two areas where we expect all events to be pions or electrons were only used to check the pion contamination, but they are not applied as cuts to the data.}
 \label{fig:pid_gc}
 \end{figure}
 
@@ -266,7 +266,7 @@ As the electron beam passes through the gaseous $^3$He target it causes the targ
 \includegraphics[width=1.\linewidth]{Boiling_Effect.png}
 \end{center}
 \caption[$^3$He Boiling Effect]{
-{\bf{$^3$He Boiling Effect.}} Image from \cite{Thesis:Ye}.}
+{\bf{$^3$He Boiling Effect.}} The $X$-axis here represents $Z_{react}$ (direction along the cell's long axis) and is in units of meters. The $Y$-axis shows the number of events. The two peaks at either end of the distribution come from the endcaps of the target and are cut from the final sample. The different colored lines represent different beam currents. If the target density was constant throughout the cell the lines between the endcaps would be flat. However, There is clearly a bump around $Z_{react}$ = -0.02 m. Above this value the number of events decreases due to the density of the $^3$He gas decreasing. This decreased density occurs because the cell was unevenly cooled and gas further from the coolant heated decreasing the gas density. Image from \cite{Thesis:Ye}.}
 \label{fig:boiling_effect}
 \end{figure}
 
@@ -341,7 +341,7 @@ Not all of the electrons we detect necessarily come from regions we are interest
 $Y$ Target & -0.03 m & 0.028 m\\ 
 $\theta$ & -0.049 rad & 0.042 rad\\ 
 $\phi$ & -0.03 rad & 0.03 rad\\ 
-$dP$ & -0.02 & 0.03\\ 
+$dP = \frac{P-P_0}{P_0}$ & -0.02 & 0.03\\ 
 \hline
 \end{tabular}
 \caption[Summary of Acceptance Cuts]{{\bf{Summary of Acceptance Cuts}} }
@@ -355,20 +355,20 @@ Each of these cuts was made using several techniques. Let us take the $Y_{target
 \includegraphics[width=1.1\linewidth]{Acceptance_Y.png}
 \end{center}
 \caption[$Y_{target}$ Acceptance]{
-{\bf{$Y_{target}$ Acceptance.}} The red acceptance region runs from -0.03 m to 0.028 m. The bump starting around 0.01 m is due to the increased target density due to the boiling effects discussed in Section \ref{sec:density}.}
+{\bf{$\boldsymbol{Y_{target}}$ Acceptance.}} The red acceptance region runs from -0.03 m to 0.028 m. The peaks at either end of the distribution are from the target's endcaps and were cut from the sample. The bump starting around 0.01 m is due to the increased target density due to the boiling effects discussed in Section \ref{sec:density}.}
 \label{fig:acceptance_y}
 \end{figure}
 
 The second technique involves intentionally using cuts that are too wide, and then continually making the cuts smaller until the cross section result remains stable. When the cuts are too wide regions without the $^3$He gas and/or outside of our kinematic region of interest are accepted giving a cross section value that is dependent on the placements of the cuts. Once the cuts are strict enough to capture only the electrons elastically scattered from $^3$He the cross section becomes stable. Cuts were made such that they accept the maximum number of electrons in the region where the cross section is stable independent of the cuts. Using both techniques the acceptance region for $Y_{target}$ was chosen as the region between -0.03 m to 0.028 m.
 
-Now let us look at the remaining cuts for $\theta$, $\phi$, and $dP$. Figure \ref{fig:acceptance_th} shows a plot of $\theta$ (the out-of-plane angle) for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure \ref{fig:acceptance_ph} shows a plot of $\phi$ (the in-plane angle) for experiment E08-014. This cut was made both visually and with the second method of reducing the cut width until the cross section value becomes stable. The second method is more important for $\phi$ than for $\theta$ since the cross section is more sensitive to $\phi$. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure \ref{fig:acceptance_dp} shows a plot of $dP$ for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The $dP$ cut runs from -0.02 to 0.03, where $dP = \frac{P-P_0}{P_0}$, $P$ is the electron momentum, and $P_0$ is the spectrometer's momentum setting.
+Now let us look at the remaining cuts for $\theta$, $\phi$, and $dP$ (the momentum fraction $dP$ is often also referred to as $\delta$). Figure \ref{fig:acceptance_th} shows a plot of $\theta$ (the out-of-plane angle) for experiment E08-014. This cut was primarily made visually and runs from -0.042 to 0.049 radians. Figure \ref{fig:acceptance_ph} shows a plot of $\phi$ (the in-plane angle) for experiment E08-014. This cut was made both visually and with the second method of reducing the cut width until the cross section value becomes stable. The second method is more important for $\phi$ than for $\theta$ since the cross section is more sensitive to $\phi$. The cut for $\phi$ runs from -0.03 to 0.03 radians. Finally, Figure \ref{fig:acceptance_dp} shows a plot of $dP$ for experiment E08-014. This cut was made mostly using the second method of checking for cross section stability. The $dP$ cut runs from -0.02 to 0.03, where $dP = \frac{P-P_0}{P_0}$, $P$ is the electron momentum, and $P_0$ is the spectrometer's momentum setting.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.1\linewidth]{Acceptance_Theta.png}
 \end{center}
 \caption[$\theta$ Acceptance]{
-{\bf{$\theta$ Acceptance.}} The red acceptance region runs from -0.042 radians to 0.049 radians.}
+{\bf{$\boldsymbol{\theta}$ Acceptance.}} $\theta$ is the out-of-plane angle. The red acceptance region runs from -0.042 radians to 0.049 radians.}
 \label{fig:acceptance_th}
 \end{figure}
 
@@ -377,7 +377,7 @@ Now let us look at the remaining cuts for $\theta$, $\phi$, and $dP$. Figure \re
 \includegraphics[width=1.1\linewidth]{Acceptance_Phi.png}
 \end{center}
 \caption[$\phi$ Acceptance]{
-{\bf{$\phi$ Acceptance.}} The red acceptance region runs from -0.03 radians to 0.03 radians.}
+{\bf{$\boldsymbol{\phi}$ Acceptance.}} $\phi$ is the in-plane angle. The red acceptance region runs from -0.03 radians to 0.03 radians.}
 \label{fig:acceptance_ph}
 \end{figure}
 
@@ -386,7 +386,7 @@ Now let us look at the remaining cuts for $\theta$, $\phi$, and $dP$. Figure \re
 \includegraphics[width=1.1\linewidth]{Acceptance_dP.png}
 \end{center}
 \caption[$dP$ Acceptance]{
-{\bf{$dP$ Acceptance.}} The red acceptance region runs from -0.02 to 0.03.}
+{\bf{$\boldsymbol{dP}$ Acceptance.}} $dP$ is the momentum fraction. The red acceptance region runs from -0.02 to 0.03.}
 \label{fig:acceptance_dp}
 \end{figure}
 
@@ -399,14 +399,14 @@ SIMC requires numerous inputs before generating the initial events. The program 
 
 SIMC then transforms these events back through the spectrometer to their reaction vertex in the target. Along the way it applies energy losses due to multiple scattering as well as ionization and Bremsstrahlung. The spectrometer magnets are modelled using the COSY INFINITY program \cite{cosy}. This program contains the various transformation matrices required to transport particles between the various coordinate systems and through the spectrometer. While being transported through the spectrometer SIMC checks to be sure that all recorded electrons do not strike the walls of the spectrometer or any non-sensitive elements of the detectors in the stack. It also checks that the electrons pass through all apertures in the spectrometer. SIMC also applies a smearing function to the electrons' VDC positions to match the real world VDCs \cite{Thesis:Wang}. 
 
-Let us now compare the results of SIMC to the real experimental data. For all of these plots reasonable physics and acceptance cuts have been applied. Figure \ref{fig:simc_phi} shows the SIMC result for $\phi$ (in-plane angle) in red, and the blue shows the experimental data. The agreement between SIMC and data seems to be fairly good, although the SIMC data may fall off a little more quickly. Figure \ref{fig:simc_theta} shows the SIMC result for $\theta$ (out-of-plane angle) in red, and the blue shows the experimental data. Once again the agreement looks decent, but there seems to be some drop off in the SIMC data in the negative $\theta$ direction.  
+Let us now compare the results of SIMC (red lines) to the real experimental data (blue lines). For all of these plots reasonable physics and acceptance cuts have been applied. The SIMC data was scaled arbitrarily to match the counts of the experimental data. We are only interested in comparing if SIMC matches the shape of the experimental data in the acceptance region of each variable. Figure \ref{fig:simc_phi} shows the SIMC result for $\phi$ (in-plane angle) alongside the experimental data. The agreement between SIMC and data seems to be fairly good, although the SIMC data falls off a little more quickly on the positive side. Figure \ref{fig:simc_theta} shows the SIMC result for $\theta$ (out-of-plane angle) alongside the experimental data. Once again the agreement looks decent, but there seems to be some drop off in the SIMC data in the negative $\theta$ direction. Figure \ref{fig:simc_dp} shows the SIMC result for $dP$ alongside the experimental data. Notice here that the SIMC data was scaled to match the experimental acceptance region of -0.02 to 0.03. The agreement between SIMC and experiment outside of this region is poor, but in the region of our $dP$ acceptance cuts the shapes are in good agreement. The agreement of the shapes of the variables $\phi$, $\theta$, and $dP$ show that SIMC is doing a good job reproducing experimental data.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.\linewidth]{SIMC_vs_Data_Phi.png}
 \end{center}
 \caption[SIMC $\phi$ and Experimental Data $\phi$]{
-{\bf{SIMC $\phi$ and Experimental Data $\phi$.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+{\bf{SIMC $\boldsymbol{\phi}$ and Experimental Data $\boldsymbol{\phi}$.}} $\phi$ is the in-plane angle. The red histogram is the SIMC data, and the blue histogram is the experimental data.}
 \label{fig:simc_phi}
 \end{figure}
 
@@ -415,18 +415,18 @@ Let us now compare the results of SIMC to the real experimental data. For all of
 \includegraphics[width=1.\linewidth]{SIMC_vs_Data_Theta.png}
 \end{center}
 \caption[SIMC $\theta$ and Experimental Data $\theta$]{
-{\bf{SIMC $\theta$ and Experimental Data $\theta$.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+{\bf{SIMC $\boldsymbol{\theta}$ and Experimental Data $\boldsymbol{\theta}$.}} $\theta$ is the out-of-plane angle. The red histogram is the SIMC data, and the blue histogram is the experimental data.}
 \label{fig:simc_theta}
 \end{figure}
 
-Figure \ref{fig:simc_dp} shows the SIMC result for $dP$ in red, and the blue shows the experimental data. Here we see the correct shape, but the SIMC data seems to be shifted a bit. This is probably the result of the optics calibration, and is a known issue with SIMC currently. Past analyses have found that this small offset in $dP$ does not substantially influence the cross section results \cite{dien}. In Section \ref{sec:comparisons} it will be shown that this analysis' cross section result agrees with similar measurements and predictions from other form factor fits.
+%Crap... Figure \ref{fig:simc_dp} shows the SIMC result for $dP$ in red, and the blue shows the experimental data. Here we see the correct shape, but the SIMC data seems to be shifted a bit. This is probably the result of the optics calibration, and is a known issue with SIMC currently. Past analyses have found that this small offset in $dP$ does not substantially influence the cross section results \cite{dien}. In Section \ref{sec:comparisons} it will be shown that this analysis' cross section result agrees with similar measurements and predictions from other form factor fits.
 
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=1.\linewidth]{SIMC_vs_Data_dP.png}
 \end{center}
 \caption[SIMC $dP$ and Experimental Data $dP$]{
-{\bf{SIMC $dP$ and Experimental Data $dP$.}} The red histogram is the SIMC data and the blue histogram is the experimental data.}
+{\bf{SIMC $\boldsymbol{dP}$ and Experimental Data $\boldsymbol{dP}$.}} $dP$ is the momentum fraction. The red histogram is the SIMC data, and the blue histogram is the experimental data.}
 \label{fig:simc_dp}
 \end{figure}
 
@@ -736,7 +736,7 @@ This is almost sufficient to estimate the optics calibration uncertainty. Howeve
 \includegraphics[width=1.1\linewidth]{Solid_Angle_Ytarget.png}
 \end{center}
 \caption[Solid Angle Acceptance of $^3$He Cell in $Y_{target}$]{
-{\bf{Solid Angle Acceptance of $^3$He Cell in $Y_{target}$}} The top left plot shows the electron events distributed in $Y_{target}$. The second from the top left shows the solid angle acceptance for all of $Y_{target}$. The remaining plots show the solid angle acceptance at different slices of $Y_{target}$ every centimeter.}
+{\bf{Solid Angle Acceptance of $^3$He Cell in $\boldsymbol{Y_{target}}$.}} The top left plot shows the electron events distributed in $Y_{target}$. The second from the top left shows the solid angle acceptance ($\theta$ vs. $\phi$) for all of $Y_{target}$. The remaining plots show the solid angle acceptance at different slices of $Y_{target}$ every centimeter in $Y_{target}$ from $Y_{target}$ = -5 cm to $Y_{target}$ = 5 cm. The important thing to notice is that the solid angle acceptance is not constant along $Y_{target}$.}
 \label{fig:solid_angle_ytarget}
 \end{figure}
 
