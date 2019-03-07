@@ -125,9 +125,7 @@ Table \ref{tab:world_data_3h} lists the literature comprising the current world 
 %}%End rotate box.
 \end{landscape}
 
-
-
-The datasets used in the SOG global fits in this thesis are marked with a * after the listed dates. Not all of the datasets could be used in this analysis for various reasons. The most common reason a dataset was not used was simply that the publication did not list its cross section data points explicitly in the publication so they could not be added to the fit. Another common reason was publications listing only the extracted form factors and not cross sections. This is not an issue when the publication also lists the beam energy and scattering angle for each data point (or $Q^2$ and one of either the energy or angle) as the cross section can be computed using these values. However, numerous publications list only the form factors without energies or angles making it impossible to calculate a cross section for each data point to be used in the global fit. Some publications like Arnold 1978 \cite{Article:Arnold} used different ways to parametrize form factors, and whenever possible these methods were converted to cross sections.
+The datasets used in the SOG global fits in this thesis are marked with a * after the listed dates. The datasets that are new as of the previous fits in Amroun \cite{Article:Amroun} are Camsonne \cite{Article:Alex}, Nakagawa \cite{Article:Nakagawa}, and the cross section measurement from this analysis. Not all of the listed datasets could be used in this analysis for various reasons. The most common reason a dataset was not used was simply that the publication did not list its cross section data points explicitly in the publication so they could not be added to the fit. Another common reason was publications listing only the extracted form factors and not cross sections. This is not an issue when the publication also lists the beam energy and scattering angle for each data point (or $Q^2$ and one of either the energy or angle) as the cross section can be computed using these values. However, numerous publications list only the form factors without energies or angles making it impossible to calculate a cross section for each data point to be used in the global fit. Some publications like Arnold 1978 \cite{Article:Arnold} used different ways to parametrize form factors, and whenever possible these methods were converted to cross sections.
 
 \section{Sum of Gaussians Parametrization}
 \label{sec:sog}
@@ -525,7 +523,7 @@ Also note that the inner $Q_i$ parameters have a much wider spread in values tha
   \caption{$Q_{i_{m}}$ parameters for $^3$He with $\chi^2_{max}$ = 500.}
   \label{fig:3he_qm}
 \end{subfigure}
-\caption[$^3$He $Q_i$ Fit Parameters]{{\bf{$^3$He $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
+\caption[$^3$He $Q_i$ Fit Parameters]{{\bf{$^3$He $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from Q$_0$ up to Q$_{11}$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
 \label{fig:3he_qi}
 \end{figure}
 
@@ -546,7 +544,7 @@ We also see that our prior that $R_{max}$ will be $\approx$ 5 fm agrees with the
   \caption{Separation of consecutive $R_i$ values (fm) of fits of $^3$He world data $\chi^2_{max}$ = 500.}
   \label{fig:3he_ri_sep}
 \end{subfigure}
-\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
+\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from R$_0$ up to R$_{11}$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
 \label{fig:3he_ri}
 \end{figure}
 
@@ -627,7 +625,7 @@ Figure \ref{fig:3he_rep_fit} shows plots of the representative charge and magnet
 \label{fig:3he_rep_fit}
 \end{figure}
 
-The representative fits for the $^3$He form factors can also be plotted along with the world data and the previous fit from \cite{Article:Amroun} as shown in Figure \ref{fig:3he_rep_data}. Note that the Amroun fits are deemed valid only up to 35 fm$^{-2}$ but were extended for the sake of comparison. The form factor points shown are derived from Rosenbluth separations performed by the experiments used for this analysis' global fits. There are fewer discreet form factor points plotted than there were cross section data points fitted since the experiments did not perform Rosenbluth separations for each $Q^2$ value due to the time this would take. Some papers, like Amroun 1994, did not publish their form factor data point values explicitly, but instead only plotted these points so they are not shown. Notice that the world data for $F_{ch}$ agrees quite well with both the new and old fits. The only noticeable change is at $Q^2$ $\approx$ 55 fm$^{-2}$ the new point from Camsonne 2016 pulled the form factor down slightly. $F_m$ has changed more with the addition of the new data from Nakagawa 2001, Camsonne 2016, and this analysis' data point. The Nakagawa and Camsonne data have pulled the first difractive minimum higher in $Q^2$, and have decreased its magnitude fairly significantly after the first minimum.
+The representative fits for the $^3$He form factors can also be plotted along with the world data and the previous fit from \cite{Article:Amroun} as shown in Figure \ref{fig:3he_rep_data}. Note that the Amroun fits are deemed valid only up to 35 fm$^{-2}$ but were extended for the sake of comparison. The Cavedon data \cite{Article:Cavedon} shown in Figure \ref{fig:3he_fm_rep_fit} is also in the Amroun paper. The form factor points shown are derived from Rosenbluth separations performed by the experiments used for this analysis' global fits. There are fewer discreet form factor points plotted than there were cross section data points fitted since the experiments did not perform Rosenbluth separations for each $Q^2$ value due to the time this would take. Some papers, like Amroun 1994, did not publish their form factor data point values explicitly, but instead only plotted these points so they are not shown. Notice that the world data for $F_{ch}$ agrees quite well with both the new and old fits. The only noticeable change is at $Q^2$ $\approx$ 55 fm$^{-2}$ the new point from Camsonne 2016 pulled the form factor down slightly. $F_m$ has changed more with the addition of the new data from Nakagawa 2001, Camsonne 2016, and this analysis' data point. The Nakagawa and Camsonne data have pulled the first difractive minimum higher in $Q^2$, and have decreased its magnitude fairly significantly after the first minimum.
 
  \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
@@ -694,16 +692,34 @@ It can also be illuminating to look at the residual of the fit for each data poi
 \label{fig:3he_rep_fit_residual}
 \end{figure}
 
-The representative fits for the charge and magnetic form factor can be combined to yield the full elastic $^3$He cross section using Equation \ref{eq:xs}. Figure \ref{fig:3he_cross_section} shows the elastic $^3$He cross section using the kinematics of experiment E08-014 along with this analysis' new data point. The new cross section measurement is fairly similar to the previous measurement from \cite{Article:Amroun}. The new high $Q^2$ data, including the point from this analysis, have brought the cross section down slightly in the region of $Q^2$ = 30-40 fm$^{-2}$. The new cross section also falls off more quickly above $Q^2$ = 50 fm$^{-2}$ than the previous fit fell off. The majority of this movement is attributable to the changes in the magnetic form factor fit.
+The representative fits for the charge and magnetic form factor can be combined to yield the full elastic $^3$He cross section using Equation \ref{eq:xs}. Figure \ref{fig:3he_cross_section} shows the elastic $^3$He cross section using the kinematics of experiment E08-014 along with this analysis' new data point. The new cross section fit is fairly similar to the previous fit from \cite{Article:Amroun}. The new high $Q^2$ data, including the point from this analysis, have brought the cross section down slightly in the region of $Q^2$ = 30 - 40 fm$^{-2}$. The new cross section also falls off more quickly above $Q^2$ = 50 fm$^{-2}$ than the previous fit fell off. The majority of this movement is attributable to the changes in the magnetic form factor fit. The new cross section measurement from this analysis can be seen better in the zoomed in plot (Figure \ref{fig:3he_fch_rep_fit}). In this plot we see that the new data point is closer to this analysis' cross section fit. The uncertainty on the new data point nearly overlaps with the new cross section fit and is certainly close enough to be consistent with the fit.
 
 \begin{figure}[!ht]
-\begin{center}
-\includegraphics[width=1.0\linewidth]{3He_Cross_Section.png}
-\end{center}
-\caption[$^3$He Elastic Cross Section]{
-{\bf{$^3$He Elastic Cross Section.}} Plot of the $^3$He elastic cross section using the kinematics of experiment E08-014. The red line represents the new $^3$He cross section fit using the new representative form factor fits from this work, and the blue line is the cross section built from the previous form factor fits found in \cite{Article:Amroun}. The black dot represents the new $^3$He cross section measurement from this analysis.}
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Cross_Section.png}
+  \caption{\bf{Log Plot Zoomed Out.}}
+  \label{fig:3he_fch_rep_fit}
+\end{subfigure}\\
+\begin{subfigure}{1.\textwidth}
+  \centering
+  \includegraphics[width=1.\linewidth]{3He_Cross_Section_Zoom.png}
+  \caption{\bf{No Log on $Y$-axis and Zoomed In.}}
+  \label{fig:3he_fm_rep_fit}
+\end{subfigure}
+\caption[$^3$He Elastic Cross Section] {
+{\bf{$^3$He Elastic Cross Section.}} The upper plot is the $^3$He elastic cross section using the kinematics of experiment E08-014 with the $Y$-axis on a log scale. The red line represents the new $^3$He cross section fit using the new representative form factor fits from this work, and the blue line is the cross section built from the previous form factor fits found in \cite{Article:Amroun}. The black dot represents the new $^3$He cross section measurement from this analysis. The lower plot depicts the same functions as the upper plot, but it removes the log on the $Y$-axis and zooms in on the cross section measurement from this analysis.}
 \label{fig:3he_cross_section}
 \end{figure}
+
+%\begin{figure}[!ht]
+%\begin{center}
+%\includegraphics[width=1.0\linewidth]{3He_Cross_Section.png}
+%\end{center}
+%\caption[$^3$He Elastic Cross Section]{
+%{\bf{$^3$He Elastic Cross Section.}} Plot of the $^3$He elastic cross section using the kinematics of experiment E08-014. The red line represents the new $^3$He cross section fit using the new representative form factor fits from this work, and the blue line is the cross section built from the previous form factor fits found in \cite{Article:Amroun}. The black dot represents the new $^3$He cross section measurement from this analysis.}
+%\label{fig:3he_cross_section}
+%\end{figure}
 
 \subsection{Revisiting the E08-014 Cross Section}
 \label{ssec:xs_revisit}
@@ -854,7 +870,7 @@ As was done with $^3$He, the parameters of the $^3$H fits can be plotted for fur
   \caption{$Q_{i_{m}}$ parameters for $^3$H with $\chi^2_{max}$ = 603.}
   \label{fig:3h_qm}
 \end{subfigure}
-\caption[$^3$H $Q_i$ Fit Parameters]{{\bf{$^3$H $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
+\caption[$^3$H $Q_i$ Fit Parameters]{{\bf{$^3$H $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from Q$_0$ up to Q$_7$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
 \label{fig:3h_qi}
 \end{figure}
 
@@ -873,7 +889,7 @@ Plotted in Figure \ref{fig:3h_ri} are the $R_i$ values (\ref{fig:3h_ri_ind}) and
   \caption{Separation of consecutive $R_i$ values (fm) of fits of $^3$H world data $\chi^2_{max}$ = 500.}
   \label{fig:3h_ri_sep}
 \end{subfigure}
-\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
+\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from R$_0$ up to R$_7$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
 \label{fig:3h_ri}
 \end{figure}
 

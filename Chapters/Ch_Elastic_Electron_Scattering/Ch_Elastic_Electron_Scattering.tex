@@ -112,16 +112,20 @@ Let us now examine a simple example of a charge distribution and its form factor
 \caption[Hard Sphere Charge Distribution Form Factor]{
 {\bf{Hard Sphere Charge Distribution Form Factor.}} Taking the Fourier transform of a hard sphere charge distribution (top plot) yields an oscillatory form factor (bottom plot).}
 \label{fig:hard_sphere}
-\end{figure}
+\end{figure} 
 
-As \cite{Book:Povh} points out the location of the minima can be used to learn about the size of the target. For a hard sphere of charge radius, $R$, is roughly given by Equation \ref{eq:minima}, where $\frac{q}{\hbar}$ is the location of the first minima. 
+Next let us examine what a form factor for $^3$He, Figure \ref{fig:3he_rep_fit}, and a form factor for $^3$H, Figure \ref{fig:3h_rep_fit}, look like. They each have the oscillatory behavior predicted by the hard sphere of charge model indicating that their charge densities can be modelled similarly (in reality their charge densities decrease gradually with distance and not all at once). It is also interesting to study the form factors of individual nucleons like the proton. One might expect to find a minimum in the proton's form factors as well, however no such minimum is observed. This is because the proton's charge form factor cannot be found by taking the Fourier transform of the proton's charge density since for the Fourier transform to be valid the recoil of the system must be small. Since the proton is relatively light the recoil is not negligible so the Fourier transform is not valid. This explains why we do not observe a minimum in the proton form factor.  
+
+As \cite{Book:Povh} points out the location of the minima can be used to learn about the size of the target. For a hard sphere of charge the charge radius, $R$, is roughly given by Equation \ref{eq:minima}, where $\frac{q}{\hbar}$ is the location of the first minima. Let us use this relation and compare the locations of the first minima in $F_{ch}$ for $^3$He (Figure \ref{fig:3he_fch_rep_fit}) and $^3$H (Figure \ref{fig:3h_fch_rep_fit}) ($F_{ch}$ is discussed in more detail below, but it represents the Fourier transform of the electric charge density). We see that the first minimum for $^3$He is found around $Q^2$ $\approx$ 11 fm$^{-2}$, and the first minimum for $^3$H is found around $Q^2$ $\approx$ 13 fm$^{-2}$. Equation \ref{eq:minima} then predicts that $^3$He will have a larger charge radius than $^3$H. 
 
 \begin{equation} \label{eq:minima}
 	R \approx \frac{4.5 \hbar}{q}
 	\text{\equationlabels{Approximate Charge Radius of a Hard Sphere of Charge}}
 \end{equation}
 
-\noindent However, one can also study the charge radius by examining the behavior of the charge density as it approaches zero. This can be seen by expanding the form factor in $q$ from the first integral in Equation \ref{eq:fourier}. Euler's formula, $e^{ix} = \cos(x)+i\sin(x)$, begins the expansion of the exponent, but we are still left with a troublesome $i\sin(x)$ term. This $i\sin(x)$ term can be eliminated by assuming that the wavelength of the electron, $\frac{\hbar}{q}$, is much larger than the charge radius, $R$, as in Equation \ref{eq:large_wavelength}.
+Let's examine if this prediction agrees with our expectations. $^3$He contains two protons and a neutron, whereas $^3$H contains one proton and two neutrons. The nuclei of these atoms are held together by the strong force while the Coulomb force pushes against this binding force. $^3$He has more charge due to having two protons, and thus the Coulomb force for $^3$He will be stronger than that of $^3$H. Therefore, we expect $^3$He to have a larger charge radius than $^3$H as there is a larger Coulomb force pushing the charge radius out against the strong force. 
+
+One can also study the charge radius by examining the behavior of the charge density as it approaches zero. This can be seen by expanding the form factor in $q$ from the first integral in Equation \ref{eq:fourier}. Euler's formula, $e^{ix} = \cos(x)+i\sin(x)$, begins the expansion of the exponent, but we are still left with a troublesome $i\sin(x)$ term. This $i\sin(x)$ term can be eliminated by assuming that the wavelength of the electron, $\frac{\hbar}{q}$, is much larger than the charge radius, $R$, as in Equation \ref{eq:large_wavelength}.
 
 \begin{equation} \label{eq:large_wavelength}
 	R \ll \frac{\hbar}{q} \implies \frac{Rq}{\hbar} \ll 1
