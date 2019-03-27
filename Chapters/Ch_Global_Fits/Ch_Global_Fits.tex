@@ -146,7 +146,7 @@ One of the first physical restrictions that can be applied by the SOG parametriz
 
 %Paraphrasing Sick, a second restriction comes from the fact that the amplitudes of the high frequency components of the nuclear wave functions have limits placed on them. This can be seen by noting that the Schr{\"o}dinger equation strongly couples the second derivative of the radial wave functions to the proton's separation energy. This implies that the proton will become less bound for larger amplitudes and shorter wavelengths of the radial wave functions. This is yet another reason to forbid certain structures in the nuclear charge density smaller than a certain width \cite{Article:SOG}. %Just cut this out. It's just reinforcing the paragraph above it and I don't understand it well enough to defend it.
 
-Gaussians are used to build the structure of the fits since they mimic the peaks of the radial wave functions. They also fall off quickly enough so as to not strongly interfere with other Gaussians not nearby them satisfying rule 2 above. Gaussians also work well with the rules and limitations imposed earlier. One can write the nuclear charge density as shown in Equation \ref{eq:sog_rho_no_tail}, where the charge density is represented as a sum of numerous Gaussians set at different radii $R_i$ (an example is given later in this section and can be seen in Figure \ref{fig:gaus_rho}). The $A_i$ amplitudes are fitted to the cross sectional data. These Gaussians have their full width at half maximum restricted by the parameter $\gamma$ as required by the physical restrictions imposed above. The smallest width structure allowed is given by $\Gamma$ where $\Gamma = 2\gamma \sqrt{\ln(2)}$ \cite{Article:SOG}. 
+Gaussians are used to build the structure of the fits since they fall off quickly enough so as to not strongly interfere with other Gaussians not nearby them, satisfying rule 2 above, while also being quite flexible when summed to mimic a distribution. Gaussians also work well with the rules and limitations imposed earlier. However, one should note that the Gaussians have no physical meaning themselves. One can write the nuclear charge density as shown in Equation \ref{eq:sog_rho_no_tail}, where the charge density is represented as a sum of numerous Gaussians set at different radii $R_i$ (an example is given later in this section and can be seen in Figure \ref{fig:gaus_rho}). The cross sections are then fitted using the $A_i$ as the free parameters. These Gaussians have their full width at half maximum restricted by the parameter $\gamma$ as required by the physical restrictions imposed above. The smallest width structure allowed is given by $\Gamma$ where $\Gamma = 2\gamma \sqrt{\ln(2)}$ \cite{Article:SOG}. %Gaussians are used to build the structure of the fits since they mimic the peaks of the radial wave functions. %The $A_i$ amplitudes are fitted to the cross sectional data. 
 
 \begin{equation} \label{eq:sog_rho_no_tail}
 	\rho(r) \propto \sum_{i=1}^N A_i e^{-\left( r-R_i \right)^2/\gamma^2}
@@ -249,18 +249,18 @@ Once the $R_i$ are selected each combination of $R_i$ are fitted using the SOG p
 	\text{\equationlabels{$\chi^2$}}
 \end{equation}
 
-Initial $R_i$ spacings tend to be fairly unfavorable and produce large $\chi^2$ values and strangely shaped form factors. To minimize the $\chi^2$ as much as possible the $R_i$ values need to be allowed to shift. This is accomplished by first fitting the data with an initial set of $R_i$ values. After the initial fit is done each of the $R_i$ values is then optimized. If R$_0$ was initially 0.2 fm the fit would then be redone with R$_0$ = 0.1 fm and then R$_0$ = 0.3 fm. The $R_i$ are each shifted up and down 0.1 fm until $\chi^2$ gets larger. The $R_i$ that yielded the smallest $\chi^2$ is then kept as the `optimal' $R_i$. Once this procedure is completed for each $R_i$ in ascending order the lowest, or at least close to the lowest, $\chi^2$ value for $R_i$ similar to the initial $R_i$ has been found.  
+Initial $R_i$ spacings tend to be fairly unfavorable and produce large $\chi^2$ values and strangely shaped form factors. To minimize the $\chi^2$ as much as possible the $R_i$ values need to be allowed to shift. This is accomplished by first fitting the data with an initial set of $R_i$ values. After the initial fit is done each of the $R_i$ values is then optimized. If $R_0$ was initially 0.2 fm the fit would then be redone with $R_0$ = 0.1 fm and then $R_0$ = 0.3 fm. The $R_i$ are each shifted up and down 0.1 fm until $\chi^2$ gets larger. The $R_i$ that yielded the smallest $\chi^2$ is then kept as the `optimal' $R_i$. Once this procedure is completed for each $R_i$ in ascending order the lowest, or at least close to the lowest, $\chi^2$ value for $R_i$ similar to the initial $R_i$ has been found.  
 
-As an example, let us examine the initial $R_i$ spacings for $^3$H using eight Gaussians (see Figure \ref{fig:gaus_rho} to see what the individual Gaussians look like). While the order of the Gaussians is irrelevant it is easier to code the $R_i$ in ascending radii length. Next we choose R$_0$-R$_7$ to meet the rules defined above. We want all of the $R_i$ to sum to approximately 5 fm, and the $R_i$ spacing between consecutive Gaussians should be smaller at smaller radii. For $^3$H with eight Gaussians the initial $R_i$ spacing is produced within given ranges randomly and then optimized as previously described. The ranges for the $R_i$ spacings are divided in steps of 0.1 fm. The first Gaussian is placed near R = 0 fm and was chosen to be R$_0$ = 0.2-0.3 fm. This means that R$_0$ was randomly selected to initially be 0.2 fm or 0.3 fm. Note that an R$_0$ of 0 fm leads to poles in the parametrization. To avoid this issue a small number is used in place of 0 if R$_0$ = 0 fm is found to be the optimal radius. 
+As an example, let us examine the initial $R_i$ spacings for $^3$H using eight Gaussians (see Figure \ref{fig:gaus_rho} to see what the individual Gaussians look like). While the order of the Gaussians is irrelevant it is easier to code the $R_i$ in ascending radii length. Next we choose $R_0$-$R_7$ to meet the rules defined above. We want all of the $R_i$ to sum to approximately 5 fm, and the $R_i$ spacing between consecutive Gaussians should be smaller at smaller radii. For $^3$H with eight Gaussians the initial $R_i$ spacing is produced within given ranges randomly and then optimized as previously described. The ranges for the $R_i$ spacings are divided in steps of 0.1 fm. The first Gaussian is placed near R = 0 fm and was chosen to be $R_0$ = 0.2-0.3 fm. This means that $R_0$ was randomly selected to initially be 0.2 fm or 0.3 fm. Note that an $R_0$ of 0 fm leads to poles in the parametrization. To avoid this issue a small number is used in place of 0 if $R_0$ = 0 fm is found to be the optimal radius. 
 
-After the first Gaussian is placed at R$_0$ Gaussians R$_{1-7}$ are placed by semi-randomly choosing their distance from the radii prior to them. The spacing for R$_{1-4}$ = 0.5-0.6 fm and for R$_{5-7}$ = 0.8-0.9 fm chosen randomly in the same manner as R$_0$. Notice that the radii further from the nucleus are placed approximately twice as far apart as the inner radii in accordance with the rules previously described. We can take the average spacing of each consecutive radius and sum them to find $R_{max}$. Doing this we find 0.25 fm + 4$\times$0.55 fm + 3$\times$0.85 fm = 5 fm which is the target $R_{max}$. This process is then repeated for hundreds of semi-randomly generated $R_i$ sets which span the model space for $^3$H and $^3$He. 
+After the first Gaussian is placed at $R_0$ Gaussians $R_{1-7}$ are placed by semi-randomly choosing their distance from the radii prior to them. The spacing for $R_{1-4}$ = 0.5-0.6 fm and for $R_{5-7}$ = 0.8-0.9 fm chosen randomly in the same manner as $R_0$. Notice that the radii further from the nucleus are placed approximately twice as far apart as the inner radii in accordance with the rules previously described. We can take the average spacing of each consecutive radius and sum them to find $R_{max}$. Doing this we find 0.25 fm + 4$\times$0.55 fm + 3$\times$0.85 fm = 5 fm which is the target $R_{max}$. This process is then repeated for hundreds of semi-randomly generated $R_i$ sets which span the model space for $^3$H and $^3$He. 
 
 \subsection{Number of Gaussians}
 \label{ssec:ngaus}
 
-To utilize the SOG parametrization it is necessary to select the number of Gaussians, N$_{Gaus}$, to use for each fit. This process involves balancing several competing interests. If too few Gaussians are used the structure of the form factors may not be described in enough detail, but if too many Gaussians are used the data may be overfit. Overfitting would lead to the statistical noise in the data being mistaken for signal. The goal is then to fit the data as well as possible with no more parameters than required. A commonly used tool for selecting the best model is to calculate the $\chi^2$ value for a fit, however $\chi^2$ alone is insufficient and can often be deceptive and lead to issues such as overfitting \cite{doug_stats}. 
+To utilize the SOG parametrization it is necessary to select the number of Gaussians, $N_{Gaus}$, to use for each fit. This process involves balancing several competing interests. If too few Gaussians are used the structure of the form factors may not be described in enough detail, but if too many Gaussians are used the data may be overfit. Overfitting would lead to the statistical noise in the data being mistaken for signal. The goal is then to fit the data as well as possible with no more parameters than required. A commonly used tool for selecting the best model is to calculate the $\chi^2$ value for a fit, however $\chi^2$ alone is insufficient and can often be deceptive and lead to issues such as overfitting \cite{doug_stats}. 
 
-To avoid this issue numerous other tests and metrics were applied when selecting N$_{Gaus}$ for $^3$H and $^3$He. Among these are the $\chi^2$ value, the reduced $\chi^2$ value, Bayesian information criterion, Akaike information criterion, the sums of the fractions of the electric and magnetic charges held by the Gaussians, the percentage of fits that were deemed `good', and finally a visual inspection of the form factors for known physical characteristics \cite{doug_stats}. By combining these different tests it is possible to determine the number of Gaussians that provide an optimal fit. Note that it is not uncommon for two consecutive numbers of Gaussians to yield reasonably similar fits.
+To avoid this issue numerous other tests and metrics were applied when selecting $N_{Gaus}$ for $^3$H and $^3$He. Among these are the $\chi^2$ value, the reduced $\chi^2$ value, Bayesian information criterion, Akaike information criterion, the sums of the fractions of the electric and magnetic charges held by the Gaussians, the percentage of fits that were deemed `good', and finally a visual inspection of the form factors for known physical characteristics \cite{doug_stats}. By combining these different tests it is possible to determine the number of Gaussians that provide an optimal fit. Note that it is not uncommon for two consecutive numbers of Gaussians to yield reasonably similar fits.
 
 Reduced $\chi^2$, or $\chi^2_r$, is similar to $\chi^2$ from Equation \ref{eq:chi2} except that it takes the number of data points and the number of parameters used in the fit in to account. The equation for reduced $\chi^2$ used in this analysis is given in Equation \ref{eq:rchi2}, where $\chi^2$ is from \ref{eq:chi2}, $N$ is the number of data points in the fit, and $N_{var}$ is the number of free parameters, or variables, used in the fit. Note that while $\chi^2$ must always decrease with the number of parameters added $\chi^2_r$ can increase if too many parameters have been added. This makes finding the fits with the lowest $\chi^2_r$ an elementary, but still useful, test that the proper number of parameters are being use to describe the data.
 
@@ -285,20 +285,20 @@ When selecting the number of Gaussians to use the sum of the electric and magnet
 
 Finally a visual inspection of the form factors is applied. It is known that the form factors should have sharp minima as discussed in Section \ref{sec:ffs}. Often the fits will have only a dip in the form factor where a sharp minimum should exist and can thus be discarded. An example of this is seen in Figure \ref{fig:3he_fch_no_cut}. These nonphysical dip only fits tend to have higher $\chi^2$ values so cutting on $\chi^2$ can generally eliminate them. More specifically, this is done by plotting the charge form factor, $F_{ch}$, and lowering the $\chi^2$ cut until all of the dip only minima fits are removed leaving only the sharp minima expected. These remaining fits are deemed to be the `good' fits. This process is done with the charge form factor as we have better data there. This procedure generally improves the corresponding magnetic form factors as well, but the lack of high $Q^2$ data for $F_m$ leads to more nonphysical or odd fits of $F_m$.
 
-When fitting with any number of Gaussians many of the resulting fits do not meet the definition of a `good' fit described above. The ratio of the `good' fits to total fits attempted is representative of the likelihood of fits of N$_{Gaus}$ to converge to physical looking fits. Assume N$_{Gaus}$ = 9 gives a `good' fit 40$\%$ of the time, and N$_{Gaus}$ = 8 gives a `good' fit 5$\%$ of the time and has a slightly lower average BIC than N$_{Gaus}$ = 9. This analysis takes the low convergence rate as evidence against the slightly lower BIC results and may favor the marginally higher BIC results due to their better convergence rate assuming $\Delta$BIC between the two average BIC values is small. 
+When fitting with any number of Gaussians many of the resulting fits do not meet the definition of a `good' fit described above. The ratio of the `good' fits to total fits attempted is representative of the likelihood of fits of $N_{Gaus}$ to converge to physical looking fits. Assume $N_{Gaus}$ = 9 gives a `good' fit 40$\%$ of the time, and $N_{Gaus}$ = 8 gives a `good' fit 5$\%$ of the time and has a slightly lower average BIC than $N_{Gaus}$ = 9. This analysis takes the low convergence rate as evidence against the slightly lower BIC results and may favor the marginally higher BIC results due to their better convergence rate assuming $\Delta$BIC between the two average BIC values is small. 
 
 Previous analyses have also done a good job locating the first minima of the form factors and can be used to check the reasonableness of this analysis' fits. For example \cite{Article:Amroun} locates the first minima of both $^3$H and $^3$He fairly well, and \cite{Article:Alex} does the same for $^3$He. If this analysis' results diverge significantly in the previously well understood regions that is taken to be a strike against the model selected. Note that some movement in the $^3$He magnetic form factor is not unexpected since new high $Q^2$ data is being incorporated into this analysis.
 
-Now that we have established the tools with which to select a model let us determine how many Gaussians to use when fitting $^3$H and $^3$He. $^3$He will be examined first due to there being more, and often higher quality, data for $^3$He than $^3$H. The method used to determine the number of Gaussians (i.e. the model) to use to fit the data was to run 100 fits of the $^3$He world data for each reasonable value of N$_{Gaus}$. Then the various tests and metrics laid out above were computed for that value of N$_{Gaus}$. These results were then compared and the `optimal' number of Gaussians was determined.
+Now that we have established the tools with which to select a model let us determine how many Gaussians to use when fitting $^3$H and $^3$He. $^3$He will be examined first due to there being more, and often higher quality, data for $^3$He than $^3$H. The method used to determine the number of Gaussians (i.e. the model) to use to fit the data was to run 100 fits of the $^3$He world data for each reasonable value of $N_{Gaus}$. Then the various tests and metrics laid out above were computed for that value of $N_{Gaus}$. These results were then compared and the `optimal' number of Gaussians was determined.
 
-Table \ref{tab:3he_ngaus} shows the results of this model selection analysis for $^3$He. All of the values in the table are averages of the surviving `good' fits and the best values are bolded as is the final selection for N$_{Gaus}$. $\chi^2_{max}$ is the maximum $\chi^2$ cut that removed all of the nonphysical dip minima in the charge form factor, and `Good Fits' is the number of the 100 fits that survived this cut. Note that not all of these factors are weighted equally. The highest preference is given to BIC and AIC followed by $\chi^2_r$ and visually inspecting the form factors. The other factors add more detailed information and are used more as tiebreakers and to raise red flags if something major is wrong.
+Table \ref{tab:3he_ngaus} shows the results of this model selection analysis for $^3$He. All of the values in the table are averages of the surviving `good' fits and the best values are bolded as is the final selection for $N_{Gaus}$. $\chi^2_{max}$ is the maximum $\chi^2$ cut that removed all of the nonphysical dip minima in the charge form factor, and `Good Fits' is the number of the 100 fits that survived this cut. Note that not all of these factors are weighted equally. The highest preference is given to BIC and AIC followed by $\chi^2_r$ and visually inspecting the form factors. The other factors add more detailed information and are used more as tiebreakers and to raise red flags if something major is wrong.
 
 %\begin{table}[!h]
 %\centering
 %\begin{tabular}{|c c c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 %\hline
 %8 & 584.902 & 2.41695 & 255.440 & 223.228 & \textbf{1.00769} & 1.11065 & 765 & 11 \\
 %9 & 470.435 & 1.96014 & 204.590 & 172.375 & 1.00851 & \textbf{1.02161} & 521 & 58 \\
@@ -308,7 +308,7 @@ Table \ref{tab:3he_ngaus} shows the results of this model selection analysis for
 %13 & 439.084 & 1.89260 & 208.924 & 162.685 & 1.00947 & 1.03975 & 500 & 56 \\
 %\hline
 %\end{tabular}
-%\caption{\bf{Determination of N$_{Gaus}$ for $^3$He}}
+%\caption{\bf{Determination of $N_{Gaus}$ for $^3$He}}
 %\label{tab:3he_ngaus}
 %\end{table}
 
@@ -318,7 +318,7 @@ Table \ref{tab:3he_ngaus} shows the results of this model selection analysis for
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$} & \textbf{$\boldsymbol{\chi^2_{max}}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 \hline
 8 & 584.9 & 2.417 & 255.4 & 223.2 & \textbf{1.008} & 1.111 & 765 & 11 \\
 9 & 470.4 & 1.960 & 204.6 & 172.4 & 1.009 & \textbf{1.021} & 521 & 58 \\
@@ -328,24 +328,24 @@ Table \ref{tab:3he_ngaus} shows the results of this model selection analysis for
 13 & 439.1 & 1.893 & 208.9 & 162.7 & 1.009 & 1.040 & 500 & 56 \\
 \hline
 \end{tabular}
-\caption[Determination of N$_{Gaus}$ for $^3$He]{{\bf{Determination of N$_{Gaus}$ for $^3$He.}} Statistical values used to determine the optimal N$_{Gaus}$ to use for the SOG fits from an initial sample of 100 fits for each value N$_{Gaus}$. N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Good Fits' is the number of fits out of 100 that converged to `goodness'. The optimal value for each variable is bolded.}
+\caption[Determination of $N_{Gaus}$ for $^3$He]{{\bf{Determination of $\boldsymbol{N_{Gaus}}$ for $^3$He.}} Statistical values used to determine the optimal $N_{Gaus}$ to use for the SOG fits from an initial sample of 100 fits for each value $N_{Gaus}$. $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Good Fits' is the number of fits out of 100 that converged to `goodness'. The optimal value for each variable is bolded.}
 \label{tab:3he_ngaus}
 \end{table}
 
-Examining Table \ref{tab:3he_ngaus} it is clear that no model had the best value in every category so some further analysis is required to select N$_{Gaus}$ for $^3$He. N$_{Gaus}$ = 12 has the best value in both $\chi^2_r$ and AIC which are both important metrics. Examining the BIC it is seen that N$_{Gaus}$ = 12 and N$_{Gaus}$ = 11 have nearly identical BIC values. In fact $\Delta$BIC$<0.4$ which indicates a negligible preference between the models. All of the $\sum Q_{i_{ch}}$ values are fairly close offering little insight. The $\sum Q_{i_{m}}$ value for N$_{Gaus}$ = 12 is on the better end of the spectrum as well. N$_{Gaus}$ = 12 also had the most fits converge to be designated good fits with physical looking charge form factors. N$_{Gaus}$ = 12 further had the lowest average $\chi^2$ value, but this metric can be misleading as $\chi^2$ must always decrease as the number of parameters increases. However, because of the different $R_i$ configurations and averaging the $\chi^2$ results for the fits the average $\chi^2$ shown in the table does not always have to decrease with increasing N$_{Gaus}$. Upon reviewing these metrics, it is fairly clear the N$_{Gaus}$ = 12 is the best model to use for fitting the $^3$He data.
+Examining Table \ref{tab:3he_ngaus} it is clear that no model had the best value in every category so some further analysis is required to select $N_{Gaus}$ for $^3$He. $N_{Gaus}$ = 12 has the best value in both $\chi^2_r$ and AIC which are both important metrics. Examining the BIC it is seen that $N_{Gaus}$ = 12 and $N_{Gaus}$ = 11 have nearly identical BIC values. In fact $\Delta$BIC$<0.4$ which indicates a negligible preference between the models. All of the $\sum Q_{i_{ch}}$ values are fairly close offering little insight. The $\sum Q_{i_{m}}$ value for $N_{Gaus}$ = 12 is on the better end of the spectrum as well. $N_{Gaus}$ = 12 also had the most fits converge to be designated good fits with physical looking charge form factors. $N_{Gaus}$ = 12 further had the lowest average $\chi^2$ value, but this metric can be misleading as $\chi^2$ must always decrease as the number of parameters increases. However, because of the different $R_i$ configurations and averaging the $\chi^2$ results for the fits the average $\chi^2$ shown in the table does not always have to decrease with increasing $N_{Gaus}$. Upon reviewing these metrics, it is fairly clear the $N_{Gaus}$ = 12 is the best model to use for fitting the $^3$He data.
 
 Table \ref{tab:3h_ngaus} mirrors Table \ref{tab:3he_ngaus} and shows the results of this model selection analysis for $^3$H. It is immediately obvious that the $\chi^2$ values are larger for $^3$H than they were for $^3$He. This is because the world data for $^3$H is less complete than that of $^3$He, especially at higher $Q^2$, and the quality of the data is not as good as that of $^3$He. The $\sum Q_i$ values are also further from unity with the magnetic charges being especially far off. Once again, this is a product of the dearth of high $Q^2$ and back angle data in the world data. If more $^3$H data could be obtained at high $Q^2$ and large back angles the reduced $\chi^2$ would likely decrease. The poor $\sum Q_{i_{m}}$ agreement with the expectation of unity also demonstrates the analysis value of not forcing the $Q_i$ to sum to unity which could hide the need for more high $Q^2$ and back angle data.
 
-There are two entries for N$_{Gaus}$ = 8 labelled close and wide. These refer to the initial spacing of the $R_i$ values. For the close entry R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.3-0.4, and R$_{5-7}$ = 0.5-0.6, and for the wide entry R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section \ref{ssec:radii}. This meant for the close $R_i$ the average starting $R_{max}$ = 3.3 fm and for the wide spacing $R_{max}$ = 5 fm which is what we expect from previous analyses \cite{Article:Amroun}. This test was done to see if the final fit results depended strongly on the starting $R_i$ spacing, or if the $R_i$ optimization produced consistent results with less reasonable initial $R_i$ values.
+There are two entries for $N_{Gaus}$ = 8 labelled close and wide. These refer to the initial spacing of the $R_i$ values. For the close entry $R_0$ = 0.2-0.3, $R_{1-4}$ = 0.3-0.4, and $R_{5-7}$ = 0.5-0.6, and for the wide entry $R_0$ = 0.2-0.3, $R_{1-4}$ = 0.5-0.6, and $R_{5-7}$ = 0.8-0.9 as explained in Section \ref{ssec:radii}. This meant for the close $R_i$ the average starting $R_{max}$ = 3.3 fm and for the wide spacing $R_{max}$ = 5 fm which is what we expect from previous analyses \cite{Article:Amroun}. This test was done to see if the final fit results depended strongly on the starting $R_i$ spacing, or if the $R_i$ optimization produced consistent results with less reasonable initial $R_i$ values.
 
-Fortunately, the results for the closer and wider $R_i$ spacings come out very similar indicating that the initial choice of $R_i$ does not significantly change the final result. This test had also previously been done for $^3$He with N$_{Gaus}$ = 10 with similar results to $^3$H with N$_{Gaus}$ = 8. The major difference between the initial spacings was that the closer, less reasonable, $R_i$ took longer for the $R_i$ optimization code to process. This was because the code had to check more values for each $R_i$ before finding similar optimal values to the larger initial $R_i$ spacings. The close $R_i$ also had fewer fits converge to be designated `good' fits indicating that more of the initial $R_i$ were unfavorable models than the wider spacings. We can conclude that if the initial $R_i$ distributions are off the final fit results should generally still be reliable, but they may take longer to process and have fewer fits converge to be deemed `good'.  
+Fortunately, the results for the closer and wider $R_i$ spacings come out very similar indicating that the initial choice of $R_i$ does not significantly change the final result. This test had also previously been done for $^3$He with $N_{Gaus}$ = 10 with similar results to $^3$H with $N_{Gaus}$ = 8. The major difference between the initial spacings was that the closer, less reasonable, $R_i$ took longer for the $R_i$ optimization code to process. This was because the code had to check more values for each $R_i$ before finding similar optimal values to the larger initial $R_i$ spacings. The close $R_i$ also had fewer fits converge to be designated `good' fits indicating that more of the initial $R_i$ were unfavorable models than the wider spacings. We can conclude that if the initial $R_i$ distributions are off the final fit results should generally still be reliable, but they may take longer to process and have fewer fits converge to be deemed `good'.  
 
 %\begin{table}[!h]
 %\centering
 %\begin{tabular}{|c c c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 %\hline
 %7 & 611.690 & 2.79310 & \textbf{263.039} & 238.851 & \textbf{1.08373} & 1.32730 & 611.7 & 1\\
 %8 close & 601.836 & 2.77344 & 264.694 & 237.051 & 1.09013 & 1.32859 & 603 & 32\\
@@ -355,7 +355,7 @@ Fortunately, the results for the closer and wider $R_i$ spacings come out very s
 %11 & \textbf{600.750} & \textbf{2.77305} & 280.637 & 242.629 & 1.08699 & 1.34100 & 602 & 88\\
 %\hline
 %\end{tabular}
-%\caption{\bf{Determination of N$_{Gaus}$ for $^3$H}}
+%\caption{\bf{Determination of $N_{Gaus}$ for $^3$H}}
 %\label{tab:3h_ngaus}
 %\end{table}
 
@@ -365,7 +365,7 @@ Fortunately, the results for the closer and wider $R_i$ spacings come out very s
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$} & \textbf{$\boldsymbol{\chi^2_{max}}$} & \makecell{\textbf{`Good'}\\ \textbf{Fits}} \\
 \hline
 7 & 611.7 & 2.793 & \textbf{263.0} & 238.9 & \textbf{1.084} & 1.327 & 611.7 & 1\\
 8 close & 601.8 & \textbf{2.773} & 264.7 & 237.1 & 1.090 & 1.329 & 603 & 32\\
@@ -375,16 +375,16 @@ Fortunately, the results for the closer and wider $R_i$ spacings come out very s
 11 & \textbf{600.8} & \textbf{2.773} & 280.6 & 242.6 & 1.087 & 1.341 & 602 & 88\\
 \hline
 \end{tabular}
-\caption[Determination of N$_{Gaus}$ for $^3$H]{{\bf{Determination of N$_{Gaus}$ for $^3$H.}} Statistical values used to determine the optimal N$_{Gaus}$ to use for the SOG fits from an initial sample of 100 fits for each value N$_{Gaus}$. N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Good Fits' is the number of fits out of 100 that converged to `goodness'. The optimal value for each variable is bolded.}
+\caption[Determination of $N_{Gaus}$ for $^3$H]{{\bf{Determination of $\boldsymbol{N_{Gaus}}$ for $^3$H.}} Statistical values used to determine the optimal $N_{Gaus}$ to use for the SOG fits from an initial sample of 100 fits for each value $N_{Gaus}$. $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Good Fits' is the number of fits out of 100 that converged to `goodness'. The optimal value for each variable is bolded.}
 \label{tab:3h_ngaus}
 \end{table}
 
-Again, the agreement between the metrics is not unanimous, and in fact it is even less clear than for $^3$He. Let us begin by examining the lowest BIC value for N$_{Gaus}$ = 7. The other metrics also look decent until one notices that only one fit met the standards for a `good' fit. This failure for the vast majority of fits to look physical indicates that N$_{Gaus}$ = 7 is probably not a good choice for the best model. Examining the lowest AIC value for the wider $R_i$ spacings and N$_{Gaus}$ = 8 the other metrics look acceptable with a reasonable number of fits converging to `goodness'. $\Delta$BIC for the wider $R_i$ spacings and N$_{Gaus}$ = 8 compared to N$_{Gaus}$ = 7 is only 1.6 indicating that there is little reason to prefer one model over the other. The higher Gaussian fits look reasonable as well, but the AIC, and especially BIC, grow significantly as N$_{Gaus}$ increases ruling out these fits. The closer spacing for N$_{Gaus}$ = 8 was eliminated for the reasons discussed above like taking longer to process and having fewer fits converge but yielding similar results to the wider spaced $R_i$ models. Accounting for all of this we select N$_{Gaus}$ = 8 with the wider initial $R_i$ spacings.
+Again, the agreement between the metrics is not unanimous, and in fact it is even less clear than for $^3$He. Let us begin by examining the lowest BIC value for $N_{Gaus}$ = 7. The other metrics also look decent until one notices that only one fit met the standards for a `good' fit. This failure for the vast majority of fits to look physical indicates that $N_{Gaus}$ = 7 is probably not a good choice for the best model. Examining the lowest AIC value for the wider $R_i$ spacings and $N_{Gaus}$ = 8 the other metrics look acceptable with a reasonable number of fits converging to `goodness'. $\Delta$BIC for the wider $R_i$ spacings and $N_{Gaus}$ = 8 compared to $N_{Gaus}$ = 7 is only 1.6 indicating that there is little reason to prefer one model over the other. The higher Gaussian fits look reasonable as well, but the AIC, and especially BIC, grow significantly as $N_{Gaus}$ increases ruling out these fits. The closer spacing for $N_{Gaus}$ = 8 was eliminated for the reasons discussed above like taking longer to process and having fewer fits converge but yielding similar results to the wider spaced $R_i$ models. Accounting for all of this we select $N_{Gaus}$ = 8 with the wider initial $R_i$ spacings.
 
 \subsection{$^3$He Fits}
 \label{ssec:3he_fits}
 
-Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred fits with pseudorandom starting $R_i$ values along with the $R_i$ optimization procedure. The initial spacing of the $R_i$ values for these fits was R$_0$ = 0.1-0.2, R$_{1-6}$ = 0.3-0.4, and R$_{7-11}$ = 0.5-0.6 as explained in Section \ref{ssec:radii}. A total of 1352 individual fits using the pseudorandom $R_i$ values were generated. Table \ref{tab:3he_fits} shows the results of these 1352 fits without any $\chi^2_{max}$ cut and with a $\chi^2_{max}$ = 500 in the same fashion as Tables \ref{tab:3he_ngaus} and \ref{tab:3h_ngaus}. This $\chi^2$ cut was determined by decreasing the value of the cut until all of the F$_{ch}$ form factors had nicely defined sharp first minima and the unphysical form factors were eliminated as discussed in Section \ref{ssec:ngaus}. 852 fits survive the $\chi^2$ cut of 500, and the remaining fits have charge form factors with the desired sharp minima.
+Now that we have selected $N_{Gaus}$ = 12 for $^3$He we can run several hundred fits with pseudorandom starting $R_i$ values along with the $R_i$ optimization procedure. The initial spacing of the $R_i$ values for these fits was $R_0$ = 0.1-0.2, $R_{1-6}$ = 0.3-0.4, and $R_{7-11}$ = 0.5-0.6 as explained in Section \ref{ssec:radii}. A total of 1352 individual fits using the pseudorandom $R_i$ values were generated. Table \ref{tab:3he_fits} shows the results of these 1352 fits without any $\chi^2_{max}$ cut and with a $\chi^2_{max}$ = 500 in the same fashion as Tables \ref{tab:3he_ngaus} and \ref{tab:3h_ngaus}. This $\chi^2$ cut was determined by decreasing the value of the cut until all of the F$_{ch}$ form factors had nicely defined sharp first minima and the unphysical form factors were eliminated as discussed in Section \ref{ssec:ngaus}. 852 fits survive the $\chi^2$ cut of 500, and the remaining fits have charge form factors with the desired sharp minima.
 
 %\vspace{6mm}
 %\begin{table}[!h]
@@ -392,7 +392,7 @@ Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred 
 %\begin{tabular}{|c c c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
 %\hline
 %12 & 523.743 & 2.23822 & 249.063 & 184.771 & 1.01018 & 1.04558 & No Cut & 1352\\
 %12 & 436.564 & 1.86566 & 201.908 & 159.223 & 1.00840 & 1.02235 & 500 & 852\\
@@ -408,13 +408,13 @@ Now that we have selected N$_{Gaus}$ = 12 for $^3$He we can run several hundred 
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$} & \textbf{$\boldsymbol{\chi^2_{max}}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
 \hline
 12 & 523.7 & 2.238 & 249.1 & 184.8 & 1.010 & 1.046 & No Cut & 1352\\
 12 & 436.6 & 1.866 & 201.9 & 159.2 & 1.008 & 1.022 & 500 & 852\\
 \hline
 \end{tabular}
-\caption[Metrics for Final $^3$He Fits]{{\bf{Metrics for Final $^3$He Fits.}} N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Below Cut' is the number of fits that survived the $\chi^2_{max}$ cut.}
+\caption[Metrics for Final $^3$He Fits]{{\bf{Metrics for Final $^3$He Fits.}} $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Below Cut' is the number of fits that survived the $\chi^2_{max}$ cut.}
 \label{tab:3he_fits}
 \end{table}
 
@@ -428,13 +428,13 @@ Now let's examine the fits from Table \ref{tab:3he_fits} visually. Figure \ref{f
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fch_3He_n12_1352.png}
-  \caption{\bf{Charge Form Factors from 1352 $^3$He Fits with no $\chi^2_{max}$ cut.}}
+  \caption{\bf{Charge Form Factors from 1352 $^3$He Fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3he_fch_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fch_3He_n12_852.png}
-  \caption{\bf{Charge Form Factors from 852 $^3$He Fits surviving a $\chi^2_{max}$ = 500 cut.}}
+  \caption{\bf{Charge Form Factors from 852 $^3$He Fits surviving a $\boldsymbol{\chi^2_{max}}$ = 500 cut.}}
   \label{fig:3he_fch_cut}
 \end{subfigure}
 \caption[$^3$He Charge Form Factors] {
@@ -452,13 +452,13 @@ Figure \ref{fig:3he_fm} shows the resulting magnetic form factors of each of the
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fm_3He_n12_1352.png}
-  \caption{\bf{Magnetic Form Factors from 1352 $^3$He Fits with no $\chi^2_{max}$ cut.}}
+  \caption{\bf{Magnetic Form Factors from 1352 $^3$He Fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3he_fm_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fm_3He_n12_852.png}
-  \caption{\bf{Magnetic Form Factors from 852 $^3$He Fits surviving a $\chi^2_{max}$ = 500 cut.}}
+  \caption{\bf{Magnetic Form Factors from 852 $^3$He Fits surviving a $\boldsymbol{\chi^2_{max}}$ = 500 cut.}}
   \label{fig:3he_fm_cut}
 \end{subfigure}
 \caption[$^3$He Magnetic Form Factors] {
@@ -474,13 +474,13 @@ Now that we have functions describing the form factors we can calculate the char
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Charge_Density_3He_n12_1352.png}
-  \caption{Charge densities of 1352 $^3$He fits with no $\chi^2_{max}$ cut.}
+  \caption{\bf{Charge densities of 1352 $^3$He fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3he_charge_density_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Charge_Density_3He_n12_852.png}
-  \caption{Charge densities of 852 $^3$He fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \caption{\bf{Charge densities of 852 $^3$He fits surviving a $\boldsymbol{\chi^2_{max}}$ = 500 cut.}}
   \label{fig:3he_charge_density_cut}
 \end{subfigure}
 \caption[$^3$He Charge Densities]{{\bf{$^3$He Charge Densities.}} The units of the $Y$-axis are the elementary electron charge per cubic fermi.}
@@ -493,20 +493,20 @@ Using Equation \ref{eq:rms_derivative} we can also calculate the RMS charge radi
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{RMS_deriv_3He_n12_1352.png}
-  \caption{RMS charge radii of 1352 $^3$He fits with no $\chi^2_{max}$ cut.}
+  \caption{\bf{RMS charge radii of 1352 $^3$He fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3he_rms_deriv_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{RMS_deriv_3He_n12_852.png}
-  \caption{RMS charge radii of 852 $^3$He fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \caption{\bf{RMS charge radii of 852 $^3$He fits surviving a $\boldsymbol{\chi^2_{max}}$ = 500 cut.}}
   \label{fig:3he_rms_deriv_cut}
 \end{subfigure}
 \caption[$^3$He RMS Charge Radii]{\bf{$^3$He RMS Charge Radii.}}
 \label{fig:3he_rms_deriv}
 \end{figure}
 
-The parameters of the $^3$He fits can be plotted as well for further information. Figure \ref{fig:3he_qi} shows the $Q_i$ fit parameters discussed in \ref{sec:sog} with Figure \ref{fig:3he_qch} showing the $Q_{i_{ch}}$ parameters and Figure \ref{fig:3he_qm} showing the $Q_{i_{m}}$ parameters. Each of the 12 parameters is shown up to a maximum value of 0.5. The structure of the parameter plots did not vary significantly after the $\chi^2_{max}$ cut was applied so only the plots with the cut are shown. One important thing to notice is that the $Q_i$ values are larger for the inner Gaussians placed at smaller radii. The inner Gaussians have far more influence over the fit than the outer ones which makes since as most of the structure of the charge density is located at smaller radii as well. A small change in Q$_{i_{1-3}}$ can have drastic effects on the form factors, but small changes to the higher $Q_i$ have almost no influence on the form factors. 
+The parameters of the $^3$He fits can be plotted as well for further information. Figure \ref{fig:3he_qi} shows the $Q_i$ fit parameters discussed in \ref{sec:sog} with Figure \ref{fig:3he_qch} showing the $Q_{i_{ch}}$ parameters and Figure \ref{fig:3he_qm} showing the $Q_{i_{m}}$ parameters. Each of the 12 parameters is shown up to a maximum value of 0.5. The structure of the parameter plots did not vary significantly after the $\chi^2_{max}$ cut was applied so only the plots with the cut are shown. One important thing to notice is that the $Q_i$ values are larger for the inner Gaussians placed at smaller radii. The inner Gaussians have far more influence over the fit than the outer ones which makes since as most of the structure of the charge density is located at smaller radii as well. A small change in $Q_{i_{1-3}}$ can have drastic effects on the form factors, but small changes to the higher $Q_i$ have almost no influence on the form factors. 
 
 Also note that the inner $Q_i$ parameters have a much wider spread in values than the outer $Q_i$. This is because the fits are extremely sensitive to the final combination of $R_i$ selected which flow from the pseudorandom $R_i$ initially generated for each fit. This means that the $Q_i$ values vary widely from fit to fit as seen in the large spread of the inner parameters. As such, attributing an uncertainty to each parameter is fairly meaningless since each set of parameters is representative only of the specific `model' created by the $R_i$ of that single fit. It would be satisfying if the average value of each $Q_i$ and $R_i$ could be found and then used to plot an average set of form factors. However, due to the strong correlation between the $Q_i$ and $R_i$ when this was attempted the fit was very poor and nonphysical in nature.
 
@@ -514,16 +514,16 @@ Also note that the inner $Q_i$ parameters have a much wider spread in values tha
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Qich_3He_n12_852.png}
-  \caption{$Q_{i_{ch}}$ parameters for $^3$He with $\chi^2_{max}$ = 500.}
+  \caption{\bf{$\boldsymbol{Q_{i_{ch}}}$ parameters for $^3$He with $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3he_qch}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Qim_3He_n12_852.png}
-  \caption{$Q_{i_{m}}$ parameters for $^3$He with $\chi^2_{max}$ = 500.}
+  \caption{\bf{$\boldsymbol{Q_{i_{m}}}$ parameters for $^3$He with $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3he_qm}
 \end{subfigure}
-\caption[$^3$He $Q_i$ Fit Parameters]{{\bf{$^3$He $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from Q$_0$ up to Q$_{11}$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
+\caption[$^3$He $Q_i$ Fit Parameters]{{\bf{$^3$He $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from $Q_0$ up to $Q_{11}$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
 \label{fig:3he_qi}
 \end{figure}
 
@@ -535,16 +535,16 @@ We also see that our prior that $R_{max}$ will be $\approx$ 5 fm agrees with the
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Ri_3He_n12_852.png}
-  \caption{$R_i$ values (fm) of fits of $^3$He world data $\chi^2_{max}$ = 500.}
+  \caption{\bf{$\boldsymbol{R_i}$ values (fm) of fits of $^3$He world data $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3he_ri_ind}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Ri_Sep_3He_n12_852.png}
-  \caption{Separation of consecutive $R_i$ values (fm) of fits of $^3$He world data $\chi^2_{max}$ = 500.}
+  \caption{\bf{Separation of consecutive $\boldsymbol{R_i}$ values (fm) of fits of $^3$He world data $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3he_ri_sep}
 \end{subfigure}
-\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from R$_0$ up to R$_{11}$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
+\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from $R_0$ up to $R_{11}$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
 \label{fig:3he_ri}
 \end{figure}
 
@@ -556,7 +556,7 @@ The set of new world data fits for $^3$He have essentially created an uncertaint
 \begin{tabular}{|c c l l|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{$R_i$ (fm)} & \textbf{Q$_{i_{ch}}$} & \textbf{Q$_{i_{m}}$}\\
+\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{$\boldsymbol{R_i}$ (fm)} & \textbf{$\boldsymbol{Q_{i_{ch}}}$} & \textbf{$\boldsymbol{Q_{i_{m}}}$}\\
 \hline
 1 & 0.3 & 0.0996392 & 0.159649 \\
 2 & 0.7 & 0.214304 & 0.0316168 \\
@@ -567,9 +567,9 @@ The set of new world data fits for $^3$He have essentially created an uncertaint
 7 & 2.2 & 0.126926 & 0.117059 \\
 8 & 2.7 & 0.0549379 & 0.0581085 \\
 9 & 3.3 & 0.0401401 & 0.0485212 \\
-10 & 4.2 & 0.0100803 & 1.77602e-12 \\
+10 & 4.2 & 0.0100803 & 1.77602 $\times$ 10$^{-12}$\\
 11 & 4.3 & 0.0007217 & 0.0240927 \\
-12 & 4.8 & 4.98962e-12 & 8.94934e-12 \\           
+12 & 4.8 & 4.98962 $\times$ 10$^{-12}$ & 8.94934 $\times$ 10$^{-12}$ \\           
 \hline
 \end{tabular}
 \caption[Parameters for $^3$He World Data Representative Fit]{{\bf{Parameters for $^3$He World Data Representative Fit.}} These fit parameters give the analytical form factors when plugged into Equation \ref{eq:sog_ffs}.}
@@ -582,7 +582,7 @@ The set of new world data fits for $^3$He have essentially created an uncertaint
 %\begin{tabular}{|c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
 %\hline
 %12 & 436.097 & 1.86366 & 268.312 & 158.948 & 1.00814 & 1.01983\\
 %\hline
@@ -596,12 +596,12 @@ The set of new world data fits for $^3$He have essentially created an uncertaint
 \begin{tabular}{|c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$}\\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$}\\
 \hline
 12 & 436.1 & 1.864 & 201.6 & 158.9 & 1.008 & 1.020\\
 \hline
 \end{tabular}
-\caption[Metrics for $^3$He World Data Representative Fit]{{\bf{Metrics for $^3$He World Data Representative Fit.}} N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, and $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters.}
+\caption[Metrics for $^3$He World Data Representative Fit]{{\bf{Metrics for $^3$He World Data Representative Fit.}} $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, and $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters.}
 \label{tab:3he_rep_fit_stats}
 \end{table}
 
@@ -663,7 +663,7 @@ This representative fit has a total $\chi^2$ of 436.1 and a reduced $\chi^2$ of 
 	\includegraphics[width=1.0\linewidth]{3He_Rep_Chi2_vs_Q2.png}
 	\end{center}
 	\caption[$^3$He Representative Fit $\chi^2$ vs. $Q^2$]{
-	{\bf{$^3$He Representative Fit $\chi^2$ vs. $Q^2$.}} }
+	{\bf{$^3$He Representative Fit $\boldsymbol{\chi^2}$ vs. $\boldsymbol{Q^2}$.}} }
 	\label{fig:3he_rep_fit_chi2_q2}
 \end{figure}
 
@@ -679,33 +679,33 @@ It can also be illuminating to look at the residual of the fit for each data poi
   \centering
   \includegraphics[width=1.\linewidth]{3He_Rep_Residual.png}
   \caption{\bf{No Zoom.}}
-  \label{fig:3he_fch_rep_fit}
+  \label{fig:3he_fch_rep_fit_residual}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.\linewidth]{3He_Rep_Residual_Zoom.png}
   \caption{\bf{Zoomed In.}}
-  \label{fig:3he_fm_rep_fit}
+  \label{fig:3he_fm_rep_fit_residual}
 \end{subfigure}
 \caption[$^3$He Representative Fit Residual vs. $Q^2$] {
-{\bf{$^3$He Representative Fit Residual vs. $Q^2$.}} The upper plot shows a view of each data point's residual, and the lower plot shows a zoomed in version without the two high residual points for clarity.}
+{\bf{$^3$He Representative Fit Residual vs. $\boldsymbol{Q^2}$.}} The upper plot shows a view of each data point's residual, and the lower plot shows a zoomed in version without the two high residual points for clarity.}
 \label{fig:3he_rep_fit_residual}
 \end{figure}
 
-The representative fits for the charge and magnetic form factor can be combined to yield the full elastic $^3$He cross section using Equation \ref{eq:xs}. Figure \ref{fig:3he_cross_section} shows the elastic $^3$He cross section using the kinematics of experiment E08-014 along with this analysis' new data point. The new cross section fit is fairly similar to the previous fit from \cite{Article:Amroun}. The new high $Q^2$ data, including the point from this analysis, have brought the cross section down slightly in the region of $Q^2$ = 30 - 40 fm$^{-2}$. The new cross section also falls off more quickly above $Q^2$ = 50 fm$^{-2}$ than the previous fit fell off. The majority of this movement is attributable to the changes in the magnetic form factor fit. The new cross section measurement from this analysis can be seen better in the zoomed in plot (Figure \ref{fig:3he_fch_rep_fit}). In this plot we see that the new data point is closer to this analysis' cross section fit. The uncertainty on the new data point nearly overlaps with the new cross section fit and is certainly close enough to be consistent with the fit.
+The representative fits for the charge and magnetic form factor can be combined to yield the full elastic $^3$He cross section using Equation \ref{eq:xs}. Figure \ref{fig:3he_cross_section} shows the elastic $^3$He cross section using the kinematics of experiment E08-014 along with this analysis' new data point. The new cross section fit is fairly similar to the previous fit from \cite{Article:Amroun}. The new high $Q^2$ data, including the point from this analysis, have brought the cross section down slightly in the region of $Q^2$ = 30 - 40 fm$^{-2}$. The new cross section also falls off more quickly above $Q^2$ = 50 fm$^{-2}$ than the previous fit fell off. The majority of this movement is attributable to the changes in the magnetic form factor fit. The new cross section measurement from this analysis can be seen better in the zoomed in plot (Figure \ref{fig:3he_cross_section_zoom}). In this plot we see that the new data point is closer to this analysis' cross section fit. The uncertainty on the new data point nearly overlaps with the new cross section fit and is certainly close enough to be consistent with the fit.
 
 \begin{figure}[!ht]
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.\linewidth]{3He_Cross_Section.png}
   \caption{\bf{Log Plot Zoomed Out.}}
-  \label{fig:3he_fch_rep_fit}
+  \label{fig:3he_cross_section_no_zoom}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.\linewidth]{3He_Cross_Section_Zoom.png}
   \caption{\bf{No Log on $Y$-axis and Zoomed In.}}
-  \label{fig:3he_fm_rep_fit}
+  \label{fig:3he_cross_section_zoom}
 \end{subfigure}
 \caption[$^3$He Elastic Cross Section] {
 {\bf{$^3$He Elastic Cross Section.}} The upper plot is the $^3$He elastic cross section using the kinematics of experiment E08-014 with the $Y$-axis on a log scale. The red line represents the new $^3$He cross section fit using the new representative form factor fits from this work, and the blue line is the cross section built from the previous form factor fits found in \cite{Article:Amroun}. The black dot represents the new $^3$He cross section measurement from this analysis. The lower plot depicts the same functions as the upper plot, but it removes the log on the $Y$-axis and zooms in on the cross section measurement from this analysis.}
@@ -726,12 +726,12 @@ The representative fits for the charge and magnetic form factor can be combined 
 
 Now that we have obtained a new representative fit for the expanded set of world data it is prudent to revisit the cross section extracted in Chapter \ref{ch:xs}. To find the elastic cross section for $^3$He presented earlier the elastic electrons were simulated with the Monte Carlo SIMC. This Monte Carlo had a previous fit for the $^3$He cross section from \cite{Article:Amroun}. We now have a fit that incorporates more high $Q^2$ data in the region of this analysis' cross section measurement. Let us now replace the previous fit in SIMC with our new fit and recalculate the cross section.
 
-Once again the cross section in SIMC will be scaled by a constant value until the elastic electron yield from simulation matches that of the experiment. SIMC will then produce the average cross section for our $^3$He data point. Since the shape of the two fits should be similar, and the cross section clearly does not change based on the fit used, we expect to find a very similar cross section value with the new fit compared to the value from the previous fit. Matching the electron yields requires scaling the SIMC cross section by a constant value of C$_{SIMC}$ = 1.23197. This is a larger scale factor than previously and is due to the decreased magnitude of $F_m$ in the new fit at this point's $Q^2$ of 34.19 fm$^{-2}$. The cross section yielded by SIMC after the yields are matched is found to be 1.345 $\times$ 10$^{-6}$ $\pm$ 0.086 $\mu$b/sr. This is in extremely close agreement (better than 1$\%$) with the previous fit's cross section of 1.335 $\pm$ 0.086 $\mu$b/sr as we expected.
+Once again the cross section in SIMC will be scaled by a constant value until the elastic electron yield from simulation matches that of the experiment. SIMC will then produce the average cross section for our $^3$He data point. Since the shape of the two fits should be similar, and the cross section clearly does not change based on the fit used, we expect to find a very similar cross section value with the new fit compared to the value from the previous fit. Matching the electron yields requires scaling the SIMC cross section by a constant value of $C_{SIMC}$ = 1.23197. This is a larger scale factor than previously and is due to the decreased magnitude of $F_m$ in the new fit at this point's $Q^2$ of 34.19 fm$^{-2}$. The cross section yielded by SIMC after the yields are matched is found to be 1.345 $\times$ 10$^{-6}$ $\pm$ 0.086 $\mu$b/sr. This is in extremely close agreement (better than 1$\%$) with the previous fit's cross section of 1.335 $\pm$ 0.086 $\mu$b/sr as we expected.
 
 \subsection{$^3$H Fits}
 \label{ssec:3h_fits}
 
-Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fits with the pseudorandom starting $R_i$ values along with the $R_i$ optimization procedure. The initial spacing of the $R_i$ values for these fits was R$_0$ = 0.2-0.3, R$_{1-4}$ = 0.5-0.6, and R$_{5-7}$ = 0.8-0.9 as explained in Section \ref{ssec:radii}. A total of 2600 individual fits using the pseudorandom $R_i$ values were generated. Table \ref{tab:3he_fits} shows the results of these 2600 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 603 in the same fashion as Tables \ref{tab:3he_ngaus} and \ref{tab:3h_ngaus}. 908 fits survive the $\chi^2$ cut of 603, and the remaining fits have charge form factors with the desired sharp minima.
+Now that we have selected $N_{Gaus}$ = 8 for $^3$H we can run several hundred fits with the pseudorandom starting $R_i$ values along with the $R_i$ optimization procedure. The initial spacing of the $R_i$ values for these fits was $R_0$ = 0.2-0.3, $R_{1-4}$ = 0.5-0.6, and $R_{5-7}$ = 0.8-0.9 as explained in Section \ref{ssec:radii}. A total of 2600 individual fits using the pseudorandom $R_i$ values were generated. Table \ref{tab:3he_fits} shows the results of these 2600 fits without any $\chi^2_{max}$ cut and with a $\chi^2$ maximum of 603 in the same fashion as Tables \ref{tab:3he_ngaus} and \ref{tab:3h_ngaus}. 908 fits survive the $\chi^2$ cut of 603, and the remaining fits have charge form factors with the desired sharp minima.
 
 %\vspace{6mm}
 %\begin{table}[!h]
@@ -739,7 +739,7 @@ Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fi
 %\begin{tabular}{|c c c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
 %\hline
 %8 & 611.385 & 2.81744 & 266.175 & 238.532 & 1.08866 & 1.33481 & No Cut & 2600\\
 %8 & 601.840 & 2.77346 & 264.695 & 237.053 & 1.08991 & 1.32926 & 603 & 908\\
@@ -755,13 +755,13 @@ Now that we have selected N$_{Gaus}$ = 8 for $^3$H we can run several hundred fi
 \begin{tabular}{|c c c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$} & \textbf{$\chi^2_{max}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$} & \textbf{$\boldsymbol{\chi^2_{max}}$} & \makecell{\textbf{Below}\\ \textbf{Cut}} \\
 \hline
 8 & 611.4 & 2.817 & 266.2 & 238.5 & 1.089 & 1.335 & No Cut & 2600\\
 8 & 601.8 & 2.773 & 264.7 & 237.1 & 1.090 & 1.329 & 603 & 908\\
 \hline
 \end{tabular}
-\caption[Metrics for Final $^3$H Fits]{{\bf{Metrics for Final $^3$H Fits.}} N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Below Cut' is the number of fits that survived the $\chi^2_{max}$ cut.}
+\caption[Metrics for Final $^3$H Fits]{{\bf{Metrics for Final $^3$H Fits.}} $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters, $\chi^2_{max}$ is the maximum $\chi^2$ value for a fit to be deemed `good', and `Below Cut' is the number of fits that survived the $\chi^2_{max}$ cut.}
 \label{tab:3h_fits}
 \end{table}
 
@@ -775,13 +775,13 @@ Figure \ref{fig:3h_fch} shows the charge form factors from each of the 2600 fits
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fch_3H_n8_2600.png}
-  \caption{\bf{Charge Form Factors from 2600 $^3$H Fits with no $\chi^2_{max}$ cut.}}
+  \caption{\bf{Charge Form Factors from 2600 $^3$H Fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3h_fch_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fch_3H_n8_908.png}
-  \caption{\bf{Charge Form Factors from 908 $^3$H Fits surviving a $\chi^2_{max}$ = 603 cut.}}
+  \caption{\bf{Charge Form Factors from 908 $^3$H Fits surviving a $\boldsymbol{\chi^2_{max}}$ = 603 cut.}}
   \label{fig:3h_fch_cut}
 \end{subfigure}
 \caption[$^3$H Charge Form Factors] {
@@ -799,13 +799,13 @@ Figure \ref{fig:3h_fm} shows the resulting magnetic form factors of each of the 
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fm_3H_n8_2600.png}
-  \caption{\bf{Magnetic Form Factors from 2600 $^3$H Fits with no $\chi^2_{max}$ cut.}}
+  \caption{\bf{Magnetic Form Factors from 2600 $^3$H Fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3h_fm_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Fm_3H_n8_908.png}
-  \caption{\bf{Magnetic Form Factors from 908 $^3$H Fits surviving a $\chi^2_{max}$ = 603 cut.}}
+  \caption{\bf{Magnetic Form Factors from 908 $^3$H Fits surviving a $\boldsymbol{\chi^2_{max}}$ = 603 cut.}}
   \label{fig:3h_fm_cut}
 \end{subfigure}
 \caption[$^3$H Magnetic Form Factors] {
@@ -821,13 +821,13 @@ Using the functions describing the form factors we can calculate the charge dens
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Charge_Density_3H_n8_2600.png}
-  \caption{Charge densities of 2600 $^3$H fits with no $\chi^2_{max}$ cut.}
+  \caption{\bf{Charge densities of 2600 $^3$H fits with no $\boldsymbol{\chi^2_{max}}$ cut.}}
   \label{fig:3h_charge_density_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Charge_Density_3H_n8_908.png}
-  \caption{Charge densities of 908 $^3$H fits surviving a $\chi^2_{max}$ = 603 cut.}
+  \caption{\bf{Charge densities of 908 $^3$H fits surviving a $\boldsymbol{\chi^2_{max}}$ = 603 cut.}}
   \label{fig:3h_charge_density_cut}
 \end{subfigure}
 \caption[$^3$H Charge Densities]{{\bf{$^3$H Charge Densities.}} The units of the $Y$-axis are the elementary electron charge per cubic fermi.}
@@ -842,13 +842,13 @@ Using Equation \ref{eq:rms_derivative} we can also calculate the RMS charge radi
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{RMS_deriv_3H_n8_2600.png}
-  \caption{RMS charge radii of 2600 $^3$H fits with no $\chi^2_{max}$ cut.}
+  \caption{\bf{RMS charge radii of 2600 $^3$H fits with no $\boldsymbol{\chi^2_{max}}$ cut}.}
   \label{fig:3h_rms_deriv_no_cut}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{RMS_deriv_3H_n8_908.png}
-  \caption{RMS charge radii of 908 $^3$H fits surviving a $\chi^2_{max}$ = 500 cut.}
+  \caption{\bf{RMS charge radii of 908 $^3$H fits surviving a $\boldsymbol{\chi^2_{max}}$ = 500 cut}.}
   \label{fig:3h_rms_deriv_cut}
 \end{subfigure}
 \caption[$^3$H RMS Charge Radii]{\bf{$^3$H RMS Charge Radii.}}
@@ -861,16 +861,16 @@ As was done with $^3$He, the parameters of the $^3$H fits can be plotted for fur
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Qich_3H_n8_908.png}
-  \caption{$Q_{i_{ch}}$ parameters for $^3$H with $\chi^2_{max}$ = 603.}
+  \caption{\bf{$\boldsymbol{Q_{i_{ch}}}$ parameters for $^3$H with $\boldsymbol{\chi^2_{max}}$ = 603.}}
   \label{fig:3h_qch}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Qim_3H_n8_908.png}
-  \caption{$Q_{i_{m}}$ parameters for $^3$H with $\chi^2_{max}$ = 603.}
+  \caption{\bf{$\boldsymbol{Q_{i_{m}}}$ parameters for $^3$H with $\boldsymbol{\chi^2_{max}}$ = 603.}}
   \label{fig:3h_qm}
 \end{subfigure}
-\caption[$^3$H $Q_i$ Fit Parameters]{{\bf{$^3$H $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from Q$_0$ up to Q$_7$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
+\caption[$^3$H $Q_i$ Fit Parameters]{{\bf{$^3$H $\boldsymbol{Q_i}$ Fit Parameters.}} The $X$-axis of these plots is the $Q_i$ value in the range of -0.1 to 0.5. The $Y$-axis is the number of counts. The plots run from $Q_0$ up to $Q_7$. Notice that the distributions are each roughly centered about a specific value showing that the SOG fits are consistently finding similar $Q_i$ values. Also notice that the smaller radii parameters generally have larger values.}
 \label{fig:3h_qi}
 \end{figure}
 
@@ -880,16 +880,16 @@ Plotted in Figure \ref{fig:3h_ri} are the $R_i$ values (\ref{fig:3h_ri_ind}) and
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Ri_3H_n8_908.png}
-  \caption{$R_i$ values (fm) of fits of $^3$H world data $\chi^2_{max}$ = 500.}
+  \caption{\bf{$\boldsymbol{R_i}$ values (fm) of fits of $^3$H world data $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3h_ri_ind}
 \end{subfigure}\\
 \begin{subfigure}{1.\textwidth}
   \centering
   \includegraphics[width=1.1\linewidth]{Ri_Sep_3H_n8_908.png}
-  \caption{Separation of consecutive $R_i$ values (fm) of fits of $^3$H world data $\chi^2_{max}$ = 500.}
+  \caption{\bf{Separation of consecutive $\boldsymbol{R_i}$ values (fm) of fits of $^3$H world data $\boldsymbol{\chi^2_{max}}$ = 500.}}
   \label{fig:3h_ri_sep}
 \end{subfigure}
-\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from R$_0$ up to R$_7$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
+\caption[$^3$He $R_i$ Values and Separations]{{\bf{$^3$He $\boldsymbol{R_i}$ Values and Separations.}} The top plot shows the values for $R_i$ from $R_0$ up to $R_7$, and the bottom plot shows the distance separating each consecutive $R_i$, where the $X$-axes are in fm. Notice that each plot is roughly centered about a specific value showing that the SOG fits are consistently finding similar $R_i$ values and separations. Also notice that the distributions widen at larger radii.}
 \label{fig:3h_ri}
 \end{figure}
 
@@ -901,7 +901,7 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 \begin{tabular}{|c c l l|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{$R_i$ (fm)} & \textbf{Q$_{i_{ch}}$} & \textbf{Q$_{i_{m}}$}\\
+\makecell{\textbf{Parameter}\\ \textbf{Number}} & \textbf{$\boldsymbol{R_i}$ (fm)} & \textbf{$\boldsymbol{Q_{i_{ch}}}$} & \textbf{$\boldsymbol{Q_{i_{m}}}$}\\
 \hline
 1 & 0.3 & 0.151488 & 0.190646 \\
 2 & 0.8 & 0.348372 & 0.301416 \\
@@ -910,7 +910,7 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 5 & 2.5 & 0.121983 & 0.173933 \\
 6 & 3.3 & 0.0242654 & 0.106361 \\
 7 & 4.1 & 0.049329 & 0.0665564 \\
-8 & 4.8 & 4.40751e-11 & 0.0148866 \\          
+8 & 4.8 & 4.40751 $\times$ 10$^{-11}$ & 0.0148866 \\          
 \hline
 \end{tabular}
 \caption[Parameters for $^3$H World Data Representative Fit]{{\bf{Parameters for $^3$H World Data Representative Fit.}} These fit parameters give the analytical form factors when plugged into Equation \ref{eq:sog_ffs}.}
@@ -922,7 +922,7 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 %\begin{tabular}{|c c c c c c c|}
 %\hline
 %%\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-%\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
+%\textbf{$N_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum$Q$_{i_{ch}}$} & \textbf{$\sum$Q$_{i_{m}}$}\\
 %\hline
 %8 & 601.882 & 2.77365 & 264.712 & 237.069 & 1.08965 & 1.3322\\
 %\hline
@@ -936,12 +936,12 @@ A representative fit for the $^3$H form factors was selected in the same manner 
 \begin{tabular}{|c c c c c c c|}
 \hline
 %\makecell{\textbf{Absorption}\\ \textbf{Spectrum Shape}} & \textbf{Paint QE} & \makecell{\textbf{Visual}\\ \textbf{Opacity}} \\
-\textbf{N$_{Gaus}$} & \textbf{Avg. $\chi^2$} & \textbf{$\chi^2_r$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\sum Q_{i_{ch}}$} & \textbf{$\sum Q_{i_{m}}$}\\
+\textbf{$\boldsymbol{N_{Gaus}}$} & \textbf{Avg. $\boldsymbol{\chi^2}$} & \textbf{$\boldsymbol{\chi^2_r}$} & \textbf{BIC} & \textbf{AIC} & \textbf{$\boldsymbol{\sum Q_{i_{ch}}}$} & \textbf{$\boldsymbol{\sum Q_{i_{m}}}$}\\
 \hline
 8 & 601.9 & 2.774 & 264.7 & 237.1 & 1.089 & 1.332\\
 \hline
 \end{tabular}
-\caption[Metrics for $^3$H World Data Representative Fit]{{\bf{Metrics for $^3$H World Data Representative Fit.}} N$_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, and $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters.}
+\caption[Metrics for $^3$H World Data Representative Fit]{{\bf{Metrics for $^3$H World Data Representative Fit.}} $N_{Gaus}$ is the number of Gaussians used in the SOG fits, Avg. $\chi^2$ is the average $\chi^2$ value for the fits, $\chi^2_r$ is the average reduced $\chi^2$ value for the fits, BIC is the average Bayesian information criterion value of the fits, AIC is the average Akaike information criterion value of the fits, $\sum Q_{i_{ch}}$ is the average sum of the $Q_{i_{ch}}$ fit parameters, and $\sum Q_{i_{m}}$ is the average sum of the $Q_{i_{m}}$ fit parameters.}
 \label{tab:3h_rep_fit_stats}
 \end{table}
 
@@ -1012,7 +1012,7 @@ This representative fit has a total $\chi^2$ of 601.9 for 234 $^3$H elastic cros
 	\includegraphics[width=1.0\linewidth]{3H_Rep_Chi2_vs_Q2.png}
 	\end{center}
 	\caption[$^3$H Representative Fit $\chi^2$ vs. $Q^2$]{
-	{\bf{$^3$H Representative Fit $\chi^2$ vs. $Q^2$.}} }
+	{\bf{$^3$H Representative Fit $\boldsymbol{\chi^2}$ vs. $\boldsymbol{Q^2}$.}} }
 	\label{fig:3h_rep_fit_chi2_q2}
 \end{figure}
 
@@ -1023,7 +1023,7 @@ The plot of the representative fit's residual, given by Equation \ref{eq:residua
 	\includegraphics[width=1.0\linewidth]{3H_Rep_Residual.png}
 	\end{center}
 	\caption[$^3$H Representative Fit Residual vs. $Q^2$]{
-	{\bf{$^3$H Representative Fit Residual vs. $Q^2$.}} }
+	{\bf{$^3$H Representative Fit Residual vs. $\boldsymbol{Q^2}$.}} }
 	\label{fig:3h_rep_fit_residual}
 \end{figure}
 

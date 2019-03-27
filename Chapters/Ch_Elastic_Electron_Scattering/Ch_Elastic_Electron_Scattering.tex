@@ -18,7 +18,7 @@ The process of elastic electron scattering is shown in Figure \ref{fig:elastic_s
 \label{fig:elastic_scattering}
 \end{figure}
 
-When the scattering process is elastic the entire process can be described by two variables. These variables are the scattering angle, $\theta$, and the initial energy, $E_0$. By using conservation of energy and momentum as well as applying the Einstein relation the scattered electron's final energy, $E'$, is found to be given by Equation \ref{eq:E'}. The energy lost by the incident electron during scattering, $\nu$, is given by Equation \ref{eq:nu}. The strength of the interaction, how much four-momentum is transferred to the target by the electron, is generally described as in Equation \ref{eq:Q^2}. 
+When the scattering process is elastic the entire process can be described by two variables. These variables are the scattering angle, $\theta$, and the initial energy, $E_0$. By using conservation of energy and momentum as well as applying the Einstein relation the scattered electron's final energy, $E'$, is found to be given by Equation \ref{eq:E'}. The energy lost by the incident electron during scattering, $\nu$, is given by Equation \ref{eq:nu}. The strength of the interaction, how much four-momentum is transferred to the target by the electron, is generally described as in Equation \ref{eq:Q^2}. $Q^2$ is given in units of (GeV/c)$^2$ which can be converted to fm$^{-2}$ by multiplying the (GeV/c)$^2$ result by a value of $\approx$ 25.7.
 
 \begin{equation} \label{eq:E'}
 	E' = \frac{E_0}{1+\frac{2E_0}{M}\sin^2\left(\frac{\theta}{2}\right)}
@@ -38,7 +38,7 @@ When the scattering process is elastic the entire process can be described by tw
 Another useful quantity to define is Bjorken $x$, denoted $x_{Bj}$, given by Equation \ref{eq:xbj}. This variable is interpretable as the fraction of the nucleon's three-momentum carried by the quark struck by the electron. For a single nucleon $0 \leq x_{Bj} \leq 1$. However, for a nucleus $0 \leq x_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $x_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $x_{Bj} = 3$.
 
 \begin{equation} \label{eq:xbj}
-	x_{Bj} = \frac{Q^2}{M(E_0-E')}
+	x_{Bj} = \frac{Q^2}{2M(E_0-E')}
 	 \text{\equationlabels{Bjorken x ($x_{Bj}$)}}
 \end{equation}
 
@@ -50,21 +50,21 @@ The differential cross section is proportional to the probability that an electr
 Following the discussion of cross sections and form factors laid out in chapters five and six of \cite{Book:Povh}, and largely adopting their notation, let us begin with the classical case of particles scattering from a fixed target nuclei. The Rutherford scattering equation can be obtained classically as Equation \ref{eq:rutherford} or through non-relativistic quantum mechanics by assuming that the wave functions of the electron are plane waves (Born approximation).   
 
 \begin{equation} \label{eq:rutherford}
-	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{\left(zeZe\right)^2}{(4\pi\epsilon_0)^2(4E_0)^2\sin^4(\theta/2)}
+	\left(\frac{d\sigma}{d\Omega}\right)_{\text{Rutherford}} = \frac{\left(zeZe\right)^2}{(4\pi\epsilon_0)^2(4E_0)^2\sin^4(\theta/2)}
 	\text{\equationlabels{Rutherford Scattering as a Function of Angle}}
 \end{equation}
 
 \noindent Here $z$ ($Z$) is the atomic number of the incident particle (target), $e$ is the elementary charge, $\epsilon_0$ is the vacuum permittivity, and $E_0$ is the incident particle's initial energy. The Rutherford equation can also be written as Equation \ref{eq:rutherford_2} following the quantum mechanical derivation, where $\alpha$ is the fine structure constant, $\hbar$ is the reduced Planck's constant, and $c$ is the speed of light. Notice that the cross section falls off like $\frac{1}{q^4}$ indicating that the interaction probability falls off rapidly with increased momentum transfer \cite{Book:Povh}.
 
 \begin{equation} \label{eq:rutherford_2}
-	\left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4}
+	\left(\frac{d\sigma}{d\Omega}\right)_{\text{Rutherford}} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4}
 	\text{\equationlabels{Rutherford Scattering as a Function of Momentum Transfer}}
 \end{equation}
 
 The Rutherford equation does not account for relativity, spin, or target recoil. To begin accounting for these quantities let us continue the derivation by adding relativity. To do this we add a second term to the cross section that is scaled by a constant and introduces angular dependence to Equation \ref{eq:rutherford_2}. This yields the preliminary version of the Mott equation while still neglecting recoil as seen in Equation \ref{eq:mott_no_recoil}.
 
 \begin{equation} \label{eq:mott_no_recoil}
-	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{Rutherford} \left( 1-\beta^2 \sin^2 \left( \frac{\theta}{2} \right) \right)
+	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{\text{Rutherford}} \left( 1-\beta^2 \sin^2 \left( \frac{\theta}{2} \right) \right)
 	\text{\equationlabels{Mott Equation No Recoil with Relativistic Term}}
 \end{equation}
 
@@ -73,7 +73,7 @@ The Rutherford equation does not account for relativity, spin, or target recoil.
 By taking the incident particle's velocity to its maximum value of $c$ we see $\beta$ goes to unity. Then Equation \ref{eq:mott_no_recoil} simplifies via trigonometric identity to Equation \ref{eq:mott_no_recoil_simple}.
 
 \begin{equation} \label{eq:mott_no_recoil_simple}
-	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} cos^2 \left( \frac{\theta}{2} \right) = \left(\frac{d\sigma}{d\Omega}\right)_{Ruth.} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4} cos^2 \left( \frac{\theta}{2} \right) 
+	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} = \left(\frac{d\sigma}{d\Omega}\right)_{\text{Ruth.}} \cos^2 \left( \frac{\theta}{2} \right) = \left(\frac{d\sigma}{d\Omega}\right)_{\text{Ruth.}} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^2}{|qc|^4} \cos^2 \left( \frac{\theta}{2} \right) 
 	\text{\equationlabels{Mott Equation No Recoil Explicit}}
 \end{equation}
 
@@ -85,14 +85,14 @@ By taking the incident particle's velocity to its maximum value of $c$ we see $\
 So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing geometry. To quantize the spatial extent of a target we introduce the concept of form factors. Form factors contain all of the spatial information about the target. Multiplying the Mott cross section, excepting recoil, by the form factor we get the experimental cross section as in Equation \ref{eq:xs_exp_ff}. By measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor, $F(q^2)$, of a target can be determined. 
 
 \begin{equation} \label{eq:xs_exp_ff}
-	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} |F(q^2)|^2
+	\left(\frac{d\sigma}{d\Omega}\right)_{\text{exp}} = \left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} |F(q^2)|^2
 	\text{\equationlabels{Form Factor Term in Cross Section}}
 \end{equation}
 
 Continuing to assume that recoil is negligible as well as the validity of the Born approximation the target's form factors can be written as the Fourier transform of a charge distribution, $\rho(x)$, as in Equation \ref{eq:fourier}. If the charge distribution is spherically symmetric then the form factor equals the right side of Equation \ref{eq:fourier} with the integral of $\rho(r)$ normalized to unity.
 
 \begin{equation} \label{eq:fourier}
-	F(q^2) = \int e^{\frac{iq \cdot x}{\hbar}} \rho(x) d^3x \xrightarrow{x \xrightarrow{} r} 4\pi \int \rho(r) \frac{sin\left( |q|r/\hbar \right)}{|q|r/\hbar} r^2 dr
+	F(q^2) = \int e^{\frac{iq \cdot x}{\hbar}} \rho(x) d^3x \xrightarrow{x \xrightarrow{} r} 4\pi \int \rho(r) \frac{\sin\left( |q|r/\hbar \right)}{|q|r/\hbar} r^2 dr
 	\text{\equationlabels{Form Factor as a Fourier Transform}}
 \end{equation}
 
@@ -135,7 +135,7 @@ One can also study the charge radius by examining the behavior of the charge den
 Now $i\sin\left(\frac{Rq}{\hbar}\right) \xrightarrow{} 0$ and we can drop the $i\sin(x)$ term leaving only $e^{ix} \approx \cos(x)$. The Taylor expansion of $\cos(x)$ is given by Equation \ref{eq:cos}.
 
 \begin{equation} \label{eq:cos}
-	cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} +...
+	\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} +...
 	\text{\equationlabels{Cosine Taylor Expansion}}
 \end{equation}
 
@@ -195,7 +195,7 @@ At this point we are still claiming that the recoil of the struck particle is ne
 	\text{\equationlabels{Energy}}
 \end{equation}
 
-Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in Equation \ref{eq:energy_estimate} along with $h \approx 4.136 \times 10^{-15}$ eV$\times$s and $c\approx 3 \times 10^{8}$ m/s yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to the masses light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
+Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in Equation \ref{eq:energy_estimate} along with $h \approx 4.136 \times 10^{-15}$ eVs and $c\approx 3 \times 10^{8}$ m/s yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to the masses of light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
 
 Taking the recoil of the target in to account one finds that the recoil factor is given by Equation \ref{eq:recoil} from Equation \ref{eq:E'}. 
 
@@ -207,14 +207,14 @@ Taking the recoil of the target in to account one finds that the recoil factor i
 \noindent Adding the factor of $\frac{E'}{E_0}$ to the Mott cross section gives Equation \ref{eq:mott_recoil}.
 
 \begin{equation} \label{eq:mott_recoil}
-	\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^3}{|qc|^4 E_0} \cos^2 \left( \frac{\theta}{2} \right)
+	\left(\frac{d\sigma}{d\Omega}\right)_{\text{Mott}} = \frac{4Z^2\alpha^2\left(\hbar c\right)^2E'^3}{|qc|^4 E_0} \cos^2 \left( \frac{\theta}{2} \right)
 	\text{\equationlabels{Mott Equation adding Recoil}}
 \end{equation}
 
 \noindent The Mott cross section can be written in a slightly different form by setting some constants equal to one and rearranging some of the energies as in Equation \ref{eq:mott}. We now have an equation that represents the scattering of electrons off of a pointlike particle \cite{Book:Povh}.
 
 \begin{equation} \label{eq:mott}
-	\left(\frac{d\sigma}{d\Omega}\right)_{Mott} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 \cos^2\left( \frac{\theta}{2} \right)}{4E_0^2 \sin^4\left( \frac{\theta}{2} \right)}
+	\left(\frac{d\sigma}{d\Omega}\right)_{\text{Mott}} = Z^2 \frac{E'}{E_0} \frac{\alpha^2 \cos^2\left( \frac{\theta}{2} \right)}{4E_0^2 \sin^4\left( \frac{\theta}{2} \right)}
 	\text{\equationlabels{Mott Equation}}
 \end{equation}
 
@@ -228,7 +228,7 @@ At this point in the analysis we have accounted for charge, spin, relativity, an
 To account for magnetic interactions we do as we did in Equation \ref{eq:mott_no_recoil} and introduce a second term to the cross section. This term is scaled by a constant and given an angular dependence of $\sin^2(\theta/2)$ as in Equation \ref{eq:mag}. The angular dependence arises from a need to conserve angular momentum and helicity. We obtain $\tan^2(\theta/2)$ by pulling out a $1/\cos^2(\theta/2)$.
 
 \begin{equation} \label{eq:mag}
-	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{point} \\ \text{spin 1/2}}} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \left( (1-2\tau \; \tan^2\left( \frac{\theta}{2} \right) \right)
+	\left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{point} \\ \text{spin 1/2}}} = \left( \frac{d\sigma}{d\Omega} \right)_{\text{Mott}} \left( (1-2\tau \; \tan^2\left( \frac{\theta}{2} \right) \right)
 	\text{\equationlabels{Cross Section Magnetic Term}}
 \end{equation}
 
@@ -239,7 +239,7 @@ To account for magnetic interactions we do as we did in Equation \ref{eq:mott_no
 	\text{\equationlabels{$\tau$}}
 \end{equation}
 
-Finally let us consider that nuclear targets are not pointlike particles and thus the g-factor from Dirac is not precisely equal to two. Instead the g-factor is replaced by the proton and neutron magnetic moments given in Equation \ref{eq:mag_mom} quantified in terms of the nuclear magneton, $\mu_N$ given in Equation \ref{eq:mu_n}, where $m_p$ is the proton mass.
+Finally let us consider that nuclear targets are not pointlike particles and thus the $g$-factor from Dirac is not precisely equal to two. Instead the $g$-factor is replaced by the proton and neutron magnetic moments given in Equation \ref{eq:mag_mom} quantified in terms of the nuclear magneton, $\mu_N$ given in Equation \ref{eq:mu_n}, where $m_p$ is the proton mass.
 
  \begin{equation} \label{eq:mag_mom}
 	\mu_p = 2.79 \mu_N \;\;\;\;\;\;\;\;\;\; \mu_n = -1.91 \mu_N 
