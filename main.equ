@@ -38,57 +38,59 @@
 \contentsline {equationlabels}{\numberline {1.38}Rosenbluth Equation}{13}{equation.1.3.38}
 \contentsline {equationlabels}{\numberline {1.39}$\epsilon $}{13}{equation.1.3.39}
 \contentsline {equationlabels}{\numberline {1.40}Reduced Cross Section}{13}{equation.1.3.40}
-\contentsline {equationlabels}{\numberline {2.1}Beam Momentum (Arc Method)}{22}{equation.2.4.1}
-\contentsline {equationlabels}{\numberline {2.2}VDC Wire Efficiency}{31}{equation.2.7.2}
-\contentsline {equationlabels}{\numberline {2.3}VDC Drift Distance}{34}{equation.2.7.3}
-\contentsline {equationlabels}{\numberline {2.4}VDC U}{35}{equation.2.7.4}
-\contentsline {equationlabels}{\numberline {2.5}VDC V}{35}{equation.2.7.5}
-\contentsline {equationlabels}{\numberline {2.6}VDC $\theta _{U(V)}$}{35}{equation.2.7.6}
-\contentsline {equationlabels}{\numberline {2.7}Gas Cherenkov Velocity Threshold}{36}{equation.2.7.7}
-\contentsline {equationlabels}{\numberline {2.8}Cherenkov Shock Wave Angle}{37}{equation.2.7.8}
-\contentsline {equationlabels}{\numberline {2.9}Gas Cherenkov Momentum Threshold}{37}{equation.2.7.9}
-\contentsline {equationlabels}{\numberline {2.10}Live Time}{43}{equation.2.8.10}
-\contentsline {equationlabels}{\numberline {2.11}Momentum Fraction (dP)}{48}{equation.2.10.11}
-\contentsline {equationlabels}{\numberline {2.12}Optics Matrix}{49}{equation.2.10.12}
-\contentsline {equationlabels}{\numberline {2.13}Momentum Fraction ($\delta $)}{49}{equation.2.10.13}
-\contentsline {equationlabels}{\numberline {2.14}$\theta _{tg}$}{49}{equation.2.10.14}
-\contentsline {equationlabels}{\numberline {2.15}$y_{tg}$}{49}{equation.2.10.15}
-\contentsline {equationlabels}{\numberline {2.16}$\phi _{tg}$}{49}{equation.2.10.16}
-\contentsline {equationlabels}{\numberline {2.17}Optics Tensors ($D_{j,k,l}$)}{50}{equation.2.10.17}
-\contentsline {equationlabels}{\numberline {2.18}Interaction Vertex ($Z_{react}$)}{51}{equation.2.10.18}
-\contentsline {equationlabels}{\numberline {2.19}Horizontal Sieve Position ($x_{sieve}$)}{51}{equation.2.10.19}
-\contentsline {equationlabels}{\numberline {2.20}Vertical Sieve Position ($y_{sieve}$)}{51}{equation.2.10.20}
-\contentsline {equationlabels}{\numberline {3.1}Experimental Cross Section}{52}{equation.3.2.1}
-\contentsline {equationlabels}{\numberline {3.2}BCM Calibration}{53}{equation.3.3.2}
-\contentsline {equationlabels}{\numberline {3.3}Beam Charge}{54}{equation.3.3.3}
-\contentsline {equationlabels}{\numberline {3.4}Number of Incident Electrons}{54}{equation.3.3.4}
-\contentsline {equationlabels}{\numberline {3.5}T$_3$ Efficiency}{56}{equation.3.4.5}
-\contentsline {equationlabels}{\numberline {3.6}VDC Efficiency}{58}{equation.3.4.6}
-\contentsline {equationlabels}{\numberline {3.7}GC Efficiency}{63}{equation.3.4.7}
-\contentsline {equationlabels}{\numberline {3.8}Fractional Target Density}{66}{equation.3.5.8}
-\contentsline {equationlabels}{\numberline {3.9}R$_1$}{66}{equation.3.5.9}
-\contentsline {equationlabels}{\numberline {3.10}$^4$He Target Density Conversion to $^3$He Target Density}{66}{equation.3.5.10}
-\contentsline {equationlabels}{\numberline {3.11}R$_2$}{67}{equation.3.5.11}
-\contentsline {equationlabels}{\numberline {3.12}$^3$He Target Density}{67}{equation.3.5.12}
-\contentsline {equationlabels}{\numberline {3.13}Radiative Corrections}{76}{equation.3.8.13}
-\contentsline {equationlabels}{\numberline {3.14}Exponential Fit}{78}{equation.3.10.14}
-\contentsline {equationlabels}{\numberline {3.15}Gaussian Fit}{79}{equation.3.10.15}
-\contentsline {equationlabels}{\numberline {3.16}Combined Exponential and Gaussian Fit}{79}{equation.3.10.16}
-\contentsline {equationlabels}{\numberline {3.17}Elastic Electron Yield Uncertainty}{89}{equation.3.12.17}
-\contentsline {equationlabels}{\numberline {3.18}GC Uncertainty}{92}{equation.3.12.18}
-\contentsline {equationlabels}{\numberline {3.19}Live Time Uncertainty}{95}{equation.3.12.19}
-\contentsline {equationlabels}{\numberline {4.1}SOG Charge Density (No Tails)}{104}{equation.4.2.1}
-\contentsline {equationlabels}{\numberline {4.2}SOG Charge Density (Tails)}{104}{equation.4.2.2}
-\contentsline {equationlabels}{\numberline {4.3}Charge Density Normalization}{105}{equation.4.2.3}
-\contentsline {equationlabels}{\numberline {4.4}SOG Form Factors}{106}{equation.4.2.4}
-\contentsline {equationlabels}{\numberline {4.5}SOG Cross Section}{106}{equation.4.2.5}
-\contentsline {equationlabels}{\numberline {4.6}Mott Equation}{106}{equation.4.2.6}
-\contentsline {equationlabels}{\numberline {4.7}GeV$^2$ to fm$^{-2}$ Conversion}{107}{equation.4.2.7}
-\contentsline {equationlabels}{\numberline {4.8}$Q^2$-Effective}{107}{equation.4.2.8}
-\contentsline {equationlabels}{\numberline {4.9}Electron Three Momentum}{107}{equation.4.2.9}
-\contentsline {equationlabels}{\numberline {4.10}$\chi ^2$}{109}{equation.4.3.10}
-\contentsline {equationlabels}{\numberline {4.11}Reduced $\chi ^2$}{111}{equation.4.3.11}
-\contentsline {equationlabels}{\numberline {4.12}Akaike Information Criterion}{111}{equation.4.3.12}
-\contentsline {equationlabels}{\numberline {4.13}Bayesian Information Criterion}{111}{equation.4.3.13}
-\contentsline {equationlabels}{\numberline {4.14}SOG Fit Residual}{133}{equation.4.3.14}
-\contentsline {equationlabels}{\numberline {5.1}Asymmetry Measurement}{164}{equation.5.0.1}
+\contentsline {equationlabels}{\numberline {1.41}Binding Energy of a Nucleus}{15}{equation.1.4.41}
+\contentsline {equationlabels}{\numberline {1.42}Approximate Charge Radius of a Hard Sphere of Charge}{16}{equation.1.4.42}
+\contentsline {equationlabels}{\numberline {2.1}Beam Momentum (Arc Method)}{24}{equation.2.4.1}
+\contentsline {equationlabels}{\numberline {2.2}VDC Wire Efficiency}{33}{equation.2.7.2}
+\contentsline {equationlabels}{\numberline {2.3}VDC Drift Distance}{36}{equation.2.7.3}
+\contentsline {equationlabels}{\numberline {2.4}VDC U}{37}{equation.2.7.4}
+\contentsline {equationlabels}{\numberline {2.5}VDC V}{37}{equation.2.7.5}
+\contentsline {equationlabels}{\numberline {2.6}VDC $\theta _{U(V)}$}{37}{equation.2.7.6}
+\contentsline {equationlabels}{\numberline {2.7}Gas Cherenkov Velocity Threshold}{38}{equation.2.7.7}
+\contentsline {equationlabels}{\numberline {2.8}Cherenkov Shock Wave Angle}{39}{equation.2.7.8}
+\contentsline {equationlabels}{\numberline {2.9}Gas Cherenkov Momentum Threshold}{39}{equation.2.7.9}
+\contentsline {equationlabels}{\numberline {2.10}Live Time}{45}{equation.2.8.10}
+\contentsline {equationlabels}{\numberline {2.11}Momentum Fraction (dP)}{50}{equation.2.10.11}
+\contentsline {equationlabels}{\numberline {2.12}Optics Matrix}{51}{equation.2.10.12}
+\contentsline {equationlabels}{\numberline {2.13}Momentum Fraction ($\delta $)}{51}{equation.2.10.13}
+\contentsline {equationlabels}{\numberline {2.14}$\theta _{tg}$}{51}{equation.2.10.14}
+\contentsline {equationlabels}{\numberline {2.15}$y_{tg}$}{51}{equation.2.10.15}
+\contentsline {equationlabels}{\numberline {2.16}$\phi _{tg}$}{51}{equation.2.10.16}
+\contentsline {equationlabels}{\numberline {2.17}Optics Tensors ($D_{j,k,l}$)}{52}{equation.2.10.17}
+\contentsline {equationlabels}{\numberline {2.18}Interaction Vertex ($Z_{react}$)}{53}{equation.2.10.18}
+\contentsline {equationlabels}{\numberline {2.19}Horizontal Sieve Position ($x_{sieve}$)}{53}{equation.2.10.19}
+\contentsline {equationlabels}{\numberline {2.20}Vertical Sieve Position ($y_{sieve}$)}{53}{equation.2.10.20}
+\contentsline {equationlabels}{\numberline {3.1}Experimental Cross Section}{54}{equation.3.2.1}
+\contentsline {equationlabels}{\numberline {3.2}BCM Calibration}{55}{equation.3.3.2}
+\contentsline {equationlabels}{\numberline {3.3}Beam Charge}{56}{equation.3.3.3}
+\contentsline {equationlabels}{\numberline {3.4}Number of Incident Electrons}{56}{equation.3.3.4}
+\contentsline {equationlabels}{\numberline {3.5}T$_3$ Efficiency}{58}{equation.3.4.5}
+\contentsline {equationlabels}{\numberline {3.6}VDC Efficiency}{60}{equation.3.4.6}
+\contentsline {equationlabels}{\numberline {3.7}GC Efficiency}{65}{equation.3.4.7}
+\contentsline {equationlabels}{\numberline {3.8}Fractional Target Density}{68}{equation.3.5.8}
+\contentsline {equationlabels}{\numberline {3.9}R$_1$}{68}{equation.3.5.9}
+\contentsline {equationlabels}{\numberline {3.10}$^4$He Target Density Conversion to $^3$He Target Density}{68}{equation.3.5.10}
+\contentsline {equationlabels}{\numberline {3.11}R$_2$}{69}{equation.3.5.11}
+\contentsline {equationlabels}{\numberline {3.12}$^3$He Target Density}{69}{equation.3.5.12}
+\contentsline {equationlabels}{\numberline {3.13}Radiative Corrections}{78}{equation.3.8.13}
+\contentsline {equationlabels}{\numberline {3.14}Exponential Fit}{80}{equation.3.10.14}
+\contentsline {equationlabels}{\numberline {3.15}Gaussian Fit}{81}{equation.3.10.15}
+\contentsline {equationlabels}{\numberline {3.16}Combined Exponential and Gaussian Fit}{81}{equation.3.10.16}
+\contentsline {equationlabels}{\numberline {3.17}Elastic Electron Yield Uncertainty}{91}{equation.3.12.17}
+\contentsline {equationlabels}{\numberline {3.18}GC Uncertainty}{94}{equation.3.12.18}
+\contentsline {equationlabels}{\numberline {3.19}Live Time Uncertainty}{97}{equation.3.12.19}
+\contentsline {equationlabels}{\numberline {4.1}SOG Charge Density (No Tails)}{106}{equation.4.2.1}
+\contentsline {equationlabels}{\numberline {4.2}SOG Charge Density (Tails)}{106}{equation.4.2.2}
+\contentsline {equationlabels}{\numberline {4.3}Charge Density Normalization}{107}{equation.4.2.3}
+\contentsline {equationlabels}{\numberline {4.4}SOG Form Factors}{108}{equation.4.2.4}
+\contentsline {equationlabels}{\numberline {4.5}SOG Cross Section}{108}{equation.4.2.5}
+\contentsline {equationlabels}{\numberline {4.6}Mott Equation}{108}{equation.4.2.6}
+\contentsline {equationlabels}{\numberline {4.7}GeV$^2$ to fm$^{-2}$ Conversion}{109}{equation.4.2.7}
+\contentsline {equationlabels}{\numberline {4.8}$Q^2$-Effective}{109}{equation.4.2.8}
+\contentsline {equationlabels}{\numberline {4.9}Electron Three Momentum}{109}{equation.4.2.9}
+\contentsline {equationlabels}{\numberline {4.10}$\chi ^2$}{111}{equation.4.3.10}
+\contentsline {equationlabels}{\numberline {4.11}Reduced $\chi ^2$}{113}{equation.4.3.11}
+\contentsline {equationlabels}{\numberline {4.12}Akaike Information Criterion}{113}{equation.4.3.12}
+\contentsline {equationlabels}{\numberline {4.13}Bayesian Information Criterion}{113}{equation.4.3.13}
+\contentsline {equationlabels}{\numberline {4.14}SOG Fit Residual}{135}{equation.4.3.14}
+\contentsline {equationlabels}{\numberline {5.1}Asymmetry Measurement}{166}{equation.5.0.1}

@@ -325,3 +325,27 @@ Now we can define a value called the reduced cross section by dividing the exper
 \end{figure}
 
 Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the $y$-intercept as $\tau G_M^2\left(Q^2\right)$ \cite{Book:Povh}. Taking the data from our example separation and converting $G_E$ and $G_M$ to $F_{ch}$ and $F_m$ we find that $F_{ch}$ = 6.98 $\times$ 10$^{-5}$ and $F_m$ = 3.33 $\times$ 10$^{-5}$, where we have neglected to treat the uncertainty for simplicity. These form factor values are in agreement with the calculations made in Reference \cite{Article:Alex}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in Section \ref{sec:sog} we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
+
+\section{Motivation and Mirror Nuclei}
+\label{sec:mirror_nuclei}
+
+Why are we interested in finding the form factors of $^3$H and $^3$He? Knowing these form factors allows us to calculate numerous useful quantities including the cross section at different energies, the charge radii, and the charge densities. The form factors teach us about the three-body physics inside of the two nuclei and thus provide information on the wave function. This information can then be compared with theoretical predictions, e.g. comparing the fitted form factors to theory predictions as in Sections \ref{ssec:3he_comparison_with_theory} and \ref{ssec:3h_comparison_with_theory}, and then be used to improve the underlying theoretical models. If one wishes to study a `free' neutron one often uses $^3$He as a proxy system. These theoretical models are vital for correcting for three-body effects inside the nucleus so that a `free' neutron can be studied, and all of these corrections are dependent on a firm understanding of the $^3$He form factors.
+
+This analysis has chosen to analyze both $^3$H and $^3$He as they are mirror nuclei. This means that each nuclei has the same number of nucleons, but the number of protons and neutrons in each nucleus is flipped (i.e. $^3$H has one proton and two neutrons and $^3$He has two protons and one neutron). The differences in the form factors between these mirror nuclei then teach us about the differences of the protons and the neutrons in the system by simply replacing one by the other. So if the two nuclei are in the ground state then each has three nucleons in the 1S$_{1/2}$ shells. $^3$H should have one proton in the 1S$_{1/2}$ shell and two neutrons in the 1S$_{1/2}$ shell for a full shell for the neutrons (so the angular momentum of $^3$H is derived from the unpaired proton). $^3$He should have two protons in the 1S$_{1/2}$ shell for a full shell and one neutron in the 1S$_{1/2}$ shell (so the angular momentum of $^3$He is derived from the unpaired neutron). So changing between the nuclei does not change the energy levels but merely fills a different shell. We believe that the strong force treats both protons and neutrons identically so any differences in the form factors for these mirror nuclei will be due to the different Coulomb forces in the nuclei from the electric charges of the protons and neutrons. 
+
+Let us predict which nucleus, $^3$H or $^3$He, will have a larger charge radius and then anticipate how that may influence the form factors. To do this we will employ the liquid drop model of the nucleus. In this model the binding energy for a nucleus is given by Equation \ref{eq:binding_energy} \cite{liquid_drop}.
+
+\begin{equation} \label{eq:binding_energy}
+	B(A,Z) = a_1A - a_2A^{2/3} - a_3 \frac{Z(Z-1)}{A^{1/3}} -a_4\frac{\left( N-Z \right)^2}{A} +\delta
+	\text{\equationlabels{Binding Energy of a Nucleus}}
+\end{equation}
+
+As \cite{Book:Povh} points out the location of the minima can be used to learn about the size of the target. For a hard sphere of charge the charge radius, $R$, is roughly given by Equation \ref{eq:minima}, where $\frac{q}{\hbar}$ is the location of the first minima. Let us use this relation to compare the locations of the first minima in $F_{ch}$ for $^3$He (Figure \ref{fig:3he_fch_rep_fit}) and $^3$H (Figure \ref{fig:3h_fch_rep_fit}) ($F_{ch}$ is discussed in more detail below, but it represents the Fourier transform of the electric charge density). We see that the first minimum for $^3$He is found at $Q^2$ $\approx$ 11 fm$^{-2}$, and the first minimum for $^3$H is found at $Q^2$ $\approx$ 13 fm$^{-2}$. Equation \ref{eq:minima} then predicts that $^3$He will have a larger charge radius than $^3$H. 
+
+\begin{equation} \label{eq:minima}
+	R \approx \frac{4.5 \hbar}{q}
+	\text{\equationlabels{Approximate Charge Radius of a Hard Sphere of Charge}}
+\end{equation}
+
+Let's examine if this prediction agrees with our expectations. $^3$He contains two protons and a neutron, whereas $^3$H contains one proton and two neutrons. The nuclei of these atoms are held together by the strong force while the Coulomb force pushes against this binding force. $^3$He has more charge due to having two protons, and thus the Coulomb force for $^3$He will be stronger than that of $^3$H. Therefore, we expect $^3$He to have a larger charge radius than $^3$H as there is a larger Coulomb force pushing the charge radius out against the strong force. 
+
