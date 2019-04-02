@@ -7,7 +7,7 @@ Electron scattering is one of the most powerful tools available to physicists to
 \section{Kinematics of Elastic Electron Scattering}
 \label{sec:kinematics}
 
-The process of elastic electron scattering is shown in Figure \ref{fig:elastic_scattering}. An incident electron, with four-momentum $k = (E_0,\textit{\textbf{k}})$, exchanges a virtual photon, $q = (\nu,\textit{\textbf{q}})$, with a target in the target's rest frame, $p = (M,0)$. The virtual photon exchanges energy and momentum causing the electron to scatter with a scattering angle $\theta$ and four-momentum $k' = (E',\textit{\textbf{k}}')$. The proton is also scattered with four-momentum $p'$, but the proton is not measured in inclusive electron scattering. When the kinetic energy of this scattering process is conserved the process is called `elastic'. 
+The process of elastic electron scattering via the electromagnetic process is shown in Figure \ref{fig:elastic_scattering}. An incident electron, with four-momentum $k = (E_0,\textit{\textbf{k}})$, exchanges a virtual photon, $q = (\nu,\textit{\textbf{q}})$, with a target in the target's rest frame, $p = (M,0)$. The virtual photon exchanges energy and momentum causing the electron to scatter with a scattering angle $\theta$ and four-momentum $k' = (E',\textit{\textbf{k}}')$. The proton is also scattered with four-momentum $p'$, but the proton is not measured in inclusive electron scattering. When the kinetic energy of this scattering process is conserved the process is called `elastic'. 
 
 \begin{figure}[!ht]
 \begin{center}
@@ -35,7 +35,7 @@ When the scattering process is elastic the entire process can be described by tw
 	\text{\equationlabels{Four-Momentum Transfer ($Q^2$)}}
 \end{equation}
 
-Another useful quantity to define is Bjorken $x$, denoted $x_{Bj}$, given by Equation \ref{eq:xbj}. This variable is interpretable as the fraction of the nucleon's three-momentum carried by the quark struck by the electron. For a single nucleon $0 \leq x_{Bj} \leq 1$. However, for a nucleus $0 \leq x_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $x_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $x_{Bj} = 3$.
+Another useful quantity to define is Bjorken $x$, denoted $x_{Bj}$, given by Equation \ref{eq:xbj}. This variable is interpretable as the fraction of the nucleon's three-momentum carried by the quark struck by the electron in the Breit frame. For a single nucleon $0 \leq x_{Bj} \leq 1$. However, for a nucleus $0 \leq x_{Bj} \leq A$, where $A$ is the atomic mass number of the target. The elastic peak can then be found at $x_{Bj} \approx A$. Taking $^3$He as an example one would then expect to find the elastic peak at $x_{Bj} = 3$.
 
 \begin{equation} \label{eq:xbj}
 	x_{Bj} = \frac{Q^2}{2M(E_0-E')}
@@ -68,7 +68,7 @@ The Rutherford equation does not account for relativity, spin, or target recoil.
 	\text{\equationlabels{Mott Equation No Recoil with Relativistic Term}}
 \end{equation}
 
-\noindent Here $\beta = \frac{v}{c}$ with $v$ being the velocity of the incident particle and $c$ the speed of light \cite{Book:Povh}. 
+\noindent Here $\beta = \frac{v}{c}$ with $v$ being the velocity of the incident particle \cite{Book:Povh}. 
 
 By taking the incident particle's velocity to its maximum value of $c$ we see $\beta$ goes to unity. Then Equation \ref{eq:mott_no_recoil} simplifies via trigonometric identity to Equation \ref{eq:mott_no_recoil_simple}.
 
@@ -82,7 +82,7 @@ By taking the incident particle's velocity to its maximum value of $c$ we see $\
 \section{Nuclear Form Factors}
 \label{sec:ffs}
 
-So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing geometry. To quantize the spatial extent of a target we introduce the concept of form factors. Form factors contain all of the spatial information about the target. Multiplying the Mott cross section, excepting recoil, by the form factor we get the experimental cross section as in Equation \ref{eq:xs_exp_ff}. By measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor, $F(q^2)$, of a target can be determined. 
+So far we have only considered scattering off of a pointlike target. Real nuclear targets are made up of atoms with differing geometry. To quantize the spatial extent of a target we introduce the concept of form factors. Form factors contain all of the transverse spatial information about the target. Multiplying the Mott cross section, excepting recoil, by the form factor we get the experimental cross section as in Equation \ref{eq:xs_exp_ff}. By measuring the experimental cross section of a target at various angles for a single energy and dividing out the Mott cross section the form factor, $F(q^2)$, of a target can be determined. 
 
 \begin{equation} \label{eq:xs_exp_ff}
 	\left(\frac{d\sigma}{d\Omega}\right)_{\text{exp}} = \left(\frac{d\sigma}{d\Omega}\right)_{\substack{ \text{Mott} \\ \text{No Recoil}}} |F(q^2)|^2
@@ -193,7 +193,7 @@ At this point we are still claiming that the recoil of the struck particle is ne
 	\text{\equationlabels{Energy}}
 \end{equation}
 
-Now lets plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in Equation \ref{eq:energy_estimate} along with $h \approx 4.136 \times 10^{-15}$ eVs and $c\approx 3 \times 10^{8}$ m/s yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to the masses of light target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
+Now plug in some reasonable values along with the constants. Nuclear targets are generally atoms made up of protons and neutrons so to glean any information about their structure one must use electrons with a wavelength approximately the size of, or smaller than that of, a proton. The proton's radius is about 0.84 fm. Plugging this into the wavelength value in Equation \ref{eq:energy_estimate} along with $h \approx 4.136 \times 10^{-15}$ eVs and $c\approx 3 \times 10^{8}$ m/s yields an electron energy of about 1.477 GeV. $^3$He has a mass of about 2.81 GeV. Clearly the electron energies required to study nuclear structure are no longer negligible when compared to target nuclei like $^3$He. This now requires us to account for target recoil in our cross section calculation from before.
 
 Taking the recoil of the target in to account one finds that the recoil factor is given by Equation \ref{eq:recoil} from Equation \ref{eq:E'}. 
 
@@ -216,7 +216,7 @@ Taking the recoil of the target in to account one finds that the recoil factor i
 	\text{\equationlabels{Mott Equation}}
 \end{equation}
 
-At this point in the analysis we have accounted for charge, spin, relativity, and recoil. However, we have still neglected the fact that many targets have a magnetic moment, $\mu$, that will also interact with the electrons it scatters. Equation \ref{eq:mu} shows the magnetic moment for a pointlike spin 1/2 particle of mass $M$. With the $g=2$ factor coming from Dirac theory.  
+At this point in the analysis we have accounted for charge, spin, relativity, and recoil. However, we have still neglected the fact that many targets have a magnetic moment, $\mu$, that will also interact with the electrons it scatters. Equation \ref{eq:mu} shows the magnetic moment for a pointlike spin 1/2 particle of mass $M$ where the $g$ = 2 factor comes from Dirac theory.  
 
 \begin{equation} \label{eq:mu}
 	\mu = g \frac{e\hbar}{4M}
@@ -230,7 +230,7 @@ To account for magnetic interactions we do as we did in Equation \ref{eq:mott_no
 	\text{\equationlabels{Cross Section Magnetic Term}}
 \end{equation}
 
-\noindent Here $\tau$ is given by Equation \ref{eq:tau} where $M$ is the target's mass and $Q^2$ is the kinematic variable measuring momentum transfer from Equation \ref{eq:Q^2}. From Equation \ref{eq:mag} it becomes clear that at large angles and large momentum transfers the magnetic interaction becomes significant and cannot be ignored. The effect of the magnetic term causes the cross section to fall off less rapidly than it would if only the electric interaction were relevant \cite{Book:Povh}.
+\noindent $\tau$ is given by Equation \ref{eq:tau} where $M$ is the target's mass and $Q^2$ is the kinematic variable measuring momentum transfer from Equation \ref{eq:Q^2}. From Equation \ref{eq:mag} it becomes clear that at large angles and large momentum transfers the magnetic interaction becomes significant and cannot be ignored. The effect of the magnetic term causes the cross section to fall off less rapidly than it would if only the electric interaction were relevant \cite{Book:Povh}.
 
 \begin{equation} \label{eq:tau}
 	\tau = \frac{Q^2}{4M}
@@ -292,7 +292,7 @@ In the literature one finds several other commonly used form factors related to 
 	\text{\equationlabels{Magnetic Form Factor (F$_{m}$)}}
 \end{equation}
 
-The form factors $G_E$ and $G_M$ can be separated out from experimental data according to the procedure of Rosenbluth separation laid out in \cite{Article:Hand}. First numerous cross section measurements at a fixed $Q^2$ and multiple different angles must be taken. To see how to extract $G_E$ and $G_M$ it is helpful to rewrite the Rosenbluth equation in Equation \ref{eq:rosenbluth_long} as Equation \ref{eq:rosenbluth} with $\epsilon$ given in Equation \ref{eq:epsilon}. As an example of what a typical cross section looks like see Figure \ref{fig:3he_cross_section} which shows the $^3$He cross section derived in this thesis.
+The form factors $G_E$ and $G_M$ can be separated out from experimental data according to the procedure of Rosenbluth separation laid out in \cite{Article:Hand}. First numerous cross section measurements at a fixed $Q^2$ and multiple angles must be taken. To see how to extract $G_E$ and $G_M$ it is helpful to rewrite the Rosenbluth equation in Equation \ref{eq:rosenbluth_long} as Equation \ref{eq:rosenbluth} with $\epsilon$ given in Equation \ref{eq:epsilon}. As an example of what a typical cross section looks like see Figure \ref{fig:3he_cross_section} which shows the $^3$He cross section derived in this thesis.
 
 \begin{equation} \label{eq:rosenbluth}
 	\left(\frac{d\sigma}{d\Omega}\right)_{exp} = \left( \frac{d\sigma}{d\Omega} \right)_{Mott} \frac{1}{1+\tau}\left[ G_E^2\left(Q^2\right) + \frac{\tau}{\epsilon} G_M^2\left(Q^2\right) \right]
@@ -322,7 +322,7 @@ Now we can define a value called the reduced cross section by dividing the exper
 \label{fig:rosenbluth_sep}
 \end{figure}
 
-Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the $y$-intercept as $\tau G_M^2\left(Q^2\right)$ \cite{Book:Povh}. Taking the data from our example separation and converting $G_E$ and $G_M$ to $F_{ch}$ and $F_m$ we find that $F_{ch}$ = 6.98 $\times$ 10$^{-5}$ and $F_m$ = 3.33 $\times$ 10$^{-5}$, where we have neglected to treat the uncertainty for simplicity. These form factor values are in agreement with the calculations made in Reference \cite{Article:Alex}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. Later in Section \ref{sec:sog} we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
+Immediately we can identify the slope of the line as $G_E^2\left(Q^2\right)$ and the $y$-intercept as $\tau G_M^2\left(Q^2\right)$ \cite{Book:Povh}. Taking the data from our example separation and converting $G_E$ and $G_M$ to $F_{ch}$ and $F_m$ we find that $F_{ch}$ = 6.98 $\times$ 10$^{-5}$ and $F_m$ = 3.33 $\times$ 10$^{-5}$, where we have neglected to treat the uncertainty for simplicity. These form factor values are in agreement with the calculations made in Reference \cite{Article:Alex}. This method works well to extract the Sach's form factors if there are enough data points taken and they have sufficiently small error bars. Unfortunately, this method is very time consuming from an experimental standpoint. In Section \ref{sec:sog} we will examine a different method of extracting form factors by fitting experimental cross section data using a sum of Gaussians technique. 
 
 \section{Motivation and Mirror Nuclei}
 \label{sec:mirror_nuclei}
@@ -331,7 +331,7 @@ Why are we interested in finding the form factors of $^3$H and $^3$He? Knowing t
 
 This analysis has chosen to analyze both $^3$H and $^3$He as they are mirror nuclei. This means that each nuclei has the same number of nucleons, but the number of protons and neutrons in each nucleus is flipped (i.e. $^3$H has one proton and two neutrons and $^3$He has two protons and one neutron). The differences in the form factors between these mirror nuclei then teach us about the differences of the protons and the neutrons in the system by simply replacing one with the other. So if the two nuclei are in the ground state then each has three nucleons in the 1S$_{1/2}$ shells. $^3$H should have one proton in the 1S$_{1/2}$ shell and two neutrons in the 1S$_{1/2}$ shell for a full shell for the neutrons (so the angular momentum of $^3$H is derived from the unpaired proton). $^3$He should have two protons in the 1S$_{1/2}$ shell for a full shell and one neutron in the 1S$_{1/2}$ shell (so the angular momentum of $^3$He is derived from the unpaired neutron). Changing between these nuclei does not change the ground state nuclear wave function but merely fills a different shell. We believe that the strong force treats both protons and neutrons identically so any differences in the form factors for these mirror nuclei will be due to the different Coulomb forces in the nuclei from the electric charges of the protons and neutrons. 
 
-Let us predict which nucleus, $^3$H or $^3$He, will have a larger charge radius and then study how that influences the form factors. To do this we will employ the liquid drop model of the nucleus. In this model the binding energy for a nucleus is given by Equation \ref{eq:binding_energy} \cite{liquid_drop}. The terms from left to right are the volume, surface, Coulomb, asymmetry, and pairing terms and are derived from how the nucleon's configurations and ratios contribute to the binding energy. In Equation \ref{eq:binding_energy} $a_{1-4}$ are empirically derived constants, $A$ is the total number of nucleons, $Z$ is the number of protons, and $N$ is the number of neutrons.
+Let us predict which nucleus, $^3$H or $^3$He, has a larger charge radius and then study how that influences the form factors. To do this we will employ the liquid drop model of the nucleus. In this model the binding energy for a nucleus is given by Equation \ref{eq:binding_energy} \cite{liquid_drop}. The terms from left to right are the volume, surface, Coulomb, asymmetry, and pairing terms and are derived from how the nucleon's configurations and ratios contribute to the binding energy. In Equation \ref{eq:binding_energy} $a_{1-4}$ are empirically derived constants, $A$ is the total number of nucleons, $Z$ is the number of protons, and $N$ is the number of neutrons.
 
 \begin{equation} \label{eq:binding_energy}
 	B(A,Z) = a_1A - a_2A^{2/3} - a_3 \frac{Z(Z-1)}{A^{1/3}} -a_4\frac{\left( N-Z \right)^2}{A} +\delta
@@ -344,7 +344,7 @@ Let us examine if this prediction agrees with our expectations. $^3$He contains 
 
 %This makes good sense as the two protons in $^3$He create more Coulomb force pushing out against the binding strong force than the single proton in $^3$H. This excess Coulomb force pushes the charge radius of $^3$He outward and should make it larger than $^3$H's charge radius.
 
-As \cite{Book:Povh} points out the location of the form factor's diffractive minima can be used to learn about the size of the charge radius (see Equation \ref{eq:minima}). Let us use this relation to compare the locations of the first minima in $F_{ch}$ for $^3$He (Figure \ref{fig:3he_fch_rep_fit}) and $^3$H (Figure \ref{fig:3h_fch_rep_fit}) ($F_{ch}$ is discussed in more detail in Section \ref{sec:ffs}, but it represents the Fourier transform of the electric charge density). We see that the first minimum for $^3$He is found at $Q^2$ $\approx$ 11 fm$^{-2}$, and the first minimum for $^3$H is found at $Q^2$ $\approx$ 13 fm$^{-2}$. Equation \ref{eq:minima} then predicts that $^3$He will have a slightly larger charge radius than $^3$H exactly as we predicted from the liquid drop model. 
+As \cite{Book:Povh} points out the location of the form factor's diffractive minima can be used to learn about the size of the charge radius (see Equation \ref{eq:minima}). Let us use this relation to compare the locations of the first minima in $F_{ch}$ for $^3$He (Figure \ref{fig:3he_fch_rep_fit}) and $^3$H (Figure \ref{fig:3h_fch_rep_fit}) ($F_{ch}$ is discussed in more detail in Section \ref{sec:ffs}, but it represents the Fourier transform of the electric charge density). We see that the first minimum for $^3$He is found at $Q^2$ $\approx$ 11 fm$^{-2}$, and the first minimum for $^3$H is found at $Q^2$ $\approx$ 13 fm$^{-2}$. Equation \ref{eq:minima} then predicts that $^3$He has a slightly larger charge radius than $^3$H exactly as we predicted from the liquid drop model. 
 
  
 
