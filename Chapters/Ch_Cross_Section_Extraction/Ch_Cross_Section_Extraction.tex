@@ -166,7 +166,7 @@ The main trigger, T$_3$, for E08-014 was a coincidence of S$_1$, S$_{2m}$, and t
 \subsection{VDC Single Track Efficiency}
 \label{ssec:vdc_eff}
 
-In general the VDCs are very efficient, but it is possible for particles to make several tracks in the VDCs. This can cause issues with track reconstruction. For the analysis of E08-014 only events making a single track in the VDCs that also passed PID cuts were analyzed. This single track efficiency can be calculated with equation \ref{eq:vdc_eff}. Where $N_{track=1}$ is the number of events making only a single track and $N_{0 \leq track \leq 4}$ are the number of events producing between one and four tracks. For the LHRS during experiment E08-014 $\epsilon_{VDC}$ was found to be 99.175$\%$, and Table \ref{tab:vdc_eff} gives the breakdown for both detectors by number of tracks seen. This introduces a small correction factor of $\frac{1}{0.99175}$ to the electron yield. For more detailed information on this calibration see \cite{Thesis:Ye} where these values were calculated. 
+In general the VDCs are very efficient, but it is possible for particles to make several tracks in the VDCs. This can cause issues with track reconstruction. For the analysis of E08-014 only events making a single track in the VDCs that also passed PID cuts were analyzed. This single track efficiency can be calculated with equation \ref{eq:vdc_eff}. Here the variable $N_{track=1}$ is the number of events making only a single track, and the variable $N_{0 \leq track \leq 4}$ is the number of events producing between one and four tracks. For the LHRS during experiment E08-014 $\epsilon_{VDC}$ was found to be 99.175$\%$, and Table \ref{tab:vdc_eff} gives the breakdown for both detectors by number of tracks seen. This introduces a small correction factor of $\frac{1}{0.99175}$ to the electron yield. For more detailed information on this calibration see \cite{Thesis:Ye} where these values were calculated. 
 
 \begin{equation} \label{eq:vdc_eff}
 	\epsilon_{VDC} = \frac{N_{track=1}}{N_{0 \leq track \leq 4}}
@@ -208,7 +208,7 @@ Alternatively, we can look at the same data in the GC to identify the particles 
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.1\linewidth]{PID_GC_Ye.png}
+\includegraphics[width=1.\linewidth]{PID_GC_Ye.png}
 \end{center}
 \caption[PID with the Gas Cherenkov]{
 {\bf{PID with the Gas Cherenkov.}} This plot does not show the data used in this analysis. It is intended only to show where we expect to see certain particles in this thesis' analysis. The $X$-axis is in units of ADC channel, and the $Y$-axis is the number of events detected. Pions are found in the lower energy ADC channels. The red area shows where almost all of the particles should be pions, but the red area is not a cut applied to the data. Electrons are found in the bulk of the distribution between ADC channels 100 and 1400. The blue area shows where almost all of the particles should be electrons, but the blue area is not a cut applied to the data. The shaded areas were only used to check the pion contamination. Image from \cite{Thesis:Ye}.}
@@ -251,7 +251,7 @@ Before we find the GC efficiency let us first place some reasonable kinematic an
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.1\linewidth]{GC_Eff.png}
+\includegraphics[width=1.\linewidth]{GC_Eff.png}
 \end{center}
 \caption[GC Efficiency]{
 {\bf{GC Efficiency.}} The left plot is $T_7$ with physics cuts and the right is $T_{3\&7}$ with physics cuts.}
@@ -735,7 +735,7 @@ This is almost sufficient to estimate the optics calibration uncertainty. Howeve
 
 \begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=1.1\linewidth]{Solid_Angle_Ytarget.png}
+\includegraphics[width=1.03\linewidth]{Solid_Angle_Ytarget.png}
 \end{center}
 \caption[Solid Angle Acceptance of $^3$He Cell in $Y_{target}$]{
 {\bf{Solid Angle Acceptance of $^3$He Cell in $\boldsymbol{Y_{target}}$.}} The top left plot shows the electron events distributed in $Y_{target}$. The second from the top left shows the solid angle acceptance ($\theta$ vs. $\phi$) for all of $Y_{target}$. The remaining plots show the solid angle acceptance at different slices of $Y_{target}$ every centimeter in $Y_{target}$ from $Y_{target}$ = -5 cm to $Y_{target}$ = 5 cm. The important thing to notice is that the solid angle acceptance is not constant along $Y_{target}$.}
