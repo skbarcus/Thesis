@@ -12,6 +12,9 @@
 %For babeling
 \usepackage{lipsum}
 
+%To insert signed approval page PDF.
+\usepackage{pdfpages}
+
 %\usepackage[utf8]{inputenc}
 %\usepackage[english]{babel}
 %\usepackage{comment}
@@ -40,8 +43,9 @@
 % Generate Copyright Page
 \subfile{preamble/copyright}
 
-% Generate Abstract Page
-\subfile{preamble/approval_page}
+% Generate Approval Page
+%\subfile{preamble/approval_page} %Adds in blank approval page.
+\includepdf[page={1}]{Signed_Approval_Page} %Adds in a specific set of PDF pages to add signed approval page.
 
 % Generate Abstract Page
 \subfile{preamble/abstract}
